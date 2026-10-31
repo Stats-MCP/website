@@ -1,0 +1,49 @@
+---
+interface Props {
+  id?: string;
+  title?: string;
+  meta?: string;
+}
+
+const { id, title, meta } = Astro.props;
+---
+
+<section id={id} class="section">
+  {
+    title && (
+      <div class="head">
+        <h2>{title}</h2>
+        {meta && <p class="mono-label">{meta}</p>}
+      </div>
+    )
+  }
+  <slot />
+</section>
+
+<style>
+  .section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  h2 {
+    font-size: 44px;
+  }
+  .head p {
+    margin: 0;
+  }
+  @media (max-width: 640px) {
+    h2 {
+      font-size: 34px;
+    }
+  }
+</style>

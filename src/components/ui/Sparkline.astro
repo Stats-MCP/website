@@ -1,0 +1,57 @@
+---
+import { sparklinePoints } from '@/lib/sparkline';
+
+interface Props {
+  values: number[];
+  label: string;
+  formatValue?: (value: number) => string;
+}
+
+const { values, label, formatValue = (value: number) => value.toFixed(1) } = Astro.props;
+const box = { width: 480, height: 130, padding: 18 };
+const points = sparklinePoints(values, box);
+const last = points.at(-1);
+const lastValue = values.at(-1);
+---
+
+<svg viewBox={`0 0 ${box.width} ${box.height}`} role="img" aria-label={label}>
+  <line x1="0" y1={box.height - 4} x2={box.width} y2={box.height - 4} class="axis"></line>
+  <polyline points={points.map((point) => `${point.x},${point.y}`).join(' ')}></polyline>
+  {
+    last && lastValue !== undefined && (
+      <>
+        <circle cx={last.x} cy={last.y} r="4.5" />
+        <text x={last.x - 8} y={last.y - 10} text-anchor="end">
+          {formatValue(lastValue)}
+        </text>
+      </>
+    )
+  }
+</svg>
+
+<style>
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .axis {
+    stroke: var(--rule);
+    stroke-width: 1;
+  }
+  polyline {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2;
+    stroke-linejoin: round;
+  }
+  circle {
+    fill: var(--accent);
+  }
+  text {
+    fill: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+  }
+</style>

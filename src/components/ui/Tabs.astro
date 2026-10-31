@@ -1,0 +1,70 @@
+---
+export interface TabItem {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  group: string;
+  label: string;
+  items: TabItem[];
+  selected: string;
+  /** Unique per tablist when several tablists share a group. */
+  idPrefix?: string;
+  /** False when the page preselects a value that a stored choice must not override. */
+  restore?: boolean;
+}
+
+const { group, label, items, selected, idPrefix = group, restore = true } = Astro.props;
+---
+
+<div class="tabs" role="tablist" aria-label={label} data-tab-restore={String(restore)}>
+  {
+    items.map((item) => (
+      <button
+        type="button"
+        role="tab"
+        id={`tab-${idPrefix}-${item.value}`}
+        aria-controls={`panel-${idPrefix}-${item.value}`}
+        aria-selected={item.value === selected ? 'true' : 'false'}
+        tabindex={item.value === selected ? 0 : -1}
+        data-tab-group={group}
+        data-tab-value={item.value}>
+        {item.label}
+      </button>
+    ))
+  }
+</div>
+
+<script>
+  import { initTabs } from '@/scripts/tabs';
+
+  initTabs();
+</script>
+
+<style>
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid var(--ink);
+  }
+  button {
+    font: inherit;
+    font-size: 14px;
+    min-height: 44px;
+    padding: 12px 18px;
+    border: 0;
+    border-right: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  button:last-child {
+    border-right: 0;
+  }
+  button[aria-selected='true'] {
+    background: var(--ink);
+    color: var(--paper);
+    font-weight: 600;
+  }
+</style>

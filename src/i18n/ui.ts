@@ -1,0 +1,235 @@
+import type { Locale } from '@/i18n/locales';
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface UiStrings {
+  nav: {
+    tagline: string;
+    howItWorks: string;
+    connect: string;
+    countries: string;
+    faq: string;
+    language: string;
+    github: string;
+    menu: string;
+  };
+  hero: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    connectCta: string;
+    endpointLabel: string;
+    countryTabs: string;
+    status: { live: string; planned: string };
+  };
+  copy: { copy: string; copied: string };
+  figure: {
+    caption: string;
+    toolsLine: string;
+    plannedTitle: string;
+    plannedText: string;
+    plannedLink: string;
+  };
+  keyFigures: { value: string; label: string }[];
+  howItWorks: {
+    title: string;
+    stepLabel: string;
+    steps: { tool: string; title: string; text: string }[];
+  };
+  connect: {
+    title: string;
+    meta: string;
+    clientTabs: string;
+  };
+  countries: {
+    title: string;
+    headers: {
+      code: string;
+      country: string;
+      source: string;
+      languages: string;
+      licence: string;
+      endpoint: string;
+      status: string;
+    };
+    details: string;
+    propose: string;
+    proposeLink: string;
+  };
+  faq: { title: string; items: FaqItem[] };
+  footer: {
+    disclaimer: string;
+    product: string;
+    openSource: string;
+    legal: string;
+    documentation: string;
+    licences: string;
+    privacy: string;
+    security: string;
+  };
+  privacy: {
+    title: string;
+    intro: string;
+    points: string[];
+    questions: string;
+  };
+  licences: { title: string; intro: string; attribution: string };
+  notFound: { title: string; text: string; home: string };
+}
+
+const en: UiStrings = {
+  nav: {
+    tagline: 'Independent · Open source',
+    howItWorks: 'How it works',
+    connect: 'Connect',
+    countries: 'Countries',
+    faq: 'FAQ',
+    language: 'Language',
+    github: 'View on GitHub',
+    menu: 'Menu'
+  },
+  hero: {
+    eyebrow: 'Official data, ready for your assistant',
+    title: 'Official national statistics for every AI assistant.',
+    lead: 'StatsMCP connects Claude, ChatGPT, Cursor and other assistants to the databases of national statistics offices. Every result names its source.',
+    connectCta: 'Connect an assistant',
+    endpointLabel: 'Endpoint',
+    countryTabs: 'Country',
+    status: { live: 'Live', planned: 'Planned' }
+  },
+  copy: { copy: 'Copy', copied: 'Copied' },
+  figure: {
+    caption: 'Figure 1 · Example conversation',
+    toolsLine: 'search_tables → get_table_metadata → query_table',
+    plannedTitle: '{country} is planned.',
+    plannedText:
+      'The {database} server is next on the roadmap. Example answers appear here when it goes live.',
+    plannedLink: 'Follow progress on GitHub'
+  },
+  keyFigures: [
+    { value: '4,800+', label: 'tables in SiStat, Slovenia' },
+    { value: '<1 s', label: 'typical answer from the endpoint' },
+    { value: '0', label: 'accounts or API keys needed' },
+    { value: 'Source + link', label: 'in every result' }
+  ],
+  howItWorks: {
+    title: 'How it works',
+    stepLabel: 'Step',
+    steps: [
+      {
+        tool: 'search_tables',
+        title: 'Find the table',
+        text: 'The assistant searches thousands of official tables by keyword.'
+      },
+      {
+        tool: 'get_table_metadata',
+        title: 'Read the variables',
+        text: 'It reads the periods, regions and measures, and finds the codes.'
+      },
+      {
+        tool: 'query_table',
+        title: 'Get the figures',
+        text: 'It gets the data with readable labels, the source and a link to the table.'
+      }
+    ]
+  },
+  connect: {
+    title: 'Connect in one step',
+    meta: 'Streamable HTTP · read-only · no sign-in',
+    clientTabs: 'Client'
+  },
+  countries: {
+    title: 'Countries',
+    headers: {
+      code: 'Code',
+      country: 'Country',
+      source: 'Official source',
+      languages: 'Languages',
+      licence: 'Data licence',
+      endpoint: 'Endpoint',
+      status: 'Status'
+    },
+    details: 'Details',
+    propose: 'Your office uses PxWeb?',
+    proposeLink: 'Open an issue on GitHub to propose it.'
+  },
+  faq: {
+    title: 'Questions',
+    items: [
+      {
+        question: 'Is it free?',
+        answer:
+          'Yes. The hosted endpoints are free, with a limit of 60 requests per minute. The code is under the MIT licence.'
+      },
+      {
+        question: 'Is StatsMCP official?',
+        answer:
+          "No. StatsMCP is independent and is not affiliated with or endorsed by any statistics office. The data comes directly from each office's public API."
+      },
+      {
+        question: 'Do you store my questions?',
+        answer:
+          'No. The endpoint writes no logs, and this website uses no cookies or analytics. Read the privacy page.'
+      },
+      {
+        question: 'Can I connect several countries?',
+        answer:
+          'Yes. Add one connector for each country. The assistant uses the right one for your question.'
+      },
+      {
+        question: 'How can my country be added?',
+        answer:
+          'If the office publishes its data through PxWeb, we can add it. Open an issue on GitHub.'
+      }
+    ]
+  },
+  footer: {
+    disclaimer: 'Not affiliated with or endorsed by any statistics office.',
+    product: 'Product',
+    openSource: 'Open source',
+    legal: 'Legal',
+    documentation: 'Documentation',
+    licences: 'Data licences by country',
+    privacy: 'Privacy',
+    security: 'Security'
+  },
+  privacy: {
+    title: 'Privacy',
+    intro: 'StatsMCP does not log your requests.',
+    points: [
+      'The hosted endpoint writes no logs. We do not store your questions, the tool calls or the results.',
+      'The rate limiter counts requests for each IP address for one minute. It does not keep them after that.',
+      'This website uses no cookies, no analytics and no third-party scripts. The fonts are on our own server.',
+      'Cloudflare runs the endpoint and this website. Cloudflare processes requests as our host under the Cloudflare privacy policy.',
+      'The statistics offices receive the data requests that the server sends to their APIs. These requests do not contain your IP address.'
+    ],
+    questions: 'Questions: open an issue on GitHub.'
+  },
+  licences: {
+    title: 'Data licences',
+    intro:
+      'The code of StatsMCP is under the MIT licence. The data belongs to each statistics office, and its terms apply.',
+    attribution:
+      'If you calculate new figures from the data, say so, for example: "Source: SURS / Calculated by <you>".'
+  },
+  notFound: {
+    title: 'Page not found',
+    text: 'This page does not exist.',
+    home: 'Go to the home page'
+  }
+};
+
+/** Slovenian copy is English until a native speaker reviews it (see reviewedLocales). */
+const sl: UiStrings = en;
+
+export const ui: Record<Locale, UiStrings> = { en, sl };
+
+export function fill(template: string, values: Record<string, string>): string {
+  return Object.entries(values).reduce(
+    (text, [key, value]) => text.replaceAll(`{${key}}`, value),
+    template
+  );
+}

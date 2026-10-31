@@ -1,0 +1,20 @@
+---
+interface Props {
+  group: string;
+  value: string;
+  selected: string;
+  idPrefix?: string;
+}
+
+const { group, value, selected, idPrefix = group } = Astro.props;
+---
+
+<div
+  role="tabpanel"
+  id={`panel-${idPrefix}-${value}`}
+  aria-labelledby={`tab-${idPrefix}-${value}`}
+  data-tab-panel-group={group}
+  data-tab-panel-value={value}
+  hidden={value !== selected}>
+  <slot />
+</div>
