@@ -6,7 +6,12 @@ import { ui } from '@/i18n/ui';
 const t = ui.en.notFound;
 ---
 
-<Base locale="en" title={`${t.title} · StatsMCP`} path="">
+<Base
+  locale="en"
+  title={ui.en.seo.notFound.title}
+  description={ui.en.seo.notFound.description}
+  path=""
+  ogSlug="home">
   <Section title={t.title}>
     <p>{t.text}</p>
     <p><a href="/">{t.home}</a></p>

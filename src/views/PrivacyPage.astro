@@ -13,7 +13,12 @@ const { locale } = Astro.props;
 const t = ui[locale].privacy;
 ---
 
-<Base locale={locale} title={`${t.title} · StatsMCP`} path="privacy/">
+<Base
+  locale={locale}
+  title={ui[locale].seo.privacy.title}
+  description={ui[locale].seo.privacy.description}
+  path="privacy/"
+  ogSlug="privacy">
   <Section title={t.title}>
     <p class="intro">{t.intro}</p>
     <ul>{t.points.map((point) => <li>{point}</li>)}</ul>

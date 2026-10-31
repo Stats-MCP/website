@@ -10,16 +10,22 @@ import '@/styles/global.css';
 
 import Footer from '@/components/sections/Footer.astro';
 import Nav from '@/components/sections/Nav.astro';
+import Seo from '@/components/seo/Seo.astro';
 import { localeTags, type Locale } from '@/i18n/locales';
 
 interface Props {
   locale: Locale;
   title: string;
-  /** Locale-independent path of this page, used by the language links. */
+  description: string;
+  /** Locale-independent path of this page, used by the language links and SEO. */
   path: string;
+  /** Slug of the Open Graph image, for example `home` → /og/home-en.png */
+  ogSlug: string;
+  countrySlug?: string;
+  jsonLd?: object[];
 }
 
-const { locale, title, path } = Astro.props;
+const { locale, title, description, path, ogSlug, countrySlug, jsonLd } = Astro.props;
 ---
 
 <!doctype html>
@@ -27,8 +33,15 @@ const { locale, title, path } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <slot name="head" />
+    <Seo
+      title={title}
+      description={description}
+      path={path}
+      locale={locale}
+      ogImage={`/og/${ogSlug}-${locale}.png`}
+      countrySlug={countrySlug}
+      jsonLd={jsonLd}
+    />
   </head>
   <body>
     <div class="container">

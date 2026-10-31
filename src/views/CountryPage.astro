@@ -5,6 +5,9 @@ import CountriesTable from '@/components/sections/CountriesTable.astro';
 import Hero from '@/components/sections/Hero.astro';
 import { countries, type Country } from '@/data/countries';
 import type { Locale } from '@/i18n/locales';
+import { fill, ui } from '@/i18n/ui';
+import { localePath } from '@/i18n/urls';
+import { breadcrumbData } from '@/lib/structured-data';
 
 interface Props {
   locale: Locale;
@@ -12,9 +15,28 @@ interface Props {
 }
 
 const { locale, country } = Astro.props;
+const seo = country.status === 'live' ? ui[locale].seo.countryLive : ui[locale].seo.countryPlanned;
+const values = {
+  country: country.name[locale],
+  database: country.database.name,
+  office: country.office.name
+};
+const absolute = (path: string) => new URL(path, Astro.site).href;
 ---
 
-<Base locale={locale} title={`${country.name[locale]} · StatsMCP`} path={`${country.slug}/`}>
+<Base
+  locale={locale}
+  title={fill(seo.title, values)}
+  description={fill(seo.description, values)}
+  path={`${country.slug}/`}
+  ogSlug={country.slug}
+  countrySlug={country.slug}
+  jsonLd={[
+    breadcrumbData([
+      { name: 'StatsMCP', url: absolute(localePath(locale)) },
+      { name: country.name[locale], url: absolute(localePath(locale, `${country.slug}/`)) }
+    ])
+  ]}>
   <Hero locale={locale} countries={countries} selected={country} restore={false} />
   <Connect locale={locale} countries={countries} selected={country} restore={false} />
   <CountriesTable locale={locale} countries={countries} />

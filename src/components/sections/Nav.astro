@@ -1,5 +1,5 @@
 ---
-import { locales, type Locale } from '@/i18n/locales';
+import { localeTags, locales, type Locale } from '@/i18n/locales';
 import { ui } from '@/i18n/ui';
 import { localePath } from '@/i18n/urls';
 import { repoUrl } from '@/data/site';
@@ -39,7 +39,7 @@ const links = [
         <li>
           <a
             href={localePath(code, path)}
-            hreflang={code}
+            hreflang={localeTags[code]}
             aria-current={code === locale ? 'page' : undefined}>
             {code.toUpperCase()}
           </a>

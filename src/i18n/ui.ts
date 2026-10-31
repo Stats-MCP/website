@@ -5,7 +5,21 @@ export interface FaqItem {
   answer: string;
 }
 
+export interface PageSeo {
+  title: string;
+  description: string;
+}
+
 export interface UiStrings {
+  seo: {
+    home: PageSeo;
+    privacy: PageSeo;
+    licences: PageSeo;
+    notFound: PageSeo;
+    /** `{country}`, `{database}` and `{office}` are replaced per country. */
+    countryLive: PageSeo;
+    countryPlanned: PageSeo;
+  };
   nav: {
     tagline: string;
     howItWorks: string;
@@ -83,6 +97,37 @@ export interface UiStrings {
 }
 
 const en: UiStrings = {
+  seo: {
+    home: {
+      title: 'StatsMCP — Official statistics for AI assistants',
+      description:
+        'Connect Claude, ChatGPT, Cursor and other AI assistants to national statistics databases. Free, read-only, open source. Every answer cites the source.'
+    },
+    privacy: {
+      title: 'Privacy — StatsMCP',
+      description:
+        'StatsMCP logs nothing: no request logs, no cookies, no analytics. Read what the endpoint and this website do with your data.'
+    },
+    licences: {
+      title: 'Data licences — StatsMCP',
+      description:
+        'The data licence and attribution rules of every statistics office in StatsMCP, with links to the official terms of reuse for each country.'
+    },
+    notFound: {
+      title: 'Page not found — StatsMCP',
+      description: 'This page does not exist on StatsMCP.'
+    },
+    countryLive: {
+      title: '{country} statistics for AI assistants — StatsMCP',
+      description:
+        "Ask Claude, ChatGPT or Cursor about {country}'s official statistics from {database} ({office}). Free MCP endpoint, sources in every answer."
+    },
+    countryPlanned: {
+      title: '{country} statistics for AI assistants — StatsMCP',
+      description:
+        "{country}'s official statistics for Claude, ChatGPT and other AI assistants are coming to StatsMCP. Follow the roadmap on GitHub."
+    }
+  },
   nav: {
     tagline: 'Independent · Open source',
     howItWorks: 'How it works',

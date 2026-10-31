@@ -7,7 +7,9 @@ import Hero from '@/components/sections/Hero.astro';
 import HowItWorks from '@/components/sections/HowItWorks.astro';
 import KeyFigures from '@/components/sections/KeyFigures.astro';
 import { countries } from '@/data/countries';
-import type { Locale } from '@/i18n/locales';
+import { localeTags, locales, type Locale } from '@/i18n/locales';
+import { ui } from '@/i18n/ui';
+import { faqData, softwareData, websiteData } from '@/lib/structured-data';
 
 interface Props {
   locale: Locale;
@@ -18,7 +20,17 @@ const selected = countries.find((country) => country.status === 'live') ?? count
 if (!selected) throw new Error('No countries are configured.');
 ---
 
-<Base locale={locale} title="StatsMCP" path="">
+<Base
+  locale={locale}
+  title={ui[locale].seo.home.title}
+  description={ui[locale].seo.home.description}
+  path=""
+  ogSlug="home"
+  jsonLd={[
+    websiteData(locales.map((code) => localeTags[code])),
+    softwareData(),
+    faqData(ui[locale].faq.items)
+  ]}>
   <Hero locale={locale} countries={countries} selected={selected} />
   <KeyFigures locale={locale} />
   <HowItWorks locale={locale} />

@@ -13,7 +13,12 @@ const { locale } = Astro.props;
 const t = ui[locale].licences;
 ---
 
-<Base locale={locale} title={`${t.title} · StatsMCP`} path="licences/">
+<Base
+  locale={locale}
+  title={ui[locale].seo.licences.title}
+  description={ui[locale].seo.licences.description}
+  path="licences/"
+  ogSlug="licences">
   <Section title={t.title}>
     <p>{t.intro}</p>
     {
