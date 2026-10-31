@@ -186,6 +186,65 @@ export const countries: Country[] = [
     }
   },
   {
+    id: 'ee',
+    slug: 'estonia',
+    code: 'EE',
+    name: { en: 'Estonia', sl: 'Estonija', nb: 'Estland' },
+    database: {
+      name: 'Statistical database',
+      url: 'https://andmed.stat.ee/en/stat'
+    },
+    office: {
+      name: 'Statistics Estonia',
+      fullName: {
+        en: 'Statistics Estonia',
+        sl: 'Statistični urad Estonije',
+        nb: 'Estlands statistikkbyrå'
+      },
+      url: 'https://www.stat.ee/en'
+    },
+    licence: {
+      label: { en: 'CC BY-SA 4.0', sl: 'CC BY-SA 4.0', nb: 'CC BY-SA 4.0' },
+      url: 'https://creativecommons.org/licenses/by-sa/4.0/'
+    },
+    dataLanguages: ['et', 'en'],
+    status: 'live',
+    example: {
+      question: {
+        en: 'What is the latest inflation rate in Estonia?',
+        sl: 'Kakšna je zadnja stopnja inflacije v Estoniji?',
+        nb: 'Hva er den siste inflasjonen i Estland?'
+      },
+      answer: {
+        en: 'In September 2026, prices were 3.5% higher than in September 2025. Inflation was lowest in August, at 1.5%.',
+        sl: 'Septembra 2026 so bile cene za 3,5 % višje kot septembra 2025. Inflacija je bila najnižja avgusta (1,5 %).',
+        nb: 'I september 2026 var prisene 3,5 % høyere enn i september 2025. Inflasjonen var lavest i august (1,5 %).'
+      },
+      highlight: { en: '3.5%', sl: '3,5 %', nb: '3,5 %' },
+      source: 'Statistics Estonia, table IA021',
+      sourceUrl: 'https://andmed.stat.ee/en/stat/IA021',
+      seriesLabel: {
+        en: 'Annual inflation, %',
+        sl: 'Letna inflacija, %',
+        nb: 'Årlig inflasjon, %'
+      },
+      series: [
+        { period: '2025M10', value: 4.6 },
+        { period: '2025M11', value: 4.9 },
+        { period: '2025M12', value: 4.1 },
+        { period: '2026M01', value: 3.7 },
+        { period: '2026M02', value: 3.1 },
+        { period: '2026M03', value: 3.6 },
+        { period: '2026M04', value: 3.4 },
+        { period: '2026M05', value: 3.7 },
+        { period: '2026M06', value: 2.3 },
+        { period: '2026M07', value: 2.2 },
+        { period: '2026M08', value: 1.5 },
+        { period: '2026M09', value: 3.5 }
+      ]
+    }
+  },
+  {
     id: 'is',
     slug: 'iceland',
     code: 'IS',
