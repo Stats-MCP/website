@@ -4,6 +4,7 @@ import { createRequire } from 'node:module';
 import { Resvg } from '@resvg/resvg-js';
 import satori from 'satori';
 
+import { brandColors, markSvg } from '@/brand/mark';
 import { sparklinePoints } from '@/lib/sparkline';
 
 const require = createRequire(import.meta.url);
@@ -11,12 +12,7 @@ const require = createRequire(import.meta.url);
 const serifStack = 'Newsreader, Newsreader Ext';
 const monoStack = 'Plex Mono, Plex Mono Ext';
 
-const colors = {
-  paper: '#F6F6F3',
-  ink: '#141414',
-  subtle: '#555555',
-  accent: '#B3122E'
-};
+const colors = { ...brandColors, subtle: '#555555' };
 
 type OgNode = { type: string; props: Record<string, unknown> };
 
@@ -79,6 +75,17 @@ function sparkline(values: readonly number[]): OgNode {
   };
 }
 
+function markImage(size: number, background = false): OgNode {
+  return {
+    type: 'img',
+    props: {
+      src: `data:image/svg+xml;base64,${Buffer.from(markSvg({ background })).toString('base64')}`,
+      width: size,
+      height: size
+    }
+  };
+}
+
 export interface OgCard {
   title: string;
   footer: string;
@@ -91,16 +98,19 @@ export function renderOgImage(card: OgCard): Promise<Uint8Array<ArrayBuffer>> {
     {
       display: 'flex',
       justifyContent: 'space-between',
-      alignItems: 'baseline',
+      alignItems: 'center',
       paddingBottom: 18,
       borderBottom: `2px solid ${colors.ink}`
     },
     [
-      el(
-        'div',
-        { fontFamily: serifStack, fontSize: 40, fontWeight: 600 },
-        'StatsMCP'
-      ),
+      el('div', { display: 'flex', alignItems: 'center', gap: 14 }, [
+        markImage(48),
+        el(
+          'div',
+          { fontFamily: serifStack, fontSize: 40, fontWeight: 600 },
+          'StatsMCP'
+        )
+      ]),
       el(
         'div',
         { fontFamily: monoStack, fontSize: 22, color: colors.subtle },
@@ -168,32 +178,11 @@ export function renderIcon(size: number): Promise<Uint8Array<ArrayBuffer>> {
     'div',
     {
       display: 'flex',
-      position: 'relative',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: '100%',
-      height: '100%',
-      backgroundColor: colors.paper,
-      color: colors.ink,
-      fontFamily: serifStack,
-      fontWeight: 600,
-      fontSize: size * 0.78
+      width: size,
+      height: size,
+      backgroundColor: brandColors.paper
     },
-    [
-      el('div', { display: 'flex', marginTop: -size * 0.08 }, 'S'),
-      el(
-        'div',
-        {
-          position: 'absolute',
-          right: size * 0.12,
-          bottom: size * 0.12,
-          width: size * 0.16,
-          height: size * 0.16,
-          backgroundColor: colors.accent
-        },
-        []
-      )
-    ]
+    [markImage(size, true)]
   );
   return toPng(root, size, size);
 }

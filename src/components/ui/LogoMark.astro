@@ -1,0 +1,42 @@
+---
+import { markRects } from '@/brand/mark';
+
+interface Props {
+  size: number;
+}
+
+const { size } = Astro.props;
+---
+
+<svg
+  class="mark"
+  width={size}
+  height={size}
+  viewBox="0 0 512 512"
+  shape-rendering="crispEdges"
+  aria-hidden="true">
+  {
+    markRects.map((rect) => (
+      <rect
+        x={rect.x}
+        y={rect.y}
+        width={rect.width}
+        height={rect.height}
+        class:list={{ accent: rect.accent }}
+      />
+    ))
+  }
+</svg>
+
+<style>
+  .mark {
+    display: block;
+    flex-shrink: 0;
+  }
+  rect {
+    fill: var(--ink);
+  }
+  .accent {
+    fill: var(--accent);
+  }
+</style>

@@ -2,6 +2,7 @@
 import { localeTags, locales, type Locale } from '@/i18n/locales';
 import { ui } from '@/i18n/ui';
 import { localePath } from '@/i18n/urls';
+import LogoMark from '@/components/ui/LogoMark.astro';
 import { repoUrl } from '@/data/site';
 
 interface Props {
@@ -21,7 +22,7 @@ const links = [
 ---
 
 <nav class="nav" aria-label="Main">
-  <a class="brand" href={home}>StatsMCP</a>
+  <a class="brand" href={home}><LogoMark size={30} />StatsMCP</a>
   <span class="mono-label tagline">{t.tagline}</span>
   <div class="spacer"></div>
   <ul class="links">
@@ -60,6 +61,9 @@ const links = [
     border-bottom: 2px solid var(--ink);
   }
   .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     font-family: var(--font-display);
     font-size: 26px;
     font-weight: 600;
