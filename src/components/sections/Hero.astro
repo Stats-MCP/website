@@ -9,6 +9,8 @@ import { repoUrl } from '@/data/site';
 import type { Locale } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
 import { countryTabItems } from '@/lib/country-tabs';
+import { splitHighlight } from '@/lib/highlight';
+import { formatPeriod } from '@/lib/periods';
 
 interface Props {
   locale: Locale;
@@ -21,6 +23,7 @@ interface Props {
 const { locale, countries, selected, restore = true } = Astro.props;
 const t = ui[locale];
 const tabs = countryTabItems(countries, locale);
+const toolNames = t.howItWorks.steps.map((step) => step.tool);
 const formatPercent = (value: number) =>
   new Intl.NumberFormat(locale, { minimumFractionDigits: 1 }).format(value);
 ---
@@ -81,20 +84,50 @@ const formatPercent = (value: number) =>
           </figcaption>
           {country.example ? (
             <div class="body">
-              <p class="question">{country.example.question[locale]}</p>
-              <p class="mono-label tools">{t.figure.toolsLine}</p>
-              <div class="chart">
-                <p class="mono-label">{country.example.seriesLabel[locale]}</p>
-                <Sparkline
-                  values={country.example.series.map((point) => point.value)}
-                  formatValue={formatPercent}
-                  label={`${country.example.seriesLabel[locale]}: ${country.example.series
-                    .map((point) => `${point.period} ${formatPercent(point.value)}`)
-                    .join(', ')}`}
-                />
+              <div class="turn">
+                <p class="speaker">{t.figure.you}</p>
+                <p class="question">{country.example.question[locale]}</p>
               </div>
-              <p class="answer">{country.example.answer[locale]}</p>
-              <p class="source">{country.example.source}</p>
+              <div class="turn">
+                <p class="speaker">{t.figure.assistant}</p>
+                <div class="tools">
+                  <span class="mono-label">
+                    {fill(t.figure.toolCalls, { count: String(toolNames.length) })}
+                  </span>
+                  <ol aria-label={fill(t.figure.toolCalls, { count: String(toolNames.length) })}>
+                    {toolNames.map((tool) => (
+                      <li>
+                        <code>{tool}</code>
+                        <span class="check" aria-hidden="true">✓</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+                <div class="chart">
+                  <p class="mono-label">{country.example.seriesLabel[locale]}</p>
+                  <Sparkline
+                    values={country.example.series.map((point) => point.value)}
+                    formatValue={formatPercent}
+                    startLabel={formatPeriod(country.example.series[0]?.period ?? '', locale)}
+                    endLabel={formatPeriod(country.example.series.at(-1)?.period ?? '', locale)}
+                    label={`${country.example.seriesLabel[locale]}: ${country.example.series
+                      .map((point) => `${formatPeriod(point.period, locale)} ${formatPercent(point.value)}`)
+                      .join(', ')}`}
+                  />
+                </div>
+                <p class="answer">
+                  {splitHighlight(country.example.answer[locale], country.example.highlight[locale]).map(
+                    (part) => (part.highlight ? <strong>{part.text}</strong> : part.text)
+                  )}
+                </p>
+                <p class="source">
+                  {t.figure.sourceLabel}{' '}
+                  <a href={country.example.sourceUrl}>
+                    {country.example.source}
+                    <span aria-hidden="true"> ↗</span>
+                  </a>
+                </p>
+              </div>
             </div>
           ) : (
             <div class="body">
@@ -201,13 +234,57 @@ const formatPercent = (value: number) =>
   .body p {
     margin: 0;
   }
+  .turn {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .speaker {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--subtle);
+  }
   .question {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
+  }
+  .tools ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tools li {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 8px;
+    border: 1px solid var(--rule);
+    font-size: 12px;
+  }
+  .check {
+    color: var(--live);
+  }
+  .answer strong {
+    color: var(--accent);
     font-weight: 600;
   }
   .chart {
-    padding: 14px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 14px;
     border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
   }
   .answer {
     font-family: var(--font-display);

@@ -21,7 +21,10 @@ export interface Country {
 export interface CountryExample {
   question: Localized;
   answer: Localized;
+  /** Part of the answer to emphasise; must appear verbatim in `answer`. */
+  highlight: Localized;
   source: string;
+  sourceUrl: string;
   seriesLabel: Localized;
   series: { period: string; value: number }[];
 }
@@ -44,6 +47,19 @@ export function validateCountries(list: readonly Country[]): void {
     }
     ids.add(country.id);
     slugs.add(country.slug);
+    const highlights = new Map(
+      Object.entries(country.example?.highlight ?? {})
+    );
+    for (const [locale, answer] of Object.entries(
+      country.example?.answer ?? {}
+    )) {
+      const highlight = highlights.get(locale);
+      if (highlight && !answer.includes(highlight)) {
+        throw new Error(
+          `Highlight "${highlight}" is missing from the ${country.id} ${locale} answer.`
+        );
+      }
+    }
   }
 }
 
@@ -85,8 +101,9 @@ export const countries: Country[] = [
         en: 'In October 2026, prices were 3.3% higher than in October 2025. Inflation peaked at 3.6% in May and June.',
         sl: 'Oktobra 2026 so bile cene za 3,3 % višje kot oktobra 2025. Inflacija je bila najvišja maja in junija (3,6 %).'
       },
-      source:
-        'SURS (Statistical Office of the Republic of Slovenia), table H281S.px',
+      highlight: { en: '3.3%', sl: '3,3 %' },
+      source: 'SURS, table H281S.px',
+      sourceUrl: 'https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/H281S.px',
       seriesLabel: { en: 'Annual inflation, %', sl: 'Letna inflacija, %' },
       series: [
         { period: '2025M11', value: 2.3 },

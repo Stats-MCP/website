@@ -4,40 +4,94 @@ import { sparklinePoints } from '@/lib/sparkline';
 interface Props {
   values: number[];
   label: string;
+  startLabel: string;
+  endLabel: string;
   formatValue?: (value: number) => string;
 }
 
-const { values, label, formatValue = (value: number) => value.toFixed(1) } = Astro.props;
-const box = { width: 480, height: 130, padding: 18 };
+const {
+  values,
+  label,
+  startLabel,
+  endLabel,
+  formatValue = (value: number) => value.toFixed(1)
+} = Astro.props;
+const box = { width: 480, height: 130, padding: 14 };
 const points = sparklinePoints(values, box);
 const last = points.at(-1);
 const lastValue = values.at(-1);
+const max = Math.max(...values);
+const min = Math.min(...values);
+const peaks = points.filter(
+  (_point, index) => values[index] === max && index !== values.length - 1
+);
 ---
 
-<svg viewBox={`0 0 ${box.width} ${box.height}`} role="img" aria-label={label}>
-  <line x1="0" y1={box.height - 4} x2={box.width} y2={box.height - 4} class="axis"></line>
-  <polyline points={points.map((point) => `${point.x},${point.y}`).join(' ')}></polyline>
-  {
-    last && lastValue !== undefined && (
-      <>
-        <circle cx={last.x} cy={last.y} r="4.5" />
-        <text x={last.x - 8} y={last.y - 10} text-anchor="end">
-          {formatValue(lastValue)}
-        </text>
-      </>
-    )
-  }
-</svg>
+<div class="sparkline">
+  <div class="scale" aria-hidden="true">
+    <span>{formatValue(max)}</span>
+    <span>{formatValue(min)}</span>
+  </div>
+  <svg viewBox={`0 0 ${box.width} ${box.height}`} role="img" aria-label={label}>
+    <line x1="0" y1={box.padding} x2={box.width} y2={box.padding} class="grid"></line>
+    <line
+      x1="0"
+      y1={box.height - box.padding}
+      x2={box.width}
+      y2={box.height - box.padding}
+      class="grid"></line>
+    <polyline
+      points={points.map((point) => `${point.x},${point.y}`).join(' ')}
+      pathLength="1"></polyline>
+    {peaks.map((peak) => <circle cx={peak.x} cy={peak.y} r="3" class="peak" />)}
+    {
+      last && lastValue !== undefined && (
+        <>
+          <circle cx={last.x} cy={last.y} r="4.5" class="last" />
+          <text x={last.x - 8} y={last.y - 10} text-anchor="end">
+            {formatValue(lastValue)}
+          </text>
+        </>
+      )
+    }
+  </svg>
+  <div class="periods" aria-hidden="true">
+    <span>{startLabel}</span>
+    <span>{endLabel}</span>
+  </div>
+</div>
 
 <style>
+  .sparkline {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 10px;
+    row-gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--subtle);
+  }
+  .scale {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6px 0;
+    text-align: right;
+  }
+  .periods {
+    grid-column: 2;
+    display: flex;
+    justify-content: space-between;
+  }
   svg {
     display: block;
     width: 100%;
     height: auto;
   }
-  .axis {
+  .grid {
     stroke: var(--rule);
     stroke-width: 1;
+    stroke-dasharray: 2 4;
   }
   polyline {
     fill: none;
@@ -45,7 +99,12 @@ const lastValue = values.at(-1);
     stroke-width: 2;
     stroke-linejoin: round;
   }
-  circle {
+  .peak {
+    fill: var(--surface);
+    stroke: var(--ink);
+    stroke-width: 1.5;
+  }
+  .last {
     fill: var(--accent);
   }
   text {
@@ -53,5 +112,29 @@ const lastValue = values.at(-1);
     font-family: var(--font-mono);
     font-size: 12px;
     font-weight: 500;
+  }
+  @keyframes draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    polyline {
+      stroke-dasharray: 1 1.01;
+      animation: draw 900ms ease-out both;
+    }
+    .peak,
+    .last,
+    text {
+      animation: appear 300ms ease-out 800ms both;
+    }
   }
 </style>

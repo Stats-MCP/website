@@ -46,7 +46,10 @@ export interface UiStrings {
   copy: { copy: string; copied: string };
   figure: {
     caption: string;
-    toolsLine: string;
+    you: string;
+    assistant: string;
+    toolCalls: string;
+    sourceLabel: string;
     plannedTitle: string;
     plannedText: string;
     plannedLink: string;
@@ -156,7 +159,10 @@ const en: UiStrings = {
   copy: { copy: 'Copy', copied: 'Copied' },
   figure: {
     caption: 'Figure 1 · Example conversation',
-    toolsLine: 'search_tables → get_table_metadata → query_table',
+    you: 'You',
+    assistant: 'Claude',
+    toolCalls: '{count} tool calls',
+    sourceLabel: 'Source:',
     plannedTitle: '{country} is planned.',
     plannedText:
       'The {database} server is next on the roadmap. Example answers appear here when it goes live.',
