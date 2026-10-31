@@ -19,6 +19,9 @@ export interface UiStrings {
     /** `{country}`, `{database}` and `{office}` are replaced per country. */
     countryLive: PageSeo;
     countryPlanned: PageSeo;
+    /** Open Graph card heading for a country, without the site name. */
+    countryCard: string;
+    figureNumber: string;
   };
   nav: {
     tagline: string;
@@ -126,7 +129,9 @@ const en: UiStrings = {
       title: '{country} statistics for AI assistants — StatsMCP',
       description:
         "{country}'s official statistics for Claude, ChatGPT and other AI assistants are coming to StatsMCP. Follow the roadmap on GitHub."
-    }
+    },
+    countryCard: '{country} statistics for AI assistants',
+    figureNumber: 'Figure 1'
   },
   nav: {
     tagline: 'Independent · Open source',
@@ -202,8 +207,8 @@ const en: UiStrings = {
       status: 'Status'
     },
     details: 'Details',
-    propose: 'Your office uses PxWeb?',
-    proposeLink: 'Open an issue on GitHub to propose it.'
+    propose: 'Missing your country?',
+    proposeLink: 'Propose it on GitHub.'
   },
   faq: {
     title: 'Questions',
