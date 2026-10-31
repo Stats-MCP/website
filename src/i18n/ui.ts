@@ -170,7 +170,7 @@ const en: UiStrings = {
   },
   keyFiguresLabel: 'Key figures',
   keyFigures: [
-    { value: '4,800+', label: 'tables in SiStat, Slovenia' },
+    { value: '{live}', label: 'national statistics databases live' },
     { value: '<1 s', label: 'typical answer from the endpoint' },
     { value: '0', label: 'accounts or API keys needed' },
     { value: 'Source + link', label: 'in every result' }

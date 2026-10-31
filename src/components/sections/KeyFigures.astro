@@ -1,19 +1,21 @@
 ---
+import { countries } from '@/data/countries';
 import type { Locale } from '@/i18n/locales';
-import { ui } from '@/i18n/ui';
+import { fill, ui } from '@/i18n/ui';
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
+const live = String(countries.filter((country) => country.status === 'live').length);
 ---
 
 <section class="figures" aria-label={ui[locale].keyFiguresLabel}>
   {
     ui[locale].keyFigures.map((figure) => (
       <div class="cell">
-        <p class="value">{figure.value}</p>
+        <p class="value">{fill(figure.value, { live })}</p>
         <p class="label">{figure.label}</p>
       </div>
     ))

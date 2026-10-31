@@ -132,9 +132,40 @@ export const countries: Country[] = [
       fullName: { en: 'Statistics Norway', sl: 'Statistični urad Norveške' },
       url: 'https://www.ssb.no/en'
     },
-    licence: { label: { en: 'CC BY 4.0', sl: 'CC BY 4.0' } },
+    licence: {
+      label: { en: 'CC BY 4.0', sl: 'CC BY 4.0' },
+      url: 'https://www.ssb.no/en/diverse/lisens'
+    },
     dataLanguages: ['no', 'en'],
-    status: 'planned'
+    status: 'live',
+    example: {
+      question: {
+        en: 'What is the latest inflation rate in Norway?',
+        sl: 'Kakšna je zadnja stopnja inflacije na Norveškem?'
+      },
+      answer: {
+        en: 'In September 2026, prices were 3.4% higher than in September 2025. Inflation peaked at 3.6% in January and March.',
+        sl: 'Septembra 2026 so bile cene za 3,4 % višje kot septembra 2025. Inflacija je bila najvišja januarja in marca (3,6 %).'
+      },
+      highlight: { en: '3.4%', sl: '3,4 %' },
+      source: 'SSB, table 14700',
+      sourceUrl: 'https://www.ssb.no/en/statbank/table/14700',
+      seriesLabel: { en: 'Annual inflation, %', sl: 'Letna inflacija, %' },
+      series: [
+        { period: '2025M10', value: 3.1 },
+        { period: '2025M11', value: 3.0 },
+        { period: '2025M12', value: 3.2 },
+        { period: '2026M01', value: 3.6 },
+        { period: '2026M02', value: 2.7 },
+        { period: '2026M03', value: 3.6 },
+        { period: '2026M04', value: 3.4 },
+        { period: '2026M05', value: 3.1 },
+        { period: '2026M06', value: 2.7 },
+        { period: '2026M07', value: 3.0 },
+        { period: '2026M08', value: 3.3 },
+        { period: '2026M09', value: 3.4 }
+      ]
+    }
   },
   {
     id: 'is',
