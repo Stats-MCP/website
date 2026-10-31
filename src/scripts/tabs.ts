@@ -45,6 +45,18 @@ function scopesFor(root: Document, group: string): ParentNode[] {
   return [...scopes];
 }
 
+/** Scrolls a tab list sideways, never the page, so the selected tab is visible. */
+function reveal(tab: HTMLElement): void {
+  const list = tab.closest<HTMLElement>('[role="tablist"]');
+  if (!list) return;
+  const listBox = list.getBoundingClientRect();
+  const tabBox = tab.getBoundingClientRect();
+  if (tabBox.left < listBox.left) list.scrollLeft -= listBox.left - tabBox.left;
+  if (tabBox.right > listBox.right) {
+    list.scrollLeft += tabBox.right - listBox.right;
+  }
+}
+
 function select(root: Document, group: string, value: string): void {
   for (const scope of scopesFor(root, group)) {
     const tabs = tabsIn(scope, group).filter(
@@ -62,6 +74,7 @@ function select(root: Document, group: string, value: string): void {
       const selected = tab.dataset.tabValue === value;
       tab.setAttribute('aria-selected', String(selected));
       tab.tabIndex = selected ? 0 : -1;
+      if (selected) reveal(tab);
     }
     for (const panel of panels) {
       panel.hidden = panel.dataset.tabPanelValue !== value;
@@ -112,6 +125,11 @@ export function initTabs(root: Document = document): void {
     );
     const stored = restorable ? readStored(group) : undefined;
     if (stored) select(root, group, stored);
+  }
+  for (const tab of root.querySelectorAll<HTMLElement>(
+    '[role="tab"][aria-selected="true"]'
+  )) {
+    reveal(tab);
   }
   root.addEventListener('click', (event) => {
     const activator = activatorFromEvent(event);

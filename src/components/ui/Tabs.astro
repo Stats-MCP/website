@@ -45,10 +45,13 @@ const { group, label, items, selected, idPrefix = group, restore = true } = Astr
 <style>
   .tabs {
     display: flex;
-    flex-wrap: wrap;
+    overflow-x: auto;
+    scrollbar-width: thin;
     border: 1px solid var(--ink);
   }
   button {
+    flex: none;
+    white-space: nowrap;
     font: inherit;
     font-size: 14px;
     min-height: 44px;
