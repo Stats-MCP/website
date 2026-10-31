@@ -15,7 +15,9 @@
     "test": "vitest run",
     "lint": "oxlint",
     "format": "oxfmt --check .",
-    "format:fix": "oxfmt --write ."
+    "format:fix": "oxfmt --write .",
+    "deploy": "astro build && wrangler deploy",
+    "preview:worker": "astro build && wrangler dev"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
@@ -32,6 +34,7 @@
     "oxlint": "1.89.0",
     "satori": "0.63.2",
     "typescript": "5.9.3",
-    "vitest": "5.0.5"
+    "vitest": "5.0.5",
+    "wrangler": "4.152.0"
   }
 }
