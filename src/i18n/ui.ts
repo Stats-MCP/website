@@ -282,10 +282,8 @@ const en: UiStrings = {
   }
 };
 
-/** Slovenian copy is English until a native speaker reviews it (see reviewedLocales). */
-const sl: UiStrings = en;
-
-export const ui: Record<Locale, UiStrings> = { en, sl };
+/** Slovenian and Norwegian copy is English until a native speaker reviews it (see reviewedLocales). */
+export const ui: Record<Locale, UiStrings> = { en, sl: en, nb: en };
 
 export function fill(template: string, values: Record<string, string>): string {
   return Object.entries(values).reduce(

@@ -49,15 +49,15 @@ export function vscodeInstallLink(country: Country): string {
   return `https://insiders.vscode.dev/redirect/mcp/install?${params.toString()}`;
 }
 
-function sameInBothLocales(steps: string[]): StepTemplates {
-  return { en: steps, sl: steps };
+function sameInAllLocales(steps: string[]): StepTemplates {
+  return { en: steps, sl: steps, nb: steps };
 }
 
 export const clients: Client[] = [
   {
     id: 'claude',
     label: 'Claude',
-    steps: sameInBothLocales([
+    steps: sameInAllLocales([
       'Open Settings, then Connectors.',
       'Select Add custom connector.',
       'Name it StatsMCP {code} and paste the endpoint.',
@@ -68,7 +68,7 @@ export const clients: Client[] = [
   {
     id: 'chatgpt',
     label: 'ChatGPT',
-    steps: sameInBothLocales([
+    steps: sameInAllLocales([
       'Turn on developer mode in Settings.',
       'Open Connectors, then Create.',
       'Paste the endpoint. Choose no authentication.'
@@ -78,7 +78,7 @@ export const clients: Client[] = [
   {
     id: 'claude-code',
     label: 'Claude Code',
-    steps: sameInBothLocales([
+    steps: sameInAllLocales([
       'Run the command in your terminal.',
       'Run /mcp to check the connection.'
     ]),
@@ -88,32 +88,36 @@ export const clients: Client[] = [
   {
     id: 'cursor',
     label: 'Cursor',
-    steps: sameInBothLocales([
+    steps: sameInAllLocales([
       'Select Add to Cursor, or add the block to .cursor/mcp.json.'
     ]),
     code: mcpServersJson,
     install: (country) => ({
-      label: { en: 'Add to Cursor', sl: 'Add to Cursor' },
+      label: { en: 'Add to Cursor', sl: 'Add to Cursor', nb: 'Add to Cursor' },
       href: cursorInstallLink(country)
     })
   },
   {
     id: 'vscode',
     label: 'VS Code',
-    steps: sameInBothLocales([
+    steps: sameInAllLocales([
       'Select Install in VS Code, or add the block to .vscode/mcp.json.',
       'Start the server from the MCP panel.'
     ]),
     code: vscodeJson,
     install: (country) => ({
-      label: { en: 'Install in VS Code', sl: 'Install in VS Code' },
+      label: {
+        en: 'Install in VS Code',
+        sl: 'Install in VS Code',
+        nb: 'Install in VS Code'
+      },
       href: vscodeInstallLink(country)
     })
   },
   {
     id: 'other',
     label: 'Other clients',
-    steps: sameInBothLocales([
+    steps: sameInAllLocales([
       'Add a remote server of type http or streamable-http.',
       'Use the endpoint. No authentication.'
     ]),
@@ -122,7 +126,7 @@ export const clients: Client[] = [
   {
     id: 'local',
     label: 'Run locally',
-    steps: sameInBothLocales([
+    steps: sameInAllLocales([
       'You need Node.js 20 or later.',
       'Add this command as a stdio server.'
     ]),

@@ -1,4 +1,4 @@
-export const locales = ['en', 'sl'] as const;
+export const locales = ['en', 'sl', 'nb'] as const;
 
 export type Locale = (typeof locales)[number];
 
@@ -8,6 +8,10 @@ export const defaultLocale: Locale = 'en';
 export const reviewedLocales: readonly Locale[] = ['en'];
 
 /** BCP 47 tags for hreflang and og:locale. */
-export const localeTags: Record<Locale, string> = { en: 'en', sl: 'sl-SI' };
+export const localeTags: Record<Locale, string> = {
+  en: 'en',
+  sl: 'sl-SI',
+  nb: 'nb-NO'
+};
 
 export type Localized = Record<Locale, string>;

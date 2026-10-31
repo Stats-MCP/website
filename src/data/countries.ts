@@ -72,20 +72,22 @@ export const countries: Country[] = [
     id: 'si',
     slug: 'slovenia',
     code: 'SI',
-    name: { en: 'Slovenia', sl: 'Slovenija' },
+    name: { en: 'Slovenia', sl: 'Slovenija', nb: 'Slovenia' },
     database: { name: 'SiStat', url: 'https://pxweb.stat.si/SiStat/en' },
     office: {
       name: 'SURS',
       fullName: {
         en: 'Statistical Office of the Republic of Slovenia',
-        sl: 'Statistični urad Republike Slovenije'
+        sl: 'Statistični urad Republike Slovenije',
+        nb: 'Det slovenske statistikkbyrået'
       },
       url: 'https://www.stat.si/StatWeb/en'
     },
     licence: {
       label: {
         en: 'Free reuse with attribution',
-        sl: 'Prosta uporaba z navedbo vira'
+        sl: 'Prosta uporaba z navedbo vira',
+        nb: 'Fri gjenbruk med kildehenvisning'
       },
       url: 'https://www.stat.si/StatWeb/en/StaticPages/Index/Copyright'
     },
@@ -95,16 +97,22 @@ export const countries: Country[] = [
     example: {
       question: {
         en: 'What is the latest inflation rate in Slovenia?',
-        sl: 'Kakšna je zadnja stopnja inflacije v Sloveniji?'
+        sl: 'Kakšna je zadnja stopnja inflacije v Sloveniji?',
+        nb: 'Hva er den siste inflasjonen i Slovenia?'
       },
       answer: {
         en: 'In October 2026, prices were 3.3% higher than in October 2025. Inflation peaked at 3.6% in May and June.',
-        sl: 'Oktobra 2026 so bile cene za 3,3 % višje kot oktobra 2025. Inflacija je bila najvišja maja in junija (3,6 %).'
+        sl: 'Oktobra 2026 so bile cene za 3,3 % višje kot oktobra 2025. Inflacija je bila najvišja maja in junija (3,6 %).',
+        nb: 'I oktober 2026 var prisene 3,3 % høyere enn i oktober 2025. Inflasjonen var høyest i mai og juni (3,6 %).'
       },
-      highlight: { en: '3.3%', sl: '3,3 %' },
+      highlight: { en: '3.3%', sl: '3,3 %', nb: '3,3 %' },
       source: 'SURS, table H281S.px',
       sourceUrl: 'https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/H281S.px',
-      seriesLabel: { en: 'Annual inflation, %', sl: 'Letna inflacija, %' },
+      seriesLabel: {
+        en: 'Annual inflation, %',
+        sl: 'Letna inflacija, %',
+        nb: 'Årlig inflasjon, %'
+      },
       series: [
         { period: '2025M11', value: 2.3 },
         { period: '2025M12', value: 2.7 },
@@ -125,15 +133,19 @@ export const countries: Country[] = [
     id: 'no',
     slug: 'norway',
     code: 'NO',
-    name: { en: 'Norway', sl: 'Norveška' },
+    name: { en: 'Norway', sl: 'Norveška', nb: 'Norge' },
     database: { name: 'Statbank', url: 'https://www.ssb.no/en/statbank' },
     office: {
       name: 'SSB',
-      fullName: { en: 'Statistics Norway', sl: 'Statistični urad Norveške' },
+      fullName: {
+        en: 'Statistics Norway',
+        sl: 'Statistični urad Norveške',
+        nb: 'Statistisk sentralbyrå'
+      },
       url: 'https://www.ssb.no/en'
     },
     licence: {
-      label: { en: 'CC BY 4.0', sl: 'CC BY 4.0' },
+      label: { en: 'CC BY 4.0', sl: 'CC BY 4.0', nb: 'CC BY 4.0' },
       url: 'https://www.ssb.no/en/diverse/lisens'
     },
     dataLanguages: ['no', 'en'],
@@ -141,16 +153,22 @@ export const countries: Country[] = [
     example: {
       question: {
         en: 'What is the latest inflation rate in Norway?',
-        sl: 'Kakšna je zadnja stopnja inflacije na Norveškem?'
+        sl: 'Kakšna je zadnja stopnja inflacije na Norveškem?',
+        nb: 'Hva er den siste inflasjonen i Norge?'
       },
       answer: {
         en: 'In September 2026, prices were 3.4% higher than in September 2025. Inflation peaked at 3.6% in January and March.',
-        sl: 'Septembra 2026 so bile cene za 3,4 % višje kot septembra 2025. Inflacija je bila najvišja januarja in marca (3,6 %).'
+        sl: 'Septembra 2026 so bile cene za 3,4 % višje kot septembra 2025. Inflacija je bila najvišja januarja in marca (3,6 %).',
+        nb: 'I september 2026 var prisene 3,4 % høyere enn i september 2025. Inflasjonen var høyest i januar og mars (3,6 %).'
       },
-      highlight: { en: '3.4%', sl: '3,4 %' },
+      highlight: { en: '3.4%', sl: '3,4 %', nb: '3,4 %' },
       source: 'SSB, table 14700',
       sourceUrl: 'https://www.ssb.no/en/statbank/table/14700',
-      seriesLabel: { en: 'Annual inflation, %', sl: 'Letna inflacija, %' },
+      seriesLabel: {
+        en: 'Annual inflation, %',
+        sl: 'Letna inflacija, %',
+        nb: 'Årlig inflasjon, %'
+      },
       series: [
         { period: '2025M10', value: 3.1 },
         { period: '2025M11', value: 3.0 },
@@ -171,14 +189,18 @@ export const countries: Country[] = [
     id: 'is',
     slug: 'iceland',
     code: 'IS',
-    name: { en: 'Iceland', sl: 'Islandija' },
+    name: { en: 'Iceland', sl: 'Islandija', nb: 'Island' },
     database: { name: 'Statistics Iceland', url: 'https://www.statice.is/' },
     office: {
       name: 'Statistics Iceland',
-      fullName: { en: 'Statistics Iceland', sl: 'Statistični urad Islandije' },
+      fullName: {
+        en: 'Statistics Iceland',
+        sl: 'Statistični urad Islandije',
+        nb: 'Islands statistikkbyrå'
+      },
       url: 'https://www.statice.is/'
     },
-    licence: { label: { en: 'CC BY 4.0', sl: 'CC BY 4.0' } },
+    licence: { label: { en: 'CC BY 4.0', sl: 'CC BY 4.0', nb: 'CC BY 4.0' } },
     dataLanguages: ['is', 'en'],
     status: 'planned'
   }

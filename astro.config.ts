@@ -3,7 +3,12 @@ import { defineConfig } from 'astro/config';
 
 import { countries } from './src/data/countries';
 import { isIndexableUrl } from './src/i18n/indexing';
-import { defaultLocale, locales, reviewedLocales } from './src/i18n/locales';
+import {
+  defaultLocale,
+  localeTags,
+  locales,
+  reviewedLocales
+} from './src/i18n/locales';
 
 const indexingRules = { locales, defaultLocale, reviewedLocales, countries };
 
@@ -14,12 +19,12 @@ export const config = defineConfig({
   vite: { build: { assetsInlineLimit: 0 } },
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'sl'],
+    locales: [...locales],
     routing: { prefixDefaultLocale: false }
   },
   integrations: [
     sitemap({
-      i18n: { defaultLocale: 'en', locales: { en: 'en', sl: 'sl-SI' } },
+      i18n: { defaultLocale: 'en', locales: localeTags },
       filter: (page) => isIndexableUrl(indexingRules, page),
       changefreq: 'weekly',
       lastmod: new Date()
