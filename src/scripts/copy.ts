@@ -1,5 +1,6 @@
 const resetDelayMs = 2000;
 const timers = new WeakMap<HTMLButtonElement, ReturnType<typeof setTimeout>>();
+const initialized = new WeakSet<Document>();
 
 function announce(root: Document, text: string): void {
   const status = root.getElementById('copy-status');
@@ -11,6 +12,8 @@ function announce(root: Document, text: string): void {
 }
 
 export function initCopyButtons(root: Document = document): void {
+  if (initialized.has(root)) return;
+  initialized.add(root);
   root.addEventListener('click', (event) => {
     if (!(event.target instanceof Element)) return;
     const button = event.target.closest<HTMLButtonElement>('button[data-copy]');

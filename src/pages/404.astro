@@ -1,0 +1,14 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/ui/Section.astro';
+import { ui } from '@/i18n/ui';
+
+const t = ui.en.notFound;
+---
+
+<Base locale="en" title={`${t.title} · StatsMCP`} path="">
+  <Section title={t.title}>
+    <p>{t.text}</p>
+    <p><a href="/">{t.home}</a></p>
+  </Section>
+</Base>

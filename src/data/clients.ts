@@ -66,16 +66,6 @@ export const clients: Client[] = [
     code: endpoint
   },
   {
-    id: 'claude-code',
-    label: 'Claude Code',
-    steps: sameInBothLocales([
-      'Run the command in your terminal.',
-      'Run /mcp to check the connection.'
-    ]),
-    code: (country) =>
-      `claude mcp add --transport http ${serverName(country)} ${endpoint(country)}`
-  },
-  {
     id: 'chatgpt',
     label: 'ChatGPT',
     steps: sameInBothLocales([
@@ -84,6 +74,16 @@ export const clients: Client[] = [
       'Paste the endpoint. Choose no authentication.'
     ]),
     code: endpoint
+  },
+  {
+    id: 'claude-code',
+    label: 'Claude Code',
+    steps: sameInBothLocales([
+      'Run the command in your terminal.',
+      'Run /mcp to check the connection.'
+    ]),
+    code: (country) =>
+      `claude mcp add --transport http ${serverName(country)} ${endpoint(country)}`
   },
   {
     id: 'cursor',

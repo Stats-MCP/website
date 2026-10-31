@@ -2,12 +2,20 @@
 interface Props {
   href: string;
   variant?: 'primary' | 'secondary';
+  /** `group:value` of a tab to select when the link is used. */
+  activate?: string;
 }
 
-const { href, variant = 'secondary' } = Astro.props;
+const { href, variant = 'secondary', activate } = Astro.props;
 ---
 
-<a class:list={['button', variant]} href={href}><slot /></a>
+<a class:list={['button', variant]} href={href} data-tab-activate={activate}><slot /></a>
+
+<script>
+  import { initTabs } from '@/scripts/tabs';
+
+  initTabs();
+</script>
 
 <style>
   .button {

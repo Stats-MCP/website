@@ -5,6 +5,7 @@ export const config = defineConfig({
   site: 'https://statsmcp.dev',
   trailingSlash: 'always',
   build: { format: 'directory' },
+  vite: { build: { assetsInlineLimit: 0 } },
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'sl'],

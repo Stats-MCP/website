@@ -1,0 +1,43 @@
+---
+import '@fontsource/newsreader/400.css';
+import '@fontsource/newsreader/600.css';
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/500.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '@/styles/global.css';
+
+import Footer from '@/components/sections/Footer.astro';
+import Nav from '@/components/sections/Nav.astro';
+import { localeTags, type Locale } from '@/i18n/locales';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  /** Locale-independent path of this page, used by the language links. */
+  path: string;
+}
+
+const { locale, title, path } = Astro.props;
+---
+
+<!doctype html>
+<html lang={localeTags[locale]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <slot name="head" />
+  </head>
+  <body>
+    <div class="container">
+      <Nav locale={locale} path={path} />
+      <main>
+        <slot />
+      </main>
+      <Footer locale={locale} />
+    </div>
+    <p id="copy-status" class="visually-hidden" aria-live="polite"></p>
+  </body>
+</html>

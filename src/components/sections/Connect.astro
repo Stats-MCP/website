@@ -1,0 +1,121 @@
+---
+import CodeBlock from '@/components/ui/CodeBlock.astro';
+import LinkButton from '@/components/ui/LinkButton.astro';
+import Section from '@/components/ui/Section.astro';
+import TabPanel from '@/components/ui/TabPanel.astro';
+import Tabs from '@/components/ui/Tabs.astro';
+import { clientSteps, clientsFor } from '@/data/clients';
+import type { Country } from '@/data/countries';
+import type { Locale } from '@/i18n/locales';
+import { fill, ui } from '@/i18n/ui';
+import { countryTabItems } from '@/lib/country-tabs';
+
+interface Props {
+  locale: Locale;
+  countries: Country[];
+  selected: Country;
+  restore?: boolean;
+}
+
+const { locale, countries, selected, restore = true } = Astro.props;
+const t = ui[locale];
+const countryTabs = countryTabItems(countries, locale);
+---
+
+<Section id="connect" title={t.connect.title} meta={t.connect.meta}>
+  <Tabs
+    group="country"
+    idPrefix="connect"
+    label={t.hero.countryTabs}
+    items={countryTabs}
+    selected={selected.id}
+    restore={restore}
+  />
+  {
+    countries.map((country) => {
+      const available = clientsFor(country);
+      const firstClient = available[0]?.id ?? '';
+      return (
+        <TabPanel group="country" idPrefix="connect" value={country.id} selected={selected.id}>
+          {country.status === 'live' ? (
+            <div class="clients" data-tab-scope>
+              <Tabs
+                group="client"
+                idPrefix={`client-${country.id}`}
+                label={t.connect.clientTabs}
+                items={available.map((client) => ({ value: client.id, label: client.label }))}
+                selected={firstClient}
+              />
+              {available.map((client) => {
+                const install = client.install?.(country);
+                return (
+                  <TabPanel
+                    group="client"
+                    idPrefix={`client-${country.id}`}
+                    value={client.id}
+                    selected={firstClient}>
+                    <div class="panel">
+                      <ol>
+                        {clientSteps(client, country, locale).map((step) => (
+                          <li>{step}</li>
+                        ))}
+                      </ol>
+                      <div class="code">
+                        <CodeBlock
+                          code={client.code(country)}
+                          copyLabel={t.copy.copy}
+                          copiedLabel={t.copy.copied}
+                        />
+                        {install && (
+                          <LinkButton href={install.href} variant="primary">
+                            {install.label[locale]}
+                          </LinkButton>
+                        )}
+                      </div>
+                    </div>
+                  </TabPanel>
+                );
+              })}
+            </div>
+          ) : (
+            <p class="planned">
+              {fill(t.figure.plannedTitle, { country: country.name[locale] })}{' '}
+              {fill(t.figure.plannedText, { database: country.database.name })}
+            </p>
+          )}
+        </TabPanel>
+      );
+    })
+  }
+</Section>
+
+<style>
+  .clients {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+    gap: 32px;
+  }
+  ol {
+    margin: 0;
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 17px;
+  }
+  .code {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .planned {
+    margin: 0;
+    color: var(--muted);
+  }
+</style>

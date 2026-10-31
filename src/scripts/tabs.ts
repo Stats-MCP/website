@@ -1,4 +1,6 @@
 const storagePrefix = 'statsmcp:tab:';
+const scopeSelector = '[data-tab-scope]';
+const initialized = new WeakSet<Document>();
 
 function readStored(key: string): string | undefined {
   try {
@@ -24,17 +26,46 @@ function tabsIn(root: ParentNode, group: string): HTMLElement[] {
   ];
 }
 
-function select(root: ParentNode, group: string, value: string): void {
-  for (const tab of tabsIn(root, group)) {
-    const selected = tab.dataset.tabValue === value;
-    tab.setAttribute('aria-selected', String(selected));
-    tab.tabIndex = selected ? 0 : -1;
+function panelsIn(root: ParentNode, group: string): HTMLElement[] {
+  return [
+    ...root.querySelectorAll<HTMLElement>(`[data-tab-panel-group="${group}"]`)
+  ];
+}
+
+function ownScope(element: Element, root: Document): ParentNode {
+  return element.closest(scopeSelector) ?? root;
+}
+
+/** A scope only follows a value it has; other scopes keep their own selection. */
+function scopesFor(root: Document, group: string): ParentNode[] {
+  const scopes = new Set<ParentNode>();
+  for (const element of [...tabsIn(root, group), ...panelsIn(root, group)]) {
+    scopes.add(ownScope(element, root));
   }
-  const panels = root.querySelectorAll<HTMLElement>(
-    `[data-tab-panel-group="${group}"]`
-  );
-  for (const panel of panels) {
-    panel.hidden = panel.dataset.tabPanelValue !== value;
+  return [...scopes];
+}
+
+function select(root: Document, group: string, value: string): void {
+  for (const scope of scopesFor(root, group)) {
+    const tabs = tabsIn(scope, group).filter(
+      (tab) => ownScope(tab, root) === scope
+    );
+    const panels = panelsIn(scope, group).filter(
+      (panel) => ownScope(panel, root) === scope
+    );
+    const known = [...tabs, ...panels].some(
+      (element) =>
+        (element.dataset.tabValue ?? element.dataset.tabPanelValue) === value
+    );
+    if (!known) continue;
+    for (const tab of tabs) {
+      const selected = tab.dataset.tabValue === value;
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+    }
+    for (const panel of panels) {
+      panel.hidden = panel.dataset.tabPanelValue !== value;
+    }
   }
 }
 
@@ -59,28 +90,38 @@ function tabFromEvent(event: Event): HTMLElement | undefined {
   );
 }
 
+function activatorFromEvent(event: Event): HTMLElement | undefined {
+  if (!(event.target instanceof Element)) return undefined;
+  return event.target.closest<HTMLElement>('[data-tab-activate]') ?? undefined;
+}
+
 export function initTabs(root: Document = document): void {
-  const groups = new Set(
-    [...root.querySelectorAll<HTMLElement>('[role="tab"][data-tab-group]')].map(
-      (tab) => tab.dataset.tabGroup ?? ''
-    )
-  );
+  if (initialized.has(root)) return;
+  initialized.add(root);
+  const groups = new Set<string>();
+  for (const tab of root.querySelectorAll<HTMLElement>(
+    '[role="tab"][data-tab-group]'
+  )) {
+    groups.add(tab.dataset.tabGroup ?? '');
+  }
   for (const group of groups) {
     const restorable = tabsIn(root, group).every(
       (tab) =>
         tab.closest('[role="tablist"]')?.getAttribute('data-tab-restore') !==
         'false'
     );
-    if (!restorable) continue;
-    const stored = readStored(group);
-    if (
-      stored &&
-      tabsIn(root, group).some((tab) => tab.dataset.tabValue === stored)
-    ) {
-      select(root, group, stored);
-    }
+    const stored = restorable ? readStored(group) : undefined;
+    if (stored) select(root, group, stored);
   }
   root.addEventListener('click', (event) => {
+    const activator = activatorFromEvent(event);
+    const [activateGroup, activateValue] =
+      activator?.dataset.tabActivate?.split(':') ?? [];
+    if (activateGroup && activateValue) {
+      select(root, activateGroup, activateValue);
+      store(activateGroup, activateValue);
+      return;
+    }
     const tab = tabFromEvent(event);
     const group = tab?.dataset.tabGroup;
     const value = tab?.dataset.tabValue;

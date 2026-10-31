@@ -1,0 +1,51 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/ui/Section.astro';
+import { countries } from '@/data/countries';
+import type { Locale } from '@/i18n/locales';
+import { ui } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = ui[locale].licences;
+---
+
+<Base locale={locale} title={`${t.title} · StatsMCP`} path="licences/">
+  <Section title={t.title}>
+    <p>{t.intro}</p>
+    {
+      countries.map((country) => (
+        <article>
+          <h3>
+            {country.name[locale]} · {country.office.fullName[locale]}
+          </h3>
+          <p>
+            {country.licence.url ? (
+              <a href={country.licence.url}>{country.licence.label[locale]}</a>
+            ) : (
+              country.licence.label[locale]
+            )}
+          </p>
+        </article>
+      ))
+    }
+    <p>{t.attribution}</p>
+  </Section>
+</Base>
+
+<style>
+  article {
+    border-top: 1px solid var(--rule);
+    padding-top: 16px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  p {
+    margin: 8px 0 0;
+    max-width: 760px;
+  }
+</style>

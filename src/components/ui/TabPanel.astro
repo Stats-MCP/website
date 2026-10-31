@@ -4,15 +4,18 @@ interface Props {
   value: string;
   selected: string;
   idPrefix?: string;
+  /** Id of the controlling tab when this panel has no tab of its own. */
+  labelledBy?: string;
 }
 
-const { group, value, selected, idPrefix = group } = Astro.props;
+const { group, value, selected, idPrefix = group, labelledBy } = Astro.props;
 ---
 
 <div
   role="tabpanel"
   id={`panel-${idPrefix}-${value}`}
-  aria-labelledby={`tab-${idPrefix}-${value}`}
+  aria-labelledby={labelledBy ?? `tab-${idPrefix}-${value}`}
+  tabindex="0"
   data-tab-panel-group={group}
   data-tab-panel-value={value}
   hidden={value !== selected}>

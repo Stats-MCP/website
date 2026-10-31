@@ -20,7 +20,8 @@ export interface UiStrings {
     eyebrow: string;
     title: string;
     lead: string;
-    connectCta: string;
+    addToClaude: string;
+    addToChatgpt: string;
     endpointLabel: string;
     countryTabs: string;
     status: { live: string; planned: string };
@@ -33,6 +34,7 @@ export interface UiStrings {
     plannedText: string;
     plannedLink: string;
   };
+  keyFiguresLabel: string;
   keyFigures: { value: string; label: string }[];
   howItWorks: {
     title: string;
@@ -95,7 +97,8 @@ const en: UiStrings = {
     eyebrow: 'Official data, ready for your assistant',
     title: 'Official national statistics for every AI assistant.',
     lead: 'StatsMCP connects Claude, ChatGPT, Cursor and other assistants to the databases of national statistics offices. Every result names its source.',
-    connectCta: 'Connect an assistant',
+    addToClaude: 'Add to Claude',
+    addToChatgpt: 'Add to ChatGPT',
     endpointLabel: 'Endpoint',
     countryTabs: 'Country',
     status: { live: 'Live', planned: 'Planned' }
@@ -109,6 +112,7 @@ const en: UiStrings = {
       'The {database} server is next on the roadmap. Example answers appear here when it goes live.',
     plannedLink: 'Follow progress on GitHub'
   },
+  keyFiguresLabel: 'Key figures',
   keyFigures: [
     { value: '4,800+', label: 'tables in SiStat, Slovenia' },
     { value: '<1 s', label: 'typical answer from the endpoint' },

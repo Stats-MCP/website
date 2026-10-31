@@ -1,0 +1,54 @@
+---
+import type { Locale } from '@/i18n/locales';
+import { ui } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = ui[locale].faq;
+---
+
+<section id="faq" class="faq">
+  <h2>{t.title}</h2>
+  <div class="items">
+    {
+      t.items.map((item, index) => (
+        <details open={index === 0}>
+          <summary>{item.question}</summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .faq {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 40px;
+    padding: 64px 0;
+    border-bottom: 1px solid var(--ink);
+  }
+  h2 {
+    font-size: 44px;
+  }
+  details {
+    border-top: 1px solid var(--ink);
+    padding: 16px 0;
+  }
+  details:last-child {
+    border-bottom: 1px solid var(--ink);
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    min-height: 28px;
+  }
+  p {
+    margin: 10px 0 0;
+    color: var(--muted);
+  }
+</style>

@@ -1,0 +1,40 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/ui/Section.astro';
+import type { Locale } from '@/i18n/locales';
+import { ui } from '@/i18n/ui';
+import { issuesUrl } from '@/data/site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = ui[locale].privacy;
+---
+
+<Base locale={locale} title={`${t.title} · StatsMCP`} path="privacy/">
+  <Section title={t.title}>
+    <p class="intro">{t.intro}</p>
+    <ul>{t.points.map((point) => <li>{point}</li>)}</ul>
+    <p>
+      <a href={issuesUrl}>{t.questions}</a>
+    </p>
+  </Section>
+</Base>
+
+<style>
+  .intro {
+    font-family: var(--font-display);
+    font-size: 24px;
+    margin: 0;
+  }
+  ul {
+    margin: 0;
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 760px;
+  }
+</style>

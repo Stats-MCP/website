@@ -1,0 +1,62 @@
+---
+import Section from '@/components/ui/Section.astro';
+import type { Locale } from '@/i18n/locales';
+import { ui } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = ui[locale].howItWorks;
+---
+
+<Section id="how" title={t.title}>
+  <ol class="steps">
+    {
+      t.steps.map((step, index) => (
+        <li>
+          <span class="tool">
+            {t.stepLabel} {index + 1} · {step.tool}
+          </span>
+          <h3>{step.title}</h3>
+          <p>{step.text}</p>
+        </li>
+      ))
+    }
+  </ol>
+</Section>
+
+<style>
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 2px solid var(--ink);
+  }
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 22px 24px 8px 0;
+  }
+  li + li {
+    padding-left: 24px;
+    border-left: 1px solid var(--rule);
+  }
+  .tool {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h3 {
+    font-size: 24px;
+  }
+  p {
+    margin: 0;
+    color: var(--muted);
+  }
+</style>

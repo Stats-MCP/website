@@ -1,0 +1,48 @@
+---
+import type { Locale } from '@/i18n/locales';
+import { ui } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<section class="figures" aria-label={ui[locale].keyFiguresLabel}>
+  {
+    ui[locale].keyFigures.map((figure) => (
+      <div class="cell">
+        <p class="value">{figure.value}</p>
+        <p class="label">{figure.label}</p>
+      </div>
+    ))
+  }
+</section>
+
+<style>
+  .figures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    border-bottom: 1px solid var(--ink);
+  }
+  .cell {
+    padding: 28px 24px;
+    border-right: 1px solid var(--rule);
+  }
+  .cell:last-child {
+    border-right: 0;
+  }
+  p {
+    margin: 0;
+  }
+  .value {
+    font-family: var(--font-display);
+    font-size: 44px;
+    line-height: 1.2;
+  }
+  .label {
+    font-size: 14px;
+    color: var(--subtle);
+  }
+</style>

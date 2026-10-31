@@ -1,0 +1,121 @@
+---
+import Section from '@/components/ui/Section.astro';
+import type { Country } from '@/data/countries';
+import type { Locale } from '@/i18n/locales';
+import { ui } from '@/i18n/ui';
+import { localePath } from '@/i18n/urls';
+import { issuesUrl } from '@/data/site';
+
+interface Props {
+  locale: Locale;
+  countries: Country[];
+}
+
+const { locale, countries } = Astro.props;
+const t = ui[locale];
+const h = t.countries.headers;
+---
+
+<Section id="countries" title={t.countries.title}>
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">{h.code}</th>
+          <th scope="col">{h.country}</th>
+          <th scope="col">{h.source}</th>
+          <th scope="col">{h.languages}</th>
+          <th scope="col">{h.licence}</th>
+          <th scope="col">{h.endpoint}</th>
+          <th scope="col">{h.status}</th>
+          <th scope="col"><span class="visually-hidden">{t.countries.details}</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          countries.map((country) => (
+            <tr>
+              <td class="mono">{country.code}</td>
+              <td>{country.name[locale]}</td>
+              <td>
+                <a href={country.database.url}>{country.database.name}</a>
+                {country.office.name !== country.database.name && (
+                  <>
+                    {' · '}
+                    <a href={country.office.url}>{country.office.name}</a>
+                  </>
+                )}
+              </td>
+              <td>{country.dataLanguages.join(', ')}</td>
+              <td>
+                {country.licence.url ? (
+                  <a href={country.licence.url}>{country.licence.label[locale]}</a>
+                ) : (
+                  country.licence.label[locale]
+                )}
+              </td>
+              <td class:list={['mono', { muted: country.status !== 'live' }]}>
+                /{country.id}/mcp
+              </td>
+              <td class:list={['status', country.status]}>{t.hero.status[country.status]}</td>
+              <td>
+                <a href={localePath(locale, `${country.slug}/`)}>
+                  {t.countries.details}
+                  <span aria-hidden="true"> →</span>
+                </a>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <p class="propose">
+    {t.countries.propose}{' '}
+    <a href={issuesUrl}>{t.countries.proposeLink}</a>
+  </p>
+</Section>
+
+<style>
+  .scroll {
+    position: relative;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+  th {
+    text-align: left;
+    padding: 10px 12px 10px 0;
+    border-bottom: 2px solid var(--ink);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--subtle);
+  }
+  td {
+    padding: 16px 12px 16px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .mono {
+    font-family: var(--font-mono);
+  }
+  .muted {
+    color: var(--subtle);
+  }
+  .status.live {
+    color: var(--live);
+    font-weight: 600;
+  }
+  .status.planned {
+    color: var(--subtle);
+  }
+  .propose {
+    margin: 0;
+    color: var(--muted);
+  }
+</style>

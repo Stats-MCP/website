@@ -1,0 +1,21 @@
+---
+import Base from '@/layouts/Base.astro';
+import Connect from '@/components/sections/Connect.astro';
+import CountriesTable from '@/components/sections/CountriesTable.astro';
+import Hero from '@/components/sections/Hero.astro';
+import { countries, type Country } from '@/data/countries';
+import type { Locale } from '@/i18n/locales';
+
+interface Props {
+  locale: Locale;
+  country: Country;
+}
+
+const { locale, country } = Astro.props;
+---
+
+<Base locale={locale} title={`${country.name[locale]} · StatsMCP`} path={`${country.slug}/`}>
+  <Hero locale={locale} countries={countries} selected={country} restore={false} />
+  <Connect locale={locale} countries={countries} selected={country} restore={false} />
+  <CountriesTable locale={locale} countries={countries} />
+</Base>

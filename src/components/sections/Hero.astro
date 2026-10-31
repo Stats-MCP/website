@@ -1,0 +1,229 @@
+---
+import CopyButton from '@/components/ui/CopyButton.astro';
+import LinkButton from '@/components/ui/LinkButton.astro';
+import Sparkline from '@/components/ui/Sparkline.astro';
+import TabPanel from '@/components/ui/TabPanel.astro';
+import Tabs from '@/components/ui/Tabs.astro';
+import { endpoint, type Country } from '@/data/countries';
+import { repoUrl } from '@/data/site';
+import type { Locale } from '@/i18n/locales';
+import { fill, ui } from '@/i18n/ui';
+import { countryTabItems } from '@/lib/country-tabs';
+
+interface Props {
+  locale: Locale;
+  countries: Country[];
+  selected: Country;
+  /** False on a country page, where the page's country must win over a stored choice. */
+  restore?: boolean;
+}
+
+const { locale, countries, selected, restore = true } = Astro.props;
+const t = ui[locale];
+const tabs = countryTabItems(countries, locale);
+const formatPercent = (value: number) =>
+  new Intl.NumberFormat(locale, { minimumFractionDigits: 1 }).format(value);
+---
+
+<section class="hero" id="top">
+  <div class="intro">
+    <p class="eyebrow">{t.hero.eyebrow}</p>
+    <h1>{t.hero.title}</h1>
+    <p class="lead">{t.hero.lead}</p>
+
+    <div class="switch">
+      <Tabs
+        group="country"
+        idPrefix="hero"
+        label={t.hero.countryTabs}
+        items={tabs}
+        selected={selected.id}
+        restore={restore}
+      />
+      {
+        countries.map((country) => (
+          <TabPanel group="country" idPrefix="hero" value={country.id} selected={selected.id}>
+            <div class="endpoint">
+              <span class="mono-label">{t.hero.endpointLabel}</span>
+              <code>{endpoint(country)}</code>
+              <span class:list={['status', country.status]}>
+                {t.hero.status[country.status]}
+              </span>
+              {country.status === 'live' && (
+                <CopyButton text={endpoint(country)} label={t.copy.copy} copiedLabel={t.copy.copied} />
+              )}
+            </div>
+          </TabPanel>
+        ))
+      }
+    </div>
+
+    <div class="actions">
+      <LinkButton href="#connect" variant="primary" activate="client:claude">
+        {t.hero.addToClaude}
+      </LinkButton>
+      <LinkButton href="#connect" activate="client:chatgpt">{t.hero.addToChatgpt}</LinkButton>
+    </div>
+  </div>
+
+  {
+    countries.map((country) => (
+      <TabPanel
+        group="country"
+        idPrefix="hero-figure"
+        value={country.id}
+        selected={selected.id}
+        labelledBy={`tab-hero-${country.id}`}>
+        <figure class="figure">
+          <figcaption class="mono-label">
+            <span>{t.figure.caption}</span>
+            <span>{country.code}</span>
+          </figcaption>
+          {country.example ? (
+            <div class="body">
+              <p class="question">{country.example.question[locale]}</p>
+              <p class="mono-label tools">{t.figure.toolsLine}</p>
+              <div class="chart">
+                <p class="mono-label">{country.example.seriesLabel[locale]}</p>
+                <Sparkline
+                  values={country.example.series.map((point) => point.value)}
+                  formatValue={formatPercent}
+                  label={`${country.example.seriesLabel[locale]}: ${country.example.series
+                    .map((point) => `${point.period} ${formatPercent(point.value)}`)
+                    .join(', ')}`}
+                />
+              </div>
+              <p class="answer">{country.example.answer[locale]}</p>
+              <p class="source">{country.example.source}</p>
+            </div>
+          ) : (
+            <div class="body">
+              <p class="answer">
+                {fill(t.figure.plannedTitle, { country: country.name[locale] })}
+              </p>
+              <p>{fill(t.figure.plannedText, { database: country.database.name })}</p>
+              <a href={repoUrl}>{t.figure.plannedLink}</a>
+            </div>
+          )}
+        </figure>
+      </TabPanel>
+    ))
+  }
+</section>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 56px;
+    padding: 64px 0 56px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .eyebrow {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    font-size: 70px;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+  }
+  .lead {
+    margin: 0;
+    font-size: 19px;
+    color: var(--muted);
+    max-width: 560px;
+  }
+  .switch {
+    border: 1px solid var(--ink);
+    background: var(--surface);
+  }
+  .switch :global([role='tablist']) {
+    border: 0;
+    border-bottom: 1px solid var(--ink);
+  }
+  .endpoint {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+  }
+  .endpoint code {
+    flex-grow: 1;
+    font-size: 15px;
+  }
+  .status {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border: 1px solid currentColor;
+  }
+  .status.live {
+    color: var(--live);
+  }
+  .status.planned {
+    color: var(--subtle);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .figure {
+    margin: 0;
+    border: 1px solid var(--ink);
+    background: var(--surface);
+  }
+  figcaption {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+  }
+  .body p {
+    margin: 0;
+  }
+  .question {
+    font-weight: 600;
+  }
+  .chart {
+    padding: 14px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .answer {
+    font-family: var(--font-display);
+    font-size: 22px;
+    line-height: 1.35;
+  }
+  .source {
+    font-size: 13px;
+    color: var(--subtle);
+  }
+  @media (max-width: 980px) {
+    .hero {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    h1 {
+      font-size: 48px;
+    }
+  }
+</style>

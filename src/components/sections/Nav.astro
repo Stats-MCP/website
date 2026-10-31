@@ -1,0 +1,116 @@
+---
+import { locales, type Locale } from '@/i18n/locales';
+import { ui } from '@/i18n/ui';
+import { localePath } from '@/i18n/urls';
+import { repoUrl } from '@/data/site';
+
+interface Props {
+  locale: Locale;
+  path: string;
+}
+
+const { locale, path } = Astro.props;
+const t = ui[locale].nav;
+const home = localePath(locale);
+const links = [
+  { href: `${home}#how`, label: t.howItWorks },
+  { href: `${home}#connect`, label: t.connect },
+  { href: `${home}#countries`, label: t.countries },
+  { href: `${home}#faq`, label: t.faq }
+];
+---
+
+<nav class="nav" aria-label="Main">
+  <a class="brand" href={home}>StatsMCP</a>
+  <span class="mono-label tagline">{t.tagline}</span>
+  <div class="spacer"></div>
+  <ul class="links">
+    {
+      links.map((link) => (
+        <li>
+          <a href={link.href}>{link.label}</a>
+        </li>
+      ))
+    }
+  </ul>
+  <ul class="languages" aria-label={t.language}>
+    {
+      locales.map((code) => (
+        <li>
+          <a
+            href={localePath(code, path)}
+            hreflang={code}
+            aria-current={code === locale ? 'page' : undefined}>
+            {code.toUpperCase()}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <a class="github" href={repoUrl}>{t.github}</a>
+</nav>
+
+<style>
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 22px;
+    padding: 22px 0;
+    border-bottom: 2px solid var(--ink);
+  }
+  .brand {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .spacer {
+    flex-grow: 1;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .links a {
+    font-size: 15px;
+    text-decoration: none;
+  }
+  .languages {
+    gap: 0;
+    border: 1px solid var(--ink);
+  }
+  .languages a {
+    display: inline-block;
+    padding: 6px 10px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    text-decoration: none;
+  }
+  .languages a[aria-current='page'] {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .github {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 11px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .github:hover {
+    color: var(--paper);
+    background: var(--accent);
+  }
+  @media (max-width: 760px) {
+    .tagline,
+    .links {
+      display: none;
+    }
+  }
+</style>
