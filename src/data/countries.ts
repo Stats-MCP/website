@@ -245,6 +245,66 @@ export const countries: Country[] = [
     }
   },
   {
+    id: 'fo',
+    slug: 'faroe-islands',
+    code: 'FO',
+    name: { en: 'Faroe Islands', sl: 'Ferski otoki', nb: 'Færøyene' },
+    database: {
+      name: 'StatBank',
+      url: 'https://statbank.hagstova.fo/pxweb/en/H2/'
+    },
+    office: {
+      name: 'Hagstova Føroya',
+      fullName: {
+        en: 'Statistics Faroe Islands',
+        sl: 'Statistični urad Ferskih otokov',
+        nb: 'Færøyenes statistikkbyrå'
+      },
+      url: 'https://hagstova.fo/en'
+    },
+    licence: {
+      label: { en: 'CC BY 4.0', sl: 'CC BY 4.0', nb: 'CC BY 4.0' },
+      url: 'https://hagstova.fo/en/terms-use'
+    },
+    dataLanguages: ['fo', 'en'],
+    status: 'live',
+    example: {
+      question: {
+        en: 'What is the latest inflation rate in the Faroe Islands?',
+        sl: 'Kakšna je zadnja stopnja inflacije na Ferskih otokih?',
+        nb: 'Hva er den siste inflasjonen på Færøyene?'
+      },
+      answer: {
+        en: 'In August 2026, prices were 2.5% higher than in August 2025. In February 2026, they were 0.2% lower than a year earlier.',
+        sl: 'Avgusta 2026 so bile cene za 2,5 % višje kot avgusta 2025. Februarja 2026 so bile za 0,2 % nižje kot leto prej.',
+        nb: 'I august 2026 var prisene 2,5 % høyere enn i august 2025. I februar 2026 var de 0,2 % lavere enn året før.'
+      },
+      highlight: { en: '2.5%', sl: '2,5 %', nb: '2,5 %' },
+      source: 'Statistics Faroe Islands, table IP02006',
+      sourceUrl:
+        'https://statbank.hagstova.fo/pxweb/en/H2/H2__IP__IP02/pris_alt_t.px/',
+      seriesLabel: {
+        en: 'Annual inflation, %',
+        sl: 'Letna inflacija, %',
+        nb: 'Årlig inflasjon, %'
+      },
+      series: [
+        { period: '2023M11', value: 2.8 },
+        { period: '2024M02', value: 2.6 },
+        { period: '2024M05', value: 3.0 },
+        { period: '2024M08', value: 1.7 },
+        { period: '2024M11', value: 0.8 },
+        { period: '2025M02', value: 1.3 },
+        { period: '2025M05', value: 0.7 },
+        { period: '2025M08', value: 1.1 },
+        { period: '2025M11', value: 0.7 },
+        { period: '2026M02', value: -0.2 },
+        { period: '2026M05', value: 2.4 },
+        { period: '2026M08', value: 2.5 }
+      ]
+    }
+  },
+  {
     id: 'is',
     slug: 'iceland',
     code: 'IS',
