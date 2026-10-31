@@ -1,0 +1,34 @@
+{
+  "name": "statsmcp-website",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.15.0",
+  "engines": {
+    "node": ">=24.21.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "vitest run --passWithNoTests",
+    "lint": "oxlint",
+    "format": "oxfmt --check .",
+    "format:fix": "oxfmt --write ."
+  },
+  "dependencies": {
+    "astro": "7.4.2",
+    "@astrojs/sitemap": "3.7.4",
+    "@fontsource/newsreader": "5.3.0",
+    "@fontsource/ibm-plex-sans": "5.3.0",
+    "@fontsource/ibm-plex-mono": "5.3.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "oxfmt": "0.74.0",
+    "oxlint": "1.89.0",
+    "typescript": "5.9.3",
+    "vitest": "5.0.5"
+  }
+}
