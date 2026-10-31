@@ -305,6 +305,66 @@ export const countries: Country[] = [
     }
   },
   {
+    id: 'fi',
+    slug: 'finland',
+    code: 'FI',
+    name: { en: 'Finland', sl: 'Finska', nb: 'Finland' },
+    database: {
+      name: 'StatFin',
+      url: 'https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/'
+    },
+    office: {
+      name: 'Statistics Finland',
+      fullName: {
+        en: 'Statistics Finland',
+        sl: 'Statistični urad Finske',
+        nb: 'Finlands statistikkbyrå'
+      },
+      url: 'https://stat.fi/en'
+    },
+    licence: {
+      label: { en: 'CC BY 4.0', sl: 'CC BY 4.0', nb: 'CC BY 4.0' },
+      url: 'https://stat.fi/en/about-us/get-to-know-statistics-finland/legislation/terms-of-use'
+    },
+    dataLanguages: ['fi', 'sv', 'en'],
+    status: 'live',
+    example: {
+      question: {
+        en: 'What is the latest inflation rate in Finland?',
+        sl: 'Kakšna je zadnja stopnja inflacije na Finskem?',
+        nb: 'Hva er den siste inflasjonen i Finland?'
+      },
+      answer: {
+        en: 'In September 2026, prices were 2.5% higher than in September 2025. A year ago, prices were falling slightly.',
+        sl: 'Septembra 2026 so bile cene za 2,5 % višje kot septembra 2025. Pred enim letom so cene rahlo padale.',
+        nb: 'I september 2026 var prisene 2,5 % høyere enn i september 2025. For et år siden falt prisene litt.'
+      },
+      highlight: { en: '2.5%', sl: '2,5 %', nb: '2,5 %' },
+      source: 'Statistics Finland, table 15b5',
+      sourceUrl:
+        'https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__khi/15b5.px/',
+      seriesLabel: {
+        en: 'Annual inflation, %',
+        sl: 'Letna inflacija, %',
+        nb: 'Årlig inflasjon, %'
+      },
+      series: [
+        { period: '2025M10', value: -0.2 },
+        { period: '2025M11', value: -0.1 },
+        { period: '2025M12', value: 0.2 },
+        { period: '2026M01', value: -0.2 },
+        { period: '2026M02', value: 0.6 },
+        { period: '2026M03', value: 1.3 },
+        { period: '2026M04', value: 1.5 },
+        { period: '2026M05', value: 2.1 },
+        { period: '2026M06', value: 2.1 },
+        { period: '2026M07', value: 2.1 },
+        { period: '2026M08', value: 2.2 },
+        { period: '2026M09', value: 2.5 }
+      ]
+    }
+  },
+  {
     id: 'is',
     slug: 'iceland',
     code: 'IS',
