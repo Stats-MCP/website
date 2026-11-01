@@ -112,7 +112,7 @@ const baseCountries: Country[] = [
     },
     dataLanguages: ['sl', 'en'],
     status: 'live',
-    localPackage: 'sistat-mcp',
+    localPackage: '@statsmcp/sistat',
     example: {
       question: {
         en: 'What is the latest inflation rate in Slovenia?',
@@ -169,7 +169,7 @@ const baseCountries: Country[] = [
     },
     dataLanguages: ['no', 'en'],
     status: 'live',
-    localPackage: 'ssb-mcp',
+    localPackage: '@statsmcp/ssb',
     example: {
       question: { en: 'How have house prices changed in Norway?' },
       answer: {
@@ -220,7 +220,7 @@ const baseCountries: Country[] = [
     },
     dataLanguages: ['et', 'en'],
     status: 'live',
-    localPackage: 'stat-ee-mcp',
+    localPackage: '@statsmcp/stat-ee',
     example: {
       question: { en: 'What is the average monthly wage in Estonia?' },
       answer: {
@@ -271,7 +271,7 @@ const baseCountries: Country[] = [
     },
     dataLanguages: ['fo', 'en'],
     status: 'live',
-    localPackage: 'hagstova-mcp',
+    localPackage: '@statsmcp/hagstova',
     example: {
       question: {
         en: 'What is the latest inflation rate in the Faroe Islands?',
@@ -332,7 +332,7 @@ const baseCountries: Country[] = [
     },
     dataLanguages: ['fi', 'sv', 'en'],
     status: 'live',
-    localPackage: 'statfin-mcp',
+    localPackage: '@statsmcp/statfin',
     example: {
       question: { en: 'How high is unemployment in Finland?' },
       answer: {
@@ -385,7 +385,7 @@ const baseCountries: Country[] = [
     dataLanguages: ['sv', 'en'],
     tables: 4278,
     status: 'live',
-    localPackage: 'scb-mcp',
+    localPackage: '@statsmcp/scb',
     example: {
       question: { en: 'How many people live in Sweden?' },
       answer: {
@@ -435,7 +435,7 @@ const baseCountries: Country[] = [
     dataLanguages: ['da', 'en'],
     tables: 2311,
     status: 'live',
-    localPackage: 'dst-mcp',
+    localPackage: '@statsmcp/dst',
     example: {
       question: { en: 'How many people are unemployed in Denmark?' },
       answer: {
@@ -484,7 +484,7 @@ const baseCountries: Country[] = [
     dataLanguages: ['nl', 'en'],
     tables: 4890,
     status: 'live',
-    localPackage: 'cbs-mcp',
+    localPackage: '@statsmcp/cbs',
     example: {
       question: { en: 'How many people live in the Netherlands?' },
       answer: {
@@ -540,7 +540,7 @@ const baseCountries: Country[] = [
     dataLanguages: ['en', 'de', 'fr'],
     tables: 7603,
     status: 'live',
-    localPackage: 'statsmcp-eurostat',
+    localPackage: '@statsmcp/eurostat',
     example: {
       question: { en: 'What is the unemployment rate in the EU?' },
       answer: {
@@ -593,7 +593,7 @@ const baseCountries: Country[] = [
     dataLanguages: ['en', 'fr'],
     tables: 8280,
     status: 'live',
-    localPackage: 'statsmcp-statcan',
+    localPackage: '@statsmcp/statcan',
     example: {
       question: { en: 'What is the unemployment rate in Canada?' },
       answer: {
@@ -646,7 +646,7 @@ const baseCountries: Country[] = [
     dataLanguages: ['is', 'en'],
     tables: 1906,
     status: 'live',
-    localPackage: 'statice-mcp',
+    localPackage: '@statsmcp/statice',
     example: {
       question: { en: 'How fast are wages rising in Iceland?' },
       answer: {
@@ -703,7 +703,7 @@ const baseCountries: Country[] = [
     dataLanguages: ['hr', 'en'],
     tables: 874,
     status: 'live',
-    localPackage: 'dzs-mcp',
+    localPackage: '@statsmcp/dzs',
     example: {
       question: { en: 'How many tourist arrivals did Croatia have in August?' },
       answer: {
@@ -753,7 +753,7 @@ const baseCountries: Country[] = [
     dataLanguages: ['en'],
     tables: 13164,
     status: 'live',
-    localPackage: 'cso-mcp',
+    localPackage: '@statsmcp/cso',
     example: {
       question: { en: 'How fast are property prices rising in Ireland?' },
       answer: {
@@ -801,7 +801,7 @@ const baseCountries: Country[] = [
     dataLanguages: ['en'],
     tables: 1228,
     status: 'live',
-    localPackage: 'abs-mcp',
+    localPackage: '@statsmcp/abs',
     example: {
       question: { en: 'How fast are prices rising in Australia?' },
       answer: {
