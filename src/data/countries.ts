@@ -784,6 +784,62 @@ export const countries: Country[] = [
         { period: '2026M09', value: 4.7 }
       ]
     }
+  },
+  {
+    id: 'ie',
+    slug: 'ireland',
+    code: 'IE',
+    name: { en: 'Ireland', sl: 'Irska', nb: 'Irland' },
+    database: { name: 'PxStat', url: 'https://data.cso.ie/' },
+    office: {
+      name: 'CSO',
+      fullName: {
+        en: 'Central Statistics Office',
+        sl: 'Centralni statistični urad Irske',
+        nb: 'Irlands sentrale statistikkontor'
+      },
+      url: 'https://www.cso.ie/en/'
+    },
+    licence: {
+      label: { en: 'CC BY 4.0', sl: 'CC BY 4.0', nb: 'CC BY 4.0' },
+      url: 'https://www.cso.ie/en/aboutus/whoweare/copyrightpolicy/'
+    },
+    dataLanguages: ['en'],
+    status: 'live',
+    example: {
+      question: {
+        en: 'What is the latest inflation rate in Ireland?',
+        sl: 'Kakšna je zadnja stopnja inflacije na Irskem?',
+        nb: 'Hva er den siste inflasjonen i Irland?'
+      },
+      answer: {
+        en: 'In September 2026, prices were 4.1% higher than in September 2025. In September 2025, the rate was 2.7%.',
+        sl: 'Septembra 2026 so bile cene za 4,1 % višje kot septembra 2025. Septembra 2025 je bila stopnja 2,7 %.',
+        nb: 'I september 2026 var prisene 4,1 % høyere enn i september 2025. I september 2025 var raten 2,7 %.'
+      },
+      highlight: { en: '4.1%', sl: '4,1 %', nb: '4,1 %' },
+      source: 'Central Statistics Office, table CPM20',
+      sourceUrl: 'https://data.cso.ie/table/CPM20',
+      seriesLabel: {
+        en: 'Annual inflation, %',
+        sl: 'Letna inflacija, %',
+        nb: 'Årlig inflasjon, %'
+      },
+      series: [
+        { period: '2023M12', value: 4.6 },
+        { period: '2024M03', value: 2.9 },
+        { period: '2024M06', value: 2.2 },
+        { period: '2024M09', value: 0.7 },
+        { period: '2024M12', value: 1.4 },
+        { period: '2025M03', value: 2.0 },
+        { period: '2025M06', value: 1.8 },
+        { period: '2025M09', value: 2.7 },
+        { period: '2025M12', value: 2.8 },
+        { period: '2026M03', value: 3.6 },
+        { period: '2026M06', value: 3.4 },
+        { period: '2026M09', value: 4.1 }
+      ]
+    }
   }
 ];
 
