@@ -1,6 +1,6 @@
 # statsmcp.dev website
 
-The website of [StatsMCP](https://github.com/Stats-MCP/statsmcp), built with Astro. This repository is private.
+The website of [StatsMCP](https://github.com/Stats-MCP/statsmcp), built with Astro. The code is under the [MIT licence](LICENSE).
 
 ## Commands
 

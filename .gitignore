@@ -3,6 +3,8 @@ dist/
 .astro/
 .wrangler/
 .dev.vars
+.env
+.env.*
 coverage/
 *.log
 .DS_Store
