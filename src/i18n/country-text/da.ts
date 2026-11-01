@@ -68,7 +68,7 @@ export const da: CountryText = {
     example: {
       question: 'Hvor mange mennesker bor der i Sverige?',
       answer:
-        'Sverige havde 10.621.103 indbyggere i august 2026. I september 2025 havde landet 10.609.460.',
+        'Sverige havde 10.621.103 indbyggere i august 2026. I august 2025 havde landet 10.605.098.',
       highlight: '10.621.103',
       seriesLabel: 'Befolkning, personer'
     }
@@ -138,9 +138,9 @@ export const da: CountryText = {
     office: 'Kroatiens statistikkontor',
     licence: 'Åben licens (Kroatien)',
     example: {
-      question: 'Hvor mange turister kom til Kroatien i sommer?',
+      question: 'Hvor mange turistankomster havde Kroatien i august?',
       answer:
-        'I august 2026 ankom 4.823.649 turister til kommercielle overnatningssteder i Kroatien. I august 2025 var tallet 4.714.658.',
+        'I august 2026 var der 4.823.649 turistankomster til kommercielle overnatningssteder i Kroatien. I august 2025 var der 4.714.658.',
       highlight: '4.823.649',
       seriesLabel: 'Turistankomster, personer'
     }

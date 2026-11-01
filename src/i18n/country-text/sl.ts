@@ -44,7 +44,7 @@ export const sl: CountryText = {
     example: {
       question: 'Koliko ljudi živi na Švedskem?',
       answer:
-        'Avgusta 2026 je bilo število prebivalcev Švedske 10.621.103. Septembra 2025 je bilo 10.609.460.',
+        'Avgusta 2026 je bilo število prebivalcev Švedske 10.621.103. Avgusta 2025 je bilo 10.605.098.',
       highlight: '10.621.103',
       seriesLabel: 'Število prebivalcev'
     }
@@ -114,7 +114,7 @@ export const sl: CountryText = {
     office: 'Hrvaški statistični urad',
     licence: 'Odprta licenca (Hrvaška)',
     example: {
-      question: 'Koliko turistov je to poletje prišlo na Hrvaško?',
+      question: 'Koliko prihodov turistov je imela Hrvaška avgusta?',
       answer:
         'Avgusta 2026 je bilo v komercialnih nastanitvenih obratih na Hrvaškem 4.823.649 prihodov turistov. Avgusta 2025 jih je bilo 4.714.658.',
       highlight: '4.823.649',

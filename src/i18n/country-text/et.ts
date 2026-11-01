@@ -68,7 +68,7 @@ export const et: CountryText = {
     example: {
       question: 'Kui palju inimesi elab Rootsis?',
       answer:
-        'Rootsis oli 2026. aasta augustis 10 621 103 elanikku. 2025. aasta septembris oli elanikke 10 609 460.',
+        'Rootsis oli 2026. aasta augustis 10 621 103 elanikku. 2025. aasta augustis oli elanikke 10 605 098.',
       highlight: '10 621 103',
       seriesLabel: 'Rahvaarv, inimesi'
     }
@@ -138,9 +138,9 @@ export const et: CountryText = {
     office: 'Horvaatia statistikaamet',
     licence: 'Avatud litsents (Horvaatia)',
     example: {
-      question: 'Kui palju turiste tuli sel suvel Horvaatiasse?',
+      question: 'Kui palju turistide saabumisi oli Horvaatias augustis?',
       answer:
-        '2026. aasta augustis saabus Horvaatia majutusettevõtetesse 4 823 649 turisti. 2025. aasta augustis oli neid 4 714 658.',
+        '2026. aasta augustis oli Horvaatia majutusettevõtetes 4 823 649 turistide saabumist. 2025. aasta augustis oli neid 4 714 658.',
       highlight: '4 823 649',
       seriesLabel: 'Saabunud turistid, inimesi'
     }

@@ -70,7 +70,7 @@ export const nl: CountryText = {
     example: {
       question: 'Hoeveel mensen wonen er in Zweden?',
       answer:
-        'In augustus 2026 had Zweden 10.621.103 inwoners. In september 2025 waren het er 10.609.460.',
+        'In augustus 2026 had Zweden 10.621.103 inwoners. In augustus 2025 waren het er 10.605.098.',
       highlight: '10.621.103',
       seriesLabel: 'Bevolking, personen'
     }
@@ -141,9 +141,9 @@ export const nl: CountryText = {
     office: 'Kroatisch Bureau voor de Statistiek',
     licence: 'Open licentie (Kroatië)',
     example: {
-      question: 'Hoeveel toeristen kwamen er deze zomer naar Kroatië?',
+      question: 'Hoeveel aankomsten van toeristen had Kroatië in augustus?',
       answer:
-        'In augustus 2026 kwamen 4.823.649 toeristen aan in commerciële accommodaties in Kroatië. In augustus 2025 waren het er 4.714.658.',
+        'In augustus 2026 waren er 4.823.649 aankomsten van toeristen in commerciële accommodaties in Kroatië. In augustus 2025 waren het er 4.714.658.',
       highlight: '4.823.649',
       seriesLabel: 'Aankomsten van toeristen, personen'
     }

@@ -68,7 +68,7 @@ export const hr: CountryText = {
     example: {
       question: 'Koliko ljudi živi u Švedskoj?',
       answer:
-        'Švedska je u kolovozu 2026. imala 10 621 103 stanovnika. U rujnu 2025. imala je 10 609 460 stanovnika.',
+        'Švedska je u kolovozu 2026. imala 10 621 103 stanovnika. U kolovozu 2025. imala je 10 605 098 stanovnika.',
       highlight: '10 621 103',
       seriesLabel: 'Broj stanovnika, osobe'
     }
@@ -138,9 +138,9 @@ export const hr: CountryText = {
     office: 'Državni zavod za statistiku',
     licence: 'Otvorena dozvola',
     example: {
-      question: 'Koliko je turista došlo u Hrvatsku ovog ljeta?',
+      question: 'Koliko je dolazaka turista bilo u Hrvatskoj u kolovozu?',
       answer:
-        'U kolovozu 2026. u komercijalni smještaj u Hrvatskoj stiglo je 4 823 649 turista. U kolovozu 2025. stiglo ih je 4 714 658.',
+        'U kolovozu 2026. u komercijalnom smještaju u Hrvatskoj ostvareno je 4 823 649 dolazaka turista. U kolovozu 2025. bilo ih je 4 714 658.',
       highlight: '4 823 649',
       seriesLabel: 'Dolasci turista, osobe'
     }

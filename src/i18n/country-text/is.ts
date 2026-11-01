@@ -68,7 +68,7 @@ export const isl: CountryText = {
     example: {
       question: 'Hversu margir búa í Svíþjóð?',
       answer:
-        'Íbúar Svíþjóðar voru 10.621.103 í ágúst 2026. Í september 2025 voru þeir 10.609.460.',
+        'Íbúar Svíþjóðar voru 10.621.103 í ágúst 2026. Í ágúst 2025 voru þeir 10.605.098.',
       highlight: '10.621.103',
       seriesLabel: 'Mannfjöldi, fjöldi einstaklinga'
     }
@@ -138,9 +138,9 @@ export const isl: CountryText = {
     office: 'Hagstofa Króatíu',
     licence: 'Opið leyfi (Króatía)',
     example: {
-      question: 'Hversu margir ferðamenn komu til Króatíu í sumar?',
+      question: 'Hversu margar komur ferðamanna voru í Króatíu í ágúst?',
       answer:
-        'Í ágúst 2026 komu 4.823.649 ferðamenn á skráða gististaði í Króatíu. Í ágúst 2025 voru þeir 4.714.658.',
+        'Í ágúst 2026 voru komur ferðamanna á skráða gististaði í Króatíu 4.823.649. Í ágúst 2025 voru þær 4.714.658.',
       highlight: '4.823.649',
       seriesLabel: 'Komur ferðamanna, fjöldi'
     }

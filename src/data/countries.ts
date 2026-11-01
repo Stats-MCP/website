@@ -389,11 +389,12 @@ const baseCountries: Country[] = [
     example: {
       question: { en: 'How many people live in Sweden?' },
       answer: {
-        en: 'Sweden had 10,621,103 inhabitants in August 2026. In September 2025, it had 10,609,460.'
+        en: 'Sweden had 10,621,103 inhabitants in August 2026. In August 2025, it had 10,605,098.'
       },
       highlight: { en: '10,621,103' },
       source: 'SCB, table TAB6471',
-      sourceUrl: 'https://www.statistikdatabasen.scb.se/pxweb/en/ssd/',
+      sourceUrl:
+        'https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BE__BE0101__BE0101A/BefolkManadCKM/',
       seriesLabel: { en: 'Population, persons' },
       decimals: 0,
       series: [
@@ -705,9 +706,9 @@ const baseCountries: Country[] = [
     status: 'live',
     localPackage: 'dzs-mcp',
     example: {
-      question: { en: 'How many tourists came to Croatia this summer?' },
+      question: { en: 'How many tourist arrivals did Croatia have in August?' },
       answer: {
-        en: 'In August 2026, 4,823,649 tourists arrived at commercial accommodation in Croatia. In August 2025, there were 4,714,658.'
+        en: 'In August 2026, there were 4,823,649 tourist arrivals at commercial accommodation in Croatia. In August 2025, there were 4,714,658.'
       },
       highlight: { en: '4,823,649' },
       source: 'DZS, table BS_TU11',

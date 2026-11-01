@@ -68,7 +68,7 @@ export const fi: CountryText = {
     example: {
       question: 'Montako ihmistä Ruotsissa asuu?',
       answer:
-        'Ruotsissa oli 10 621 103 asukasta elokuussa 2026. Syyskuussa 2025 asukkaita oli 10 609 460.',
+        'Ruotsissa oli 10 621 103 asukasta elokuussa 2026. Elokuussa 2025 asukkaita oli 10 605 098.',
       highlight: '10 621 103',
       seriesLabel: 'Väkiluku, henkilöä'
     }
@@ -138,9 +138,9 @@ export const fi: CountryText = {
     office: 'Kroatian tilastovirasto',
     licence: 'Avoin lisenssi (Kroatia)',
     example: {
-      question: 'Montako matkailijaa Kroatiaan tuli tänä kesänä?',
+      question: 'Montako matkailijoiden saapumista Kroatiassa oli elokuussa?',
       answer:
-        'Elokuussa 2026 Kroatian kaupallisiin majoitusliikkeisiin saapui 4 823 649 matkailijaa. Elokuussa 2025 heitä oli 4 714 658.',
+        'Elokuussa 2026 Kroatian kaupallisiin majoitusliikkeisiin kirjattiin 4 823 649 matkailijoiden saapumista. Elokuussa 2025 saapumisia oli 4 714 658.',
       highlight: '4 823 649',
       seriesLabel: 'Saapuneet matkailijat, henkilöä'
     }

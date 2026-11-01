@@ -70,7 +70,7 @@ export const de: CountryText = {
     example: {
       question: 'Wie viele Menschen leben in Schweden?',
       answer:
-        'Im August 2026 hatte Schweden 10.621.103 Einwohner. Im September 2025 waren es 10.609.460.',
+        'Im August 2026 hatte Schweden 10.621.103 Einwohner. Im August 2025 waren es 10.605.098.',
       highlight: '10.621.103',
       seriesLabel: 'Bevölkerung, Personen'
     }
@@ -140,9 +140,9 @@ export const de: CountryText = {
     office: 'Kroatisches Statistikamt',
     licence: 'Offene Lizenz (Kroatien)',
     example: {
-      question: 'Wie viele Touristen kamen diesen Sommer nach Kroatien?',
+      question: 'Wie viele Ankünfte von Touristen hatte Kroatien im August?',
       answer:
-        'Im August 2026 kamen 4.823.649 Touristen in gewerblichen Unterkünften in Kroatien an. Im August 2025 waren es 4.714.658.',
+        'Im August 2026 gab es in gewerblichen Unterkünften in Kroatien 4.823.649 Ankünfte von Touristen. Im August 2025 waren es 4.714.658.',
       highlight: '4.823.649',
       seriesLabel: 'Touristenankünfte, Personen'
     }

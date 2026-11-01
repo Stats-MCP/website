@@ -68,7 +68,7 @@ export const fo: CountryText = {
     example: {
       question: 'Hvussu nógv fólk búgva í Svøríki?',
       answer:
-        'Í Svøríki búðu 10.621.103 fólk í august 2026. Í september 2025 búðu 10.609.460 fólk har.',
+        'Í Svøríki búðu 10.621.103 fólk í august 2026. Í august 2025 búðu 10.605.098 fólk har.',
       highlight: '10.621.103',
       seriesLabel: 'Fólkatal, persónar'
     }
@@ -138,9 +138,9 @@ export const fo: CountryText = {
     office: 'Hagstovan í Kroatia',
     licence: 'Opið loyvi (Kroatia)',
     example: {
-      question: 'Hvussu nógv ferðafólk komu til Kroatia í summar?',
+      question: 'Hvussu nógvar ferðafólkakomur vóru í Kroatia í august?',
       answer:
-        'Í august 2026 komu 4.823.649 ferðafólk á vinnuligar gistingar í Kroatia. Í august 2025 vóru tey 4.714.658.',
+        'Í august 2026 vóru 4.823.649 ferðafólkakomur á vinnuligum gistingarstøðum í Kroatia. Í august 2025 vóru tær 4.714.658.',
       highlight: '4.823.649',
       seriesLabel: 'Ferðafólk komin, persónar'
     }
