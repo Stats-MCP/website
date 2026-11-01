@@ -1,4 +1,5 @@
 ---
+import Flag from '@/components/ui/Flag.astro';
 import Section from '@/components/ui/Section.astro';
 import type { Country } from '@/data/countries';
 import type { Locale } from '@/i18n/locales';
@@ -14,9 +15,10 @@ interface Props {
 const { locale, countries } = Astro.props;
 const t = ui[locale];
 const h = t.countries.headers;
+const number = new Intl.NumberFormat(locale);
 ---
 
-<Section id="countries" title={t.countries.title}>
+<Section>
   <div class="scroll">
     <table>
       <thead>
@@ -25,6 +27,7 @@ const h = t.countries.headers;
           <th scope="col">{h.country}</th>
           <th scope="col">{h.source}</th>
           <th scope="col">{h.languages}</th>
+          <th scope="col" class="num">{h.tables}</th>
           <th scope="col">{h.licence}</th>
           <th scope="col">{h.endpoint}</th>
           <th scope="col">{h.status}</th>
@@ -36,7 +39,12 @@ const h = t.countries.headers;
           countries.map((country) => (
             <tr>
               <td class="mono">{country.code}</td>
-              <td>{country.name[locale]}</td>
+              <td>
+                <span class="country">
+                  <Flag code={country.code} />
+                  {country.name[locale]}
+                </span>
+              </td>
               <td>
                 <a href={country.database.url}>{country.database.name}</a>
                 {country.office.name !== country.database.name && (
@@ -47,6 +55,13 @@ const h = t.countries.headers;
                 )}
               </td>
               <td>{country.dataLanguages.join(', ')}</td>
+              <td class="num">
+                {country.tables === undefined ? (
+                  <span class="muted">{t.countries.officeSearch}</span>
+                ) : (
+                  number.format(country.tables)
+                )}
+              </td>
               <td>
                 {country.licence.url ? (
                   <a href={country.licence.url}>{country.licence.label[locale]}</a>
@@ -83,7 +98,7 @@ const h = t.countries.headers;
   }
   table {
     width: 100%;
-    min-width: 760px;
+    min-width: 900px;
     border-collapse: collapse;
     font-size: 15px;
   }
@@ -103,6 +118,15 @@ const h = t.countries.headers;
   }
   .mono {
     font-family: var(--font-mono);
+  }
+  .num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .country {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
   }
   .muted {
     color: var(--subtle);

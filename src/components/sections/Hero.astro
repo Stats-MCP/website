@@ -1,5 +1,6 @@
 ---
 import CopyButton from '@/components/ui/CopyButton.astro';
+import Flag from '@/components/ui/Flag.astro';
 import LinkButton from '@/components/ui/LinkButton.astro';
 import Sparkline from '@/components/ui/Sparkline.astro';
 import TabPanel from '@/components/ui/TabPanel.astro';
@@ -22,7 +23,7 @@ interface Props {
 
 const { locale, countries, selected, restore = true } = Astro.props;
 const t = ui[locale];
-const tabs = countryTabItems(countries, locale);
+const tabs = countryTabItems(countries, locale, { compact: true });
 const toolNames = t.howItWorks.steps.map((step) => step.tool);
 const formatPercent = (value: number) =>
   new Intl.NumberFormat(locale, { minimumFractionDigits: 1 }).format(value);
@@ -42,10 +43,17 @@ const formatPercent = (value: number) =>
         items={tabs}
         selected={selected.id}
         restore={restore}
+        layout="wrap"
       />
       {
         countries.map((country) => (
           <TabPanel group="country" idPrefix="hero" value={country.id} selected={selected.id}>
+            <p class="picked">
+              <Flag code={country.code} />
+              <span>
+                <strong>{country.name[locale]}</strong> · {country.office.fullName[locale]}
+              </span>
+            </p>
             <div class="endpoint">
               <span class="mono-label">{t.hero.endpointLabel}</span>
               <code>{endpoint(country)}</code>
@@ -183,6 +191,14 @@ const formatPercent = (value: number) =>
   .switch :global([role='tablist']) {
     border: 0;
     border-bottom: 1px solid var(--ink);
+  }
+  .picked {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 12px 14px 0;
+    font-size: 15px;
   }
   .endpoint {
     display: flex;

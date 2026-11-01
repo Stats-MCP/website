@@ -1,0 +1,59 @@
+---
+import Base from '@/layouts/Base.astro';
+import CountriesTable from '@/components/sections/CountriesTable.astro';
+import { countries } from '@/data/countries';
+import type { Locale } from '@/i18n/locales';
+import { ui } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = ui[locale];
+---
+
+<Base
+  locale={locale}
+  title={t.seo.countries.title}
+  description={t.seo.countries.description}
+  path="countries/"
+  ogSlug="countries">
+  <header class="intro">
+    <h1>{t.countries.pageTitle}</h1>
+    <p>{t.countries.pageIntro}</p>
+  </header>
+  <CountriesTable locale={locale} countries={countries} />
+  <p class="note">{t.countries.tablesNote}</p>
+</Base>
+
+<style>
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 56px 0 8px;
+  }
+  h1 {
+    font-size: 56px;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+  .intro p {
+    margin: 0;
+    max-width: 680px;
+    font-size: 19px;
+    color: var(--muted);
+  }
+  .note {
+    margin: 24px 0 64px;
+    max-width: 760px;
+    font-size: 14px;
+    color: var(--subtle);
+  }
+  @media (max-width: 640px) {
+    h1 {
+      font-size: 38px;
+    }
+  }
+</style>

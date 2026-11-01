@@ -1,0 +1,149 @@
+---
+import Flag from '@/components/ui/Flag.astro';
+import Section from '@/components/ui/Section.astro';
+import type { Country } from '@/data/countries';
+import { issuesUrl } from '@/data/site';
+import type { Locale } from '@/i18n/locales';
+import { fill, ui } from '@/i18n/ui';
+import { localePath } from '@/i18n/urls';
+
+interface Props {
+  locale: Locale;
+  countries: Country[];
+}
+
+const { locale, countries } = Astro.props;
+const t = ui[locale];
+const number = new Intl.NumberFormat(locale);
+const coverage = (country: Country) =>
+  country.tables === undefined
+    ? t.countries.officeSearch
+    : fill(t.countries.tableCount, { count: number.format(country.tables) });
+---
+
+<Section id="countries" title={t.countries.title}>
+  <ul class="grid">
+    {
+      countries.map((country) => (
+        <li>
+          <a class="card" href={localePath(locale, `${country.slug}/`)}>
+            <span class="name">
+              <Flag code={country.code} size={28} />
+              {country.name[locale]}
+            </span>
+            <span class="office">{country.office.fullName[locale]}</span>
+            <span class="meta">
+              <span class="mono">{coverage(country)}</span>
+              <span class:list={['status', country.status]}>{t.hero.status[country.status]}</span>
+            </span>
+          </a>
+        </li>
+      ))
+    }
+    <li class="end">
+      <a class="compare" href={localePath(locale, 'countries/')}>
+        {t.countries.compareAll}
+        <span aria-hidden="true"> →</span>
+      </a>
+      <span class="propose">
+        {t.countries.propose} <a href={issuesUrl}>{t.countries.proposeLink}</a>
+      </span>
+    </li>
+  </ul>
+</Section>
+
+<style>
+  .grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--ink);
+    border-left: 1px solid var(--ink);
+  }
+  li {
+    flex: 0 0 25%;
+    box-sizing: border-box;
+    min-width: 0;
+    display: flex;
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 18px 18px 16px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .card:hover,
+  .card:focus-visible {
+    background: var(--surface);
+  }
+  .name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  .office {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 8px;
+    font-size: 13px;
+  }
+  .mono {
+    font-family: var(--font-mono);
+    color: var(--subtle);
+  }
+  .status.live {
+    color: var(--live);
+    font-weight: 600;
+  }
+  .status.planned {
+    color: var(--subtle);
+  }
+  .end {
+    flex: 1 1 25%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    padding: 18px;
+    background: var(--surface);
+  }
+  .compare {
+    font-family: var(--font-display);
+    font-size: 24px;
+    text-decoration: none;
+  }
+  .propose {
+    color: var(--muted);
+  }
+  @media (max-width: 1023px) {
+    li {
+      flex-basis: 33.333%;
+    }
+  }
+  @media (max-width: 720px) {
+    li {
+      flex-basis: 50%;
+    }
+  }
+  @media (max-width: 480px) {
+    li {
+      flex-basis: 100%;
+    }
+  }
+</style>

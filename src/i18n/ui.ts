@@ -15,6 +15,7 @@ export interface UiStrings {
     home: PageSeo;
     privacy: PageSeo;
     licences: PageSeo;
+    countries: PageSeo;
     notFound: PageSeo;
     /** `{country}`, `{database}` and `{office}` are replaced per country. */
     countryLive: PageSeo;
@@ -76,10 +77,18 @@ export interface UiStrings {
       licence: string;
       endpoint: string;
       status: string;
+      tables: string;
     };
     details: string;
     propose: string;
     proposeLink: string;
+    /** `{count}` is the formatted number of tables. */
+    tableCount: string;
+    officeSearch: string;
+    compareAll: string;
+    pageTitle: string;
+    pageIntro: string;
+    tablesNote: string;
   };
   faq: { title: string; items: FaqItem[] };
   footer: {
@@ -113,6 +122,11 @@ const en: UiStrings = {
       title: 'Privacy — StatsMCP',
       description:
         'StatsMCP logs nothing: no request logs, no cookies, no analytics. Read what the endpoint and this website do with your data.'
+    },
+    countries: {
+      title: 'Countries and coverage — StatsMCP',
+      description:
+        'Every country in StatsMCP with its statistics office, data languages, number of tables, data licence and MCP endpoint.'
     },
     licences: {
       title: 'Data licences — StatsMCP',
@@ -210,11 +224,20 @@ const en: UiStrings = {
       languages: 'Languages',
       licence: 'Data licence',
       endpoint: 'Endpoint',
-      status: 'Status'
+      status: 'Status',
+      tables: 'Tables'
     },
     details: 'Details',
     propose: 'Missing your country?',
-    proposeLink: 'Propose it on GitHub.'
+    proposeLink: 'Propose it on GitHub.',
+    tableCount: '{count} tables',
+    officeSearch: 'Office search',
+    compareAll: 'Compare all countries',
+    pageTitle: 'Countries and coverage',
+    pageIntro:
+      'Every country, its statistics office, the languages of its data, the number of tables, the data licence and the endpoint.',
+    tablesNote:
+      'Tables: the number of tables in the table index that StatsMCP searches, in the first data language. "Office search" means that the server uses the search of the statistics office.'
   },
   faq: {
     title: 'Questions',

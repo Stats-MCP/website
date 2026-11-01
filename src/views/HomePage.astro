@@ -1,7 +1,7 @@
 ---
 import Base from '@/layouts/Base.astro';
 import Connect from '@/components/sections/Connect.astro';
-import CountriesTable from '@/components/sections/CountriesTable.astro';
+import CountriesGrid from '@/components/sections/CountriesGrid.astro';
 import Faq from '@/components/sections/Faq.astro';
 import Hero from '@/components/sections/Hero.astro';
 import HowItWorks from '@/components/sections/HowItWorks.astro';
@@ -35,6 +35,6 @@ if (!selected) throw new Error('No countries are configured.');
   <KeyFigures locale={locale} />
   <HowItWorks locale={locale} />
   <Connect locale={locale} countries={countries} selected={selected} />
-  <CountriesTable locale={locale} countries={countries} />
+  <CountriesGrid locale={locale} countries={countries} />
   <Faq locale={locale} />
 </Base>

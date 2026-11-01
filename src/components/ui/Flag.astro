@@ -1,0 +1,34 @@
+---
+import { flagUrl } from '@/lib/flags';
+
+interface Props {
+  code: string;
+  size?: number;
+}
+
+const { code, size = 20 } = Astro.props;
+const src = flagUrl(code);
+---
+
+{
+  src && (
+    <img
+      class="flag"
+      src={src}
+      alt=""
+      width={size}
+      height={Math.round((size * 3) / 4)}
+      loading="lazy"
+      decoding="async"
+    />
+  )
+}
+
+<style>
+  .flag {
+    flex: none;
+    display: inline-block;
+    vertical-align: -2px;
+    box-shadow: 0 0 0 1px var(--rule);
+  }
+</style>

@@ -30,6 +30,10 @@ export const getStaticPaths = (() =>
         card: { title: t.privacy.intro, footer: t.privacy.title }
       },
       {
+        slug: 'countries',
+        card: { title: t.countries.pageTitle, footer: t.countries.pageIntro }
+      },
+      {
         slug: 'licences',
         card: { title: t.licences.title, footer: t.footer.disclaimer }
       },

@@ -13,6 +13,8 @@ export interface Country {
   office: { name: string; fullName: Localized; url: string };
   licence: { label: Localized; url?: string };
   dataLanguages: string[];
+  /** Tables in the crawled table index, first data language; unset when search uses the office's own API. */
+  tables?: number;
   status: CountryStatus;
   localPackage?: string;
   example?: CountryExample;
@@ -29,7 +31,7 @@ export interface CountryExample {
   series: { period: string; value: number }[];
 }
 
-const reservedSlugs = ['privacy', 'licences', 'og', '404'];
+const reservedSlugs = ['privacy', 'licences', 'countries', 'og', '404'];
 
 export function validateCountries(list: readonly Country[]): void {
   const ids = new Set<string>();
@@ -387,6 +389,7 @@ export const countries: Country[] = [
       url: 'https://creativecommons.org/publicdomain/zero/1.0/'
     },
     dataLanguages: ['sv', 'en'],
+    tables: 4278,
     status: 'live',
     example: {
       question: {
@@ -444,6 +447,7 @@ export const countries: Country[] = [
       url: 'https://www.dst.dk/en/Statistik/brug-statistikken/kildeangivelse'
     },
     dataLanguages: ['da', 'en'],
+    tables: 2311,
     status: 'live',
     example: {
       question: {
@@ -500,6 +504,7 @@ export const countries: Country[] = [
       url: 'https://www.cbs.nl/en-gb/about-us/website/copyright'
     },
     dataLanguages: ['nl', 'en'],
+    tables: 4890,
     status: 'live',
     example: {
       question: {
@@ -563,6 +568,7 @@ export const countries: Country[] = [
       url: 'https://ec.europa.eu/eurostat/help/copyright-notice'
     },
     dataLanguages: ['en', 'de', 'fr'],
+    tables: 7603,
     status: 'live',
     example: {
       question: {
@@ -623,6 +629,7 @@ export const countries: Country[] = [
       url: 'https://www.statcan.gc.ca/en/reference/licence'
     },
     dataLanguages: ['en', 'fr'],
+    tables: 8280,
     status: 'live',
     example: {
       question: {
@@ -683,6 +690,7 @@ export const countries: Country[] = [
       url: 'https://statice.is/publications/open-data-access'
     },
     dataLanguages: ['is', 'en'],
+    tables: 1906,
     status: 'live',
     example: {
       question: {
@@ -747,6 +755,7 @@ export const countries: Country[] = [
       url: 'https://web.dzs.hr/Hrv/about_us/Legals/Open%20Licence.pdf'
     },
     dataLanguages: ['hr', 'en'],
+    tables: 874,
     status: 'live',
     example: {
       question: {
@@ -805,6 +814,7 @@ export const countries: Country[] = [
       url: 'https://www.cso.ie/en/aboutus/whoweare/copyrightpolicy/'
     },
     dataLanguages: ['en'],
+    tables: 13164,
     status: 'live',
     example: {
       question: {

@@ -181,6 +181,9 @@ importers:
       astro:
         specifier: 7.4.2
         version: 7.4.2(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1)
+      flag-icons:
+        specifier: 7.6.0
+        version: 7.6.0
     devDependencies:
       '@astrojs/check':
         specifier: 0.9.12
@@ -1697,6 +1700,9 @@ packages:
 
   fflate@0.7.3:
     resolution: {integrity: sha512-0Zz1jOzJWERhyhsimS54VTqOteCNwRtIlh8isdL0AXLo0g7xNTfTL7oWrkmCnPhZGocKIkWHBistBrrpoNH3aw==}
+
+  flag-icons@7.6.0:
+    resolution: {integrity: sha512-hir/PsXwr0EESyizKrXJzmkzpLIMf+1vlNKLqAfvdh+bsU94a7LYWTiubkHKqptGoCPzOUGcm6c4PfC9/BaGSQ==}
 
   flattie@1.1.1:
     resolution: {integrity: sha512-9UbaD6XdAL97+k/n+N7JwX46K/M6Zc6KcFYskrYL8wbBV/Uyk0CTAMY0VT+qiK5PM7AIc9aTWYtq65U7T+aCNQ==}
@@ -3811,6 +3817,8 @@ snapshots:
       picomatch: 4.0.7
 
   fflate@0.7.3: {}
+
+  flag-icons@7.6.0: {}
 
   flattie@1.1.1: {}
 
