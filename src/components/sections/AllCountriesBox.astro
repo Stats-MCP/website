@@ -1,0 +1,66 @@
+---
+import CopyButton from '@/components/ui/CopyButton.astro';
+import LinkButton from '@/components/ui/LinkButton.astro';
+import { ALL_COUNTRIES_URL } from '@/data/connect-target';
+import type { Locale } from '@/i18n/locales';
+import { ui } from '@/i18n/ui';
+import { localePath } from '@/i18n/urls';
+
+interface Props {
+  locale: Locale;
+  connectHref?: string;
+}
+
+const { locale } = Astro.props;
+const t = ui[locale];
+const connectHref = Astro.props.connectHref ?? `${localePath(locale)}#connect`;
+---
+
+<div class="box">
+  <span class="mono-label">{t.hero.allEndpointLabel}</span>
+  <div class="endpoint">
+    <code>{ALL_COUNTRIES_URL}</code>
+    <CopyButton text={ALL_COUNTRIES_URL} label={t.copy.copy} copiedLabel={t.copy.copied} />
+  </div>
+  <div class="actions">
+    <LinkButton href={connectHref} variant="primary" activate="client:claude">
+      {t.hero.addToClaude}
+    </LinkButton>
+    <LinkButton href={connectHref} activate="client:chatgpt">{t.hero.otherAssistants}</LinkButton>
+  </div>
+</div>
+
+<style>
+  .box {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px;
+    border: 2px solid var(--ink);
+    background: var(--surface);
+  }
+  .endpoint {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+  code {
+    flex: 1 1 260px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    font-family: var(--font-mono);
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  @media (max-width: 640px) {
+    code {
+      font-size: 18px;
+    }
+  }
+</style>

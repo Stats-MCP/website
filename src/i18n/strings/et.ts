@@ -56,6 +56,8 @@ export const et: UiStrings = {
     lead: "StatsMCP ühendab Claude'i, ChatGPT, Cursori ja VS Code'i {offices} statistikaametiga. Iga vastus nimetab allika ja lingib tabeli.",
     addToClaude: "Lisa Claude'ile",
     addToChatgpt: 'Lisa ChatGPT-le',
+    allEndpointLabel: 'Üks lõpp-punkt kõigile riikidele',
+    otherAssistants: 'Muud assistendid',
     endpointLabel: 'Lõpp-punkt',
     countryTabs: 'Riik',
     status: { live: 'Töös', planned: 'Plaanis', limited: 'Ainult otsing' },
@@ -164,8 +166,9 @@ export const et: UiStrings = {
     tableCount: '{count} tabelit',
     officeSearch: 'Ameti otsing',
     compareAll: 'Võrdle kõiki riike',
-    pageTitle: 'Riigid ja kaetus',
-    pageIntro: 'Iga allika kaetus, litsents ja lõpp-punkt.',
+    pageTitle: '{offices} ametit. Üks ühendus.',
+    pageIntro:
+      'Ühe lõpp-punktiga ühendud kõigi ametitega. Kui soovid kasutada ainult üht ametit, kopeeri allpool selle lõpp-punkt.',
     tablesNote:
       'Tabelid: tabelid meie otsinguindeksis. Ameti otsing: server kasutab ameti enda otsingut.'
   },

@@ -56,6 +56,8 @@ export const fi: UiStrings = {
     lead: 'StatsMCP yhdistää Clauden, ChatGPT:n, Cursorin ja VS Coden {offices} tilastovirastoon. Jokainen vastaus kertoo lähteen ja linkittää taulukkoon.',
     addToClaude: 'Lisää Claudeen',
     addToChatgpt: 'Lisää ChatGPT:hen',
+    allEndpointLabel: 'Yksi päätepiste kaikille maille',
+    otherAssistants: 'Muut avustajat',
     endpointLabel: 'Päätepiste',
     countryTabs: 'Maa',
     status: {
@@ -170,8 +172,9 @@ export const fi: UiStrings = {
     tableCount: '{count} taulukkoa',
     officeSearch: 'Viraston haku',
     compareAll: 'Vertaa kaikkia maita',
-    pageTitle: 'Maat ja kattavuus',
-    pageIntro: 'Kattavuus, lisenssi ja päätepiste lähteittäin.',
+    pageTitle: '{offices} virastoa. Yksi yhteys.',
+    pageIntro:
+      'Yhdellä päätepisteellä yhdistät kaikkiin virastoihin. Jos haluat käyttää vain yhtä virastoa, kopioi sen päätepiste alta.',
     tablesNote:
       'Taulukot: taulukot hakuindeksissämme. Viraston haku: palvelin käyttää viraston omaa hakua.'
   },

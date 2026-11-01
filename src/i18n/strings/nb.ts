@@ -56,6 +56,8 @@ export const nb: UiStrings = {
     lead: 'StatsMCP kobler Claude, ChatGPT, Cursor og VS Code til {offices} statistikkbyråer. Hvert svar oppgir kilden og lenker til tabellen.',
     addToClaude: 'Legg til i Claude',
     addToChatgpt: 'Legg til i ChatGPT',
+    allEndpointLabel: 'Ett endepunkt for alle land',
+    otherAssistants: 'Andre assistenter',
     endpointLabel: 'Endepunkt',
     countryTabs: 'Land',
     status: { live: 'I drift', planned: 'Planlagt', limited: 'Bare søk' },
@@ -166,8 +168,9 @@ export const nb: UiStrings = {
     tableCount: '{count} tabeller',
     officeSearch: 'Byråets søk',
     compareAll: 'Sammenlign alle land',
-    pageTitle: 'Land og dekning',
-    pageIntro: 'Dekning, lisens og endepunkt for hver kilde.',
+    pageTitle: '{offices} byråer. Én tilkobling.',
+    pageIntro:
+      'Med ett endepunkt kobler du deg til alle byråene. Vil du bare bruke ett byrå, kopierer du endepunktet nedenfor.',
     tablesNote:
       'Tabeller: tabeller i søkeindeksen vår. Byråets søk: serveren bruker byråets eget søk.'
   },

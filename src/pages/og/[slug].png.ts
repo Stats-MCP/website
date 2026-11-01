@@ -31,7 +31,14 @@ export const getStaticPaths = (() =>
       },
       {
         slug: 'countries',
-        card: { title: t.countries.pageTitle, footer: t.countries.pageIntro }
+        card: {
+          title: fill(t.countries.pageTitle, {
+            offices: String(
+              countries.filter((country) => country.status === 'live').length
+            )
+          }),
+          footer: t.countries.pageIntro
+        }
       },
       {
         slug: 'licences',

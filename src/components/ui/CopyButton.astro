@@ -3,9 +3,11 @@ interface Props {
   text: string;
   label: string;
   copiedLabel: string;
+  /** Names the copied thing when several Copy buttons share one page. */
+  ariaLabel?: string;
 }
 
-const { text, label, copiedLabel } = Astro.props;
+const { text, label, copiedLabel, ariaLabel } = Astro.props;
 ---
 
 <button
@@ -13,7 +15,8 @@ const { text, label, copiedLabel } = Astro.props;
   class="copy pressable"
   data-copy={text}
   data-copy-label={label}
-  data-copied-label={copiedLabel}>{label}</button
+  data-copied-label={copiedLabel}
+  aria-label={ariaLabel}>{label}</button
 >
 
 <script>

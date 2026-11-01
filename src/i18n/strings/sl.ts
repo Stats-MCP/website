@@ -55,6 +55,8 @@ export const sl: UiStrings = {
     lead: 'StatsMCP poveže Claude, ChatGPT, Cursor in VS Code s statističnimi uradi. Trenutno jih je {offices}. Vsak odgovor navede vir in povezavo na tabelo.',
     addToClaude: 'Dodaj v Claude',
     addToChatgpt: 'Dodaj v ChatGPT',
+    allEndpointLabel: 'Ena končna točka za vse države',
+    otherAssistants: 'Drugi pomočniki',
     endpointLabel: 'Končna točka',
     countryTabs: 'Država',
     status: { live: 'Na voljo', planned: 'V načrtu', limited: 'Samo iskanje' },
@@ -163,8 +165,9 @@ export const sl: UiStrings = {
     tableCount: 'Tabele: {count}',
     officeSearch: 'Iskalnik urada',
     compareAll: 'Primerjaj vse države',
-    pageTitle: 'Države in pokritost',
-    pageIntro: 'Pokritost, licenca in končna točka za vsak vir.',
+    pageTitle: '{offices} uradov. Ena povezava.',
+    pageIntro:
+      'Z eno končno točko se povežete z vsemi uradi. Če želite uporabljati samo en urad, spodaj kopirajte njegovo končno točko.',
     tablesNote:
       'Tabele: tabele v našem iskalnem indeksu. Iskalnik urada: strežnik uporablja iskalnik statističnega urada.'
   },

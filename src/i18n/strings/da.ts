@@ -55,6 +55,8 @@ export const da: UiStrings = {
     lead: 'StatsMCP forbinder Claude, ChatGPT, Cursor og VS Code med {offices} statistikkontorer. Hvert svar angiver kilden og linker til tabellen.',
     addToClaude: 'Tilføj til Claude',
     addToChatgpt: 'Tilføj til ChatGPT',
+    allEndpointLabel: 'Ét endpoint for alle lande',
+    otherAssistants: 'Andre assistenter',
     endpointLabel: 'Endpoint',
     countryTabs: 'Land',
     status: { live: 'I drift', planned: 'Planlagt', limited: 'Kun søgning' },
@@ -165,8 +167,9 @@ export const da: UiStrings = {
     tableCount: '{count} tabeller',
     officeSearch: 'Kontorets søgning',
     compareAll: 'Sammenlign alle lande',
-    pageTitle: 'Lande og dækning',
-    pageIntro: 'Dækning, licens og endpoint for hver kilde.',
+    pageTitle: '{offices} kontorer. Én forbindelse.',
+    pageIntro:
+      'Med ét endpoint forbinder du dig til alle kontorer. Vil du kun bruge ét kontor, kopierer du dets endpoint nedenfor.',
     tablesNote:
       'Tabeller: tabeller i vores søgeindeks. Kontorets søgning: serveren bruger kontorets egen søgning.'
   },

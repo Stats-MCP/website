@@ -1,9 +1,10 @@
 ---
 import Base from '@/layouts/Base.astro';
+import AllCountriesBox from '@/components/sections/AllCountriesBox.astro';
 import CountriesTable from '@/components/sections/CountriesTable.astro';
 import { countries } from '@/data/countries';
 import type { Locale } from '@/i18n/locales';
-import { ui } from '@/i18n/ui';
+import { fill, ui } from '@/i18n/ui';
 
 interface Props {
   locale: Locale;
@@ -11,6 +12,9 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = ui[locale];
+const offices = String(
+  countries.filter((country) => country.status === 'live').length
+);
 ---
 
 <Base
@@ -20,8 +24,9 @@ const t = ui[locale];
   path="countries/"
   ogSlug="countries">
   <header class="intro">
-    <h1>{t.countries.pageTitle}</h1>
+    <h1>{fill(t.countries.pageTitle, { offices })}</h1>
     <p>{t.countries.pageIntro}</p>
+    <AllCountriesBox locale={locale} />
   </header>
   <CountriesTable locale={locale} countries={countries} />
   <p class="note">{t.countries.tablesNote}</p>

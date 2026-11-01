@@ -56,6 +56,8 @@ export const fo: UiStrings = {
     lead: 'StatsMCP knýtir Claude, ChatGPT, Cursor og VS Code at {offices} hagstovum. Hvørt svar nevnir kelduna og hevur leinkju til talvuna.',
     addToClaude: 'Legg afturat Claude',
     addToChatgpt: 'Legg afturat ChatGPT',
+    allEndpointLabel: 'Ein endapunkt fyri øll lond',
+    otherAssistants: 'Onnur forrit',
     endpointLabel: 'Endapunkt',
     countryTabs: 'Land',
     status: { live: 'Í gongd', planned: 'Ætlað', limited: 'Bert leiting' },
@@ -166,8 +168,9 @@ export const fo: UiStrings = {
     tableCount: '{count} talvur',
     officeSearch: 'Leiting hjá hagstovuni',
     compareAll: 'Samanber øll lond',
-    pageTitle: 'Lond og dekningur',
-    pageIntro: 'Dekningur, loyvi og endapunkt fyri hvørja keldu.',
+    pageTitle: '{offices} hagstovur. Eitt samband.',
+    pageIntro:
+      'Við einum endapunkti bindur tú teg at øllum hagstovunum. Vilt tú bert brúka eina hagstovu, avritar tú endapunktið hjá henni niðanfyri.',
     tablesNote:
       'Talvur: talvur í leitiyvirliti okkara. Leiting hjá hagstovuni: ambætarin brúkar leitingina hjá hagstovuni sjálvari.'
   },

@@ -56,6 +56,8 @@ export const de: UiStrings = {
     lead: 'StatsMCP verbindet Claude, ChatGPT, Cursor und VS Code mit {offices} Statistikämtern. Jede Antwort nennt die Quelle und verlinkt die Tabelle.',
     addToClaude: 'Zu Claude hinzufügen',
     addToChatgpt: 'Zu ChatGPT hinzufügen',
+    allEndpointLabel: 'Ein Endpunkt für alle Länder',
+    otherAssistants: 'Andere Assistenten',
     endpointLabel: 'Endpunkt',
     countryTabs: 'Land',
     status: { live: 'Live', planned: 'Geplant', limited: 'Nur Suche' },
@@ -168,8 +170,9 @@ export const de: UiStrings = {
     tableCount: '{count} Tabellen',
     officeSearch: 'Suche des Amts',
     compareAll: 'Alle Länder vergleichen',
-    pageTitle: 'Länder und Abdeckung',
-    pageIntro: 'Abdeckung, Lizenz und Endpunkt jeder Quelle.',
+    pageTitle: '{offices} Ämter. Eine Verbindung.',
+    pageIntro:
+      'Mit einem Endpunkt verbinden Sie sich mit allen Ämtern. Wenn Sie nur ein Amt nutzen möchten, kopieren Sie unten dessen Endpunkt.',
     tablesNote:
       'Tabellen: Tabellen in unserem Suchindex. Suche des Amts: Der Server verwendet die eigene Suche des Amts.'
   },

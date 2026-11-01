@@ -56,6 +56,8 @@ export const isl: UiStrings = {
     lead: 'StatsMCP tengir Claude, ChatGPT, Cursor og VS Code við {offices} hagstofur. Hvert svar tilgreinir heimild og tengir á töfluna.',
     addToClaude: 'Bæta við Claude',
     addToChatgpt: 'Bæta við ChatGPT',
+    allEndpointLabel: 'Einn endapunktur fyrir öll lönd',
+    otherAssistants: 'Önnur forrit',
     endpointLabel: 'Endapunktur',
     countryTabs: 'Land',
     status: {
@@ -170,8 +172,9 @@ export const isl: UiStrings = {
     tableCount: '{count} töflur',
     officeSearch: 'Leit hagstofu',
     compareAll: 'Bera saman öll lönd',
-    pageTitle: 'Lönd og umfang',
-    pageIntro: 'Umfang, leyfi og endapunktur fyrir hverja heimild.',
+    pageTitle: '{offices} hagstofur. Ein tenging.',
+    pageIntro:
+      'Með einum endapunkti tengist þú öllum hagstofunum. Ef þú vilt aðeins nota eina hagstofu skaltu afrita endapunkt hennar hér fyrir neðan.',
     tablesNote:
       'Töflur: töflur í leitarskránni okkar. Leit hagstofu: netþjónninn notar eigin leit hagstofunnar.'
   },

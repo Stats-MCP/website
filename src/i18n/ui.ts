@@ -53,6 +53,8 @@ export interface UiStrings {
     lead: string;
     addToClaude: string;
     addToChatgpt: string;
+    allEndpointLabel: string;
+    otherAssistants: string;
     endpointLabel: string;
     countryTabs: string;
     status: { live: string; planned: string; limited: string };
@@ -120,6 +122,7 @@ export interface UiStrings {
     tableCount: string;
     officeSearch: string;
     compareAll: string;
+    /** `{offices}` is the number of live offices. */
     pageTitle: string;
     pageIntro: string;
     tablesNote: string;
@@ -201,6 +204,8 @@ const en: UiStrings = {
     lead: 'StatsMCP connects Claude, ChatGPT, Cursor and VS Code to {offices} statistics offices. Every answer names its source and links the table.',
     addToClaude: 'Add to Claude',
     addToChatgpt: 'Add to ChatGPT',
+    allEndpointLabel: 'One endpoint for every country',
+    otherAssistants: 'Other assistants',
     endpointLabel: 'Endpoint',
     countryTabs: 'Country',
     status: { live: 'Live', planned: 'Planned', limited: 'Search only' },
@@ -308,8 +313,9 @@ const en: UiStrings = {
     tableCount: '{count} tables',
     officeSearch: 'Office search',
     compareAll: 'Compare all countries',
-    pageTitle: 'Countries and coverage',
-    pageIntro: 'Coverage, licence and endpoint for each source.',
+    pageTitle: '{offices} offices. One connection.',
+    pageIntro:
+      'One endpoint connects you to every office. To use only one office, copy its endpoint below.',
     tablesNote:
       'Tables: tables in our search index. Office search: the server uses the office’s own search.'
   },

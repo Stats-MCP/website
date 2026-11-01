@@ -56,6 +56,8 @@ export const fr: UiStrings = {
     lead: 'StatsMCP connecte Claude, ChatGPT, Cursor et VS Code à {offices} offices statistiques. Chaque réponse cite sa source et renvoie au tableau.',
     addToClaude: 'Ajouter à Claude',
     addToChatgpt: 'Ajouter à ChatGPT',
+    allEndpointLabel: 'Un seul point d’accès pour tous les pays',
+    otherAssistants: 'Autres assistants',
     endpointLabel: 'Point d’accès',
     countryTabs: 'Pays',
     status: {
@@ -175,8 +177,9 @@ export const fr: UiStrings = {
     tableCount: '{count} tableaux',
     officeSearch: 'Recherche de l’office',
     compareAll: 'Comparer tous les pays',
-    pageTitle: 'Pays et couverture',
-    pageIntro: 'Couverture, licence et point d’accès de chaque source.',
+    pageTitle: '{offices} offices. Une seule connexion.',
+    pageIntro:
+      'Un seul point d’accès vous connecte à tous les offices. Pour n’utiliser qu’un seul office, copiez son point d’accès ci-dessous.',
     tablesNote:
       'Tableaux : tableaux de notre index de recherche. Recherche de l’office : le serveur utilise le moteur de recherche de l’office.'
   },

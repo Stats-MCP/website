@@ -56,6 +56,8 @@ export const sv: UiStrings = {
     lead: 'StatsMCP kopplar Claude, ChatGPT, Cursor och VS Code till {offices} statistikmyndigheter. Varje svar anger källan och länkar till tabellen.',
     addToClaude: 'Lägg till i Claude',
     addToChatgpt: 'Lägg till i ChatGPT',
+    allEndpointLabel: 'En slutpunkt för alla länder',
+    otherAssistants: 'Andra assistenter',
     endpointLabel: 'Slutpunkt',
     countryTabs: 'Land',
     status: {
@@ -170,8 +172,9 @@ export const sv: UiStrings = {
     tableCount: '{count} tabeller',
     officeSearch: 'Myndighetens sökning',
     compareAll: 'Jämför alla länder',
-    pageTitle: 'Länder och täckning',
-    pageIntro: 'Täckning, licens och slutpunkt för varje källa.',
+    pageTitle: '{offices} myndigheter. En anslutning.',
+    pageIntro:
+      'Med en slutpunkt ansluter du till alla myndigheter. Vill du bara använda en myndighet kopierar du dess slutpunkt nedan.',
     tablesNote:
       'Tabeller: tabeller i vårt sökindex. Myndighetens sökning: servern använder myndighetens egen sökning.'
   },

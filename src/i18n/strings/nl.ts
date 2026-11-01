@@ -56,6 +56,8 @@ export const nl: UiStrings = {
     lead: 'StatsMCP verbindt Claude, ChatGPT, Cursor en VS Code met {offices} statistische bureaus. Elk antwoord noemt de bron en linkt naar de tabel.',
     addToClaude: 'Toevoegen aan Claude',
     addToChatgpt: 'Toevoegen aan ChatGPT',
+    allEndpointLabel: 'Eén endpoint voor alle landen',
+    otherAssistants: 'Andere assistenten',
     endpointLabel: 'Endpoint',
     countryTabs: 'Land',
     status: { live: 'Live', planned: 'Gepland', limited: 'Alleen zoeken' },
@@ -167,8 +169,9 @@ export const nl: UiStrings = {
     tableCount: '{count} tabellen',
     officeSearch: 'Zoekfunctie van het bureau',
     compareAll: 'Alle landen vergelijken',
-    pageTitle: 'Landen en dekking',
-    pageIntro: 'Dekking, licentie en endpoint per bron.',
+    pageTitle: '{offices} bureaus. Eén verbinding.',
+    pageIntro:
+      'Met één endpoint maakt u verbinding met alle bureaus. Wilt u maar één bureau gebruiken, kopieer dan hieronder het endpoint ervan.',
     tablesNote:
       'Tabellen: tabellen in onze zoekindex. Zoekfunctie van het bureau: de server gebruikt de eigen zoekfunctie van het bureau.'
   },

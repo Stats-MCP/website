@@ -1,8 +1,9 @@
 ---
+import CopyButton from '@/components/ui/CopyButton.astro';
 import Flag from '@/components/ui/Flag.astro';
 import { byName } from '@/lib/country-order';
 import Section from '@/components/ui/Section.astro';
-import { statusKey, type Country } from '@/data/countries';
+import { endpoint, statusKey, type Country } from '@/data/countries';
 import { type Locale , localized } from '@/i18n/locales';
 import { ui } from '@/i18n/ui';
 import { localePath } from '@/i18n/urls';
@@ -70,8 +71,18 @@ const number = new Intl.NumberFormat(locale);
                   localized(country.licence.label, locale)
                 )}
               </td>
-              <td class:list={['mono', { muted: country.status !== 'live' }]}>
-                /{country.id}/mcp
+              <td>
+                <div class="endpoint">
+                  <code class:list={[{ muted: country.status !== 'live' }]}>{endpoint(country)}</code>
+                  {country.status === 'live' && (
+                    <CopyButton
+                      text={endpoint(country)}
+                      label={t.copy.copy}
+                      copiedLabel={t.copy.copied}
+                      ariaLabel={`${t.copy.copy}: ${localized(country.name, locale)}`}
+                    />
+                  )}
+                </div>
               </td>
               <td class:list={['status', statusKey(country)]}>{t.hero.status[statusKey(country)]}</td>
               <td>
@@ -119,6 +130,16 @@ const number = new Intl.NumberFormat(locale);
   }
   .mono {
     font-family: var(--font-mono);
+  }
+  .endpoint {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+  }
+  .endpoint code {
+    font-family: var(--font-mono);
+    font-size: 14px;
   }
   .num {
     text-align: right;
