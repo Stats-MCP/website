@@ -1,5 +1,5 @@
 ---
-import { countries } from '@/data/countries';
+import { countries, indexedTables } from '@/data/countries';
 import type { Locale } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
 
@@ -9,13 +9,14 @@ interface Props {
 
 const { locale } = Astro.props;
 const live = String(countries.filter((country) => country.status === 'live').length);
+const tables = `${new Intl.NumberFormat(locale).format(indexedTables(countries))}+`;
 ---
 
 <section class="figures" aria-label={ui[locale].keyFiguresLabel}>
   {
     ui[locale].keyFigures.map((figure) => (
       <div class="cell">
-        <p class="value">{fill(figure.value, { live })}</p>
+        <p class="value">{fill(figure.value, { live, tables })}</p>
         <p class="label">{figure.label}</p>
       </div>
     ))

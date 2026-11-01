@@ -2,7 +2,7 @@
 import Flag from '@/components/ui/Flag.astro';
 import { byName } from '@/lib/country-order';
 import Section from '@/components/ui/Section.astro';
-import type { Country } from '@/data/countries';
+import { statusKey, type Country } from '@/data/countries';
 import { issuesUrl } from '@/data/site';
 import { type Locale , localized } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
@@ -35,7 +35,7 @@ const coverage = (country: Country) =>
             <span class="office">{localized(country.office.fullName, locale)}</span>
             <span class="meta">
               <span class="mono">{coverage(country)}</span>
-              <span class:list={['status', country.status]}>{t.hero.status[country.status]}</span>
+              <span class:list={['status', statusKey(country)]}>{t.hero.status[statusKey(country)]}</span>
             </span>
           </a>
         </li>
@@ -112,6 +112,10 @@ const coverage = (country: Country) =>
   }
   .status.live {
     color: var(--live);
+    font-weight: 600;
+  }
+  .status.limited {
+    color: var(--warn);
     font-weight: 600;
   }
   .status.planned {

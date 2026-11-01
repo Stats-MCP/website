@@ -3,9 +3,9 @@ import type { UiStrings } from '@/i18n/ui';
 export const fo: UiStrings = {
   seo: {
     home: {
-      title: 'StatsMCP — Almenn hagtøl til AI-hjálparar',
+      title: 'StatsMCP — Almenn hagtøl til vitlíkishjálparar',
       description:
-        'Knýt Claude, ChatGPT, Cursor og aðrar AI-hjálparar at dátugrunnum við tjóðarhagtølum. Ókeypis, bert til lesingar, opin keldukota. Hvørt svar vísir á kelduna.'
+        'Knýt Claude, ChatGPT, Cursor og aðrar vitlíkishjálparar at dátugrunnum við tjóðarhagtølum. Ókeypis, bert til lesingar, opin keldukota. Hvørt svar vísir á kelduna.'
     },
     privacy: {
       title: 'Privatlív — StatsMCP',
@@ -27,16 +27,16 @@ export const fo: UiStrings = {
       description: 'Henda síðan finst ikki á StatsMCP.'
     },
     countryLive: {
-      title: '{country}: hagtøl til AI-hjálparar — StatsMCP',
+      title: '{country}: hagtøl til vitlíkishjálparar — StatsMCP',
       description:
         'Almenn hagtøl ({country}) úr {database} ({office}) til Claude, ChatGPT og Cursor. Ókeypis MCP-endapunkt, kelda í hvørjum svari.'
     },
     countryPlanned: {
-      title: '{country}: hagtøl til AI-hjálparar — StatsMCP',
+      title: '{country}: hagtøl til vitlíkishjálparar — StatsMCP',
       description:
-        'Almenn hagtøl ({country}) til Claude, ChatGPT og aðrar AI-hjálparar koma skjótt á StatsMCP. Fylg ætlanini á GitHub.'
+        'Almenn hagtøl ({country}) til Claude, ChatGPT og aðrar vitlíkishjálparar koma skjótt á StatsMCP. Fylg ætlanini á GitHub.'
     },
-    countryCard: '{country}: hagtøl til AI-hjálparar',
+    countryCard: '{country}: hagtøl til vitlíkishjálparar',
     figureNumber: 'Mynd 1'
   },
   nav: {
@@ -50,14 +50,18 @@ export const fo: UiStrings = {
     menu: 'Valmynd'
   },
   hero: {
-    eyebrow: 'Almennar dátur, klárar til hjálpara tín',
-    title: 'Almenn tjóðarhagtøl til allar AI-hjálparar.',
-    lead: 'StatsMCP knýtir Claude, ChatGPT, Cursor og aðrar hjálparar at dátugrunnunum hjá hagstovum landanna. Hvørt úrslit nevnir kelduna.',
+    eyebrow: 'Ókeypis og opin keldukota',
+    title:
+      'Almenn hagtøl úr {countries} londum og ES, í vitlíkishjálpara tínum.',
+    lead: 'StatsMCP knýtir Claude, ChatGPT, Cursor og VS Code at {offices} hagstovum. Hvørt svar nevnir kelduna og hevur leinkju til talvuna.',
     addToClaude: 'Legg afturat Claude',
     addToChatgpt: 'Legg afturat ChatGPT',
     endpointLabel: 'Endapunkt',
     countryTabs: 'Land',
-    status: { live: 'Í gongd', planned: 'Ætlað' }
+    status: { live: 'Í gongd', planned: 'Ætlað', limited: 'Bert leiting' },
+    limitedNote:
+      'Leiting í talvum virkar. Hagstovan steingir í løtuni fyri dátufyrispurningum frá hýsara okkara. npm-pakkin virkar fult út.',
+    privacy: 'Ongar loggar · Eingin innritan · Ongar cookies'
   },
   copy: { copy: 'Avrita', copied: 'Avritað' },
   figure: {
@@ -73,10 +77,13 @@ export const fo: UiStrings = {
   },
   keyFiguresLabel: 'Lyklatøl',
   keyFigures: [
-    { value: '{live}', label: 'dátugrunnar við tjóðarhagtølum í gongd' },
-    { value: '<1 s', label: 'vanlig svartíð frá endapunktinum' },
-    { value: '0', label: 'kontur ella API-lyklar krevjast' },
-    { value: 'Kelda + leinkja', label: 'í hvørjum úrsliti' }
+    { value: '{live}', label: 'hagstovur í gongd' },
+    { value: '{tables}', label: 'almennar talvur í leitiyvirlitinum' },
+    { value: '0', label: 'loggar, kontur ella API-lyklar' },
+    {
+      value: '100%',
+      label: 'av úrslitunum nevna kelduna og hava leinkju til talvuna'
+    }
   ],
   howItWorks: {
     title: 'Soleiðis virkar tað',
@@ -100,9 +107,17 @@ export const fo: UiStrings = {
     ]
   },
   connect: {
-    title: 'Knýt saman í einum stigi',
-    meta: 'Streamable HTTP · bert til lesingar · eingin innritan',
+    title: 'Knýt saman á minni enn einum minutti',
+    meta: 'Streamable HTTP · bert til lesingar · eingin innritan · 60 fyrispurningar/min',
     clientTabs: 'Forrit'
+  },
+  countryPage: {
+    title: '{country}: almenn hagtøl í vitlíkishjálpara tínum.',
+    leadIndexed:
+      'Leita í {tables} talvum. Kelda: {office}. Loyvi: {licence}. Ókeypis, eingin innritan.',
+    leadOffice:
+      'Leita í talvunum. Kelda: {office}. Loyvi: {licence}. Ókeypis, eingin innritan.',
+    seeAll: 'Sí allar keldur ({count})'
   },
   countries: {
     title: 'Lond',
@@ -123,10 +138,9 @@ export const fo: UiStrings = {
     officeSearch: 'Leiting hjá hagstovuni',
     compareAll: 'Samanber øll lond',
     pageTitle: 'Lond og dekningur',
-    pageIntro:
-      'Hvørt land, hagstovan, málini í dátunum, tal av talvum, dátuloyvið og endapunktið.',
+    pageIntro: 'Dekningur, loyvi og endapunkt fyri hvørja keldu.',
     tablesNote:
-      'Talvur: tal av talvum í talvuyvirlitinum, sum StatsMCP leitar í, á fyrsta dátumálinum. „Leiting hjá hagstovuni“ merkir, at ambætarin brúkar leitingina hjá hagstovuni.'
+      'Talvur: talvur í leitiyvirliti okkara. Leiting hjá hagstovuni: ambætarin brúkar leitingina hjá hagstovuni sjálvari.'
   },
   faq: {
     title: 'Spurningar',
@@ -144,7 +158,7 @@ export const fo: UiStrings = {
       {
         question: 'Goyma tit spurningar mínar?',
         answer:
-          'Nei. Endapunktið skrásetir ongar loggar, og henda heimasíðan brúkar ongar cookies ella greiningaramboð. Les síðuna um privatlív.'
+          'Nei. Vit goyma ongar loggar, og henda heimasíðan brúkar ongar cookies ella greiningaramboð. Hjálparin sendir bert leitorð og talvukotur til ambætara okkara. Veitarin av vitlíkinum sær tó framvegis samrøðu tína. Les síðuna um privatlív.'
       },
       {
         question: 'Kann eg knýta fleiri lond at?',
@@ -152,9 +166,14 @@ export const fo: UiStrings = {
           'Ja. Legg eitt samband afturat fyri hvørt land. Hjálparin brúkar tað røtta sambandið til spurning tín.'
       },
       {
+        question: 'Kann eg koyra tað á míni egnu teldu?',
+        answer:
+          'Ja. Ambætararnir eru á npm. Lat fanan „Run locally“ upp undir „Knýt saman“. Tá fara spurningar tínir bert til hagstovuna.'
+      },
+      {
         question: 'Hvussu kann mítt land verða lagt afturat?',
         answer:
-          'Um hagstovan útgevur dáturnar gjøgnum PxWeb, kunnu vit leggja landið afturat. Stovna eitt issue á GitHub.'
+          'Stovna eitt issue á GitHub. Vit kunnu leggja flestu hagstovur afturat, sum hava eitt alment API.'
       }
     ]
   },
@@ -176,7 +195,8 @@ export const fo: UiStrings = {
       'Avmarkarin telur fyrispurningar frá hvørjari IP-adressu í ein minutt. Hann goymir teir ikki eftir tað.',
       'Henda heimasíðan brúkar ongar cookies, onga greining og ongar skriptir frá triðja parti. Stavsniðini liggja á okkara egna ambætara.',
       'Cloudflare rekur endapunktið og hesa heimasíðuna. Cloudflare viðger fyrispurningar sum hýsari okkara eftir privatlívspolitikki Cloudflare.',
-      'Hagstovurnar fáa dátufyrispurningarnar, sum ambætarin sendir til API teirra. Hesir fyrispurningar innihalda ikki IP-adressu tína.'
+      'Hagstovurnar fáa dátufyrispurningarnar, sum ambætarin sendir til API teirra. Hesir fyrispurningar innihalda ikki IP-adressu tína.',
+      'Veitarin av vitlíkishjálpara tínum, til dømis Anthropic ella OpenAI, sær samrøðu tína eftir sínum egnu treytum.'
     ],
     questions: 'Spurningar: stovna eitt issue á GitHub.'
   },

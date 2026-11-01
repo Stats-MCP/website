@@ -1,7 +1,8 @@
 ---
 import Base from '@/layouts/Base.astro';
 import Connect from '@/components/sections/Connect.astro';
-import CountriesTable from '@/components/sections/CountriesTable.astro';
+import Faq from '@/components/sections/Faq.astro';
+import HowItWorks from '@/components/sections/HowItWorks.astro';
 import Hero from '@/components/sections/Hero.astro';
 import { countries, type Country } from '@/data/countries';
 import { type Locale , localized } from '@/i18n/locales';
@@ -22,6 +23,16 @@ const values = {
   office: country.office.name
 };
 const absolute = (path: string) => new URL(path, Astro.site).href;
+const page = ui[locale].countryPage;
+const pageValues = {
+  country: localized(country.name, locale),
+  office: localized(country.office.fullName, locale),
+  licence: localized(country.licence.label, locale),
+  tables: country.tables === undefined ? '' : new Intl.NumberFormat(locale).format(country.tables)
+};
+const title = fill(page.title, pageValues);
+const lead = fill(country.tables === undefined ? page.leadOffice : page.leadIndexed, pageValues);
+const sources = String(countries.filter((item) => item.status === 'live').length);
 ---
 
 <Base
@@ -37,7 +48,34 @@ const absolute = (path: string) => new URL(path, Astro.site).href;
       { name: localized(country.name, locale), url: absolute(localePath(locale, `${country.slug}/`)) }
     ])
   ]}>
-  <Hero locale={locale} countries={countries} selected={country} restore={false} />
+  <Hero
+    locale={locale}
+    countries={countries}
+    selected={country}
+    restore={false}
+    title={title}
+    lead={lead}
+  />
+  <HowItWorks locale={locale} />
   <Connect locale={locale} countries={countries} selected={country} restore={false} />
-  <CountriesTable locale={locale} countries={countries} />
+  <p class="all">
+    <a href={localePath(locale, 'countries/')}>
+      {fill(page.seeAll, { count: sources })}
+      <span aria-hidden="true"> →</span>
+    </a>
+  </p>
+  <Faq locale={locale} />
 </Base>
+
+<style>
+  .all {
+    margin: 0;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--ink);
+    font-family: var(--font-display);
+    font-size: 24px;
+  }
+  .all a {
+    text-decoration: none;
+  }
+</style>

@@ -50,15 +50,22 @@ export const fr: UiStrings = {
     menu: 'Menu'
   },
   hero: {
-    eyebrow: 'Données officielles, prêtes pour votre assistant',
+    eyebrow: 'Gratuit et open source',
     title:
-      'Les statistiques nationales officielles pour tous les assistants IA.',
-    lead: 'StatsMCP connecte Claude, ChatGPT, Cursor et d’autres assistants aux bases de données des offices statistiques nationaux. Chaque résultat cite sa source.',
+      'Les statistiques officielles de {countries} pays et de l’UE, dans votre assistant IA.',
+    lead: 'StatsMCP connecte Claude, ChatGPT, Cursor et VS Code à {offices} offices statistiques. Chaque réponse cite sa source et renvoie au tableau.',
     addToClaude: 'Ajouter à Claude',
     addToChatgpt: 'Ajouter à ChatGPT',
     endpointLabel: 'Point d’accès',
     countryTabs: 'Pays',
-    status: { live: 'En service', planned: 'Prévu' }
+    status: {
+      live: 'En service',
+      planned: 'Prévu',
+      limited: 'Recherche seule'
+    },
+    limitedNote:
+      'La recherche de tableaux fonctionne. L’office bloque actuellement les requêtes de données de notre hébergeur. Le paquet npm fonctionne entièrement.',
+    privacy: 'Aucun journal · Aucune inscription · Aucun cookie'
   },
   copy: { copy: 'Copier', copied: 'Copié' },
   figure: {
@@ -74,10 +81,16 @@ export const fr: UiStrings = {
   },
   keyFiguresLabel: 'Chiffres clés',
   keyFigures: [
-    { value: '{live}', label: 'bases de statistiques nationales en service' },
-    { value: '<1 s', label: 'délai de réponse habituel du point d’accès' },
-    { value: '0', label: 'compte ou clé API nécessaire' },
-    { value: 'Source + lien', label: 'dans chaque résultat' }
+    { value: '{live}', label: 'offices statistiques en service' },
+    {
+      value: '{tables}',
+      label: 'tableaux officiels dans l’index de recherche'
+    },
+    { value: '0', label: 'journal, compte ou clé API' },
+    {
+      value: '100 %',
+      label: 'des résultats citent la source et renvoient au tableau'
+    }
   ],
   howItWorks: {
     title: 'Fonctionnement',
@@ -101,9 +114,17 @@ export const fr: UiStrings = {
     ]
   },
   connect: {
-    title: 'Connexion en une étape',
-    meta: 'Streamable HTTP · lecture seule · sans inscription',
+    title: 'Connexion en moins d’une minute',
+    meta: 'Streamable HTTP · lecture seule · sans inscription · 60 requêtes/min',
     clientTabs: 'Client'
+  },
+  countryPage: {
+    title: '{country} : les statistiques officielles dans votre assistant IA.',
+    leadIndexed:
+      'Interrogez {tables} tableaux. Source : {office}. Licence : {licence}. Gratuit, sans inscription.',
+    leadOffice:
+      'Interrogez les tableaux de l’office. Source : {office}. Licence : {licence}. Gratuit, sans inscription.',
+    seeAll: 'Voir les {count} sources'
   },
   countries: {
     title: 'Pays',
@@ -124,10 +145,9 @@ export const fr: UiStrings = {
     officeSearch: 'Recherche de l’office',
     compareAll: 'Comparer tous les pays',
     pageTitle: 'Pays et couverture',
-    pageIntro:
-      'Chaque pays, son office statistique, les langues de ses données, le nombre de tableaux, la licence des données et le point d’accès.',
+    pageIntro: 'Couverture, licence et point d’accès de chaque source.',
     tablesNote:
-      'Tableaux : le nombre de tableaux dans l’index que StatsMCP consulte, dans la première langue des données. « Recherche de l’office » signifie que le serveur utilise le moteur de recherche de l’office statistique.'
+      'Tableaux : tableaux de notre index de recherche. Recherche de l’office : le serveur utilise le moteur de recherche de l’office.'
   },
   faq: {
     title: 'Questions',
@@ -145,7 +165,7 @@ export const fr: UiStrings = {
       {
         question: 'Enregistrez-vous mes questions ?',
         answer:
-          'Non. Le point d’accès n’écrit aucun journal, et ce site n’utilise ni cookies ni outils d’analyse. Consultez la page Confidentialité.'
+          'Non. Nous ne conservons aucun journal, et ce site n’utilise ni cookies ni outils d’analyse. Votre assistant envoie seulement des mots-clés et des codes de tableaux à notre serveur. Votre fournisseur d’IA voit tout de même votre conversation. Consultez la page Confidentialité.'
       },
       {
         question: 'Puis-je connecter plusieurs pays ?',
@@ -153,9 +173,14 @@ export const fr: UiStrings = {
           'Oui. Ajoutez un connecteur par pays. L’assistant utilise le bon connecteur pour votre question.'
       },
       {
+        question: 'Puis-je l’exécuter sur mon propre ordinateur ?',
+        answer:
+          'Oui. Les serveurs sont sur npm. Dans la section Connexion, ouvrez l’onglet « Run locally ». Vos questions vont alors uniquement à l’office statistique.'
+      },
+      {
         question: 'Comment ajouter mon pays ?',
         answer:
-          'Si l’office publie ses données avec PxWeb, nous pouvons l’ajouter. Ouvrez une issue sur GitHub.'
+          'Ouvrez une issue sur GitHub. Nous pouvons ajouter la plupart des offices qui ont une API publique.'
       }
     ]
   },
@@ -178,7 +203,8 @@ export const fr: UiStrings = {
       'Le limiteur de débit compte les requêtes de chaque adresse IP pendant une minute. Il ne les conserve pas ensuite.',
       'Ce site n’utilise ni cookies, ni outils d’analyse, ni scripts tiers. Les polices sont sur notre propre serveur.',
       'Cloudflare exploite le point d’accès et ce site. Cloudflare traite les requêtes en tant qu’hébergeur, selon la politique de confidentialité de Cloudflare.',
-      'Les offices statistiques reçoivent les requêtes de données que le serveur envoie à leurs API. Ces requêtes ne contiennent pas votre adresse IP.'
+      'Les offices statistiques reçoivent les requêtes de données que le serveur envoie à leurs API. Ces requêtes ne contiennent pas votre adresse IP.',
+      'Le fournisseur de votre assistant IA, par exemple Anthropic ou OpenAI, voit votre conversation selon ses propres conditions.'
     ],
     questions: 'Questions : ouvrez une issue sur GitHub.'
   },

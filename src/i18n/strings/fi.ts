@@ -50,14 +50,22 @@ export const fi: UiStrings = {
     menu: 'Valikko'
   },
   hero: {
-    eyebrow: 'Virallista dataa avustajasi käyttöön',
-    title: 'Viralliset kansalliset tilastot kaikille tekoälyavustajille.',
-    lead: 'StatsMCP yhdistää Clauden, ChatGPT:n, Cursorin ja muut avustajat kansallisten tilastovirastojen tietokantoihin. Jokainen tulos kertoo lähteensä.',
+    eyebrow: 'Maksuton ja avointa lähdekoodia',
+    title:
+      'Viralliset tilastot {countries} maasta ja EU:sta tekoälyavustajassasi.',
+    lead: 'StatsMCP yhdistää Clauden, ChatGPT:n, Cursorin ja VS Coden {offices} tilastovirastoon. Jokainen vastaus kertoo lähteen ja linkittää taulukkoon.',
     addToClaude: 'Lisää Claudeen',
     addToChatgpt: 'Lisää ChatGPT:hen',
     endpointLabel: 'Päätepiste',
     countryTabs: 'Maa',
-    status: { live: 'Käytössä', planned: 'Suunnitteilla' }
+    status: {
+      live: 'Käytössä',
+      planned: 'Suunnitteilla',
+      limited: 'Vain haku'
+    },
+    limitedNote:
+      'Taulukkohaku toimii. Virasto estää tällä hetkellä datapyynnöt palveluntarjoajaltamme. npm-paketti toimii täysin.',
+    privacy: 'Ei lokeja · Ei rekisteröitymistä · Ei evästeitä'
   },
   copy: { copy: 'Kopioi', copied: 'Kopioitu' },
   figure: {
@@ -73,10 +81,13 @@ export const fi: UiStrings = {
   },
   keyFiguresLabel: 'Tunnusluvut',
   keyFigures: [
-    { value: '{live}', label: 'kansallista tilastotietokantaa käytössä' },
-    { value: '<1 s', label: 'tyypillinen vastausaika päätepisteestä' },
-    { value: '0', label: 'tiliä tai API-avainta tarvitaan' },
-    { value: 'Lähde + linkki', label: 'jokaisessa tuloksessa' }
+    { value: '{live}', label: 'tilastovirastoa käytössä' },
+    { value: '{tables}', label: 'virallista taulukkoa hakuindeksissä' },
+    { value: '0', label: 'lokia, tiliä tai API-avainta' },
+    {
+      value: '100 %',
+      label: 'tuloksista kertoo lähteen ja linkittää taulukkoon'
+    }
   ],
   howItWorks: {
     title: 'Miten se toimii',
@@ -100,9 +111,17 @@ export const fi: UiStrings = {
     ]
   },
   connect: {
-    title: 'Yhdistä yhdessä vaiheessa',
-    meta: 'Streamable HTTP · vain luku · ei kirjautumista',
+    title: 'Yhdistä alle minuutissa',
+    meta: 'Streamable HTTP · vain luku · ei kirjautumista · 60 pyyntöä/min',
     clientTabs: 'Asiakasohjelma'
+  },
+  countryPage: {
+    title: '{country}: viralliset tilastot tekoälyavustajassasi.',
+    leadIndexed:
+      'Hae {tables} taulukosta. Lähde: {office}. Datan lisenssi: {licence}. Maksuton, ei rekisteröitymistä.',
+    leadOffice:
+      'Hae tilastoviraston taulukoista. Lähde: {office}. Datan lisenssi: {licence}. Maksuton, ei rekisteröitymistä.',
+    seeAll: 'Näytä kaikki lähteet ({count})'
   },
   countries: {
     title: 'Maat',
@@ -123,10 +142,9 @@ export const fi: UiStrings = {
     officeSearch: 'Viraston haku',
     compareAll: 'Vertaa kaikkia maita',
     pageTitle: 'Maat ja kattavuus',
-    pageIntro:
-      'Kaikki maat: tilastovirasto, aineiston kielet, taulukoiden määrä, datan lisenssi ja päätepiste.',
+    pageIntro: 'Kattavuus, lisenssi ja päätepiste lähteittäin.',
     tablesNote:
-      'Taulukot: niiden taulukoiden määrä, joista StatsMCP hakee, ensimmäisellä aineiston kielellä. ”Viraston haku” tarkoittaa, että palvelin käyttää tilastoviraston omaa hakua.'
+      'Taulukot: taulukot hakuindeksissämme. Viraston haku: palvelin käyttää viraston omaa hakua.'
   },
   faq: {
     title: 'Kysymyksiä',
@@ -144,7 +162,7 @@ export const fi: UiStrings = {
       {
         question: 'Tallennatteko kysymykseni?',
         answer:
-          'Emme. Päätepiste ei kirjoita lokeja, eikä tämä sivusto käytä evästeitä tai analytiikkaa. Lue tietosuojasivu.'
+          'Emme. Emme säilytä lokeja, eikä tämä sivusto käytä evästeitä tai analytiikkaa. Avustajasi lähettää palvelimellemme vain hakusanoja ja taulukkokoodeja. Tekoälypalvelusi tarjoaja näkee silti keskustelusi. Lue tietosuojasivu.'
       },
       {
         question: 'Voinko yhdistää useita maita?',
@@ -152,9 +170,14 @@ export const fi: UiStrings = {
           'Kyllä. Lisää yksi liitin kutakin maata kohden. Avustaja käyttää kysymykseesi oikeaa liitintä.'
       },
       {
+        question: 'Voinko ajaa sitä omalla tietokoneellani?',
+        answer:
+          'Kyllä. Palvelimet ovat npm:ssä. Avaa välilehti ”Run locally” kohdassa Yhdistä. Silloin kysymyksesi menevät vain tilastovirastolle.'
+      },
+      {
         question: 'Miten maani voidaan lisätä?',
         answer:
-          'Jos virasto julkaisee datansa PxWebin kautta, voimme lisätä sen. Avaa issue GitHubissa.'
+          'Avaa issue GitHubissa. Voimme lisätä useimmat virastot, joilla on julkinen API.'
       }
     ]
   },
@@ -176,7 +199,8 @@ export const fi: UiStrings = {
       'Nopeusrajoitin laskee kunkin IP-osoitteen pyyntöjä yhden minuutin ajan. Sen jälkeen se ei säilytä niitä.',
       'Tämä sivusto ei käytä evästeitä, analytiikkaa tai kolmansien osapuolten skriptejä. Fontit ovat omalla palvelimellamme.',
       'Cloudflare ylläpitää päätepistettä ja tätä sivustoa. Cloudflare käsittelee pyyntöjä palveluntarjoajanamme Cloudflaren tietosuojakäytännön mukaisesti.',
-      'Tilastovirastot vastaanottavat datapyynnöt, jotka palvelin lähettää niiden API-rajapintoihin. Nämä pyynnöt eivät sisällä IP-osoitettasi.'
+      'Tilastovirastot vastaanottavat datapyynnöt, jotka palvelin lähettää niiden API-rajapintoihin. Nämä pyynnöt eivät sisällä IP-osoitettasi.',
+      'Tekoälyavustajasi tarjoaja, esimerkiksi Anthropic tai OpenAI, näkee keskustelusi omien ehtojensa mukaisesti.'
     ],
     questions: 'Kysymyksiä: avaa issue GitHubissa.'
   },

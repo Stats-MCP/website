@@ -48,13 +48,17 @@ export interface UiStrings {
   };
   hero: {
     eyebrow: string;
+    /** `{countries}` and `{offices}` are numbers. */
     title: string;
     lead: string;
     addToClaude: string;
     addToChatgpt: string;
     endpointLabel: string;
     countryTabs: string;
-    status: { live: string; planned: string };
+    status: { live: string; planned: string; limited: string };
+    /** Shown for a source whose data queries do not work from the hosted endpoint. */
+    limitedNote: string;
+    privacy: string;
   };
   copy: { copy: string; copied: string };
   figure: {
@@ -78,6 +82,15 @@ export interface UiStrings {
     title: string;
     meta: string;
     clientTabs: string;
+  };
+  countryPage: {
+    /** `{country}` is the country name. */
+    title: string;
+    /** `{tables}`, `{office}` and `{licence}` are filled per country. */
+    leadIndexed: string;
+    leadOffice: string;
+    /** `{count}` is the number of sources. */
+    seeAll: string;
   };
   countries: {
     title: string;
@@ -173,14 +186,18 @@ const en: UiStrings = {
     menu: 'Menu'
   },
   hero: {
-    eyebrow: 'Official data, ready for your assistant',
-    title: 'Official national statistics for every AI assistant.',
-    lead: 'StatsMCP connects Claude, ChatGPT, Cursor and other assistants to the databases of national statistics offices. Every result names its source.',
+    eyebrow: 'Free and open source',
+    title:
+      'Official statistics from {countries} countries and the EU, in your AI assistant.',
+    lead: 'StatsMCP connects Claude, ChatGPT, Cursor and VS Code to {offices} statistics offices. Every answer names its source and links the table.',
     addToClaude: 'Add to Claude',
     addToChatgpt: 'Add to ChatGPT',
     endpointLabel: 'Endpoint',
     countryTabs: 'Country',
-    status: { live: 'Live', planned: 'Planned' }
+    status: { live: 'Live', planned: 'Planned', limited: 'Search only' },
+    limitedNote:
+      'Table search works. The office blocks data requests from our host at the moment. The npm package works fully.',
+    privacy: 'No logs · No sign-up · No cookies'
   },
   copy: { copy: 'Copy', copied: 'Copied' },
   figure: {
@@ -196,10 +213,10 @@ const en: UiStrings = {
   },
   keyFiguresLabel: 'Key figures',
   keyFigures: [
-    { value: '{live}', label: 'national statistics databases live' },
-    { value: '<1 s', label: 'typical answer from the endpoint' },
-    { value: '0', label: 'accounts or API keys needed' },
-    { value: 'Source + link', label: 'in every result' }
+    { value: '{live}', label: 'statistics offices live' },
+    { value: '{tables}', label: 'official tables in the search index' },
+    { value: '0', label: 'logs, accounts or API keys' },
+    { value: '100%', label: 'of results name the source and link the table' }
   ],
   howItWorks: {
     title: 'How it works',
@@ -223,9 +240,17 @@ const en: UiStrings = {
     ]
   },
   connect: {
-    title: 'Connect in one step',
-    meta: 'Streamable HTTP · read-only · no sign-in',
+    title: 'Connect in under a minute',
+    meta: 'Streamable HTTP · read-only · no sign-in · 60 requests/min',
     clientTabs: 'Client'
+  },
+  countryPage: {
+    title: '{country}: official statistics in your AI assistant.',
+    leadIndexed:
+      'Search {tables} tables from {office}. Data under {licence}. Free, no sign-up.',
+    leadOffice:
+      'Search the tables of {office}. Data under {licence}. Free, no sign-up.',
+    seeAll: 'See all {count} sources'
   },
   countries: {
     title: 'Countries',
@@ -246,10 +271,9 @@ const en: UiStrings = {
     officeSearch: 'Office search',
     compareAll: 'Compare all countries',
     pageTitle: 'Countries and coverage',
-    pageIntro:
-      'Every country, its statistics office, the languages of its data, the number of tables, the data licence and the endpoint.',
+    pageIntro: 'Coverage, licence and endpoint for each source.',
     tablesNote:
-      'Tables: the number of tables in the table index that StatsMCP searches, in the first data language. "Office search" means that the server uses the search of the statistics office.'
+      'Tables: tables in our search index. Office search: the server uses the office’s own search.'
   },
   faq: {
     title: 'Questions',
@@ -267,7 +291,7 @@ const en: UiStrings = {
       {
         question: 'Do you store my questions?',
         answer:
-          'No. The endpoint writes no logs, and this website uses no cookies or analytics. Read the privacy page.'
+          'No. We keep no logs, and this website uses no cookies or analytics. Your assistant sends only search words and table codes to our server. Your AI provider still sees your conversation. Read the privacy page.'
       },
       {
         question: 'Can I connect several countries?',
@@ -275,9 +299,14 @@ const en: UiStrings = {
           'Yes. Add one connector for each country. The assistant uses the right one for your question.'
       },
       {
+        question: 'Can I run it on my own computer?',
+        answer:
+          'Yes. The servers are on npm. Open the Run locally tab in Connect. Then your questions go only to the statistics office.'
+      },
+      {
         question: 'How can my country be added?',
         answer:
-          'If the office publishes its data through PxWeb, we can add it. Open an issue on GitHub.'
+          'Open an issue on GitHub. We can add most offices that have a public API.'
       }
     ]
   },
@@ -299,7 +328,8 @@ const en: UiStrings = {
       'The rate limiter counts requests for each IP address for one minute. It does not keep them after that.',
       'This website uses no cookies, no analytics and no third-party scripts. The fonts are on our own server.',
       'Cloudflare runs the endpoint and this website. Cloudflare processes requests as our host under the Cloudflare privacy policy.',
-      'The statistics offices receive the data requests that the server sends to their APIs. These requests do not contain your IP address.'
+      'The statistics offices receive the data requests that the server sends to their APIs. These requests do not contain your IP address.',
+      'Your AI assistant provider, for example Anthropic or OpenAI, sees your conversation under its own terms.'
     ],
     questions: 'Questions: open an issue on GitHub.'
   },
@@ -317,7 +347,6 @@ const en: UiStrings = {
   }
 };
 
-/** Slovenian and Norwegian copy is English until a native speaker reviews it (see reviewedLocales). */
 export const ui: Record<Locale, UiStrings> = {
   en,
   sl: sl,

@@ -19,6 +19,8 @@ export interface Country {
   tables?: number;
   status: CountryStatus;
   localPackage?: string;
+  /** Search works, but the hosted endpoint cannot query table data. */
+  limited?: true;
   example?: CountryExample;
 }
 
@@ -65,6 +67,17 @@ export function validateCountries(list: readonly Country[]): void {
       }
     }
   }
+}
+
+/** Label key for the status badge: a limited source shows "Search only". */
+export function statusKey(country: Country): CountryStatus | 'limited' {
+  return country.limited ? 'limited' : country.status;
+}
+
+/** The official tables in the search index, rounded down to the thousand. */
+export function indexedTables(list: readonly Country[]): number {
+  const total = list.reduce((sum, country) => sum + (country.tables ?? 0), 0);
+  return Math.floor(total / 1000) * 1000;
 }
 
 export function endpoint(country: Country): string {
@@ -213,6 +226,7 @@ const baseCountries: Country[] = [
     },
     dataLanguages: ['et', 'en'],
     status: 'live',
+    localPackage: 'stat-ee-mcp',
     example: {
       question: {
         en: 'What is the latest inflation rate in Estonia?',
@@ -451,6 +465,7 @@ const baseCountries: Country[] = [
     dataLanguages: ['da', 'en'],
     tables: 2311,
     status: 'live',
+    localPackage: 'dst-mcp',
     example: {
       question: {
         en: 'What is the latest inflation rate in Denmark?',
@@ -508,6 +523,7 @@ const baseCountries: Country[] = [
     dataLanguages: ['nl', 'en'],
     tables: 4890,
     status: 'live',
+    limited: true,
     example: {
       question: {
         en: 'What is the latest inflation rate in the Netherlands?',
@@ -572,6 +588,7 @@ const baseCountries: Country[] = [
     dataLanguages: ['en', 'de', 'fr'],
     tables: 7603,
     status: 'live',
+    localPackage: 'statsmcp-eurostat',
     example: {
       question: {
         en: 'What is the latest inflation rate in the EU?',
@@ -759,6 +776,7 @@ const baseCountries: Country[] = [
     dataLanguages: ['hr', 'en'],
     tables: 874,
     status: 'live',
+    localPackage: 'dzs-mcp',
     example: {
       question: {
         en: 'What is the latest inflation rate in Croatia?',
@@ -818,6 +836,7 @@ const baseCountries: Country[] = [
     dataLanguages: ['en'],
     tables: 13164,
     status: 'live',
+    localPackage: 'cso-mcp',
     example: {
       question: {
         en: 'What is the latest inflation rate in Ireland?',

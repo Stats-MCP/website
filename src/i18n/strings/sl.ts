@@ -50,14 +50,17 @@ export const sl: UiStrings = {
     menu: 'Meni'
   },
   hero: {
-    eyebrow: 'Uradni podatki, pripravljeni za vašega pomočnika',
-    title: 'Uradna nacionalna statistika za vsakega pomočnika UI.',
-    lead: 'StatsMCP poveže Claude, ChatGPT, Cursor in druge pomočnike s podatkovnimi bazami nacionalnih statističnih uradov. Vsak rezultat navede vir.',
+    eyebrow: 'Brezplačno in odprtokodno',
+    title: 'Uradna statistika iz {countries} držav in EU v vašem pomočniku UI.',
+    lead: 'StatsMCP poveže Claude, ChatGPT, Cursor in VS Code s statističnimi uradi. Trenutno jih je {offices}. Vsak odgovor navede vir in povezavo na tabelo.',
     addToClaude: 'Dodaj v Claude',
     addToChatgpt: 'Dodaj v ChatGPT',
     endpointLabel: 'Končna točka',
     countryTabs: 'Država',
-    status: { live: 'Na voljo', planned: 'V načrtu' }
+    status: { live: 'Na voljo', planned: 'V načrtu', limited: 'Samo iskanje' },
+    limitedNote:
+      'Iskanje tabel deluje. Urad trenutno blokira zahteve za podatke z našega strežnika. Paket npm deluje v celoti.',
+    privacy: 'Brez dnevnikov · Brez registracije · Brez piškotkov'
   },
   copy: { copy: 'Kopiraj', copied: 'Kopirano' },
   figure: {
@@ -73,13 +76,10 @@ export const sl: UiStrings = {
   },
   keyFiguresLabel: 'Ključni podatki',
   keyFigures: [
-    {
-      value: '{live}',
-      label: 'delujočih nacionalnih statističnih podatkovnih baz'
-    },
-    { value: '<1 s', label: 'običajen odzivni čas končne točke' },
-    { value: '0', label: 'potrebnih računov ali ključev API' },
-    { value: 'Vir + povezava', label: 'v vsakem rezultatu' }
+    { value: '{live}', label: 'delujočih statističnih uradov' },
+    { value: '{tables}', label: 'uradnih tabel v iskalnem indeksu' },
+    { value: '0', label: 'dnevnikov, računov ali ključev API' },
+    { value: '100 %', label: 'rezultatov navede vir in povezavo na tabelo' }
   ],
   howItWorks: {
     title: 'Kako deluje',
@@ -103,9 +103,17 @@ export const sl: UiStrings = {
     ]
   },
   connect: {
-    title: 'Povezava v enem koraku',
-    meta: 'Streamable HTTP · samo za branje · brez prijave',
+    title: 'Povezava v manj kot minuti',
+    meta: 'Streamable HTTP · samo za branje · brez prijave · 60 zahtev/min',
     clientTabs: 'Odjemalec'
+  },
+  countryPage: {
+    title: '{country}: uradna statistika v vašem pomočniku UI.',
+    leadIndexed:
+      'Iščite med {tables} tabelami. Vir: {office}. Licenca za podatke: {licence}. Brezplačno, brez registracije.',
+    leadOffice:
+      'Iščite po tabelah statističnega urada. Vir: {office}. Licenca za podatke: {licence}. Brezplačno, brez registracije.',
+    seeAll: 'Vsi viri ({count})'
   },
   countries: {
     title: 'Države',
@@ -126,10 +134,9 @@ export const sl: UiStrings = {
     officeSearch: 'Iskalnik urada',
     compareAll: 'Primerjaj vse države',
     pageTitle: 'Države in pokritost',
-    pageIntro:
-      'Vse države, njihovi statistični uradi, jeziki podatkov, število tabel, licenca za podatke in končna točka.',
+    pageIntro: 'Pokritost, licenca in končna točka za vsak vir.',
     tablesNote:
-      'Tabele: število tabel v indeksu tabel, po katerem išče StatsMCP, v prvem jeziku podatkov. „Iskalnik urada“ pomeni, da strežnik uporablja iskalnik statističnega urada.'
+      'Tabele: tabele v našem iskalnem indeksu. Iskalnik urada: strežnik uporablja iskalnik statističnega urada.'
   },
   faq: {
     title: 'Vprašanja',
@@ -147,7 +154,7 @@ export const sl: UiStrings = {
       {
         question: 'Ali shranjujete moja vprašanja?',
         answer:
-          'Ne. Končna točka ne piše dnevnikov, to spletno mesto pa ne uporablja piškotkov ali analitike. Preberite stran o zasebnosti.'
+          'Ne. Ne hranimo dnevnikov, to spletno mesto pa ne uporablja piškotkov ali analitike. Vaš pomočnik našemu strežniku pošlje samo iskalne besede in šifre tabel. Vaš ponudnik UI pogovor še vedno vidi. Preberite stran o zasebnosti.'
       },
       {
         question: 'Ali lahko povežem več držav?',
@@ -155,9 +162,14 @@ export const sl: UiStrings = {
           'Da. Za vsako državo dodajte en konektor. Pomočnik za vaše vprašanje uporabi pravega.'
       },
       {
+        question: 'Ali ga lahko zaženem na svojem računalniku?',
+        answer:
+          'Da. Strežniki so na voljo v npm. V razdelku Povezava odprite zavihek „Run locally“. Tako gredo vaša vprašanja samo do statističnega urada.'
+      },
+      {
         question: 'Kako lahko dodate mojo državo?',
         answer:
-          'Če urad objavlja podatke prek PxWeb, jo lahko dodamo. Odprite issue na GitHubu.'
+          'Odprite issue na GitHubu. Dodamo lahko večino uradov, ki imajo javni API.'
       }
     ]
   },
@@ -180,7 +192,8 @@ export const sl: UiStrings = {
       'Omejevalnik zahtev šteje zahteve za vsak naslov IP eno minuto. Po tem jih ne hrani.',
       'To spletno mesto ne uporablja piškotkov, analitike ali skript tretjih oseb. Pisave so na našem strežniku.',
       'Končno točko in to spletno mesto poganja Cloudflare. Cloudflare kot naš ponudnik gostovanja obdeluje zahteve v skladu s pravilnikom o zasebnosti Cloudflare.',
-      'Statistični uradi prejmejo zahteve za podatke, ki jih strežnik pošlje njihovim API-jem. Te zahteve ne vsebujejo vašega naslova IP.'
+      'Statistični uradi prejmejo zahteve za podatke, ki jih strežnik pošlje njihovim API-jem. Te zahteve ne vsebujejo vašega naslova IP.',
+      'Ponudnik vašega pomočnika UI, na primer Anthropic ali OpenAI, vidi vaš pogovor v skladu s svojimi pogoji.'
     ],
     questions: 'Vprašanja: odprite issue na GitHubu.'
   },

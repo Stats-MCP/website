@@ -50,14 +50,17 @@ export const da: UiStrings = {
     menu: 'Menu'
   },
   hero: {
-    eyebrow: 'Officielle data, klar til din assistent',
-    title: 'Officiel national statistik til alle AI-assistenter.',
-    lead: 'StatsMCP forbinder Claude, ChatGPT, Cursor og andre assistenter med databaserne hos nationale statistikkontorer. Hvert resultat angiver kilden.',
+    eyebrow: 'Gratis og open source',
+    title: 'Officiel statistik fra {countries} lande og EU i din AI-assistent.',
+    lead: 'StatsMCP forbinder Claude, ChatGPT, Cursor og VS Code med {offices} statistikkontorer. Hvert svar angiver kilden og linker til tabellen.',
     addToClaude: 'Tilføj til Claude',
     addToChatgpt: 'Tilføj til ChatGPT',
     endpointLabel: 'Endpoint',
     countryTabs: 'Land',
-    status: { live: 'I drift', planned: 'Planlagt' }
+    status: { live: 'I drift', planned: 'Planlagt', limited: 'Kun søgning' },
+    limitedNote:
+      'Tabelsøgningen virker. Kontoret blokerer i øjeblikket dataforespørgsler fra vores hostingudbyder. npm-pakken virker fuldt ud.',
+    privacy: 'Ingen logge · Ingen tilmelding · Ingen cookies'
   },
   copy: { copy: 'Kopiér', copied: 'Kopieret' },
   figure: {
@@ -73,10 +76,13 @@ export const da: UiStrings = {
   },
   keyFiguresLabel: 'Nøgletal',
   keyFigures: [
-    { value: '{live}', label: 'nationale statistikdatabaser i drift' },
-    { value: '<1 s', label: 'typisk svartid fra endpointet' },
-    { value: '0', label: 'brugerkonti eller API-nøgler påkrævet' },
-    { value: 'Kilde + link', label: 'i hvert resultat' }
+    { value: '{live}', label: 'statistikkontorer i drift' },
+    { value: '{tables}', label: 'officielle tabeller i søgeindekset' },
+    { value: '0', label: 'logge, konti eller API-nøgler' },
+    {
+      value: '100 %',
+      label: 'af resultaterne angiver kilden og linker til tabellen'
+    }
   ],
   howItWorks: {
     title: 'Sådan virker det',
@@ -100,9 +106,17 @@ export const da: UiStrings = {
     ]
   },
   connect: {
-    title: 'Forbind i ét trin',
-    meta: 'Streamable HTTP · kun læseadgang · intet login',
+    title: 'Forbind på under et minut',
+    meta: 'Streamable HTTP · kun læseadgang · intet login · 60 forespørgsler/min',
     clientTabs: 'Klient'
+  },
+  countryPage: {
+    title: '{country}: officiel statistik i din AI-assistent.',
+    leadIndexed:
+      'Søg i {tables} tabeller fra {office}. Datalicens: {licence}. Gratis, ingen tilmelding.',
+    leadOffice:
+      'Søg i tabellerne fra {office}. Datalicens: {licence}. Gratis, ingen tilmelding.',
+    seeAll: 'Se alle {count} kilder'
   },
   countries: {
     title: 'Lande',
@@ -123,10 +137,9 @@ export const da: UiStrings = {
     officeSearch: 'Kontorets søgning',
     compareAll: 'Sammenlign alle lande',
     pageTitle: 'Lande og dækning',
-    pageIntro:
-      'Alle lande med statistikkontor, datasprog, antal tabeller, datalicens og endpoint.',
+    pageIntro: 'Dækning, licens og endpoint for hver kilde.',
     tablesNote:
-      'Tabeller: antallet af tabeller i det tabelindeks, som StatsMCP søger i, på det første datasprog. »Kontorets søgning« betyder, at serveren bruger statistikkontorets egen søgning.'
+      'Tabeller: tabeller i vores søgeindeks. Kontorets søgning: serveren bruger kontorets egen søgning.'
   },
   faq: {
     title: 'Spørgsmål',
@@ -144,7 +157,7 @@ export const da: UiStrings = {
       {
         question: 'Gemmer I mine spørgsmål?',
         answer:
-          'Nej. Endpointet skriver ingen logge, og dette websted bruger ingen cookies eller analyseværktøjer. Læs siden om privatliv.'
+          'Nej. Vi gemmer ingen logge, og dette websted bruger ingen cookies eller analyseværktøjer. Din assistent sender kun søgeord og tabelkoder til vores server. Din AI-udbyder ser stadig din samtale. Læs siden om privatliv.'
       },
       {
         question: 'Kan jeg forbinde flere lande?',
@@ -152,9 +165,14 @@ export const da: UiStrings = {
           'Ja. Tilføj én connector for hvert land. Assistenten bruger den rigtige til dit spørgsmål.'
       },
       {
+        question: 'Kan jeg køre det på min egen computer?',
+        answer:
+          'Ja. Serverne ligger på npm. Åbn fanen »Run locally« under Forbind. Så går dine spørgsmål kun til statistikkontoret.'
+      },
+      {
         question: 'Hvordan kan mit land blive tilføjet?',
         answer:
-          'Hvis kontoret udgiver sine data via PxWeb, kan vi tilføje det. Opret et issue på GitHub.'
+          'Opret et issue på GitHub. Vi kan tilføje de fleste kontorer, der har et offentligt API.'
       }
     ]
   },
@@ -176,7 +194,8 @@ export const da: UiStrings = {
       'Hastighedsbegrænsningen tæller forespørgsler for hver IP-adresse i ét minut. Den gemmer dem ikke derefter.',
       'Dette websted bruger ingen cookies, ingen analyseværktøjer og ingen scripts fra tredjeparter. Skrifttyperne ligger på vores egen server.',
       'Cloudflare driver endpointet og dette websted. Cloudflare behandler forespørgsler som vores hostingudbyder i henhold til Cloudflares privatlivspolitik.',
-      "Statistikkontorerne modtager de dataforespørgsler, som serveren sender til deres API'er. Disse forespørgsler indeholder ikke din IP-adresse."
+      "Statistikkontorerne modtager de dataforespørgsler, som serveren sender til deres API'er. Disse forespørgsler indeholder ikke din IP-adresse.",
+      'Udbyderen af din AI-assistent, for eksempel Anthropic eller OpenAI, ser din samtale i henhold til sine egne vilkår.'
     ],
     questions: 'Spørgsmål: opret et issue på GitHub.'
   },

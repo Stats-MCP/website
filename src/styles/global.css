@@ -7,6 +7,7 @@
   --surface: #ffffff;
   --accent: #b3122e;
   --live: #0b6b3a;
+  --warn: #8a5a00;
   --font-display: 'Newsreader', Georgia, serif;
   --font-body: 'IBM Plex Sans', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
@@ -73,7 +74,23 @@ h3 {
   font-weight: 400;
   margin: 0;
   overflow-wrap: break-word;
+}
+
+/* Long compound words (for example Icelandic or German) break with a hyphen only in these languages. */
+:is(
+    :lang(is),
+    :lang(fo),
+    :lang(fi),
+    :lang(et),
+    :lang(de),
+    :lang(nl),
+    :lang(sv),
+    :lang(da),
+    :lang(nb)
+  )
+  :is(h1, h2, h3) {
   hyphens: auto;
+  hyphenate-limit-chars: 12 5 5;
 }
 
 code,

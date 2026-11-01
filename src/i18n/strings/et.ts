@@ -50,14 +50,18 @@ export const et: UiStrings = {
     menu: 'Menüü'
   },
   hero: {
-    eyebrow: 'Ametlikud andmed sinu assistendile',
-    title: 'Ametlik riiklik statistika igale tehisintellekti assistendile.',
-    lead: "StatsMCP ühendab Claude'i, ChatGPT, Cursori ja teised assistendid riiklike statistikaametite andmebaasidega. Iga tulemus nimetab oma allika.",
+    eyebrow: 'Tasuta ja avatud lähtekoodiga',
+    title:
+      'Ametlik statistika {countries} riigist ja EList sinu tehisintellekti assistendis.',
+    lead: "StatsMCP ühendab Claude'i, ChatGPT, Cursori ja VS Code'i {offices} statistikaametiga. Iga vastus nimetab allika ja lingib tabeli.",
     addToClaude: "Lisa Claude'ile",
     addToChatgpt: 'Lisa ChatGPT-le',
     endpointLabel: 'Lõpp-punkt',
     countryTabs: 'Riik',
-    status: { live: 'Töös', planned: 'Plaanis' }
+    status: { live: 'Töös', planned: 'Plaanis', limited: 'Ainult otsing' },
+    limitedNote:
+      'Tabelite otsing töötab. Amet blokeerib praegu meie majutaja andmepäringud. npm-pakett töötab täielikult.',
+    privacy: 'Logideta · Registreerumiseta · Küpsisteta'
   },
   copy: { copy: 'Kopeeri', copied: 'Kopeeritud' },
   figure: {
@@ -73,10 +77,10 @@ export const et: UiStrings = {
   },
   keyFiguresLabel: 'Põhinäitajad',
   keyFigures: [
-    { value: '{live}', label: 'riiklikku statistika andmebaasi töös' },
-    { value: '<1 s', label: 'lõpp-punkti tavaline vastuseaeg' },
-    { value: '0', label: 'kontot või API-võtit vaja' },
-    { value: 'Allikas + link', label: 'igas tulemuses' }
+    { value: '{live}', label: 'statistikaametit töös' },
+    { value: '{tables}', label: 'ametlikku tabelit otsinguindeksis' },
+    { value: '0', label: 'logi, kontot ega API-võtit' },
+    { value: '100%', label: 'tulemustest nimetab allika ja lingib tabeli' }
   ],
   howItWorks: {
     title: 'Kuidas see töötab',
@@ -100,9 +104,17 @@ export const et: UiStrings = {
     ]
   },
   connect: {
-    title: 'Ühenda ühe sammuga',
-    meta: 'Streamable HTTP · ainult lugemiseks · sisselogimist pole vaja',
+    title: 'Ühenda vähem kui minutiga',
+    meta: 'Streamable HTTP · ainult lugemiseks · sisselogimiseta · 60 päringut minutis',
     clientTabs: 'Klient'
+  },
+  countryPage: {
+    title: '{country}: ametlik statistika sinu tehisintellekti assistendis.',
+    leadIndexed:
+      'Otsi {tables} tabeli seast. Allikas: {office}. Litsents: {licence}. Tasuta, registreerumiseta.',
+    leadOffice:
+      'Otsi tabeleid. Allikas: {office}. Litsents: {licence}. Tasuta, registreerumiseta.',
+    seeAll: 'Vaata kõiki allikaid ({count})'
   },
   countries: {
     title: 'Riigid',
@@ -123,10 +135,9 @@ export const et: UiStrings = {
     officeSearch: 'Ameti otsing',
     compareAll: 'Võrdle kõiki riike',
     pageTitle: 'Riigid ja kaetus',
-    pageIntro:
-      'Iga riik, selle statistikaamet, andmete keeled, tabelite arv, andmelitsents ja lõpp-punkt.',
+    pageIntro: 'Iga allika kaetus, litsents ja lõpp-punkt.',
     tablesNote:
-      'Tabelid: tabelite arv tabeliindeksis, milles StatsMCP otsib, esimeses andmekeeles. „Ameti otsing“ tähendab, et server kasutab statistikaameti enda otsingut.'
+      'Tabelid: tabelid meie otsinguindeksis. Ameti otsing: server kasutab ameti enda otsingut.'
   },
   faq: {
     title: 'Küsimused',
@@ -144,7 +155,7 @@ export const et: UiStrings = {
       {
         question: 'Kas te salvestate minu küsimusi?',
         answer:
-          'Ei. Lõpp-punkt ei kirjuta logisid ja see veebisait ei kasuta küpsiseid ega analüütikat. Loe privaatsuslehte.'
+          'Ei. Me ei pea logisid ja see veebisait ei kasuta küpsiseid ega analüütikat. Sinu assistent saadab meie serverisse ainult otsingusõnad ja tabelikoodid. Sinu tehisintellekti teenuse pakkuja näeb vestlust siiski. Loe privaatsuslehte.'
       },
       {
         question: 'Kas ma saan ühendada mitu riiki?',
@@ -152,9 +163,14 @@ export const et: UiStrings = {
           'Jah. Lisa iga riigi jaoks üks konnektor. Assistent kasutab sinu küsimuse jaoks õiget konnektorit.'
       },
       {
+        question: 'Kas ma saan seda oma arvutis käitada?',
+        answer:
+          'Jah. Serverid on npm-is. Ava jaotises „Ühenda“ vahekaart „Run locally“. Siis lähevad sinu küsimused ainult statistikaametile.'
+      },
+      {
         question: 'Kuidas saab minu riigi lisada?',
         answer:
-          'Kui amet avaldab oma andmed PxWebi kaudu, saame riigi lisada. Ava GitHubis issue.'
+          'Ava GitHubis issue. Saame lisada enamiku ameteid, millel on avalik API.'
       }
     ]
   },
@@ -177,7 +193,8 @@ export const et: UiStrings = {
       'Päringute piiraja loendab iga IP-aadressi päringuid ühe minuti jooksul. Pärast seda neid ei säilitata.',
       'See veebisait ei kasuta küpsiseid, analüütikat ega kolmandate osapoolte skripte. Fondid on meie enda serveris.',
       "Lõpp-punkti ja seda veebisaiti käitab Cloudflare. Cloudflare töötleb päringuid meie majutajana Cloudflare'i privaatsuspoliitika alusel.",
-      'Statistikaametid saavad andmepäringud, mille server nende API-dele saadab. Need päringud ei sisalda sinu IP-aadressi.'
+      'Statistikaametid saavad andmepäringud, mille server nende API-dele saadab. Need päringud ei sisalda sinu IP-aadressi.',
+      'Sinu tehisintellekti assistendi pakkuja, näiteks Anthropic või OpenAI, näeb sinu vestlust oma tingimuste alusel.'
     ],
     questions: 'Küsimused: ava GitHubis issue.'
   },

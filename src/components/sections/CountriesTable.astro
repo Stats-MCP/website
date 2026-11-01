@@ -2,7 +2,7 @@
 import Flag from '@/components/ui/Flag.astro';
 import { byName } from '@/lib/country-order';
 import Section from '@/components/ui/Section.astro';
-import type { Country } from '@/data/countries';
+import { statusKey, type Country } from '@/data/countries';
 import { type Locale , localized } from '@/i18n/locales';
 import { ui } from '@/i18n/ui';
 import { localePath } from '@/i18n/urls';
@@ -73,7 +73,7 @@ const number = new Intl.NumberFormat(locale);
               <td class:list={['mono', { muted: country.status !== 'live' }]}>
                 /{country.id}/mcp
               </td>
-              <td class:list={['status', country.status]}>{t.hero.status[country.status]}</td>
+              <td class:list={['status', statusKey(country)]}>{t.hero.status[statusKey(country)]}</td>
               <td>
                 <a href={localePath(locale, `${country.slug}/`)}>
                   {t.countries.details}
@@ -134,6 +134,10 @@ const number = new Intl.NumberFormat(locale);
   }
   .status.live {
     color: var(--live);
+    font-weight: 600;
+  }
+  .status.limited {
+    color: var(--warn);
     font-weight: 600;
   }
   .status.planned {

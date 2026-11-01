@@ -50,14 +50,22 @@ export const sv: UiStrings = {
     menu: 'Meny'
   },
   hero: {
-    eyebrow: 'Officiella data, redo för din assistent',
-    title: 'Officiell nationell statistik för alla AI-assistenter.',
-    lead: 'StatsMCP kopplar Claude, ChatGPT, Cursor och andra assistenter till databaserna hos nationella statistikmyndigheter. Varje resultat anger sin källa.',
+    eyebrow: 'Gratis och öppen källkod',
+    title:
+      'Officiell statistik från {countries} länder och EU, i din AI-assistent.',
+    lead: 'StatsMCP kopplar Claude, ChatGPT, Cursor och VS Code till {offices} statistikmyndigheter. Varje svar anger källan och länkar till tabellen.',
     addToClaude: 'Lägg till i Claude',
     addToChatgpt: 'Lägg till i ChatGPT',
     endpointLabel: 'Slutpunkt',
     countryTabs: 'Land',
-    status: { live: 'I drift', planned: 'Planerad' }
+    status: {
+      live: 'I drift',
+      planned: 'Planerad',
+      limited: 'Endast sökning'
+    },
+    limitedNote:
+      'Tabellsökningen fungerar. Myndigheten blockerar just nu dataförfrågningar från vår värd. npm-paketet fungerar fullt ut.',
+    privacy: 'Inga loggar · Ingen registrering · Inga kakor'
   },
   copy: { copy: 'Kopiera', copied: 'Kopierat' },
   figure: {
@@ -73,10 +81,13 @@ export const sv: UiStrings = {
   },
   keyFiguresLabel: 'Nyckeltal',
   keyFigures: [
-    { value: '{live}', label: 'nationella statistikdatabaser i drift' },
-    { value: '<1 s', label: 'typisk svarstid från slutpunkten' },
-    { value: '0', label: 'konton eller API-nycklar krävs' },
-    { value: 'Källa + länk', label: 'i varje resultat' }
+    { value: '{live}', label: 'statistikmyndigheter i drift' },
+    { value: '{tables}', label: 'officiella tabeller i sökindexet' },
+    { value: '0', label: 'loggar, konton eller API-nycklar' },
+    {
+      value: '100 %',
+      label: 'av resultaten anger källan och länkar till tabellen'
+    }
   ],
   howItWorks: {
     title: 'Så fungerar det',
@@ -100,9 +111,17 @@ export const sv: UiStrings = {
     ]
   },
   connect: {
-    title: 'Anslut i ett steg',
-    meta: 'Streamable HTTP · endast läsning · ingen inloggning',
+    title: 'Anslut på under en minut',
+    meta: 'Streamable HTTP · endast läsning · ingen inloggning · 60 förfrågningar/min',
     clientTabs: 'Klient'
+  },
+  countryPage: {
+    title: '{country}: officiell statistik i din AI-assistent.',
+    leadIndexed:
+      'Sök i {tables} tabeller från {office}. Datalicens: {licence}. Gratis, ingen registrering.',
+    leadOffice:
+      'Sök i tabellerna från {office}. Datalicens: {licence}. Gratis, ingen registrering.',
+    seeAll: 'Se alla {count} källor'
   },
   countries: {
     title: 'Länder',
@@ -123,10 +142,9 @@ export const sv: UiStrings = {
     officeSearch: 'Myndighetens sökning',
     compareAll: 'Jämför alla länder',
     pageTitle: 'Länder och täckning',
-    pageIntro:
-      'Alla länder med statistikmyndighet, dataspråk, antal tabeller, datalicens och slutpunkt.',
+    pageIntro: 'Täckning, licens och slutpunkt för varje källa.',
     tablesNote:
-      'Tabeller: antalet tabeller i det tabellindex som StatsMCP söker i, på det första dataspråket. ”Myndighetens sökning” betyder att servern använder statistikmyndighetens egen sökfunktion.'
+      'Tabeller: tabeller i vårt sökindex. Myndighetens sökning: servern använder myndighetens egen sökning.'
   },
   faq: {
     title: 'Frågor',
@@ -144,7 +162,7 @@ export const sv: UiStrings = {
       {
         question: 'Sparar ni mina frågor?',
         answer:
-          'Nej. Slutpunkten skriver inga loggar, och den här webbplatsen använder inga kakor eller analysverktyg. Läs integritetssidan.'
+          'Nej. Vi sparar inga loggar, och den här webbplatsen använder inga kakor eller analysverktyg. Din assistent skickar bara sökord och tabellkoder till vår server. Din AI-leverantör ser ändå ditt samtal. Läs integritetssidan.'
       },
       {
         question: 'Kan jag ansluta flera länder?',
@@ -152,9 +170,14 @@ export const sv: UiStrings = {
           'Ja. Lägg till en anslutning för varje land. Assistenten använder rätt anslutning för din fråga.'
       },
       {
+        question: 'Kan jag köra den på min egen dator?',
+        answer:
+          'Ja. Servrarna finns på npm. Öppna fliken ”Run locally” under Anslut. Då går dina frågor bara till statistikmyndigheten.'
+      },
+      {
         question: 'Hur kan mitt land läggas till?',
         answer:
-          'Om myndigheten publicerar sina data via PxWeb kan vi lägga till det. Öppna ett ärende på GitHub.'
+          'Öppna ett ärende på GitHub. Vi kan lägga till de flesta myndigheter som har ett öppet API.'
       }
     ]
   },
@@ -176,7 +199,8 @@ export const sv: UiStrings = {
       'Hastighetsbegränsningen räknar förfrågningar per IP-adress under en minut. Den sparar dem inte efter det.',
       'Den här webbplatsen använder inga kakor, ingen analys och inga skript från tredje part. Typsnitten ligger på vår egen server.',
       'Cloudflare driver slutpunkten och den här webbplatsen. Cloudflare behandlar förfrågningar som vår värd enligt Cloudflares integritetspolicy.',
-      'Statistikmyndigheterna tar emot de dataförfrågningar som servern skickar till deras API:er. Förfrågningarna innehåller inte din IP-adress.'
+      'Statistikmyndigheterna tar emot de dataförfrågningar som servern skickar till deras API:er. Förfrågningarna innehåller inte din IP-adress.',
+      'Leverantören av din AI-assistent, till exempel Anthropic eller OpenAI, ser ditt samtal enligt sina egna villkor.'
     ],
     questions: 'Frågor: öppna ett ärende på GitHub.'
   },

@@ -50,14 +50,18 @@ export const nl: UiStrings = {
     menu: 'Menu'
   },
   hero: {
-    eyebrow: 'Officiële data, klaar voor uw assistent',
-    title: 'Officiële nationale statistiek voor elke AI-assistent.',
-    lead: 'StatsMCP verbindt Claude, ChatGPT, Cursor en andere assistenten met de databanken van nationale statistische bureaus. Elk resultaat vermeldt de bron.',
+    eyebrow: 'Gratis en open source',
+    title:
+      'Officiële statistiek uit {countries} landen en de EU, in uw AI-assistent.',
+    lead: 'StatsMCP verbindt Claude, ChatGPT, Cursor en VS Code met {offices} statistische bureaus. Elk antwoord noemt de bron en linkt naar de tabel.',
     addToClaude: 'Toevoegen aan Claude',
     addToChatgpt: 'Toevoegen aan ChatGPT',
     endpointLabel: 'Endpoint',
     countryTabs: 'Land',
-    status: { live: 'Live', planned: 'Gepland' }
+    status: { live: 'Live', planned: 'Gepland', limited: 'Alleen zoeken' },
+    limitedNote:
+      'Zoeken in tabellen werkt. Het bureau blokkeert op dit moment dataverzoeken van onze host. Het npm-pakket werkt volledig.',
+    privacy: 'Geen logs · Geen aanmelding · Geen cookies'
   },
   copy: { copy: 'Kopiëren', copied: 'Gekopieerd' },
   figure: {
@@ -73,10 +77,13 @@ export const nl: UiStrings = {
   },
   keyFiguresLabel: 'Kerncijfers',
   keyFigures: [
-    { value: '{live}', label: 'nationale statistische databanken live' },
-    { value: '<1 s', label: 'gebruikelijke antwoordtijd van het endpoint' },
-    { value: '0', label: 'accounts of API-sleutels nodig' },
-    { value: 'Bron + link', label: 'in elk resultaat' }
+    { value: '{live}', label: 'statistische bureaus live' },
+    { value: '{tables}', label: 'officiële tabellen in de zoekindex' },
+    { value: '0', label: 'logbestanden, accounts of API-sleutels' },
+    {
+      value: '100 %',
+      label: 'van de resultaten noemt de bron en linkt naar de tabel'
+    }
   ],
   howItWorks: {
     title: 'Hoe het werkt',
@@ -100,9 +107,17 @@ export const nl: UiStrings = {
     ]
   },
   connect: {
-    title: 'Verbinden in één stap',
-    meta: 'Streamable HTTP · alleen-lezen · zonder aanmelding',
+    title: 'Verbinden in minder dan een minuut',
+    meta: 'Streamable HTTP · alleen-lezen · zonder aanmelding · 60 verzoeken/min',
     clientTabs: 'Client'
+  },
+  countryPage: {
+    title: '{country}: officiële statistiek in uw AI-assistent.',
+    leadIndexed:
+      'Doorzoek {tables} tabellen. Bron: {office}. Licentie: {licence}. Gratis, zonder aanmelding.',
+    leadOffice:
+      'Doorzoek de tabellen van het bureau. Bron: {office}. Licentie: {licence}. Gratis, zonder aanmelding.',
+    seeAll: 'Alle {count} bronnen bekijken'
   },
   countries: {
     title: 'Landen',
@@ -123,10 +138,9 @@ export const nl: UiStrings = {
     officeSearch: 'Zoekfunctie van het bureau',
     compareAll: 'Alle landen vergelijken',
     pageTitle: 'Landen en dekking',
-    pageIntro:
-      'Elk land, het statistisch bureau, de talen van de data, het aantal tabellen, de datalicentie en het endpoint.',
+    pageIntro: 'Dekking, licentie en endpoint per bron.',
     tablesNote:
-      'Tabellen: het aantal tabellen in de tabelindex die StatsMCP doorzoekt, in de eerste taal van de data. ‘Zoekfunctie van het bureau’ betekent dat de server de zoekfunctie van het statistisch bureau gebruikt.'
+      'Tabellen: tabellen in onze zoekindex. Zoekfunctie van het bureau: de server gebruikt de eigen zoekfunctie van het bureau.'
   },
   faq: {
     title: 'Vragen',
@@ -144,7 +158,7 @@ export const nl: UiStrings = {
       {
         question: 'Slaan jullie mijn vragen op?',
         answer:
-          'Nee. Het endpoint schrijft geen logbestanden en deze website gebruikt geen cookies of analytics. Lees de privacypagina.'
+          'Nee. We bewaren geen logbestanden, en deze website gebruikt geen cookies of analytics. Uw assistent stuurt alleen zoekwoorden en tabelcodes naar onze server. Uw AI-aanbieder ziet uw gesprek wel. Lees de privacypagina.'
       },
       {
         question: 'Kan ik meerdere landen verbinden?',
@@ -152,9 +166,14 @@ export const nl: UiStrings = {
           'Ja. Voeg voor elk land één connector toe. De assistent gebruikt de juiste connector voor uw vraag.'
       },
       {
+        question: 'Kan ik het op mijn eigen computer draaien?',
+        answer:
+          'Ja. De servers staan op npm. Open bij ‘Verbinden’ het tabblad ‘Run locally’. Dan gaan uw vragen alleen naar het statistisch bureau.'
+      },
+      {
         question: 'Hoe kan mijn land worden toegevoegd?',
         answer:
-          'Als het bureau zijn data via PxWeb publiceert, kunnen we het toevoegen. Open een issue op GitHub.'
+          'Open een issue op GitHub. We kunnen de meeste bureaus met een openbare API toevoegen.'
       }
     ]
   },
@@ -177,7 +196,8 @@ export const nl: UiStrings = {
       'De snelheidsbegrenzer telt de verzoeken per IP-adres gedurende één minuut. Daarna bewaart hij ze niet.',
       'Deze website gebruikt geen cookies, geen analytics en geen scripts van derden. De lettertypen staan op onze eigen server.',
       'Cloudflare host het endpoint en deze website. Cloudflare verwerkt verzoeken als onze hostingpartij volgens het privacybeleid van Cloudflare.',
-      'De statistische bureaus ontvangen de dataverzoeken die de server naar hun API’s stuurt. Deze verzoeken bevatten uw IP-adres niet.'
+      'De statistische bureaus ontvangen de dataverzoeken die de server naar hun API’s stuurt. Deze verzoeken bevatten uw IP-adres niet.',
+      'Uw AI-aanbieder, bijvoorbeeld Anthropic of OpenAI, ziet uw gesprek volgens de eigen voorwaarden van die aanbieder.'
     ],
     questions: 'Vragen: open een issue op GitHub.'
   },

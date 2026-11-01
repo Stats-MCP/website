@@ -50,14 +50,18 @@ export const de: UiStrings = {
     menu: 'Menü'
   },
   hero: {
-    eyebrow: 'Amtliche Daten für Ihren Assistenten',
-    title: 'Amtliche nationale Statistik für jeden KI-Assistenten.',
-    lead: 'StatsMCP verbindet Claude, ChatGPT, Cursor und andere Assistenten mit den Datenbanken nationaler Statistikämter. Jedes Ergebnis nennt seine Quelle.',
+    eyebrow: 'Kostenlos und Open Source',
+    title:
+      'Amtliche Statistik aus {countries} Ländern und der EU in Ihrem KI-Assistenten.',
+    lead: 'StatsMCP verbindet Claude, ChatGPT, Cursor und VS Code mit {offices} Statistikämtern. Jede Antwort nennt die Quelle und verlinkt die Tabelle.',
     addToClaude: 'Zu Claude hinzufügen',
     addToChatgpt: 'Zu ChatGPT hinzufügen',
     endpointLabel: 'Endpunkt',
     countryTabs: 'Land',
-    status: { live: 'Live', planned: 'Geplant' }
+    status: { live: 'Live', planned: 'Geplant', limited: 'Nur Suche' },
+    limitedNote:
+      'Die Tabellensuche funktioniert. Das Amt blockiert zurzeit Datenanfragen von unserem Hoster. Das npm-Paket funktioniert vollständig.',
+    privacy: 'Keine Protokolle · Keine Anmeldung · Keine Cookies'
   },
   copy: { copy: 'Kopieren', copied: 'Kopiert' },
   figure: {
@@ -73,10 +77,13 @@ export const de: UiStrings = {
   },
   keyFiguresLabel: 'Kennzahlen',
   keyFigures: [
-    { value: '{live}', label: 'nationale Statistikdatenbanken live' },
-    { value: '<1 s', label: 'typische Antwortzeit des Endpunkts' },
-    { value: '0', label: 'Konten oder API-Schlüssel nötig' },
-    { value: 'Quelle + Link', label: 'in jedem Ergebnis' }
+    { value: '{live}', label: 'Statistikämter live' },
+    { value: '{tables}', label: 'amtliche Tabellen im Suchindex' },
+    { value: '0', label: 'Protokolle, Konten oder API-Schlüssel' },
+    {
+      value: '100 %',
+      label: 'der Ergebnisse nennen die Quelle und verlinken die Tabelle'
+    }
   ],
   howItWorks: {
     title: 'So funktioniert es',
@@ -100,9 +107,17 @@ export const de: UiStrings = {
     ]
   },
   connect: {
-    title: 'In einem Schritt verbinden',
-    meta: 'Streamable HTTP · nur Lesezugriff · ohne Anmeldung',
+    title: 'In weniger als einer Minute verbinden',
+    meta: 'Streamable HTTP · nur Lesezugriff · ohne Anmeldung · 60 Anfragen/min',
     clientTabs: 'Client'
+  },
+  countryPage: {
+    title: '{country}: amtliche Statistik in Ihrem KI-Assistenten.',
+    leadIndexed:
+      'Durchsuchen Sie {tables} Tabellen. Quelle: {office}. Lizenz: {licence}. Kostenlos, ohne Anmeldung.',
+    leadOffice:
+      'Durchsuchen Sie die Tabellen des Amts. Quelle: {office}. Lizenz: {licence}. Kostenlos, ohne Anmeldung.',
+    seeAll: 'Alle {count} Quellen ansehen'
   },
   countries: {
     title: 'Länder',
@@ -123,10 +138,9 @@ export const de: UiStrings = {
     officeSearch: 'Suche des Amts',
     compareAll: 'Alle Länder vergleichen',
     pageTitle: 'Länder und Abdeckung',
-    pageIntro:
-      'Alle Länder mit Statistikamt, Datensprachen, Anzahl der Tabellen, Datenlizenz und Endpunkt.',
+    pageIntro: 'Abdeckung, Lizenz und Endpunkt jeder Quelle.',
     tablesNote:
-      'Tabellen: die Anzahl der Tabellen im Tabellenindex, den StatsMCP durchsucht, in der ersten Datensprache. „Suche des Amts“ bedeutet, dass der Server die Suche des Statistikamts verwendet.'
+      'Tabellen: Tabellen in unserem Suchindex. Suche des Amts: Der Server verwendet die eigene Suche des Amts.'
   },
   faq: {
     title: 'Fragen',
@@ -144,7 +158,7 @@ export const de: UiStrings = {
       {
         question: 'Speichern Sie meine Fragen?',
         answer:
-          'Nein. Der Endpunkt schreibt keine Protokolle, und diese Website verwendet keine Cookies oder Analyse-Tools. Lesen Sie die Datenschutzseite.'
+          'Nein. Wir speichern keine Protokolle, und diese Website verwendet keine Cookies oder Analyse-Tools. Ihr Assistent sendet nur Suchbegriffe und Tabellencodes an unseren Server. Ihr KI-Anbieter sieht Ihr Gespräch trotzdem. Lesen Sie die Datenschutzseite.'
       },
       {
         question: 'Kann ich mehrere Länder verbinden?',
@@ -152,9 +166,14 @@ export const de: UiStrings = {
           'Ja. Fügen Sie für jedes Land einen Connector hinzu. Der Assistent verwendet den passenden für Ihre Frage.'
       },
       {
+        question: 'Kann ich es auf meinem eigenen Computer ausführen?',
+        answer:
+          'Ja. Die Server sind auf npm. Öffnen Sie unter „Verbinden“ den Tab „Run locally“. Dann gehen Ihre Fragen nur an das Statistikamt.'
+      },
+      {
         question: 'Wie kann mein Land hinzugefügt werden?',
         answer:
-          'Wenn das Amt seine Daten über PxWeb veröffentlicht, können wir es hinzufügen. Eröffnen Sie ein Issue auf GitHub.'
+          'Eröffnen Sie ein Issue auf GitHub. Wir können die meisten Ämter mit einer öffentlichen API hinzufügen.'
       }
     ]
   },
@@ -177,7 +196,8 @@ export const de: UiStrings = {
       'Die Ratenbegrenzung zählt die Anfragen pro IP-Adresse für eine Minute. Danach speichert sie sie nicht.',
       'Diese Website verwendet keine Cookies, keine Analyse-Tools und keine Skripte von Dritten. Die Schriften liegen auf unserem eigenen Server.',
       'Cloudflare betreibt den Endpunkt und diese Website. Cloudflare verarbeitet Anfragen als unser Hoster gemäß der Datenschutzrichtlinie von Cloudflare.',
-      'Die Statistikämter erhalten die Datenanfragen, die der Server an ihre APIs sendet. Diese Anfragen enthalten Ihre IP-Adresse nicht.'
+      'Die Statistikämter erhalten die Datenanfragen, die der Server an ihre APIs sendet. Diese Anfragen enthalten Ihre IP-Adresse nicht.',
+      'Ihr KI-Anbieter, zum Beispiel Anthropic oder OpenAI, sieht Ihr Gespräch gemäß seinen eigenen Bedingungen.'
     ],
     questions: 'Fragen: Eröffnen Sie ein Issue auf GitHub.'
   },

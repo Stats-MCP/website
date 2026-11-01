@@ -5,11 +5,13 @@ import LinkButton from '@/components/ui/LinkButton.astro';
 import Sparkline from '@/components/ui/Sparkline.astro';
 import TabPanel from '@/components/ui/TabPanel.astro';
 import Tabs from '@/components/ui/Tabs.astro';
-import { endpoint, type Country } from '@/data/countries';
+import { endpoint, statusKey, type Country } from '@/data/countries';
 import { repoUrl } from '@/data/site';
 import { type Locale , localized } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
+import { byName } from '@/lib/country-order';
 import { countryTabItems } from '@/lib/country-tabs';
+import { localePath } from '@/i18n/urls';
 import { splitHighlight } from '@/lib/highlight';
 import { formatPeriod } from '@/lib/periods';
 
@@ -19,10 +21,23 @@ interface Props {
   selected: Country;
   /** False on a country page, where the page's country must win over a stored choice. */
   restore?: boolean;
+  /** Heading and lead of a country page; the home page computes its own. */
+  title?: string;
+  lead?: string;
 }
 
 const { locale, countries, selected, restore = true } = Astro.props;
 const t = ui[locale];
+const live = countries.filter((country) => country.status === 'live');
+const counts = {
+  countries: String(live.filter((country) => country.id !== 'eu').length),
+  offices: String(live.length)
+};
+const title = Astro.props.title ?? fill(t.hero.title, counts);
+const lead = Astro.props.lead ?? fill(t.hero.lead, counts);
+const coverage = byName(live, locale)
+  .map((country) => localized(country.name, locale))
+  .join(' · ');
 const tabs = countryTabItems(countries, locale, { compact: true });
 const toolNames = t.howItWorks.steps.map((step) => step.tool);
 const formatPercent = (value: number) =>
@@ -32,8 +47,8 @@ const formatPercent = (value: number) =>
 <section class="hero" id="top">
   <div class="intro">
     <p class="eyebrow">{t.hero.eyebrow}</p>
-    <h1>{t.hero.title}</h1>
-    <p class="lead">{t.hero.lead}</p>
+    <h1>{title}</h1>
+    <p class="lead">{lead}</p>
 
     <div class="switch">
       <Tabs
@@ -57,13 +72,14 @@ const formatPercent = (value: number) =>
             <div class="endpoint">
               <span class="mono-label">{t.hero.endpointLabel}</span>
               <code>{endpoint(country)}</code>
-              <span class:list={['status', country.status]}>
-                {t.hero.status[country.status]}
+              <span class:list={['status', statusKey(country)]}>
+                {t.hero.status[statusKey(country)]}
               </span>
               {country.status === 'live' && (
                 <CopyButton text={endpoint(country)} label={t.copy.copy} copiedLabel={t.copy.copied} />
               )}
             </div>
+            {country.limited && <p class="note">{t.hero.limitedNote}</p>}
           </TabPanel>
         ))
       }
@@ -75,21 +91,22 @@ const formatPercent = (value: number) =>
       </LinkButton>
       <LinkButton href="#connect" activate="client:chatgpt">{t.hero.addToChatgpt}</LinkButton>
     </div>
+    <p class="coverage">{coverage}</p>
+    <p class="promise">
+      <a href={localePath(locale, 'privacy/')}>{t.hero.privacy}</a>
+    </p>
   </div>
 
-  {
-    countries.map((country) => (
-      <TabPanel
-        group="country"
-        idPrefix="hero-figure"
-        value={country.id}
-        selected={selected.id}
-        labelledBy={`tab-hero-${country.id}`}>
-        <figure class="figure">
-          <figcaption class="mono-label">
-            <span>{t.figure.caption}</span>
-            <span>{country.code}</span>
-          </figcaption>
+  <figure class="figure">
+    <figcaption class="mono-label">{t.figure.caption}</figcaption>
+    {
+      countries.map((country) => (
+        <TabPanel
+          group="country"
+          idPrefix="hero-figure"
+          value={country.id}
+          selected={selected.id}
+          labelledBy={`tab-hero-${country.id}`}>
           {country.example ? (
             <div class="body">
               <div class="turn">
@@ -146,10 +163,10 @@ const formatPercent = (value: number) =>
               <a href={repoUrl}>{t.figure.plannedLink}</a>
             </div>
           )}
-        </figure>
-      </TabPanel>
-    ))
-  }
+        </TabPanel>
+      ))
+    }
+  </figure>
 </section>
 
 <style>
@@ -217,6 +234,28 @@ const formatPercent = (value: number) =>
     text-transform: uppercase;
     padding: 4px 8px;
     border: 1px solid currentColor;
+  }
+  .note {
+    margin: 0;
+    padding: 0 14px 14px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .coverage {
+    margin: 0;
+    max-width: 560px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  .promise {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+  .status.limited {
+    color: var(--warn);
+    border-color: currentColor;
   }
   .status.live {
     color: var(--live);

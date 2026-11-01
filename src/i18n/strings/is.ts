@@ -50,14 +50,22 @@ export const isl: UiStrings = {
     menu: 'Valmynd'
   },
   hero: {
-    eyebrow: 'Opinber gögn, tilbúin fyrir aðstoðarmanninn þinn',
-    title: 'Opinberar hagtölur ríkja fyrir alla gervigreindaraðstoðarmenn.',
-    lead: 'StatsMCP tengir Claude, ChatGPT, Cursor og aðra aðstoðarmenn við gagnasöfn hagstofa. Hver niðurstaða tilgreinir heimild sína.',
+    eyebrow: 'Ókeypis og opinn hugbúnaður',
+    title:
+      'Opinberar hagtölur frá {countries} löndum og ESB, í gervigreindaraðstoðarmanninum þínum.',
+    lead: 'StatsMCP tengir Claude, ChatGPT, Cursor og VS Code við {offices} hagstofur. Hvert svar tilgreinir heimild og tengir á töfluna.',
     addToClaude: 'Bæta við Claude',
     addToChatgpt: 'Bæta við ChatGPT',
     endpointLabel: 'Endapunktur',
     countryTabs: 'Land',
-    status: { live: 'Virkt', planned: 'Fyrirhugað' }
+    status: {
+      live: 'Virkt',
+      planned: 'Fyrirhugað',
+      limited: 'Aðeins leit'
+    },
+    limitedNote:
+      'Töfluleit virkar. Hagstofan lokar sem stendur á gagnabeiðnir frá hýsingaraðila okkar. npm-pakkinn virkar að fullu.',
+    privacy: 'Engar atvikaskrár · Engin skráning · Engar vafrakökur'
   },
   copy: { copy: 'Afrita', copied: 'Afritað' },
   figure: {
@@ -73,10 +81,13 @@ export const isl: UiStrings = {
   },
   keyFiguresLabel: 'Lykiltölur',
   keyFigures: [
-    { value: '{live}', label: 'opinber hagtölugagnasöfn virk' },
-    { value: '<1 s', label: 'dæmigerður svartími endapunkts' },
-    { value: '0', label: 'aðgangar eða API-lyklar sem þarf' },
-    { value: 'Heimild + tengill', label: 'í hverri niðurstöðu' }
+    { value: '{live}', label: 'hagstofur virkar' },
+    { value: '{tables}', label: 'opinberar töflur í leitarskránni' },
+    { value: '0', label: 'atvikaskrár, aðgangar eða API-lyklar' },
+    {
+      value: '100%',
+      label: 'niðurstaðna tilgreina heimild og tengja á töfluna'
+    }
   ],
   howItWorks: {
     title: 'Svona virkar það',
@@ -100,9 +111,17 @@ export const isl: UiStrings = {
     ]
   },
   connect: {
-    title: 'Tengstu í einu skrefi',
-    meta: 'Streamable HTTP · aðeins lestur · engin innskráning',
+    title: 'Tengstu á innan við mínútu',
+    meta: 'Streamable HTTP · aðeins lestur · engin innskráning · 60 beiðnir/mín',
     clientTabs: 'Forrit'
+  },
+  countryPage: {
+    title: '{country}: opinberar hagtölur í aðstoðarmanninum þínum.',
+    leadIndexed:
+      'Leitaðu í {tables} töflum. Heimild: {office}. Gagnaleyfi: {licence}. Ókeypis, engin skráning.',
+    leadOffice:
+      'Leitaðu í töflum hagstofunnar. Heimild: {office}. Gagnaleyfi: {licence}. Ókeypis, engin skráning.',
+    seeAll: 'Sjá allar heimildir ({count})'
   },
   countries: {
     title: 'Lönd',
@@ -123,10 +142,9 @@ export const isl: UiStrings = {
     officeSearch: 'Leit hagstofu',
     compareAll: 'Bera saman öll lönd',
     pageTitle: 'Lönd og umfang',
-    pageIntro:
-      'Öll lönd, hagstofa þeirra, tungumál gagnanna, fjöldi taflna, gagnaleyfi og endapunktur.',
+    pageIntro: 'Umfang, leyfi og endapunktur fyrir hverja heimild.',
     tablesNote:
-      'Töflur: fjöldi taflna í töfluskránni sem StatsMCP leitar í, á fyrsta tungumáli gagnanna. „Leit hagstofu“ þýðir að netþjónninn notar leit hagstofunnar.'
+      'Töflur: töflur í leitarskránni okkar. Leit hagstofu: netþjónninn notar eigin leit hagstofunnar.'
   },
   faq: {
     title: 'Spurningar',
@@ -144,7 +162,7 @@ export const isl: UiStrings = {
       {
         question: 'Geymið þið spurningarnar mínar?',
         answer:
-          'Nei. Endapunkturinn heldur engar atvikaskrár, og þessi vefur notar hvorki vafrakökur né vefmælingar. Lestu síðuna um persónuvernd.'
+          'Nei. Við höldum engar atvikaskrár, og þessi vefur notar hvorki vafrakökur né vefmælingar. Aðstoðarmaðurinn sendir aðeins leitarorð og töflukóða á netþjóninn okkar. Gervigreindarþjónustan þín sér samt samtalið. Lestu síðuna um persónuvernd.'
       },
       {
         question: 'Get ég tengt mörg lönd?',
@@ -152,9 +170,14 @@ export const isl: UiStrings = {
           'Já. Bættu við einni tengingu fyrir hvert land. Aðstoðarmaðurinn notar rétta tengingu fyrir spurninguna þína.'
       },
       {
+        question: 'Get ég keyrt þetta á eigin tölvu?',
+        answer:
+          'Já. Netþjónarnir eru á npm. Opnaðu flipann „Run locally“ undir Tengjast. Þá fara spurningarnar þínar aðeins til hagstofunnar.'
+      },
+      {
         question: 'Hvernig er hægt að bæta landinu mínu við?',
         answer:
-          'Ef hagstofan birtir gögnin sín í gegnum PxWeb getum við bætt henni við. Stofnaðu mál á GitHub.'
+          'Stofnaðu mál á GitHub. Við getum bætt við flestum hagstofum sem hafa opið API.'
       }
     ]
   },
@@ -176,7 +199,8 @@ export const isl: UiStrings = {
       'Hraðatakmörkunin telur beiðnir frá hverri IP-tölu í eina mínútu. Hún geymir þær ekki eftir það.',
       'Þessi vefur notar engar vafrakökur, engar vefmælingar og engar skriftur frá þriðja aðila. Leturgerðirnar eru á okkar eigin netþjóni.',
       'Cloudflare rekur endapunktinn og þennan vef. Cloudflare vinnur úr beiðnum sem hýsingaraðili okkar samkvæmt persónuverndarstefnu Cloudflare.',
-      'Hagstofurnar taka við gagnabeiðnunum sem netþjónninn sendir í API þeirra. Þessar beiðnir innihalda ekki IP-töluna þína.'
+      'Hagstofurnar taka við gagnabeiðnunum sem netþjónninn sendir í API þeirra. Þessar beiðnir innihalda ekki IP-töluna þína.',
+      'Veitandi gervigreindaraðstoðarmannsins þíns, til dæmis Anthropic eða OpenAI, sér samtalið þitt samkvæmt eigin skilmálum.'
     ],
     questions: 'Spurningar: stofnaðu mál á GitHub.'
   },
