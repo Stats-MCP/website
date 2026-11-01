@@ -129,12 +129,12 @@ const peaks = points.filter(
   @media (prefers-reduced-motion: no-preference) {
     polyline {
       stroke-dasharray: 1 1.01;
-      animation: draw 900ms ease-out both;
+      animation: draw 900ms var(--ease-out) both;
     }
     .peak,
     .last,
     text {
-      animation: appear 300ms ease-out 800ms both;
+      animation: appear 300ms var(--ease-out) 800ms both;
     }
   }
 </style>

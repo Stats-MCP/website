@@ -72,14 +72,21 @@ const t = ui[locale].faq;
       block-size: 0;
       overflow-y: clip;
       transition:
-        block-size 220ms ease,
+        block-size 220ms var(--ease-out),
         content-visibility 220ms allow-discrete;
     }
     details[open]::details-content {
       block-size: auto;
     }
+    details p {
+      opacity: 0;
+      transition: opacity 220ms var(--ease-out);
+    }
+    details[open] p {
+      opacity: 1;
+    }
     summary::after {
-      transition: transform 220ms ease;
+      transition: transform 220ms var(--ease-out);
     }
   }
   p {

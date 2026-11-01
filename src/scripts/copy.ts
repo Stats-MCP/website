@@ -24,12 +24,14 @@ export function initCopyButtons(root: Document = document): void {
       .writeText(button.dataset.copy ?? '')
       .then(() => {
         button.textContent = doneLabel;
+        button.dataset.copied = '';
         announce(root, doneLabel);
         clearTimeout(timers.get(button));
         timers.set(
           button,
           setTimeout(() => {
             button.textContent = idleLabel;
+            delete button.dataset.copied;
           }, resetDelayMs)
         );
       })

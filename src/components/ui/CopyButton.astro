@@ -10,7 +10,7 @@ const { text, label, copiedLabel } = Astro.props;
 
 <button
   type="button"
-  class="copy"
+  class="copy pressable"
   data-copy={text}
   data-copy-label={label}
   data-copied-label={copiedLabel}>{label}</button
@@ -32,5 +32,12 @@ const { text, label, copiedLabel } = Astro.props;
     background: var(--paper);
     color: var(--ink);
     cursor: pointer;
+  }
+  .copy:hover {
+    background: var(--surface);
+  }
+  .copy[data-copied] {
+    border-color: var(--live);
+    color: var(--live);
   }
 </style>

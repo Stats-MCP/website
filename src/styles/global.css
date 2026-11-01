@@ -12,6 +12,10 @@
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
   --max: 1200px;
   --gutter: 32px;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --duration-press: 120ms;
+  --duration-hover: 150ms;
 }
 
 @media (max-width: 640px) {
@@ -36,6 +40,21 @@ body {
 
 a {
   color: var(--ink);
+  transition: color var(--duration-hover) ease;
+}
+
+a > span[aria-hidden='true']:last-child {
+  display: inline-block;
+  white-space: pre;
+  transition: transform var(--duration-hover) var(--ease-out);
+}
+
+.pressable {
+  transition:
+    color var(--duration-hover) ease,
+    background-color var(--duration-hover) ease,
+    border-color var(--duration-hover) ease,
+    transform var(--duration-press) var(--ease-out);
 }
 
 a:hover {
@@ -91,11 +110,6 @@ section[id],
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(4px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
   }
 }
 
@@ -105,6 +119,16 @@ section[id],
   }
 
   [role='tabpanel']:not([hidden]) {
-    animation: fade-in 180ms ease-out;
+    animation: fade-in 180ms var(--ease-out);
+  }
+
+  .pressable:active {
+    transform: scale(0.97);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  a:hover > span[aria-hidden='true']:last-child {
+    transform: translateX(3px);
   }
 }

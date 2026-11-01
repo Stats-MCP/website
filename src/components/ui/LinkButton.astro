@@ -9,7 +9,7 @@ interface Props {
 const { href, variant = 'secondary', activate } = Astro.props;
 ---
 
-<a class:list={['button', variant]} href={href} data-tab-activate={activate}><slot /></a>
+<a class:list={['button', 'pressable', variant]} href={href} data-tab-activate={activate}><slot /></a>
 
 <script>
   import { initTabs } from '@/scripts/tabs';
@@ -37,5 +37,9 @@ const { href, variant = 'secondary', activate } = Astro.props;
   }
   .secondary {
     border: 1px solid var(--ink);
+  }
+  .secondary:hover {
+    color: var(--ink);
+    background: var(--surface);
   }
 </style>
