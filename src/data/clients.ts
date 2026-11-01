@@ -1,4 +1,4 @@
-import { endpoint, type Country } from '@/data/countries';
+import type { ConnectTarget } from '@/data/connect-target';
 import { translatedSteps } from '@/i18n/client-steps';
 import { type Locale, type Localized, localized } from '@/i18n/locales';
 
@@ -12,43 +12,38 @@ export interface Client {
   label: string;
   /** Translated tab label for a client that is not a product name. */
   labelKey?: 'otherClients' | 'runLocally';
-  /** English step texts; `{code}` and `{country}` are replaced per country. */
+  /** English step texts; `{code}` and `{country}` are replaced per target. */
   steps: string[];
-  code: (country: Country) => string;
-  install?: (country: Country) => ClientInstall;
-  /** Shown only for countries with a local npm package. */
+  code: (target: ConnectTarget) => string;
+  install?: (target: ConnectTarget) => ClientInstall;
   needsLocalPackage?: boolean;
 }
 
-function serverName(country: Country): string {
-  return `statsmcp-${country.id}`;
+function mcpServersJson(target: ConnectTarget): string {
+  const config = { mcpServers: { [target.serverName]: { url: target.url } } };
+  return JSON.stringify(config, null, 2);
 }
 
-function mcpServersJson(country: Country): string {
+function vscodeJson(target: ConnectTarget): string {
   const config = {
-    mcpServers: { [serverName(country)]: { url: endpoint(country) } }
+    servers: { [target.serverName]: { type: 'http', url: target.url } }
   };
   return JSON.stringify(config, null, 2);
 }
 
-function vscodeJson(country: Country): string {
-  const config = {
-    servers: { [serverName(country)]: { type: 'http', url: endpoint(country) } }
-  };
-  return JSON.stringify(config, null, 2);
-}
-
-export function cursorInstallLink(country: Country): string {
-  const config = btoa(JSON.stringify({ url: endpoint(country) }));
-  const params = new URLSearchParams({ name: serverName(country), config });
+export function cursorInstallLink(target: ConnectTarget): string {
+  const config = btoa(JSON.stringify({ url: target.url }));
+  const params = new URLSearchParams({ name: target.serverName, config });
   return `cursor://anysphere.cursor-deeplink/mcp/install?${params.toString()}`;
 }
 
-export function vscodeInstallLink(country: Country): string {
-  const config = JSON.stringify({ type: 'http', url: endpoint(country) });
-  const params = new URLSearchParams({ name: serverName(country), config });
+export function vscodeInstallLink(target: ConnectTarget): string {
+  const config = JSON.stringify({ type: 'http', url: target.url });
+  const params = new URLSearchParams({ name: target.serverName, config });
   return `https://insiders.vscode.dev/redirect/mcp/install?${params.toString()}`;
 }
+
+const url = (target: ConnectTarget): string => target.url;
 
 export const clients: Client[] = [
   {
@@ -60,7 +55,7 @@ export const clients: Client[] = [
       'Name it StatsMCP {code} and paste the endpoint.',
       'Ask a question about {country}.'
     ],
-    code: endpoint
+    code: url
   },
   {
     id: 'chatgpt',
@@ -70,7 +65,7 @@ export const clients: Client[] = [
       'Open Connectors, then Create.',
       'Paste the endpoint. Choose no authentication.'
     ],
-    code: endpoint
+    code: url
   },
   {
     id: 'claude-code',
@@ -79,17 +74,17 @@ export const clients: Client[] = [
       'Run the command in your terminal.',
       'Run /mcp to check the connection.'
     ],
-    code: (country) =>
-      `claude mcp add --transport http ${serverName(country)} ${endpoint(country)}`
+    code: (target) =>
+      `claude mcp add --transport http ${target.serverName} ${target.url}`
   },
   {
     id: 'cursor',
     label: 'Cursor',
     steps: ['Select Add to Cursor, or add the block to .cursor/mcp.json.'],
     code: mcpServersJson,
-    install: (country) => ({
+    install: (target) => ({
       label: { en: 'Add to Cursor', sl: 'Add to Cursor', nb: 'Add to Cursor' },
-      href: cursorInstallLink(country)
+      href: cursorInstallLink(target)
     })
   },
   {
@@ -100,13 +95,13 @@ export const clients: Client[] = [
       'Start the server from the MCP panel.'
     ],
     code: vscodeJson,
-    install: (country) => ({
+    install: (target) => ({
       label: {
         en: 'Install in VS Code',
         sl: 'Install in VS Code',
         nb: 'Install in VS Code'
       },
-      href: vscodeInstallLink(country)
+      href: vscodeInstallLink(target)
     })
   },
   {
@@ -127,26 +122,28 @@ export const clients: Client[] = [
       'You need Node.js 20 or later.',
       'Add this command as a stdio server.'
     ],
-    code: (country) => `npx -y ${country.localPackage ?? ''}`,
+    code: (target) => `npx -y ${target.localPackage ?? ''}`,
     needsLocalPackage: true
   }
 ];
 
-export function clientsFor(country: Country): Client[] {
+export function clientsFor(target: ConnectTarget): Client[] {
   return clients.filter(
-    (client) => !client.needsLocalPackage || country.localPackage
+    (client) => !client.needsLocalPackage || target.localPackage
   );
 }
 
 export function clientSteps(
   client: Client,
-  country: Country,
+  target: ConnectTarget,
   locale: Locale
 ): string[] {
   const steps = translatedSteps[locale]?.[client.id] ?? client.steps;
   return steps.map((step) =>
     step
-      .replaceAll('{code}', country.code)
-      .replaceAll('{country}', localized(country.name, locale))
+      .replaceAll('{code}', target.code)
+      .replaceAll('{country}', localized(target.name, locale))
+      .replaceAll(/ {2,}/g, ' ')
+      .replaceAll(' ,', ',')
   );
 }

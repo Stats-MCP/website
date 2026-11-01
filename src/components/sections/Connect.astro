@@ -5,6 +5,7 @@ import Section from '@/components/ui/Section.astro';
 import TabPanel from '@/components/ui/TabPanel.astro';
 import Tabs from '@/components/ui/Tabs.astro';
 import { clientSteps, clientsFor } from '@/data/clients';
+import { countryTarget } from '@/data/connect-target';
 import type { Country } from '@/data/countries';
 import { type Locale , localized } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
@@ -34,7 +35,8 @@ const countryTabs = countryTabItems(countries, locale);
   />
   {
     countries.map((country) => {
-      const available = clientsFor(country);
+      const target = countryTarget(country);
+      const available = clientsFor(target);
       const firstClient = available[0]?.id ?? '';
       return (
         <TabPanel group="country" idPrefix="connect" value={country.id} selected={selected.id}>
@@ -51,7 +53,7 @@ const countryTabs = countryTabItems(countries, locale);
                 selected={firstClient}
               />
               {available.map((client) => {
-                const install = client.install?.(country);
+                const install = client.install?.(target);
                 return (
                   <TabPanel
                     group="client"
@@ -60,13 +62,13 @@ const countryTabs = countryTabItems(countries, locale);
                     selected={firstClient}>
                     <div class="panel">
                       <ol>
-                        {clientSteps(client, country, locale).map((step) => (
+                        {clientSteps(client, target, locale).map((step) => (
                           <li>{step}</li>
                         ))}
                       </ol>
                       <div class="code">
                         <CodeBlock
-                          code={client.code(country)}
+                          code={client.code(target)}
                           copyLabel={t.copy.copy}
                           copiedLabel={t.copy.copied}
                         />

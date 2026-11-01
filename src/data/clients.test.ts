@@ -7,11 +7,12 @@ import {
   cursorInstallLink,
   vscodeInstallLink
 } from '@/data/clients';
+import { countryTarget } from '@/data/connect-target';
 import type { Country } from '@/data/countries';
 import { getCountry } from '@/data/test-helpers';
 
-const slovenia = getCountry('si');
-const norway = getCountry('no');
+const slovenia = countryTarget(getCountry('si'));
+const norway = countryTarget(getCountry('no'));
 
 describe('install links', () => {
   it('encodes the endpoint as base64 JSON in the Cursor link', () => {
@@ -43,7 +44,7 @@ describe('install links', () => {
 });
 
 const clientIds = (country: Country) =>
-  clientsFor(country).map((client) => client.id);
+  clientsFor(countryTarget(country)).map((client) => client.id);
 
 describe('clientsFor', () => {
   it('offers the local option only for a country with an npm package', () => {
