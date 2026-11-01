@@ -661,69 +661,6 @@ export const countries: Country[] = [
     }
   },
   {
-    id: 'sg',
-    slug: 'singapore',
-    code: 'SG',
-    name: { en: 'Singapore', sl: 'Singapur', nb: 'Singapore' },
-    database: {
-      name: 'SingStat Table Builder',
-      url: 'https://tablebuilder.singstat.gov.sg/'
-    },
-    office: {
-      name: 'SingStat',
-      fullName: {
-        en: 'Singapore Department of Statistics',
-        sl: 'Statistični urad Singapurja',
-        nb: 'Singapores statistikkbyrå'
-      },
-      url: 'https://www.singstat.gov.sg/'
-    },
-    licence: {
-      label: {
-        en: 'Singapore Open Data Licence',
-        sl: 'Singapurska licenca odprtih podatkov',
-        nb: 'Singapores lisens for åpne data'
-      },
-      url: 'https://data.gov.sg/open-data-licence'
-    },
-    dataLanguages: ['en'],
-    status: 'live',
-    example: {
-      question: {
-        en: 'How have consumer prices in Singapore changed over the last year?',
-        sl: 'Kako so se v zadnjem letu spremenile cene življenjskih potrebščin v Singapurju?',
-        nb: 'Hvordan har konsumprisene i Singapore endret seg det siste året?'
-      },
-      answer: {
-        en: 'In September 2026, the Consumer Price Index was 103.6, up from 101.3 in September 2025 (2024 = 100).',
-        sl: 'Septembra 2026 je bil indeks cen življenjskih potrebščin 103,6, septembra 2025 pa 101,3 (2024 = 100).',
-        nb: 'I september 2026 var konsumprisindeksen 103,6, mot 101,3 i september 2025 (2024 = 100).'
-      },
-      highlight: { en: '103.6', sl: '103,6', nb: '103,6' },
-      source: 'SingStat, table M213751',
-      sourceUrl: 'https://tablebuilder.singstat.gov.sg/table/TS/M213751',
-      seriesLabel: {
-        en: 'Consumer Price Index (2024 = 100)',
-        sl: 'Indeks cen življenjskih potrebščin (2024 = 100)',
-        nb: 'Konsumprisindeks (2024 = 100)'
-      },
-      series: [
-        { period: '2025M10', value: 101.33 },
-        { period: '2025M11', value: 101.579 },
-        { period: '2025M12', value: 101.854 },
-        { period: '2026M01', value: 101.333 },
-        { period: '2026M02', value: 101.918 },
-        { period: '2026M03', value: 102.405 },
-        { period: '2026M04', value: 102.052 },
-        { period: '2026M05', value: 102.814 },
-        { period: '2026M06', value: 102.858 },
-        { period: '2026M07', value: 102.696 },
-        { period: '2026M08', value: 103.334 },
-        { period: '2026M09', value: 103.551 }
-      ]
-    }
-  },
-  {
     id: 'is',
     slug: 'iceland',
     code: 'IS',
