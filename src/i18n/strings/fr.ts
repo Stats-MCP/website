@@ -5,7 +5,7 @@ export const fr: UiStrings = {
     home: {
       title: 'StatsMCP — Statistiques officielles pour les assistants IA',
       description:
-        'Connectez Claude, ChatGPT, Cursor et d’autres assistants IA aux bases de données des statistiques nationales. Gratuit, en lecture seule, open source. Chaque réponse cite sa source.'
+        'Connectez Claude, ChatGPT, Cursor et d’autres assistants IA aux offices statistiques nationaux et à Eurostat avec un seul point d’accès MCP. Gratuit, en lecture seule et open source. Chaque réponse cite sa source.'
     },
     privacy: {
       title: 'Confidentialité — StatsMCP',
@@ -13,9 +13,9 @@ export const fr: UiStrings = {
         'StatsMCP n’enregistre rien : aucun journal de requêtes, aucun cookie, aucun outil d’analyse. Découvrez ce que le point d’accès et ce site font de vos données.'
     },
     countries: {
-      title: 'Pays et couverture — StatsMCP',
+      title: 'Se connecter à un seul office statistique — StatsMCP',
       description:
-        'Tous les pays de StatsMCP avec leur office statistique, les langues des données, le nombre de tableaux, la licence des données et le point d’accès MCP.'
+        'Le point d’accès MCP, les langues des données, le nombre de tableaux et la licence de chaque office statistique de StatsMCP. Copiez un point d’accès ou connectez tous les offices à la fois.'
     },
     licences: {
       title: 'Licences des données — StatsMCP',
@@ -58,6 +58,8 @@ export const fr: UiStrings = {
     addToChatgpt: 'Ajouter à ChatGPT',
     allEndpointLabel: 'Un seul point d’accès pour tous les pays',
     otherAssistants: 'Autres assistants',
+    oneCountry:
+      'Un seul pays vous suffit ? Chaque office a aussi son propre point d’accès.',
     endpointLabel: 'Point d’accès',
     countryTabs: 'Pays',
     status: {
@@ -77,7 +79,7 @@ export const fr: UiStrings = {
     compareAnswer:
       'En {period}, le taux de chômage était de {canada} au Canada et de {eu} dans l’UE. Les deux taux sont corrigés des variations saisonnières.',
     euShort: 'UE',
-    tryTitle: 'Essayez de demander'
+    tryTitle: 'Exemples de questions'
   },
   figure: {
     caption: 'Figure 1 · Exemple de conversation',
@@ -186,7 +188,7 @@ export const fr: UiStrings = {
     tableCount: '{count} tableaux',
     officeSearch: 'Recherche de l’office',
     compareAll: 'Comparer tous les pays',
-    pageTitle: '{offices} offices. Une seule connexion.',
+    pageTitle: '{offices} offices. Connectez-les tous, ou un seul.',
     pageIntro:
       'Un seul point d’accès vous connecte à tous les offices. Pour n’utiliser qu’un seul office, copiez son point d’accès ci-dessous.',
     tablesNote:
@@ -213,7 +215,7 @@ export const fr: UiStrings = {
       {
         question: 'Puis-je connecter plusieurs pays ?',
         answer:
-          'Oui. Ajoutez un connecteur par pays. L’assistant utilise le bon connecteur pour votre question.'
+          'Oui. Connectez https://statsmcp.dev/mcp une seule fois et posez des questions sur n’importe quel pays. Pour n’utiliser qu’un seul office, connectez son propre point d’accès depuis la page Pays.'
       },
       {
         question: 'Puis-je l’exécuter sur mon propre ordinateur ?',

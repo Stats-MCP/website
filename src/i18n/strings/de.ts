@@ -5,7 +5,7 @@ export const de: UiStrings = {
     home: {
       title: 'StatsMCP — Amtliche Statistik für KI-Assistenten',
       description:
-        'Verbinden Sie Claude, ChatGPT, Cursor und andere KI-Assistenten mit nationalen Statistikdatenbanken. Kostenlos, nur Lesezugriff, Open Source. Jede Antwort nennt die Quelle.'
+        'Verbinden Sie Claude, ChatGPT, Cursor und andere KI-Assistenten über einen MCP-Endpunkt mit nationalen Statistikämtern und Eurostat. Kostenlos, nur Lesezugriff, Open Source. Jede Antwort nennt die Quelle.'
     },
     privacy: {
       title: 'Datenschutz — StatsMCP',
@@ -13,9 +13,9 @@ export const de: UiStrings = {
         'StatsMCP protokolliert nichts: keine Anfrageprotokolle, keine Cookies, keine Analyse-Tools. Lesen Sie, was der Endpunkt und diese Website mit Ihren Daten tun.'
     },
     countries: {
-      title: 'Länder und Abdeckung — StatsMCP',
+      title: 'Mit einem Statistikamt verbinden — StatsMCP',
       description:
-        'Alle Länder in StatsMCP mit Statistikamt, Datensprachen, Anzahl der Tabellen, Datenlizenz und MCP-Endpunkt.'
+        'MCP-Endpunkt, Datensprachen, Anzahl der Tabellen und Lizenz jedes Statistikamts in StatsMCP. Kopieren Sie einen Endpunkt oder verbinden Sie alle Ämter auf einmal.'
     },
     licences: {
       title: 'Datenlizenzen — StatsMCP',
@@ -58,6 +58,8 @@ export const de: UiStrings = {
     addToChatgpt: 'Zu ChatGPT hinzufügen',
     allEndpointLabel: 'Ein Endpunkt für alle Länder',
     otherAssistants: 'Andere Assistenten',
+    oneCountry:
+      'Brauchen Sie nur ein Land? Jedes Amt hat auch einen eigenen Endpunkt.',
     endpointLabel: 'Endpunkt',
     countryTabs: 'Land',
     status: { live: 'Live', planned: 'Geplant', limited: 'Nur Suche' },
@@ -68,7 +70,7 @@ export const de: UiStrings = {
   copy: { copy: 'Kopieren', copied: 'Kopiert' },
   home: {
     title: 'Alle nationalen Statistikämter, eine Verbindung.',
-    lead: 'Fügen Sie Ihrem KI-Assistenten einen MCP-Server hinzu. Fragen Sie zu jedem der {offices} Ämter, von Slowenien bis Australien. Ihr Assistent durchsucht {tables} amtliche Tabellen und nennt die Quelle.',
+    lead: 'Fügen Sie Ihrem KI-Assistenten einen MCP-Server hinzu. Stellen Sie Fragen zu jedem der {offices} Ämter, von Slowenien bis Australien. Ihr Assistent durchsucht {tables} amtliche Tabellen und nennt die Quelle.',
     compareQuestion: 'Vergleiche die Arbeitslosigkeit in Kanada und der EU.',
     compareAnswer:
       'Im Zeitraum {period} lag die Arbeitslosenquote in Kanada bei {canada} und in der EU bei {eu}. Beide Werte sind saisonbereinigt.',
@@ -179,7 +181,7 @@ export const de: UiStrings = {
     tableCount: '{count} Tabellen',
     officeSearch: 'Suche des Amts',
     compareAll: 'Alle Länder vergleichen',
-    pageTitle: '{offices} Ämter. Eine Verbindung.',
+    pageTitle: '{offices} Ämter. Alle verbinden oder nur eines.',
     pageIntro:
       'Mit einem Endpunkt verbinden Sie sich mit allen Ämtern. Wenn Sie nur ein Amt nutzen möchten, kopieren Sie unten dessen Endpunkt.',
     tablesNote:
@@ -206,7 +208,7 @@ export const de: UiStrings = {
       {
         question: 'Kann ich mehrere Länder verbinden?',
         answer:
-          'Ja. Fügen Sie für jedes Land einen Connector hinzu. Der Assistent verwendet den passenden für Ihre Frage.'
+          'Ja. Verbinden Sie https://statsmcp.dev/mcp einmal und stellen Sie Fragen zu jedem Land. Wenn Sie nur ein Amt nutzen möchten, verbinden Sie dessen eigenen Endpunkt über die Seite Länder.'
       },
       {
         question: 'Kann ich es auf meinem eigenen Computer ausführen?',

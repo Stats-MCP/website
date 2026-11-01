@@ -5,7 +5,7 @@ export const fo: UiStrings = {
     home: {
       title: 'StatsMCP — Almenn hagtøl til vitlíkishjálparar',
       description:
-        'Knýt Claude, ChatGPT, Cursor og aðrar vitlíkishjálparar at dátugrunnum við tjóðarhagtølum. Ókeypis, bert til lesingar, opin keldukota. Hvørt svar vísir á kelduna.'
+        'Knýt Claude, ChatGPT, Cursor og aðrar vitlíkishjálparar at hagstovum landanna og Eurostat við einum MCP-endapunkti. Ókeypis, bert til lesingar og opin keldukota. Hvørt svar greiðir frá keldu.'
     },
     privacy: {
       title: 'Privatlív — StatsMCP',
@@ -13,9 +13,9 @@ export const fo: UiStrings = {
         'StatsMCP skrásetir einki: ongar loggar, ongar cookies, onga greining. Les, hvat endapunktið og henda heimasíðan gera við tínar dátur.'
     },
     countries: {
-      title: 'Lond og dekningur — StatsMCP',
+      title: 'Knýt teg at einari hagstovu — StatsMCP',
       description:
-        'Øll lond í StatsMCP við hagstovu, dátumálum, tali av talvum, dátuloyvi og MCP-endapunkti.'
+        'MCP-endapunktið, dátumálini, talið av talvum og loyvið hjá hvørjari hagstovu í StatsMCP. Avrita eitt endapunkt, ella knýt allar hagstovurnar at í senn.'
     },
     licences: {
       title: 'Dátuloyvi — StatsMCP',
@@ -56,8 +56,10 @@ export const fo: UiStrings = {
     lead: 'StatsMCP knýtir Claude, ChatGPT, Cursor og VS Code at {offices} hagstovum. Hvørt svar nevnir kelduna og hevur leinkju til talvuna.',
     addToClaude: 'Legg afturat Claude',
     addToChatgpt: 'Legg afturat ChatGPT',
-    allEndpointLabel: 'Ein endapunkt fyri øll lond',
-    otherAssistants: 'Onnur forrit',
+    allEndpointLabel: 'Eitt endapunkt fyri øll lond',
+    otherAssistants: 'Aðrir hjálparar',
+    oneCountry:
+      'Tørvar tú bert eitt land? Hvør hagstova hevur eisini sítt egna endapunkt.',
     endpointLabel: 'Endapunkt',
     countryTabs: 'Land',
     status: { live: 'Í gongd', planned: 'Ætlað', limited: 'Bert leiting' },
@@ -68,7 +70,7 @@ export const fo: UiStrings = {
   copy: { copy: 'Avrita', copied: 'Avritað' },
   home: {
     title: 'Allar hagstovur landanna, eitt samband.',
-    lead: 'Legg ein MCP-ambætara afturat KT-hjálparanum hjá tær. Spyr um hvørja sum helst av {offices} hagstovum, frá Slovenia til Avstralia. Hjálparin leitar í {tables} almennum talvum og greiðir frá keldu.',
+    lead: 'Legg ein MCP-ambætara afturat vitlíkishjálparanum hjá tær. Spyr um hvørja sum helst av {offices} hagstovum, frá Slovenia til Avstralia. Hjálparin leitar í {tables} almennum talvum og greiðir frá keldu.',
     compareQuestion: 'Samanber arbeiðsloysið í Kanada og ES.',
     compareAnswer:
       'Í tíðarskeiðnum {period} var arbeiðsloysið {canada} í Kanada og {eu} í ES. Bæði tølini eru árstíðarjavnað.',
@@ -149,7 +151,7 @@ export const fo: UiStrings = {
     otherClients: 'Onnur forrit',
     runLocally: 'Koyr á egnu teldu',
     allCountries: 'hvørt land sum helst',
-    oneOfficeLink: 'Bind bert at einari hagstovu'
+    oneOfficeLink: 'Knýt teg bert at einari hagstovu'
   },
   countryPage: {
     title: '{country}: almenn hagtøl í vitlíkishjálpara tínum.',
@@ -177,9 +179,9 @@ export const fo: UiStrings = {
     tableCount: '{count} talvur',
     officeSearch: 'Leiting hjá hagstovuni',
     compareAll: 'Samanber øll lond',
-    pageTitle: '{offices} hagstovur. Eitt samband.',
+    pageTitle: '{offices} hagstovur. Knýt allar at, ella bert eina.',
     pageIntro:
-      'Við einum endapunkti bindur tú teg at øllum hagstovunum. Vilt tú bert brúka eina hagstovu, avritar tú endapunktið hjá henni niðanfyri.',
+      'Við einum endapunkti knýtir tú teg at øllum hagstovunum. Vilt tú bert brúka eina hagstovu, avritar tú endapunktið hjá henni niðanfyri.',
     tablesNote:
       'Talvur: talvur í leitiyvirliti okkara. Leiting hjá hagstovuni: ambætarin brúkar leitingina hjá hagstovuni sjálvari.'
   },
@@ -204,7 +206,7 @@ export const fo: UiStrings = {
       {
         question: 'Kann eg knýta fleiri lond at?',
         answer:
-          'Ja. Legg eitt samband afturat fyri hvørt land. Hjálparin brúkar tað røtta sambandið til spurning tín.'
+          'Ja. Knýt https://statsmcp.dev/mcp at eina ferð, og spyr um hvørt land sum helst. Vilt tú bert brúka eina hagstovu, knýtir tú hennara egna endapunkt at frá síðuni Lond.'
       },
       {
         question: 'Kann eg koyra tað á míni egnu teldu?',

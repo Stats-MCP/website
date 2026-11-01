@@ -5,7 +5,7 @@ export const hr: UiStrings = {
     home: {
       title: 'StatsMCP — Službena statistika za AI asistente',
       description:
-        'Povežite Claude, ChatGPT, Cursor i druge AI asistente s nacionalnim statističkim bazama podataka. Besplatno, samo za čitanje, otvoreni kod. Svaki odgovor navodi izvor.'
+        'Povežite Claude, ChatGPT, Cursor i druge AI asistente s nacionalnim statističkim uredima i Eurostatom jednom MCP krajnjom točkom. Besplatno, samo za čitanje i otvorenog koda. Svaki odgovor navodi izvor.'
     },
     privacy: {
       title: 'Privatnost — StatsMCP',
@@ -13,9 +13,9 @@ export const hr: UiStrings = {
         'StatsMCP ništa ne bilježi: nema zapisnika zahtjeva, kolačića ni analitike. Pročitajte što krajnja točka i ova web-stranica rade s vašim podacima.'
     },
     countries: {
-      title: 'Zemlje i pokrivenost — StatsMCP',
+      title: 'Povežite se s jednim statističkim uredom — StatsMCP',
       description:
-        'Sve zemlje u StatsMCP-u sa statističkim uredom, jezicima podataka, brojem tablica, licencijom za podatke i MCP krajnjom točkom.'
+        'MCP krajnja točka, jezici podataka, broj tablica i licencija svakog statističkog ureda u StatsMCP-u. Kopirajte jednu krajnju točku ili odjednom povežite sve urede.'
     },
     licences: {
       title: 'Licencije za podatke — StatsMCP',
@@ -58,6 +58,8 @@ export const hr: UiStrings = {
     addToChatgpt: 'Dodaj u ChatGPT',
     allEndpointLabel: 'Jedna krajnja točka za sve zemlje',
     otherAssistants: 'Ostali asistenti',
+    oneCountry:
+      'Trebate samo jednu zemlju? Svaki ured ima i vlastitu krajnju točku.',
     endpointLabel: 'Krajnja točka',
     countryTabs: 'Zemlja',
     status: {
@@ -75,9 +77,9 @@ export const hr: UiStrings = {
     lead: 'Dodajte jedan MCP poslužitelj svom AI asistentu. Pitajte o bilo kojem od {offices} ureda, od Slovenije do Australije. Asistent pretražuje {tables} službenih tablica i navodi izvor.',
     compareQuestion: 'Usporedi nezaposlenost u Kanadi i EU-u.',
     compareAnswer:
-      'U razdoblju {period} nezaposlenost je iznosila {canada} u Kanadi i {eu} u EU-u. Obje stope su desezonirane.',
+      'U razdoblju {period} nezaposlenost je iznosila {canada} u Kanadi i {eu} u EU-u. Obje su stope desezonirane.',
     euShort: 'EU',
-    tryTitle: 'Pokušajte pitati'
+    tryTitle: 'Primjeri pitanja'
   },
   figure: {
     caption: 'Slika 1 · Primjer razgovora',
@@ -178,7 +180,7 @@ export const hr: UiStrings = {
     tableCount: '{count} tablica',
     officeSearch: 'Pretraživanje ureda',
     compareAll: 'Usporedite sve zemlje',
-    pageTitle: '{offices} ureda. Jedna veza.',
+    pageTitle: '{offices} ureda. Povežite sve ili samo jedan.',
     pageIntro:
       'Jednom krajnjom točkom povezujete se sa svim uredima. Ako želite koristiti samo jedan ured, u nastavku kopirajte njegovu krajnju točku.',
     tablesNote:
@@ -205,7 +207,7 @@ export const hr: UiStrings = {
       {
         question: 'Mogu li povezati više zemalja?',
         answer:
-          'Da. Dodajte jedan konektor za svaku zemlju. Asistent koristi pravi konektor za vaše pitanje.'
+          'Da. Jednom povežite https://statsmcp.dev/mcp i pitajte o bilo kojoj zemlji. Ako želite koristiti samo jedan ured, na stranici Zemlje povežite njegovu krajnju točku.'
       },
       {
         question: 'Mogu li ga pokrenuti na svojem računalu?',

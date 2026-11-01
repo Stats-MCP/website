@@ -10,7 +10,7 @@ import {
 describe('structured data', () => {
   it.each([
     ['WebSite', websiteData(['en', 'sl-SI'])],
-    ['SoftwareApplication', softwareData()],
+    ['SoftwareApplication', softwareData('One MCP endpoint.')],
     ['FAQPage', faqData([])],
     ['BreadcrumbList', breadcrumbData([])]
   ])('builds a schema.org %s', (type, data) => {
@@ -24,7 +24,10 @@ describe('structured data', () => {
     expect(websiteData(['en', 'sl-SI'])).toMatchObject({
       inLanguage: ['en', 'sl-SI']
     });
-    expect(softwareData()).toMatchObject({ offers: { price: '0' } });
+    expect(softwareData('One MCP endpoint.')).toMatchObject({
+      description: 'One MCP endpoint.',
+      offers: { price: '0' }
+    });
   });
 
   it('turns every FAQ item into a question with its answer', () => {

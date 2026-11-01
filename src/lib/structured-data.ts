@@ -1,3 +1,4 @@
+import { repoUrl } from '@/data/site';
 import type { FaqItem } from '@/i18n/ui';
 
 const siteUrl = 'https://statsmcp.dev/';
@@ -12,16 +13,18 @@ export function websiteData(languages: readonly string[]): object {
   };
 }
 
-export function softwareData(): object {
+export function softwareData(description: string): object {
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'StatsMCP',
+    description,
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'Any',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
     license: 'https://opensource.org/licenses/MIT',
-    url: siteUrl
+    url: siteUrl,
+    sameAs: [repoUrl]
   };
 }
 

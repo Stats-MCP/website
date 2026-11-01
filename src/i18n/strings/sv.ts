@@ -5,7 +5,7 @@ export const sv: UiStrings = {
     home: {
       title: 'StatsMCP — Officiell statistik för AI-assistenter',
       description:
-        'Koppla Claude, ChatGPT, Cursor och andra AI-assistenter till nationella statistikdatabaser. Gratis, endast läsning, öppen källkod. Varje svar anger källan.'
+        'Anslut Claude, ChatGPT, Cursor och andra AI-assistenter till nationella statistikmyndigheter och Eurostat med en enda MCP-slutpunkt. Gratis, endast läsåtkomst och öppen källkod. Varje svar anger källan.'
     },
     privacy: {
       title: 'Integritet — StatsMCP',
@@ -13,9 +13,9 @@ export const sv: UiStrings = {
         'StatsMCP loggar ingenting: inga förfrågningsloggar, inga kakor, ingen analys. Läs vad slutpunkten och den här webbplatsen gör med dina data.'
     },
     countries: {
-      title: 'Länder och täckning — StatsMCP',
+      title: 'Anslut till en enskild statistikmyndighet — StatsMCP',
       description:
-        'Alla länder i StatsMCP med statistikmyndighet, dataspråk, antal tabeller, datalicens och MCP-slutpunkt.'
+        'MCP-slutpunkten, dataspråken, antalet tabeller och licensen för varje statistikmyndighet i StatsMCP. Kopiera en slutpunkt eller anslut alla myndigheter på en gång.'
     },
     licences: {
       title: 'Datalicenser — StatsMCP',
@@ -58,6 +58,8 @@ export const sv: UiStrings = {
     addToChatgpt: 'Lägg till i ChatGPT',
     allEndpointLabel: 'En slutpunkt för alla länder',
     otherAssistants: 'Andra assistenter',
+    oneCountry:
+      'Behöver du bara ett land? Varje myndighet har också en egen slutpunkt.',
     endpointLabel: 'Slutpunkt',
     countryTabs: 'Land',
     status: {
@@ -181,7 +183,7 @@ export const sv: UiStrings = {
     tableCount: '{count} tabeller',
     officeSearch: 'Myndighetens sökning',
     compareAll: 'Jämför alla länder',
-    pageTitle: '{offices} myndigheter. En anslutning.',
+    pageTitle: '{offices} myndigheter. Anslut alla, eller bara en.',
     pageIntro:
       'Med en slutpunkt ansluter du till alla myndigheter. Vill du bara använda en myndighet kopierar du dess slutpunkt nedan.',
     tablesNote:
@@ -208,7 +210,7 @@ export const sv: UiStrings = {
       {
         question: 'Kan jag ansluta flera länder?',
         answer:
-          'Ja. Lägg till en anslutning för varje land. Assistenten använder rätt anslutning för din fråga.'
+          'Ja. Anslut https://statsmcp.dev/mcp en gång och fråga om vilket land som helst. Vill du bara använda en myndighet ansluter du dess egen slutpunkt från sidan Länder.'
       },
       {
         question: 'Kan jag köra den på min egen dator?',

@@ -55,6 +55,7 @@ export interface UiStrings {
     addToChatgpt: string;
     allEndpointLabel: string;
     otherAssistants: string;
+    oneCountry: string;
     endpointLabel: string;
     countryTabs: string;
     status: { live: string; planned: string; limited: string };
@@ -163,7 +164,7 @@ const en: UiStrings = {
     home: {
       title: 'StatsMCP — Official statistics for AI assistants',
       description:
-        'Connect Claude, ChatGPT, Cursor and other AI assistants to national statistics databases. Free, read-only, open source. Every answer cites the source.'
+        'Connect Claude, ChatGPT, Cursor and other AI assistants to national statistics offices and Eurostat with one MCP endpoint. Free, read-only and open source. Every answer cites the source.'
     },
     privacy: {
       title: 'Privacy — StatsMCP',
@@ -171,9 +172,9 @@ const en: UiStrings = {
         'StatsMCP logs nothing: no request logs, no cookies, no analytics. Read what the endpoint and this website do with your data.'
     },
     countries: {
-      title: 'Countries and coverage — StatsMCP',
+      title: 'Connect to one statistics office — StatsMCP',
       description:
-        'Every country in StatsMCP with its statistics office, data languages, number of tables, data licence and MCP endpoint.'
+        'The MCP endpoint, data languages, number of tables and licence of each statistics office in StatsMCP. Copy one endpoint, or connect every office at once.'
     },
     licences: {
       title: 'Data licences — StatsMCP',
@@ -216,6 +217,7 @@ const en: UiStrings = {
     addToChatgpt: 'Add to ChatGPT',
     allEndpointLabel: 'One endpoint for every country',
     otherAssistants: 'Other assistants',
+    oneCountry: 'Need only one country? Each office also has its own endpoint.',
     endpointLabel: 'Endpoint',
     countryTabs: 'Country',
     status: { live: 'Live', planned: 'Planned', limited: 'Search only' },
@@ -332,7 +334,7 @@ const en: UiStrings = {
     tableCount: '{count} tables',
     officeSearch: 'Office search',
     compareAll: 'Compare all countries',
-    pageTitle: '{offices} offices. One connection.',
+    pageTitle: '{offices} offices. Connect to all, or to one.',
     pageIntro:
       'One endpoint connects you to every office. To use only one office, copy its endpoint below.',
     tablesNote:
@@ -359,7 +361,7 @@ const en: UiStrings = {
       {
         question: 'Can I connect several countries?',
         answer:
-          'Yes. Add one connector for each country. The assistant uses the right one for your question.'
+          'Yes. Connect https://statsmcp.dev/mcp once and ask about any country. To use only one office, connect its own endpoint from the Countries page.'
       },
       {
         question: 'Can I run it on my own computer?',

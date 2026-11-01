@@ -5,7 +5,7 @@ export const et: UiStrings = {
     home: {
       title: 'StatsMCP — ametlik statistika tehisintellekti assistentidele',
       description:
-        'Ühenda Claude, ChatGPT, Cursor ja teised tehisintellekti assistendid riiklike statistika andmebaasidega. Tasuta, ainult lugemiseks, avatud lähtekoodiga. Iga vastus viitab allikale.'
+        'Ühenda Claude, ChatGPT, Cursor ja teised tehisintellekti assistendid riiklike statistikaametite ja Eurostatiga ühe MCP lõpp-punkti kaudu. Tasuta, ainult lugemiseks ja avatud lähtekoodiga. Iga vastus viitab allikale.'
     },
     privacy: {
       title: 'Privaatsus — StatsMCP',
@@ -13,9 +13,9 @@ export const et: UiStrings = {
         'StatsMCP ei logi midagi: ei päringulogisid, küpsiseid ega analüütikat. Loe, mida lõpp-punkt ja see veebisait sinu andmetega teevad.'
     },
     countries: {
-      title: 'Riigid ja kaetus — StatsMCP',
+      title: 'Ühenda üks statistikaamet — StatsMCP',
       description:
-        'Kõik StatsMCP riigid koos statistikaameti, andmekeelte, tabelite arvu, andmelitsentsi ja MCP lõpp-punktiga.'
+        'StatsMCP iga statistikaameti MCP lõpp-punkt, andmekeeled, tabelite arv ja litsents. Kopeeri üks lõpp-punkt või ühenda kõik ametid korraga.'
     },
     licences: {
       title: 'Andmelitsentsid — StatsMCP',
@@ -58,6 +58,7 @@ export const et: UiStrings = {
     addToChatgpt: 'Lisa ChatGPT-le',
     allEndpointLabel: 'Üks lõpp-punkt kõigile riikidele',
     otherAssistants: 'Muud assistendid',
+    oneCountry: 'Vajad ainult üht riiki? Igal ametil on ka oma lõpp-punkt.',
     endpointLabel: 'Lõpp-punkt',
     countryTabs: 'Riik',
     status: { live: 'Töös', planned: 'Plaanis', limited: 'Ainult otsing' },
@@ -68,10 +69,10 @@ export const et: UiStrings = {
   copy: { copy: 'Kopeeri', copied: 'Kopeeritud' },
   home: {
     title: 'Kõik riiklikud statistikaametid, üks ühendus.',
-    lead: 'Lisa oma tehisintellekti assistendile üks MCP-server. Küsi ükskõik millise {offices} ameti kohta, Sloveeniast Austraaliani. Assistent otsib {tables} ametlikust tabelist ja viitab allikale.',
+    lead: 'Lisa oma tehisintellekti assistendile üks MCP-server. Küsi ükskõik millise ameti andmete kohta – kokku {offices} ametit Sloveeniast Austraaliani. Assistent otsib {tables} ametlikust tabelist ja viitab allikale.',
     compareQuestion: 'Võrdle töötust Kanadas ja ELis.',
     compareAnswer:
-      'Perioodil {period} oli töötuse määr Kanadas {canada} ja ELis {eu}. Mõlemad määrad on sesoonselt kohandatud.',
+      'Perioodil {period} oli töötuse määr Kanadas {canada} ja ELis {eu}. Mõlemad määrad on sesoonselt korrigeeritud.',
     euShort: 'EL',
     tryTitle: 'Proovi küsida'
   },
@@ -175,7 +176,7 @@ export const et: UiStrings = {
     tableCount: '{count} tabelit',
     officeSearch: 'Ameti otsing',
     compareAll: 'Võrdle kõiki riike',
-    pageTitle: '{offices} ametit. Üks ühendus.',
+    pageTitle: '{offices} ametit. Ühenda kõik või ainult üks.',
     pageIntro:
       'Ühe lõpp-punktiga ühendud kõigi ametitega. Kui soovid kasutada ainult üht ametit, kopeeri allpool selle lõpp-punkt.',
     tablesNote:
@@ -202,7 +203,7 @@ export const et: UiStrings = {
       {
         question: 'Kas ma saan ühendada mitu riiki?',
         answer:
-          'Jah. Lisa iga riigi jaoks üks konnektor. Assistent kasutab sinu küsimuse jaoks õiget konnektorit.'
+          'Jah. Ühenda https://statsmcp.dev/mcp üks kord ja küsi ükskõik millise riigi kohta. Kui soovid kasutada ainult üht ametit, ühenda lehelt Riigid selle enda lõpp-punkt.'
       },
       {
         question: 'Kas ma saan seda oma arvutis käitada?',

@@ -5,7 +5,7 @@ export const isl: UiStrings = {
     home: {
       title: 'StatsMCP — Opinberar hagtölur fyrir gervigreindaraðstoðarmenn',
       description:
-        'Tengdu Claude, ChatGPT, Cursor og aðra gervigreindaraðstoðarmenn við gagnasöfn hagstofa. Ókeypis, aðeins lestur, opinn hugbúnaður. Hvert svar vísar í heimild.'
+        'Tengdu Claude, ChatGPT, Cursor og aðra gervigreindaraðstoðarmenn við hagstofur ríkja og Eurostat með einum MCP-endapunkti. Ókeypis, aðeins lestur og opinn hugbúnaður. Hvert svar vísar í heimildina.'
     },
     privacy: {
       title: 'Persónuvernd — StatsMCP',
@@ -13,9 +13,9 @@ export const isl: UiStrings = {
         'StatsMCP skráir ekkert: engar atvikaskrár, engar vafrakökur, engar vefmælingar. Lestu hvað endapunkturinn og þessi vefur gera við gögnin þín.'
     },
     countries: {
-      title: 'Lönd og umfang — StatsMCP',
+      title: 'Tengjast einni hagstofu — StatsMCP',
       description:
-        'Öll lönd í StatsMCP ásamt hagstofu, tungumálum gagna, fjölda taflna, gagnaleyfi og MCP-endapunkti.'
+        'MCP-endapunktur, gagnatungumál, fjöldi taflna og leyfi hverrar hagstofu í StatsMCP. Afritaðu einn endapunkt eða tengdu allar hagstofurnar í einu.'
     },
     licences: {
       title: 'Gagnaleyfi — StatsMCP',
@@ -57,7 +57,9 @@ export const isl: UiStrings = {
     addToClaude: 'Bæta við Claude',
     addToChatgpt: 'Bæta við ChatGPT',
     allEndpointLabel: 'Einn endapunktur fyrir öll lönd',
-    otherAssistants: 'Önnur forrit',
+    otherAssistants: 'Aðrir aðstoðarmenn',
+    oneCountry:
+      'Þarftu aðeins eitt land? Hver hagstofa hefur líka sinn eigin endapunkt.',
     endpointLabel: 'Endapunktur',
     countryTabs: 'Land',
     status: {
@@ -72,7 +74,7 @@ export const isl: UiStrings = {
   copy: { copy: 'Afrita', copied: 'Afritað' },
   home: {
     title: 'Allar hagstofur ríkja, ein tenging.',
-    lead: 'Bættu einum MCP-þjóni við gervigreindaraðstoðarmanninn þinn. Spurðu um hvaða af {offices} hagstofum sem er, frá Slóveníu til Ástralíu. Aðstoðarmaðurinn leitar í {tables} opinberum töflum og vísar í heimildina.',
+    lead: 'Bættu einum MCP-þjóni við gervigreindaraðstoðarmanninn þinn. Spurðu um hverja sem er af {offices} hagstofum, frá Slóveníu til Ástralíu. Aðstoðarmaðurinn leitar í {tables} opinberum töflum og vísar í heimildina.',
     compareQuestion: 'Berðu saman atvinnuleysi í Kanada og ESB.',
     compareAnswer:
       'Á tímabilinu {period} var atvinnuleysi {canada} í Kanada og {eu} í ESB. Báðar tölurnar eru árstíðaleiðréttar.',
@@ -181,7 +183,7 @@ export const isl: UiStrings = {
     tableCount: '{count} töflur',
     officeSearch: 'Leit hagstofu',
     compareAll: 'Bera saman öll lönd',
-    pageTitle: '{offices} hagstofur. Ein tenging.',
+    pageTitle: '{offices} hagstofur. Tengdu allar eða aðeins eina.',
     pageIntro:
       'Með einum endapunkti tengist þú öllum hagstofunum. Ef þú vilt aðeins nota eina hagstofu skaltu afrita endapunkt hennar hér fyrir neðan.',
     tablesNote:
@@ -208,7 +210,7 @@ export const isl: UiStrings = {
       {
         question: 'Get ég tengt mörg lönd?',
         answer:
-          'Já. Bættu við einni tengingu fyrir hvert land. Aðstoðarmaðurinn notar rétta tengingu fyrir spurninguna þína.'
+          'Já. Tengdu https://statsmcp.dev/mcp einu sinni og spurðu um hvaða land sem er. Ef þú vilt aðeins nota eina hagstofu skaltu tengja endapunkt hennar af síðunni Lönd.'
       },
       {
         question: 'Get ég keyrt þetta á eigin tölvu?',

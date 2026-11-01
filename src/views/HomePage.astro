@@ -30,7 +30,7 @@ const selected = defaultCountry(countries, locale);
   ogSlug="home"
   jsonLd={[
     websiteData(locales.map((code) => localeTags[code])),
-    softwareData(),
+    softwareData(ui[locale].seo.home.description),
     faqData(ui[locale].faq.items)
   ]}>
   <HomeHero locale={locale} />

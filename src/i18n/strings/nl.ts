@@ -5,7 +5,7 @@ export const nl: UiStrings = {
     home: {
       title: 'StatsMCP — Officiële statistiek voor AI-assistenten',
       description:
-        'Verbind Claude, ChatGPT, Cursor en andere AI-assistenten met nationale statistische databanken. Gratis, alleen-lezen, open source. Elk antwoord vermeldt de bron.'
+        'Verbind Claude, ChatGPT, Cursor en andere AI-assistenten met nationale statistische bureaus en Eurostat via één MCP-endpoint. Gratis, alleen-lezen en open source. Elk antwoord noemt de bron.'
     },
     privacy: {
       title: 'Privacy — StatsMCP',
@@ -13,9 +13,9 @@ export const nl: UiStrings = {
         'StatsMCP registreert niets: geen logbestanden, geen cookies, geen analytics. Lees wat het endpoint en deze website met uw gegevens doen.'
     },
     countries: {
-      title: 'Landen en dekking — StatsMCP',
+      title: 'Verbinden met één statistisch bureau — StatsMCP',
       description:
-        'Elk land in StatsMCP met het statistisch bureau, de talen van de data, het aantal tabellen, de datalicentie en het MCP-endpoint.'
+        'Het MCP-endpoint, de datatalen, het aantal tabellen en de licentie van elk statistisch bureau in StatsMCP. Kopieer één endpoint of verbind alle bureaus tegelijk.'
     },
     licences: {
       title: 'Datalicenties — StatsMCP',
@@ -58,6 +58,8 @@ export const nl: UiStrings = {
     addToChatgpt: 'Toevoegen aan ChatGPT',
     allEndpointLabel: 'Eén endpoint voor alle landen',
     otherAssistants: 'Andere assistenten',
+    oneCountry:
+      'Hebt u maar één land nodig? Elk bureau heeft ook een eigen endpoint.',
     endpointLabel: 'Endpoint',
     countryTabs: 'Land',
     status: { live: 'Live', planned: 'Gepland', limited: 'Alleen zoeken' },
@@ -67,13 +69,13 @@ export const nl: UiStrings = {
   },
   copy: { copy: 'Kopiëren', copied: 'Gekopieerd' },
   home: {
-    title: 'Alle nationale statistiekbureaus, één verbinding.',
-    lead: 'Voeg één MCP-server toe aan uw AI-assistent. Vraag naar elk van de {offices} bureaus, van Slovenië tot Australië. Uw assistent doorzoekt {tables} officiële tabellen en noemt de bron.',
+    title: 'Alle nationale statistische bureaus, één verbinding.',
+    lead: 'Voeg één MCP-server toe aan uw AI-assistent. Raadpleeg elk van de {offices} bureaus, van Slovenië tot Australië. Uw assistent doorzoekt {tables} officiële tabellen en noemt de bron.',
     compareQuestion: 'Vergelijk de werkloosheid in Canada en de EU.',
     compareAnswer:
       'In {period} was de werkloosheid {canada} in Canada en {eu} in de EU. Beide cijfers zijn voor seizoensinvloeden gecorrigeerd.',
     euShort: 'EU',
-    tryTitle: 'Probeer te vragen'
+    tryTitle: 'Vraag bijvoorbeeld'
   },
   figure: {
     caption: 'Figuur 1 · Voorbeeldgesprek',
@@ -178,7 +180,7 @@ export const nl: UiStrings = {
     tableCount: '{count} tabellen',
     officeSearch: 'Zoekfunctie van het bureau',
     compareAll: 'Alle landen vergelijken',
-    pageTitle: '{offices} bureaus. Eén verbinding.',
+    pageTitle: '{offices} bureaus. Verbind ze allemaal, of één.',
     pageIntro:
       'Met één endpoint maakt u verbinding met alle bureaus. Wilt u maar één bureau gebruiken, kopieer dan hieronder het endpoint ervan.',
     tablesNote:
@@ -205,7 +207,7 @@ export const nl: UiStrings = {
       {
         question: 'Kan ik meerdere landen verbinden?',
         answer:
-          'Ja. Voeg voor elk land één connector toe. De assistent gebruikt de juiste connector voor uw vraag.'
+          'Ja. Verbind https://statsmcp.dev/mcp één keer en stel vragen over elk land. Wilt u maar één bureau gebruiken, verbind dan het eigen endpoint van dat bureau via de pagina Landen.'
       },
       {
         question: 'Kan ik het op mijn eigen computer draaien?',

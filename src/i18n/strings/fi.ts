@@ -5,7 +5,7 @@ export const fi: UiStrings = {
     home: {
       title: 'StatsMCP — Virallinen tilastotieto tekoälyavustajille',
       description:
-        'Yhdistä Claude, ChatGPT, Cursor ja muut tekoälyavustajat kansallisiin tilastotietokantoihin. Maksuton, vain luku, avointa lähdekoodia. Jokainen vastaus kertoo lähteen.'
+        'Yhdistä Claude, ChatGPT, Cursor ja muut tekoälyavustajat kansallisiin tilastovirastoihin ja Eurostatiin yhdellä MCP-päätepisteellä. Maksuton, vain luku ja avoin lähdekoodi. Jokainen vastaus kertoo lähteen.'
     },
     privacy: {
       title: 'Tietosuoja — StatsMCP',
@@ -13,9 +13,9 @@ export const fi: UiStrings = {
         'StatsMCP ei kirjaa mitään: ei pyyntölokeja, ei evästeitä, ei analytiikkaa. Lue, mitä päätepiste ja tämä sivusto tekevät tiedoillasi.'
     },
     countries: {
-      title: 'Maat ja kattavuus — StatsMCP',
+      title: 'Yhdistä yhteen tilastovirastoon — StatsMCP',
       description:
-        'Kaikki StatsMCP:n maat: tilastovirasto, aineiston kielet, taulukoiden määrä, datan lisenssi ja MCP-päätepiste.'
+        'Jokaisen StatsMCP:n tilastoviraston MCP-päätepiste, datakielet, taulukoiden määrä ja lisenssi. Kopioi yksi päätepiste tai yhdistä kaikki virastot kerralla.'
     },
     licences: {
       title: 'Datan lisenssit — StatsMCP',
@@ -58,6 +58,8 @@ export const fi: UiStrings = {
     addToChatgpt: 'Lisää ChatGPT:hen',
     allEndpointLabel: 'Yksi päätepiste kaikille maille',
     otherAssistants: 'Muut avustajat',
+    oneCountry:
+      'Tarvitsetko vain yhden maan? Jokaisella virastolla on myös oma päätepiste.',
     endpointLabel: 'Päätepiste',
     countryTabs: 'Maa',
     status: {
@@ -181,7 +183,7 @@ export const fi: UiStrings = {
     tableCount: '{count} taulukkoa',
     officeSearch: 'Viraston haku',
     compareAll: 'Vertaa kaikkia maita',
-    pageTitle: '{offices} virastoa. Yksi yhteys.',
+    pageTitle: '{offices} virastoa. Yhdistä kaikki tai vain yksi.',
     pageIntro:
       'Yhdellä päätepisteellä yhdistät kaikkiin virastoihin. Jos haluat käyttää vain yhtä virastoa, kopioi sen päätepiste alta.',
     tablesNote:
@@ -208,7 +210,7 @@ export const fi: UiStrings = {
       {
         question: 'Voinko yhdistää useita maita?',
         answer:
-          'Kyllä. Lisää yksi liitin kutakin maata kohden. Avustaja käyttää kysymykseesi oikeaa liitintä.'
+          'Kyllä. Yhdistä https://statsmcp.dev/mcp kerran ja kysy mistä tahansa maasta. Jos haluat käyttää vain yhtä virastoa, yhdistä sen oma päätepiste Maat-sivulta.'
       },
       {
         question: 'Voinko ajaa sitä omalla tietokoneellani?',

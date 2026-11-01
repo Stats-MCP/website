@@ -5,7 +5,7 @@ export const sl: UiStrings = {
     home: {
       title: 'StatsMCP — Uradna statistika za pomočnike UI',
       description:
-        'Povežite Claude, ChatGPT, Cursor in druge pomočnike UI z nacionalnimi statističnimi podatkovnimi bazami. Brezplačno, samo za branje, odprta koda. Vsak odgovor navede vir.'
+        'Claude, ChatGPT, Cursor in druge pomočnike UI z eno končno točko MCP povežite z nacionalnimi statističnimi uradi in Eurostatom. Brezplačno, samo za branje in odprtokodno. Vsak odgovor navede vir.'
     },
     privacy: {
       title: 'Zasebnost — StatsMCP',
@@ -13,9 +13,9 @@ export const sl: UiStrings = {
         'StatsMCP ne beleži ničesar: ni dnevnikov zahtev, ni piškotkov, ni analitike. Preberite, kaj končna točka in to spletno mesto naredita z vašimi podatki.'
     },
     countries: {
-      title: 'Države in pokritost — StatsMCP',
+      title: 'Povezava z enim statističnim uradom — StatsMCP',
       description:
-        'Vse države v StatsMCP s statističnim uradom, jeziki podatkov, številom tabel, licenco za podatke in končno točko MCP.'
+        'Končna točka MCP, jeziki podatkov, število tabel in licenca vsakega statističnega urada v StatsMCP. Kopirajte eno končno točko ali hkrati povežite vse urade.'
     },
     licences: {
       title: 'Licence za podatke — StatsMCP',
@@ -57,6 +57,8 @@ export const sl: UiStrings = {
     addToChatgpt: 'Dodaj v ChatGPT',
     allEndpointLabel: 'Ena končna točka za vse države',
     otherAssistants: 'Drugi pomočniki',
+    oneCountry:
+      'Potrebujete samo eno državo? Vsak urad ima tudi svojo končno točko.',
     endpointLabel: 'Končna točka',
     countryTabs: 'Država',
     status: { live: 'Na voljo', planned: 'V načrtu', limited: 'Samo iskanje' },
@@ -174,7 +176,7 @@ export const sl: UiStrings = {
     tableCount: 'Tabele: {count}',
     officeSearch: 'Iskalnik urada',
     compareAll: 'Primerjaj vse države',
-    pageTitle: '{offices} uradov. Ena povezava.',
+    pageTitle: '{offices} uradov. Povežite vse ali enega.',
     pageIntro:
       'Z eno končno točko se povežete z vsemi uradi. Če želite uporabljati samo en urad, spodaj kopirajte njegovo končno točko.',
     tablesNote:
@@ -201,7 +203,7 @@ export const sl: UiStrings = {
       {
         question: 'Ali lahko povežem več držav?',
         answer:
-          'Da. Za vsako državo dodajte en konektor. Pomočnik za vaše vprašanje uporabi pravega.'
+          'Da. Enkrat povežite https://statsmcp.dev/mcp in sprašujte o kateri koli državi. Če želite uporabljati samo en urad, na strani Države povežite njegovo končno točko.'
       },
       {
         question: 'Ali ga lahko zaženem na svojem računalniku?',

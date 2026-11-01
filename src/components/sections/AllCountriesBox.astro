@@ -9,11 +9,13 @@ import { localePath } from '@/i18n/urls';
 interface Props {
   locale: Locale;
   connectHref?: string;
+  oneOfficeHref?: string;
 }
 
 const { locale } = Astro.props;
 const t = ui[locale];
 const connectHref = Astro.props.connectHref ?? `${localePath(locale)}#connect`;
+const oneOfficeHref = Astro.props.oneOfficeHref ?? localePath(locale, 'countries/');
 ---
 
 <div class="box">
@@ -28,6 +30,12 @@ const connectHref = Astro.props.connectHref ?? `${localePath(locale)}#connect`;
     </LinkButton>
     <LinkButton href={connectHref} activate="client:chatgpt">{t.hero.otherAssistants}</LinkButton>
   </div>
+  <p class="one-office">
+    {t.hero.oneCountry}{' '}
+    <a href={oneOfficeHref}>
+      {t.connect.oneOfficeLink} <span aria-hidden="true">→</span>
+    </a>
+  </p>
 </div>
 
 <style>
@@ -57,6 +65,16 @@ const connectHref = Astro.props.connectHref ?? `${localePath(locale)}#connect`;
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+  }
+  .one-office {
+    margin: 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .one-office a {
+    white-space: nowrap;
   }
   @media (max-width: 640px) {
     code {

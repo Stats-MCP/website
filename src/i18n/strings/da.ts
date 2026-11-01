@@ -5,7 +5,7 @@ export const da: UiStrings = {
     home: {
       title: 'StatsMCP — Officiel statistik til AI-assistenter',
       description:
-        'Forbind Claude, ChatGPT, Cursor og andre AI-assistenter med nationale statistikdatabaser. Gratis, kun læseadgang, open source. Hvert svar angiver kilden.'
+        'Forbind Claude, ChatGPT, Cursor og andre AI-assistenter til nationale statistikkontorer og Eurostat med ét MCP-endpoint. Gratis, kun læseadgang og open source. Hvert svar angiver kilden.'
     },
     privacy: {
       title: 'Privatliv — StatsMCP',
@@ -13,9 +13,9 @@ export const da: UiStrings = {
         'StatsMCP logger intet: ingen forespørgselslogge, ingen cookies, ingen analyseværktøjer. Læs, hvad endpointet og dette websted gør med dine data.'
     },
     countries: {
-      title: 'Lande og dækning — StatsMCP',
+      title: 'Forbind til ét statistikkontor — StatsMCP',
       description:
-        'Alle lande i StatsMCP med statistikkontor, datasprog, antal tabeller, datalicens og MCP-endpoint.'
+        'MCP-endpointet, datasprogene, antallet af tabeller og licensen for hvert statistikkontor i StatsMCP. Kopiér ét endpoint, eller forbind alle kontorer på én gang.'
     },
     licences: {
       title: 'Datalicenser — StatsMCP',
@@ -57,6 +57,8 @@ export const da: UiStrings = {
     addToChatgpt: 'Tilføj til ChatGPT',
     allEndpointLabel: 'Ét endpoint for alle lande',
     otherAssistants: 'Andre assistenter',
+    oneCountry:
+      'Har du kun brug for ét land? Hvert kontor har også sit eget endpoint.',
     endpointLabel: 'Endpoint',
     countryTabs: 'Land',
     status: { live: 'I drift', planned: 'Planlagt', limited: 'Kun søgning' },
@@ -176,7 +178,7 @@ export const da: UiStrings = {
     tableCount: '{count} tabeller',
     officeSearch: 'Kontorets søgning',
     compareAll: 'Sammenlign alle lande',
-    pageTitle: '{offices} kontorer. Én forbindelse.',
+    pageTitle: '{offices} kontorer. Forbind alle, eller kun ét.',
     pageIntro:
       'Med ét endpoint forbinder du dig til alle kontorer. Vil du kun bruge ét kontor, kopierer du dets endpoint nedenfor.',
     tablesNote:
@@ -203,7 +205,7 @@ export const da: UiStrings = {
       {
         question: 'Kan jeg forbinde flere lande?',
         answer:
-          'Ja. Tilføj én connector for hvert land. Assistenten bruger den rigtige til dit spørgsmål.'
+          'Ja. Forbind https://statsmcp.dev/mcp én gang, og spørg om et hvilket som helst land. Vil du kun bruge ét kontor, forbinder du dets eget endpoint fra siden Lande.'
       },
       {
         question: 'Kan jeg køre det på min egen computer?',

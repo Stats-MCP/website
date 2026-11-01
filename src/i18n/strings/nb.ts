@@ -5,7 +5,7 @@ export const nb: UiStrings = {
     home: {
       title: 'StatsMCP — Offisiell statistikk for KI-assistenter',
       description:
-        'Koble Claude, ChatGPT, Cursor og andre KI-assistenter til nasjonale statistikkdatabaser. Gratis, kun lesetilgang, åpen kildekode. Hvert svar oppgir kilden.'
+        'Koble Claude, ChatGPT, Cursor og andre KI-assistenter til nasjonale statistikkbyråer og Eurostat med ett MCP-endepunkt. Gratis, bare lesetilgang og åpen kildekode. Hvert svar oppgir kilden.'
     },
     privacy: {
       title: 'Personvern — StatsMCP',
@@ -13,9 +13,9 @@ export const nb: UiStrings = {
         'StatsMCP logger ingenting: ingen forespørselslogger, ingen informasjonskapsler, ingen analyseverktøy. Les hva endepunktet og dette nettstedet gjør med dataene dine.'
     },
     countries: {
-      title: 'Land og dekning — StatsMCP',
+      title: 'Koble til ett statistikkbyrå — StatsMCP',
       description:
-        'Alle land i StatsMCP med statistikkbyrå, dataspråk, antall tabeller, datalisens og MCP-endepunkt.'
+        'MCP-endepunktet, dataspråkene, antall tabeller og lisensen til hvert statistikkbyrå i StatsMCP. Kopier ett endepunkt, eller koble til alle byråene på én gang.'
     },
     licences: {
       title: 'Datalisenser — StatsMCP',
@@ -58,6 +58,8 @@ export const nb: UiStrings = {
     addToChatgpt: 'Legg til i ChatGPT',
     allEndpointLabel: 'Ett endepunkt for alle land',
     otherAssistants: 'Andre assistenter',
+    oneCountry:
+      'Trenger du bare ett land? Hvert byrå har også sitt eget endepunkt.',
     endpointLabel: 'Endepunkt',
     countryTabs: 'Land',
     status: { live: 'I drift', planned: 'Planlagt', limited: 'Bare søk' },
@@ -177,7 +179,7 @@ export const nb: UiStrings = {
     tableCount: '{count} tabeller',
     officeSearch: 'Byråets søk',
     compareAll: 'Sammenlign alle land',
-    pageTitle: '{offices} byråer. Én tilkobling.',
+    pageTitle: '{offices} byråer. Koble til alle, eller bare ett.',
     pageIntro:
       'Med ett endepunkt kobler du deg til alle byråene. Vil du bare bruke ett byrå, kopierer du endepunktet nedenfor.',
     tablesNote:
@@ -204,7 +206,7 @@ export const nb: UiStrings = {
       {
         question: 'Kan jeg koble til flere land?',
         answer:
-          'Ja. Legg til én kobling for hvert land. Assistenten bruker den riktige for spørsmålet ditt.'
+          'Ja. Koble til https://statsmcp.dev/mcp én gang, og spør om hvilket som helst land. Vil du bare bruke ett byrå, kobler du til endepunktet for det byrået fra siden Land.'
       },
       {
         question: 'Kan jeg kjøre det på min egen datamaskin?',

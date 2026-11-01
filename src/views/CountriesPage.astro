@@ -26,8 +26,9 @@ const offices = String(
   <header class="intro">
     <h1>{fill(t.countries.pageTitle, { offices })}</h1>
     <p>{t.countries.pageIntro}</p>
-    <AllCountriesBox locale={locale} />
+    <AllCountriesBox locale={locale} oneOfficeHref="#offices" />
   </header>
+  <h2 id="offices" class="offices">{t.connect.oneOfficeLink}</h2>
   <CountriesTable locale={locale} countries={countries} />
   <p class="note">{t.countries.tablesNote}</p>
 </Base>
@@ -50,6 +51,12 @@ const offices = String(
     font-size: 19px;
     color: var(--muted);
   }
+  .offices {
+    margin: 56px 0 0;
+    font-size: 44px;
+    scroll-margin-top: 24px;
+    text-wrap: balance;
+  }
   .note {
     margin: 24px 0 64px;
     max-width: 760px;
@@ -59,6 +66,9 @@ const offices = String(
   @media (max-width: 640px) {
     h1 {
       font-size: 38px;
+    }
+    .offices {
+      font-size: 34px;
     }
   }
 </style>
