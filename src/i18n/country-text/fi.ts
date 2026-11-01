@@ -159,7 +159,7 @@ export const fi: CountryText = {
   },
   au: {
     name: 'Australia',
-    office: 'Australian tilastokeskus',
+    office: 'Australian tilastovirasto',
     licence: 'CC BY 4.0',
     example: {
       question: 'Kuinka nopeasti hinnat nousevat Australiassa?',

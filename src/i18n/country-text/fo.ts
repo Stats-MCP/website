@@ -159,7 +159,7 @@ export const fo: CountryText = {
   },
   au: {
     name: 'Avstralia',
-    office: 'Hagstova Avstralia',
+    office: 'Hagstovan í Avstralia',
     licence: 'CC BY 4.0',
     example: {
       question: 'Hvussu skjótt hækka prísirnir í Avstralia?',

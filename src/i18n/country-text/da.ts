@@ -159,7 +159,7 @@ export const da: CountryText = {
   },
   au: {
     name: 'Australien',
-    office: 'Australiens statistikbureau',
+    office: 'Australiens statistikkontor',
     licence: 'CC BY 4.0',
     example: {
       question: 'Hvor hurtigt stiger priserne i Australien?',
