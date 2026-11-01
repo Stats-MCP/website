@@ -68,7 +68,7 @@ export const et: UiStrings = {
   },
   copy: { copy: 'Kopeeri', copied: 'Kopeeritud' },
   home: {
-    title: 'Kõik riiklikud statistikaametid, üks ühendus.',
+    title: '{offices} statistikaametit, üks ühendus.',
     lead: 'Lisa oma tehisintellekti assistendile üks MCP-server. Küsi ükskõik millise ameti andmete kohta – kokku {offices} ametit Sloveeniast Austraaliani. Assistent otsib {tables} ametlikust tabelist ja viitab allikale.',
     compareQuestion: 'Võrdle töötust Kanadas ja ELis.',
     compareAnswer:
@@ -175,8 +175,8 @@ export const et: UiStrings = {
     proposeLink: 'Tee ettepanek GitHubis.',
     tableCount: '{count} tabelit',
     officeSearch: 'Ameti otsing',
-    compareAll: 'Võrdle kõiki riike',
-    pageTitle: '{offices} ametit. Ühenda kõik või ainult üks.',
+    compareAll: 'Kõik lõpp-punktid ja katvus',
+    pageTitle: '{offices} ametit. Ühenda kõigiga või ainult ühega.',
     pageIntro:
       'Ühe lõpp-punktiga ühendud kõigi ametitega. Kui soovid kasutada ainult üht ametit, kopeeri allpool selle lõpp-punkt.',
     tablesNote:

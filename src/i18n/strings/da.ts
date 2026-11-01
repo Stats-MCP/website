@@ -68,7 +68,7 @@ export const da: UiStrings = {
   },
   copy: { copy: 'Kopiér', copied: 'Kopieret' },
   home: {
-    title: 'Alle nationale statistikkontorer, én forbindelse.',
+    title: '{offices} statistikkontorer, én forbindelse.',
     lead: 'Tilføj én MCP-server til din AI-assistent. Spørg om et hvilket som helst af {offices} kontorer, fra Slovenien til Australien. Assistenten søger i {tables} officielle tabeller og angiver kilden.',
     compareQuestion: 'Sammenlign ledigheden i Canada og EU.',
     compareAnswer:
@@ -177,8 +177,8 @@ export const da: UiStrings = {
     proposeLink: 'Foreslå det på GitHub.',
     tableCount: '{count} tabeller',
     officeSearch: 'Kontorets søgning',
-    compareAll: 'Sammenlign alle lande',
-    pageTitle: '{offices} kontorer. Forbind alle, eller kun ét.',
+    compareAll: 'Alle endpoints og dækning',
+    pageTitle: '{offices} kontorer. Forbind til alle eller kun ét.',
     pageIntro:
       'Med ét endpoint forbinder du dig til alle kontorer. Vil du kun bruge ét kontor, kopierer du dets endpoint nedenfor.',
     tablesNote:

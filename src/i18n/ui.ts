@@ -65,6 +65,7 @@ export interface UiStrings {
   };
   copy: { copy: string; copied: string };
   home: {
+    /** `{offices}` is a number. */
     title: string;
     /** `{offices}` and `{tables}` are filled from the country data. */
     lead: string;
@@ -227,7 +228,7 @@ const en: UiStrings = {
   },
   copy: { copy: 'Copy', copied: 'Copied' },
   home: {
-    title: 'Every national statistics office, one connection.',
+    title: '{offices} statistics offices, one connection.',
     lead: 'Add one MCP server to your AI assistant. Ask about any of {offices} offices, from Slovenia to Australia. Your assistant searches {tables} official tables and cites the source.',
     compareQuestion: 'Compare unemployment in Canada and the EU.',
     compareAnswer:
@@ -333,7 +334,7 @@ const en: UiStrings = {
     proposeLink: 'Propose it on GitHub.',
     tableCount: '{count} tables',
     officeSearch: 'Office search',
-    compareAll: 'Compare all countries',
+    compareAll: 'All endpoints and coverage',
     pageTitle: '{offices} offices. Connect to all, or to one.',
     pageIntro:
       'One endpoint connects you to every office. To use only one office, copy its endpoint below.',

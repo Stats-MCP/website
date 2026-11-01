@@ -4,7 +4,7 @@ import Connect from '@/components/sections/Connect.astro';
 import Faq from '@/components/sections/Faq.astro';
 import HowItWorks from '@/components/sections/HowItWorks.astro';
 import Hero from '@/components/sections/Hero.astro';
-import { countries, type Country } from '@/data/countries';
+import { countries, liveCountries, type Country } from '@/data/countries';
 import { type Locale , localized } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
 import { localePath } from '@/i18n/urls';
@@ -32,7 +32,7 @@ const pageValues = {
 };
 const title = fill(page.title, pageValues);
 const lead = fill(country.tables === undefined ? page.leadOffice : page.leadIndexed, pageValues);
-const sources = String(countries.filter((item) => item.status === 'live').length);
+const sources = String(liveCountries.length);
 ---
 
 <Base

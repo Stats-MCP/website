@@ -73,7 +73,7 @@ export const fr: UiStrings = {
   },
   copy: { copy: 'Copier', copied: 'Copié' },
   home: {
-    title: 'Tous les offices statistiques nationaux, une seule connexion.',
+    title: '{offices} offices statistiques, une seule connexion.',
     lead: 'Ajoutez un serveur MCP à votre assistant IA. Interrogez n’importe lequel des {offices} offices, de la Slovénie à l’Australie. Votre assistant consulte {tables} tableaux officiels et cite la source.',
     compareQuestion: 'Compare le chômage au Canada et dans l’UE.',
     compareAnswer:
@@ -187,8 +187,8 @@ export const fr: UiStrings = {
     proposeLink: 'Proposez-le sur GitHub.',
     tableCount: '{count} tableaux',
     officeSearch: 'Recherche de l’office',
-    compareAll: 'Comparer tous les pays',
-    pageTitle: '{offices} offices. Connectez-les tous, ou un seul.',
+    compareAll: 'Tous les points d’accès et leur couverture',
+    pageTitle: '{offices} offices. Connectez-vous à tous ou à un seul.',
     pageIntro:
       'Un seul point d’accès vous connecte à tous les offices. Pour n’utiliser qu’un seul office, copiez son point d’accès ci-dessous.',
     tablesNote:

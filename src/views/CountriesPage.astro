@@ -2,7 +2,7 @@
 import Base from '@/layouts/Base.astro';
 import AllCountriesBox from '@/components/sections/AllCountriesBox.astro';
 import CountriesTable from '@/components/sections/CountriesTable.astro';
-import { countries } from '@/data/countries';
+import { countries, liveCountries } from '@/data/countries';
 import type { Locale } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
 
@@ -12,9 +12,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = ui[locale];
-const offices = String(
-  countries.filter((country) => country.status === 'live').length
-);
+const offices = String(liveCountries.length);
 ---
 
 <Base
@@ -26,10 +24,9 @@ const offices = String(
   <header class="intro">
     <h1>{fill(t.countries.pageTitle, { offices })}</h1>
     <p>{t.countries.pageIntro}</p>
-    <AllCountriesBox locale={locale} oneOfficeHref="#offices" />
+    <AllCountriesBox locale={locale} oneOffice={false} />
   </header>
-  <h2 id="offices" class="offices">{t.connect.oneOfficeLink}</h2>
-  <CountriesTable locale={locale} countries={countries} />
+  <CountriesTable locale={locale} countries={countries} id="offices" title={t.connect.oneOfficeLink} />
   <p class="note">{t.countries.tablesNote}</p>
 </Base>
 
@@ -51,12 +48,6 @@ const offices = String(
     font-size: 19px;
     color: var(--muted);
   }
-  .offices {
-    margin: 56px 0 0;
-    font-size: 44px;
-    scroll-margin-top: 24px;
-    text-wrap: balance;
-  }
   .note {
     margin: 24px 0 64px;
     max-width: 760px;
@@ -66,9 +57,6 @@ const offices = String(
   @media (max-width: 640px) {
     h1 {
       font-size: 38px;
-    }
-    .offices {
-      font-size: 34px;
     }
   }
 </style>

@@ -69,7 +69,7 @@ export const nb: UiStrings = {
   },
   copy: { copy: 'Kopier', copied: 'Kopiert' },
   home: {
-    title: 'Alle nasjonale statistikkbyråer, én tilkobling.',
+    title: '{offices} statistikkbyråer, én tilkobling.',
     lead: 'Legg til én MCP-server i KI-assistenten din. Spør om hvilket som helst av {offices} byråer, fra Slovenia til Australia. Assistenten søker i {tables} offisielle tabeller og oppgir kilden.',
     compareQuestion: 'Sammenlign arbeidsledigheten i Canada og EU.',
     compareAnswer:
@@ -178,7 +178,7 @@ export const nb: UiStrings = {
     proposeLink: 'Foreslå det på GitHub.',
     tableCount: '{count} tabeller',
     officeSearch: 'Byråets søk',
-    compareAll: 'Sammenlign alle land',
+    compareAll: 'Alle endepunkter og dekning',
     pageTitle: '{offices} byråer. Koble til alle, eller bare ett.',
     pageIntro:
       'Med ett endepunkt kobler du deg til alle byråene. Vil du bare bruke ett byrå, kopierer du endepunktet nedenfor.',

@@ -1,0 +1,31 @@
+---
+import ClientTabs from '@/components/sections/ClientTabs.astro';
+import Section from '@/components/ui/Section.astro';
+import { allCountriesTarget } from '@/data/connect-target';
+import type { Locale } from '@/i18n/locales';
+import { ui } from '@/i18n/ui';
+import { localePath } from '@/i18n/urls';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = ui[locale];
+---
+
+<Section id="connect" title={t.connect.title} meta={t.connect.meta}>
+  <ClientTabs locale={locale} target={allCountriesTarget(t.connect.allCountries)} />
+  <p class="one-office">
+    <a href={localePath(locale, 'countries/')}>
+      {t.connect.oneOfficeLink} <span aria-hidden="true">→</span>
+    </a>
+  </p>
+</Section>
+
+<style>
+  .one-office {
+    margin: 24px 0 0;
+    font-size: 17px;
+  }
+</style>

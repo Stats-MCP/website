@@ -73,7 +73,7 @@ export const sv: UiStrings = {
   },
   copy: { copy: 'Kopiera', copied: 'Kopierat' },
   home: {
-    title: 'Alla nationella statistikmyndigheter, en anslutning.',
+    title: '{offices} statistikmyndigheter, en enda anslutning.',
     lead: 'Lägg till en MCP-server i din AI-assistent. Fråga om vilken som helst av {offices} myndigheter, från Slovenien till Australien. Assistenten söker i {tables} officiella tabeller och anger källan.',
     compareQuestion: 'Jämför arbetslösheten i Kanada och EU.',
     compareAnswer:
@@ -182,7 +182,7 @@ export const sv: UiStrings = {
     proposeLink: 'Föreslå det på GitHub.',
     tableCount: '{count} tabeller',
     officeSearch: 'Myndighetens sökning',
-    compareAll: 'Jämför alla länder',
+    compareAll: 'Alla slutpunkter och täckning',
     pageTitle: '{offices} myndigheter. Anslut alla, eller bara en.',
     pageIntro:
       'Med en slutpunkt ansluter du till alla myndigheter. Vill du bara använda en myndighet kopierar du dess slutpunkt nedan.',

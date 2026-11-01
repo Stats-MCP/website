@@ -1,4 +1,4 @@
-import { countries, endpoint } from '@/data/countries';
+import { countries, liveCountries, endpoint } from '@/data/countries';
 import { locales, localized } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
 import { renderOgImage, type OgCard } from '@/og/render';
@@ -12,12 +12,13 @@ interface Props {
 export const getStaticPaths = (() =>
   locales.flatMap((locale) => {
     const t = ui[locale];
+    const offices = String(liveCountries.length);
     const slovenia = countries.find((country) => country.example);
     const pages: { slug: string; card: OgCard }[] = [
       {
         slug: 'home',
         card: {
-          title: t.home.title,
+          title: fill(t.home.title, { offices }),
           footer: t.hero.eyebrow,
           chart: slovenia?.example && {
             values: slovenia.example.series.map((point) => point.value),
@@ -33,9 +34,7 @@ export const getStaticPaths = (() =>
         slug: 'countries',
         card: {
           title: fill(t.countries.pageTitle, {
-            offices: String(
-              countries.filter((country) => country.status === 'live').length
-            )
+            offices
           }),
           footer: t.countries.pageIntro
         }

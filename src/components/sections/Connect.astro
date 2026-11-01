@@ -3,11 +3,10 @@ import ClientTabs from '@/components/sections/ClientTabs.astro';
 import Section from '@/components/ui/Section.astro';
 import TabPanel from '@/components/ui/TabPanel.astro';
 import Tabs from '@/components/ui/Tabs.astro';
-import { allCountriesTarget, countryTarget } from '@/data/connect-target';
+import { countryTarget } from '@/data/connect-target';
 import type { Country } from '@/data/countries';
 import { type Locale, localized } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
-import { localePath } from '@/i18n/urls';
 import { countryTabItems } from '@/lib/country-tabs';
 
 interface Props {
@@ -15,50 +14,35 @@ interface Props {
   countries: Country[];
   selected: Country;
   restore?: boolean;
-  /** Connect to the all-countries endpoint instead of one country. */
-  all?: boolean;
 }
 
-const { locale, countries, selected, restore = true, all = false } = Astro.props;
+const { locale, countries, selected, restore = true } = Astro.props;
 const t = ui[locale];
 ---
 
 <Section id="connect" title={t.connect.title} meta={t.connect.meta}>
+  <Tabs
+    group="country"
+    idPrefix="connect"
+    label={t.hero.countryTabs}
+    items={countryTabItems(countries, locale)}
+    selected={selected.id}
+    restore={restore}
+    layout="wrap"
+  />
   {
-    all ? (
-      <>
-        <ClientTabs locale={locale} target={allCountriesTarget(t.connect.allCountries)} />
-        <p class="one-office">
-          <a href={localePath(locale, 'countries/')}>
-            {t.connect.oneOfficeLink} <span aria-hidden="true">→</span>
-          </a>
-        </p>
-      </>
-    ) : (
-      <>
-        <Tabs
-          group="country"
-          idPrefix="connect"
-          label={t.hero.countryTabs}
-          items={countryTabItems(countries, locale)}
-          selected={selected.id}
-          restore={restore}
-          layout="wrap"
-        />
-        {countries.map((country) => (
-          <TabPanel group="country" idPrefix="connect" value={country.id} selected={selected.id}>
-            {country.status === 'live' ? (
-              <ClientTabs locale={locale} target={countryTarget(country)} />
-            ) : (
-              <p class="planned">
-                {fill(t.figure.plannedTitle, { country: localized(country.name, locale) })}{' '}
-                {fill(t.figure.plannedText, { database: country.database.name })}
-              </p>
-            )}
-          </TabPanel>
-        ))}
-      </>
-    )
+    countries.map((country) => (
+      <TabPanel group="country" idPrefix="connect" value={country.id} selected={selected.id}>
+        {country.status === 'live' ? (
+          <ClientTabs locale={locale} target={countryTarget(country)} />
+        ) : (
+          <p class="planned">
+            {fill(t.figure.plannedTitle, { country: localized(country.name, locale) })}{' '}
+            {fill(t.figure.plannedText, { database: country.database.name })}
+          </p>
+        )}
+      </TabPanel>
+    ))
   }
 </Section>
 
@@ -66,9 +50,5 @@ const t = ui[locale];
   .planned {
     margin: 0;
     color: var(--muted);
-  }
-  .one-office {
-    margin: 24px 0 0;
-    font-size: 17px;
   }
 </style>

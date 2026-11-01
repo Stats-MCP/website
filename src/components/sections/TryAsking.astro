@@ -1,6 +1,6 @@
 ---
 import Section from '@/components/ui/Section.astro';
-import { countries, type Country } from '@/data/countries';
+import { countries } from '@/data/countries';
 import { type Locale, localized } from '@/i18n/locales';
 import { ui } from '@/i18n/ui';
 import { keepNumbersTogether } from '@/lib/highlight';
@@ -12,7 +12,7 @@ interface Props {
 const { locale } = Astro.props;
 const t = ui[locale];
 const examples = ['au', 'ie', 'nl'].flatMap((id) => {
-  const country = countries.find((item: Country) => item.id === id);
+  const country = countries.find((item) => item.id === id);
   return country?.example ? [country.example] : [];
 });
 if (examples.length !== 3) {

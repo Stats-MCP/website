@@ -73,7 +73,7 @@ export const isl: UiStrings = {
   },
   copy: { copy: 'Afrita', copied: 'Afritað' },
   home: {
-    title: 'Allar hagstofur ríkja, ein tenging.',
+    title: '{offices} hagstofur, ein tenging.',
     lead: 'Bættu einum MCP-þjóni við gervigreindaraðstoðarmanninn þinn. Spurðu um hverja sem er af {offices} hagstofum, frá Slóveníu til Ástralíu. Aðstoðarmaðurinn leitar í {tables} opinberum töflum og vísar í heimildina.',
     compareQuestion: 'Berðu saman atvinnuleysi í Kanada og ESB.',
     compareAnswer:
@@ -182,7 +182,7 @@ export const isl: UiStrings = {
     proposeLink: 'Leggðu það til á GitHub.',
     tableCount: '{count} töflur',
     officeSearch: 'Leit hagstofu',
-    compareAll: 'Bera saman öll lönd',
+    compareAll: 'Allir endapunktar og umfang',
     pageTitle: '{offices} hagstofur. Tengdu allar eða aðeins eina.',
     pageIntro:
       'Með einum endapunkti tengist þú öllum hagstofunum. Ef þú vilt aðeins nota eina hagstofu skaltu afrita endapunkt hennar hér fyrir neðan.',

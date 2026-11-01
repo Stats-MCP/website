@@ -68,7 +68,7 @@ export const sl: UiStrings = {
   },
   copy: { copy: 'Kopiraj', copied: 'Kopirano' },
   home: {
-    title: 'Vsi nacionalni statistični uradi, ena povezava.',
+    title: '{offices} statističnih uradov, ena povezava.',
     lead: 'Pomočniku UI dodajte en strežnik MCP. Sprašujte o katerem koli od {offices} uradov, od Slovenije do Avstralije. Pomočnik preišče {tables} uradnih tabel in navede vir.',
     compareQuestion: 'Primerjaj brezposelnost v Kanadi in EU.',
     compareAnswer:
@@ -175,8 +175,8 @@ export const sl: UiStrings = {
     proposeLink: 'Predlagajte jo na GitHubu.',
     tableCount: 'Tabele: {count}',
     officeSearch: 'Iskalnik urada',
-    compareAll: 'Primerjaj vse države',
-    pageTitle: '{offices} uradov. Povežite vse ali enega.',
+    compareAll: 'Vse končne točke in pokritost',
+    pageTitle: '{offices} uradov. Povežite se z vsemi ali samo z enim.',
     pageIntro:
       'Z eno končno točko se povežete z vsemi uradi. Če želite uporabljati samo en urad, spodaj kopirajte njegovo končno točko.',
     tablesNote:

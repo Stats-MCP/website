@@ -69,7 +69,7 @@ export const nl: UiStrings = {
   },
   copy: { copy: 'Kopiëren', copied: 'Gekopieerd' },
   home: {
-    title: 'Alle nationale statistische bureaus, één verbinding.',
+    title: '{offices} statistische bureaus, één verbinding.',
     lead: 'Voeg één MCP-server toe aan uw AI-assistent. Raadpleeg elk van de {offices} bureaus, van Slovenië tot Australië. Uw assistent doorzoekt {tables} officiële tabellen en noemt de bron.',
     compareQuestion: 'Vergelijk de werkloosheid in Canada en de EU.',
     compareAnswer:
@@ -179,8 +179,8 @@ export const nl: UiStrings = {
     proposeLink: 'Stel het voor op GitHub.',
     tableCount: '{count} tabellen',
     officeSearch: 'Zoekfunctie van het bureau',
-    compareAll: 'Alle landen vergelijken',
-    pageTitle: '{offices} bureaus. Verbind ze allemaal, of één.',
+    compareAll: 'Alle endpoints en dekking',
+    pageTitle: '{offices} bureaus. Verbind ze allemaal, of maar één.',
     pageIntro:
       'Met één endpoint maakt u verbinding met alle bureaus. Wilt u maar één bureau gebruiken, kopieer dan hieronder het endpoint ervan.',
     tablesNote:

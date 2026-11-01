@@ -891,5 +891,8 @@ function translate(country: Country): Country {
 }
 
 export const countries: Country[] = baseCountries.map(translate);
+export const liveCountries = countries.filter(
+  (country) => country.status === 'live'
+);
 
 validateCountries(countries);

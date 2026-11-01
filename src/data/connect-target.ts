@@ -5,7 +5,6 @@ export const ALL_COUNTRIES_URL = 'https://statsmcp.dev/mcp';
 
 export interface ConnectTarget {
   id: string;
-  /** Short code in step texts ("StatsMCP SI"); empty for every country. */
   code: string;
   name: Localized;
   url: string;

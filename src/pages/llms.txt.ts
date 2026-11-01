@@ -1,5 +1,10 @@
 import { ALL_COUNTRIES_URL } from '@/data/connect-target';
-import { countries, endpoint, indexedTables } from '@/data/countries';
+import {
+  countries,
+  liveCountries,
+  endpoint,
+  indexedTables
+} from '@/data/countries';
 import { docsUrl, repoUrl } from '@/data/site';
 import { fill, ui } from '@/i18n/ui';
 
@@ -7,12 +12,11 @@ import type { APIRoute } from 'astro';
 
 export const GET: APIRoute = () => {
   const t = ui.en;
-  const live = countries.filter((country) => country.status === 'live');
   const lead = fill(t.home.lead, {
-    offices: String(live.length),
+    offices: String(liveCountries.length),
     tables: `${new Intl.NumberFormat('en').format(indexedTables(countries))}+`
   });
-  const ids = live.map((country) => country.id).join(', ');
+  const ids = liveCountries.map((country) => country.id).join(', ');
   const lines = [
     '# StatsMCP',
     '',
@@ -24,21 +28,23 @@ export const GET: APIRoute = () => {
     '',
     `- ${ALL_COUNTRIES_URL}: one MCP server for every office below.`,
     '- list_countries: lists the offices, their ids and data languages.',
-    ...t.howItWorks.steps.map((step) => `- ${step.tool}: ${step.text}`),
+    '- search_tables: finds tables by keyword in one office.',
+    '- get_table_metadata: lists the periods, regions and measures of a table, with their codes.',
+    '- query_table: gets the data with readable labels, the source and a link to the table.',
     `- Every tool except list_countries takes a required \`country\` argument: ${ids}.`,
     '',
     '## One office',
     '',
     'Use these endpoints to connect to only one office. They have search_tables, get_table_metadata and query_table, without the `country` argument.',
     '',
-    ...live.map(
+    ...liveCountries.map(
       (country) =>
         `- ${country.name.en}: ${endpoint(country)} (${country.database.name}, ${country.office.fullName.en}; data languages: ${country.dataLanguages.join(', ')})`
     ),
     '',
     '## Run locally (npm)',
     '',
-    ...live.flatMap((country) =>
+    ...liveCountries.flatMap((country) =>
       country.localPackage
         ? [`- ${country.name.en}: npx -y ${country.localPackage}`]
         : []

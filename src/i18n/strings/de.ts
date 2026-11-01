@@ -69,7 +69,7 @@ export const de: UiStrings = {
   },
   copy: { copy: 'Kopieren', copied: 'Kopiert' },
   home: {
-    title: 'Alle nationalen Statistikämter, eine Verbindung.',
+    title: '{offices} Statistikämter, eine Verbindung.',
     lead: 'Fügen Sie Ihrem KI-Assistenten einen MCP-Server hinzu. Stellen Sie Fragen zu jedem der {offices} Ämter, von Slowenien bis Australien. Ihr Assistent durchsucht {tables} amtliche Tabellen und nennt die Quelle.',
     compareQuestion: 'Vergleiche die Arbeitslosigkeit in Kanada und der EU.',
     compareAnswer:
@@ -180,8 +180,8 @@ export const de: UiStrings = {
     proposeLink: 'Schlagen Sie es auf GitHub vor.',
     tableCount: '{count} Tabellen',
     officeSearch: 'Suche des Amts',
-    compareAll: 'Alle Länder vergleichen',
-    pageTitle: '{offices} Ämter. Alle verbinden oder nur eines.',
+    compareAll: 'Alle Endpunkte und Abdeckung',
+    pageTitle: '{offices} Ämter. Mit allen verbinden oder nur mit einem.',
     pageIntro:
       'Mit einem Endpunkt verbinden Sie sich mit allen Ämtern. Wenn Sie nur ein Amt nutzen möchten, kopieren Sie unten dessen Endpunkt.',
     tablesNote:

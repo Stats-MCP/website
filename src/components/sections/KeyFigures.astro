@@ -1,5 +1,5 @@
 ---
-import { countries, indexedTables } from '@/data/countries';
+import { countries, liveCountries, indexedTables } from '@/data/countries';
 import type { Locale } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
 
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const live = String(countries.filter((country) => country.status === 'live').length);
+const live = String(liveCountries.length);
 const tables = `${new Intl.NumberFormat(locale).format(indexedTables(countries))}+`;
 ---
 

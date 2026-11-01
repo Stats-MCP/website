@@ -73,7 +73,7 @@ export const fi: UiStrings = {
   },
   copy: { copy: 'Kopioi', copied: 'Kopioitu' },
   home: {
-    title: 'Kaikki kansalliset tilastovirastot, yksi yhteys.',
+    title: '{offices} tilastovirastoa, yksi yhteys.',
     lead: 'Lisää yksi MCP-palvelin tekoälyavustajaasi. Kysy mistä tahansa {offices} virastosta Sloveniasta Australiaan. Avustaja hakee {tables} virallisesta taulukosta ja kertoo lähteen.',
     compareQuestion: 'Vertaa työttömyyttä Kanadassa ja EU:ssa.',
     compareAnswer:
@@ -182,8 +182,8 @@ export const fi: UiStrings = {
     proposeLink: 'Ehdota sitä GitHubissa.',
     tableCount: '{count} taulukkoa',
     officeSearch: 'Viraston haku',
-    compareAll: 'Vertaa kaikkia maita',
-    pageTitle: '{offices} virastoa. Yhdistä kaikki tai vain yksi.',
+    compareAll: 'Kaikki päätepisteet ja kattavuus',
+    pageTitle: '{offices} virastoa. Yhdistä kaikkiin tai vain yhteen.',
     pageIntro:
       'Yhdellä päätepisteellä yhdistät kaikkiin virastoihin. Jos haluat käyttää vain yhtä virastoa, kopioi sen päätepiste alta.',
     tablesNote:

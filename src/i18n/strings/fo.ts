@@ -69,7 +69,7 @@ export const fo: UiStrings = {
   },
   copy: { copy: 'Avrita', copied: 'Avritað' },
   home: {
-    title: 'Allar hagstovur landanna, eitt samband.',
+    title: '{offices} hagstovur, eitt samband.',
     lead: 'Legg ein MCP-ambætara afturat vitlíkishjálparanum hjá tær. Spyr um hvørja sum helst av {offices} hagstovum, frá Slovenia til Avstralia. Hjálparin leitar í {tables} almennum talvum og greiðir frá keldu.',
     compareQuestion: 'Samanber arbeiðsloysið í Kanada og ES.',
     compareAnswer:
@@ -178,7 +178,7 @@ export const fo: UiStrings = {
     proposeLink: 'Skjót tað upp á GitHub.',
     tableCount: '{count} talvur',
     officeSearch: 'Leiting hjá hagstovuni',
-    compareAll: 'Samanber øll lond',
+    compareAll: 'Øll endapunkt og dekningur',
     pageTitle: '{offices} hagstovur. Knýt allar at, ella bert eina.',
     pageIntro:
       'Við einum endapunkti knýtir tú teg at øllum hagstovunum. Vilt tú bert brúka eina hagstovu, avritar tú endapunktið hjá henni niðanfyri.',
