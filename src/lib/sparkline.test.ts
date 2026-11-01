@@ -25,6 +25,12 @@ describe('sparklinePoints', () => {
     expect(sparklinePoints([5], box)).toEqual([{ x: 10, y: 40 }]);
   });
 
+  it('places values on a shared range so two series compare', () => {
+    expect(
+      sparklinePoints([2, 4], box, { min: 0, max: 6 }).map((point) => point.y)
+    ).toEqual([30, 20]);
+  });
+
   it('returns no points for no values', () => {
     expect(sparklinePoints([], box)).toEqual([]);
   });

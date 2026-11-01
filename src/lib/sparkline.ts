@@ -9,13 +9,18 @@ export interface SparklinePoint {
   y: number;
 }
 
+export interface SparklineRange {
+  min: number;
+  max: number;
+}
+
 export function sparklinePoints(
   values: readonly number[],
-  box: SparklineBox
+  box: SparklineBox,
+  range: SparklineRange = { min: Math.min(...values), max: Math.max(...values) }
 ): SparklinePoint[] {
   if (values.length === 0) return [];
-  const min = Math.min(...values);
-  const max = Math.max(...values);
+  const { min, max } = range;
   const span = max - min || 1;
   const innerWidth = box.width - box.padding * 2;
   const innerHeight = box.height - box.padding * 2;

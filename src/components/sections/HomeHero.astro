@@ -1,5 +1,6 @@
 ---
 import AllCountriesBox from '@/components/sections/AllCountriesBox.astro';
+import CompareChart from '@/components/ui/CompareChart.astro';
 import { countries, liveCountries, indexedTables } from '@/data/countries';
 import { type Locale, localized } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
@@ -27,8 +28,9 @@ function lastPoint(id: string) {
 
 const canada = lastPoint('ca');
 const eu = lastPoint('eu');
-if (canada.point.period !== eu.point.period) {
-  throw new Error('The Canada and EU examples must end in the same period.');
+const periods = canada.example.series.map((point) => point.period);
+if (periods.join() !== eu.example.series.map((point) => point.period).join()) {
+  throw new Error('The Canada and EU examples must cover the same periods.');
 }
 const percent = new Intl.NumberFormat(locale, {
   style: 'percent',
@@ -41,6 +43,12 @@ const comparison = {
   period: formatPeriod(canada.point.period, locale)
 };
 const sources = [canada.example, eu.example];
+const chart = {
+  label: `${localized(canada.example.seriesLabel, locale)}: ${localized(canada.country.name, locale)}, ${t.home.euShort}`,
+  startLabel: formatPeriod(periods[0] ?? '', locale),
+  endLabel: comparison.period,
+  formatValue: (value: number) => percent.format(value / 100)
+};
 const shownTools = t.howItWorks.steps
   .map((step) => step.tool)
   .filter((tool) => tool !== 'get_table_metadata');
@@ -79,15 +87,20 @@ const tools = shownTools.flatMap((tool) => [`${tool} · ca`, `${tool} · eu`]);
           <p class="card-label">
             {localized(canada.country.name, locale)} · {comparison.period}
           </p>
-          <p class="card-value">{comparison.canada}</p>
+          <p class="card-value first">{comparison.canada}</p>
         </div>
         <div class="card">
           <p class="card-label">
             {t.home.euShort} · {comparison.period}
           </p>
-          <p class="card-value">{comparison.eu}</p>
+          <p class="card-value second">{comparison.eu}</p>
         </div>
       </div>
+      <CompareChart
+        first={canada.example.series.map((point) => point.value)}
+        second={eu.example.series.map((point) => point.value)}
+        {...chart}
+      />
       <p class="answer">
         {fill(t.home.compareAnswer, comparison)}
       </p>
@@ -211,6 +224,11 @@ const tools = shownTools.flatMap((tool) => [`${tool} · ca`, `${tool} · eu`]);
     font-family: var(--font-display);
     font-size: 44px;
     line-height: 1.1;
+  }
+  .card-value.first {
+    color: var(--ink);
+  }
+  .card-value.second {
     color: var(--accent);
   }
   .answer {

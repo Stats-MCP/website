@@ -1,0 +1,129 @@
+---
+import { sparklinePoints } from '@/lib/sparkline';
+
+interface Props {
+  first: number[];
+  second: number[];
+  label: string;
+  startLabel: string;
+  endLabel: string;
+  formatValue: (value: number) => string;
+}
+
+const { first, second, label, startLabel, endLabel, formatValue } = Astro.props;
+const box = { width: 480, height: 120, padding: 12 };
+const all = [...first, ...second];
+const range = { min: Math.min(...all), max: Math.max(...all) };
+const lines = [
+  { key: 'first', points: sparklinePoints(first, box, range) },
+  { key: 'second', points: sparklinePoints(second, box, range) }
+];
+---
+
+<div class="chart">
+  <div class="scale" aria-hidden="true">
+    <span>{formatValue(range.max)}</span>
+    <span>{formatValue(range.min)}</span>
+  </div>
+  <svg viewBox={`0 0 ${box.width} ${box.height}`} role="img" aria-label={label}>
+    <line x1="0" y1={box.padding} x2={box.width} y2={box.padding} class="grid"></line>
+    <line
+      x1="0"
+      y1={box.height - box.padding}
+      x2={box.width}
+      y2={box.height - box.padding}
+      class="grid"></line>
+    {
+      lines.map((line) => {
+        const last = line.points.at(-1);
+        return (
+          <g class={line.key}>
+            <polyline
+              points={line.points.map((point) => `${point.x},${point.y}`).join(' ')}
+              pathLength="1"
+            />
+            {last && <circle cx={last.x} cy={last.y} r="4" />}
+          </g>
+        );
+      })
+    }
+  </svg>
+  <div class="periods" aria-hidden="true">
+    <span>{startLabel}</span>
+    <span>{endLabel}</span>
+  </div>
+</div>
+
+<style>
+  .chart {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 10px;
+    row-gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--subtle);
+  }
+  .scale {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4px 0;
+    text-align: right;
+  }
+  .periods {
+    grid-column: 2;
+    display: flex;
+    justify-content: space-between;
+  }
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  .grid {
+    stroke: var(--rule);
+    stroke-width: 1;
+    stroke-dasharray: 2 4;
+  }
+  polyline {
+    fill: none;
+    stroke-width: 2;
+    stroke-linejoin: round;
+  }
+  .first polyline {
+    stroke: var(--ink);
+  }
+  .first circle {
+    fill: var(--ink);
+  }
+  .second polyline {
+    stroke: var(--accent);
+  }
+  .second circle {
+    fill: var(--accent);
+  }
+  @keyframes draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    polyline {
+      stroke-dasharray: 1 1.01;
+      animation: draw 900ms var(--ease-out) both;
+    }
+    circle {
+      animation: appear 300ms var(--ease-out) 800ms both;
+    }
+  }
+</style>
