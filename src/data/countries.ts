@@ -365,6 +365,66 @@ export const countries: Country[] = [
     }
   },
   {
+    id: 'se',
+    slug: 'sweden',
+    code: 'SE',
+    name: { en: 'Sweden', sl: 'Švedska', nb: 'Sverige' },
+    database: {
+      name: 'Statistical Database',
+      url: 'https://www.statistikdatabasen.scb.se/pxweb/en/ssd/'
+    },
+    office: {
+      name: 'SCB',
+      fullName: {
+        en: 'Statistics Sweden',
+        sl: 'Statistični urad Švedske',
+        nb: 'Statistiska centralbyrån'
+      },
+      url: 'https://www.scb.se/en/'
+    },
+    licence: {
+      label: { en: 'CC0', sl: 'CC0', nb: 'CC0' },
+      url: 'https://creativecommons.org/publicdomain/zero/1.0/'
+    },
+    dataLanguages: ['sv', 'en'],
+    status: 'live',
+    example: {
+      question: {
+        en: 'What is the latest inflation rate in Sweden?',
+        sl: 'Kakšna je zadnja stopnja inflacije na Švedskem?',
+        nb: 'Hva er den siste inflasjonen i Sverige?'
+      },
+      answer: {
+        en: 'In September 2026, prices were 1.1% higher than in September 2025. In April 2026, they were 0.1% lower than a year earlier.',
+        sl: 'Septembra 2026 so bile cene za 1,1 % višje kot septembra 2025. Aprila 2026 so bile za 0,1 % nižje kot leto prej.',
+        nb: 'I september 2026 var prisene 1,1 % høyere enn i september 2025. I april 2026 var de 0,1 % lavere enn året før.'
+      },
+      highlight: { en: '1.1%', sl: '1,1 %', nb: '1,1 %' },
+      source: 'Statistics Sweden, table TAB6596',
+      sourceUrl:
+        'https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__PR__PR0101__PR0101A/KPI2020M/',
+      seriesLabel: {
+        en: 'Annual inflation, %',
+        sl: 'Letna inflacija, %',
+        nb: 'Årlig inflasjon, %'
+      },
+      series: [
+        { period: '2025M10', value: 0.9 },
+        { period: '2025M11', value: 0.3 },
+        { period: '2025M12', value: 0.3 },
+        { period: '2026M01', value: 0.5 },
+        { period: '2026M02', value: 0.5 },
+        { period: '2026M03', value: 0.5 },
+        { period: '2026M04', value: -0.1 },
+        { period: '2026M05', value: 0.8 },
+        { period: '2026M06', value: 0.7 },
+        { period: '2026M07', value: 0.2 },
+        { period: '2026M08', value: 0.3 },
+        { period: '2026M09', value: 1.1 }
+      ]
+    }
+  },
+  {
     id: 'is',
     slug: 'iceland',
     code: 'IS',
