@@ -12,7 +12,7 @@ import { fill, ui } from '@/i18n/ui';
 import { byName } from '@/lib/country-order';
 import { countryTabItems } from '@/lib/country-tabs';
 import { localePath } from '@/i18n/urls';
-import { splitHighlight } from '@/lib/highlight';
+import { keepNumbersTogether, splitHighlight } from '@/lib/highlight';
 import { formatPeriod } from '@/lib/periods';
 
 interface Props {
@@ -40,8 +40,13 @@ const coverage = byName(live, locale)
   .join(' · ');
 const tabs = countryTabItems(countries, locale, { compact: true });
 const toolNames = t.howItWorks.steps.map((step) => step.tool);
-const formatPercent = (value: number) =>
-  new Intl.NumberFormat(locale, { minimumFractionDigits: 1 }).format(value);
+const formatValue = (decimals = 1) => {
+  const format = new Intl.NumberFormat(locale, {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals
+  });
+  return (value: number) => format.format(value);
+};
 ---
 
 <section class="hero" id="top">
@@ -132,16 +137,16 @@ const formatPercent = (value: number) =>
                   <p class="mono-label">{localized(country.example.seriesLabel, locale)}</p>
                   <Sparkline
                     values={country.example.series.map((point) => point.value)}
-                    formatValue={formatPercent}
+                    formatValue={formatValue(country.example.decimals)}
                     startLabel={formatPeriod(country.example.series[0]?.period ?? '', locale)}
                     endLabel={formatPeriod(country.example.series.at(-1)?.period ?? '', locale)}
                     label={`${localized(country.example.seriesLabel, locale)}: ${country.example.series
-                      .map((point) => `${formatPeriod(point.period, locale)} ${formatPercent(point.value)}`)
+                      .map((point) => `${formatPeriod(point.period, locale)} ${formatValue(country.example?.decimals)(point.value)}`)
                       .join(', ')}`}
                   />
                 </div>
                 <p class="answer">
-                  {splitHighlight(localized(country.example.answer, locale), localized(country.example.highlight, locale)).map(
+                  {splitHighlight(keepNumbersTogether(localized(country.example.answer, locale)), keepNumbersTogether(localized(country.example.highlight, locale))).map(
                     (part) => (part.highlight ? <strong>{part.text}</strong> : part.text)
                   )}
                 </p>

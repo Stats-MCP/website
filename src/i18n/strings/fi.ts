@@ -89,6 +89,31 @@ export const fi: UiStrings = {
       label: 'tuloksista kertoo lähteen ja linkittää taulukkoon'
     }
   ],
+  audiences: {
+    title: 'Kuka käyttää StatsMCP:tä',
+    items: [
+      {
+        who: 'Kehittäjät',
+        text: 'Lisää virallista dataa agenttiisi yhdellä URL-osoitteella.',
+        prompt: 'Mitkä Tanskan kunnat kasvoivat nopeimmin vuonna 2025?'
+      },
+      {
+        who: 'Toimittajat',
+        text: 'Tarkista luku ja hae artikkeliisi linkki taulukkoon.',
+        prompt: 'Onko työttömyys Suomessa korkeampi kuin vuosi sitten?'
+      },
+      {
+        who: 'Analyytikot',
+        text: 'Vertaa maita lataamatta laskentataulukoita.',
+        prompt: 'Vertaa asuntojen hintoja Norjassa ja Irlannissa vuodesta 2020.'
+      },
+      {
+        who: 'Tutkijat',
+        text: 'Löydä oikea taulukko, sen koodit ja lisenssi.',
+        prompt: 'Mistä taulukosta löytyvät Islannin syntyneet äidin iän mukaan?'
+      }
+    ]
+  },
   howItWorks: {
     title: 'Miten se toimii',
     stepLabel: 'Vaihe',
@@ -113,7 +138,9 @@ export const fi: UiStrings = {
   connect: {
     title: 'Yhdistä alle minuutissa',
     meta: 'Streamable HTTP · vain luku · ei kirjautumista · 60 pyyntöä/min',
-    clientTabs: 'Asiakasohjelma'
+    clientTabs: 'Asiakasohjelma',
+    otherClients: 'Muut asiakasohjelmat',
+    runLocally: 'Aja paikallisesti'
   },
   countryPage: {
     title: '{country}: viralliset tilastot tekoälyavustajassasi.',
@@ -172,7 +199,7 @@ export const fi: UiStrings = {
       {
         question: 'Voinko ajaa sitä omalla tietokoneellani?',
         answer:
-          'Kyllä. Palvelimet ovat npm:ssä. Avaa välilehti ”Run locally” kohdassa Yhdistä. Silloin kysymyksesi menevät vain tilastovirastolle.'
+          'Kyllä. Palvelimet ovat npm:ssä. Avaa välilehti ”Aja paikallisesti” kohdassa Yhdistä. Silloin kysymyksesi menevät vain tilastovirastolle.'
       },
       {
         question: 'Miten maani voidaan lisätä?',

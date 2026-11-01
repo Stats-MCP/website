@@ -33,6 +33,8 @@ export interface CountryExample {
   sourceUrl: string;
   seriesLabel: Localized;
   series: { period: string; value: number }[];
+  /** Decimals for chart labels; 1 for rates, 0 for counts. */
+  decimals?: number;
 }
 
 const reservedSlugs = ['privacy', 'licences', 'countries', 'og', '404'];
@@ -167,38 +169,30 @@ const baseCountries: Country[] = [
     },
     dataLanguages: ['no', 'en'],
     status: 'live',
+    localPackage: 'ssb-mcp',
     example: {
-      question: {
-        en: 'What is the latest inflation rate in Norway?',
-        sl: 'Kakšna je zadnja stopnja inflacije na Norveškem?',
-        nb: 'Hva er den siste inflasjonen i Norge?'
-      },
+      question: { en: 'How have house prices changed in Norway?' },
       answer: {
-        en: 'In September 2026, prices were 3.4% higher than in September 2025. Inflation peaked at 3.6% in January and March.',
-        sl: 'Septembra 2026 so bile cene za 3,4 % višje kot septembra 2025. Inflacija je bila najvišja januarja in marca (3,6 %).',
-        nb: 'I september 2026 var prisene 3,4 % høyere enn i september 2025. Inflasjonen var høyest i januar og mars (3,6 %).'
+        en: 'The price index for existing dwellings in Norway was 158.3 in Q3 2026 (2015 = 100). In Q3 2025, it was 153.2.'
       },
-      highlight: { en: '3.4%', sl: '3,4 %', nb: '3,4 %' },
-      source: 'SSB, table 14700',
-      sourceUrl: 'https://www.ssb.no/en/statbank/table/14700',
-      seriesLabel: {
-        en: 'Annual inflation, %',
-        sl: 'Letna inflacija, %',
-        nb: 'Årlig inflasjon, %'
-      },
+      highlight: { en: '158.3' },
+      source: 'SSB, table 07221',
+      sourceUrl: 'https://www.ssb.no/en/statbank/table/07221',
+      seriesLabel: { en: 'House price index, existing dwellings (2015 = 100)' },
+      decimals: 1,
       series: [
-        { period: '2025M10', value: 3.1 },
-        { period: '2025M11', value: 3.0 },
-        { period: '2025M12', value: 3.2 },
-        { period: '2026M01', value: 3.6 },
-        { period: '2026M02', value: 2.7 },
-        { period: '2026M03', value: 3.6 },
-        { period: '2026M04', value: 3.4 },
-        { period: '2026M05', value: 3.1 },
-        { period: '2026M06', value: 2.7 },
-        { period: '2026M07', value: 3.0 },
-        { period: '2026M08', value: 3.3 },
-        { period: '2026M09', value: 3.4 }
+        { period: '2023Q4', value: 136.4 },
+        { period: '2024Q1', value: 141.7 },
+        { period: '2024Q2', value: 147.7 },
+        { period: '2024Q3', value: 145.9 },
+        { period: '2024Q4', value: 143 },
+        { period: '2025Q1', value: 150.9 },
+        { period: '2025Q2', value: 154.4 },
+        { period: '2025Q3', value: 153.2 },
+        { period: '2025Q4', value: 151.5 },
+        { period: '2026Q1', value: 156.7 },
+        { period: '2026Q2', value: 161.2 },
+        { period: '2026Q3', value: 158.3 }
       ]
     }
   },
@@ -228,37 +222,28 @@ const baseCountries: Country[] = [
     status: 'live',
     localPackage: 'stat-ee-mcp',
     example: {
-      question: {
-        en: 'What is the latest inflation rate in Estonia?',
-        sl: 'Kakšna je zadnja stopnja inflacije v Estoniji?',
-        nb: 'Hva er den siste inflasjonen i Estland?'
-      },
+      question: { en: 'What is the average monthly wage in Estonia?' },
       answer: {
-        en: 'In September 2026, prices were 3.5% higher than in September 2025. Inflation was lowest in August, at 1.5%.',
-        sl: 'Septembra 2026 so bile cene za 3,5 % višje kot septembra 2025. Inflacija je bila najnižja avgusta (1,5 %).',
-        nb: 'I september 2026 var prisene 3,5 % høyere enn i september 2025. Inflasjonen var lavest i august (1,5 %).'
+        en: 'The average gross monthly wage in Estonia was €2,243 in Q2 2026. In Q2 2025, it was €2,126.'
       },
-      highlight: { en: '3.5%', sl: '3,5 %', nb: '3,5 %' },
-      source: 'Statistics Estonia, table IA021',
-      sourceUrl: 'https://andmed.stat.ee/en/stat/IA021',
-      seriesLabel: {
-        en: 'Annual inflation, %',
-        sl: 'Letna inflacija, %',
-        nb: 'Årlig inflasjon, %'
-      },
+      highlight: { en: '€2,243' },
+      source: 'Statistics Estonia, table PA111',
+      sourceUrl: 'https://andmed.stat.ee/en/stat/PA111',
+      seriesLabel: { en: 'Average gross monthly wage, €' },
+      decimals: 0,
       series: [
-        { period: '2025M10', value: 4.6 },
-        { period: '2025M11', value: 4.9 },
-        { period: '2025M12', value: 4.1 },
-        { period: '2026M01', value: 3.7 },
-        { period: '2026M02', value: 3.1 },
-        { period: '2026M03', value: 3.6 },
-        { period: '2026M04', value: 3.4 },
-        { period: '2026M05', value: 3.7 },
-        { period: '2026M06', value: 2.3 },
-        { period: '2026M07', value: 2.2 },
-        { period: '2026M08', value: 1.5 },
-        { period: '2026M09', value: 3.5 }
+        { period: '2023Q3', value: 1812 },
+        { period: '2023Q4', value: 1904 },
+        { period: '2024Q1', value: 1894 },
+        { period: '2024Q2', value: 2007 },
+        { period: '2024Q3', value: 1959 },
+        { period: '2024Q4', value: 2062 },
+        { period: '2025Q1', value: 2011 },
+        { period: '2025Q2', value: 2126 },
+        { period: '2025Q3', value: 2075 },
+        { period: '2025Q4', value: 2155 },
+        { period: '2026Q1', value: 2135 },
+        { period: '2026Q2', value: 2243 }
       ]
     }
   },
@@ -286,6 +271,7 @@ const baseCountries: Country[] = [
     },
     dataLanguages: ['fo', 'en'],
     status: 'live',
+    localPackage: 'hagstova-mcp',
     example: {
       question: {
         en: 'What is the latest inflation rate in the Faroe Islands?',
@@ -346,39 +332,31 @@ const baseCountries: Country[] = [
     },
     dataLanguages: ['fi', 'sv', 'en'],
     status: 'live',
+    localPackage: 'statfin-mcp',
     example: {
-      question: {
-        en: 'What is the latest inflation rate in Finland?',
-        sl: 'Kakšna je zadnja stopnja inflacije na Finskem?',
-        nb: 'Hva er den siste inflasjonen i Finland?'
-      },
+      question: { en: 'How high is unemployment in Finland?' },
       answer: {
-        en: 'In September 2026, prices were 2.5% higher than in September 2025. A year ago, prices were falling slightly.',
-        sl: 'Septembra 2026 so bile cene za 2,5 % višje kot septembra 2025. Pred enim letom so cene rahlo padale.',
-        nb: 'I september 2026 var prisene 2,5 % høyere enn i september 2025. For et år siden falt prisene litt.'
+        en: 'The trend unemployment rate in Finland was 10.5% in September 2026. In September 2025, it was 10.0%.'
       },
-      highlight: { en: '2.5%', sl: '2,5 %', nb: '2,5 %' },
-      source: 'Statistics Finland, table 15b5',
+      highlight: { en: '10.5%' },
+      source: 'Statistics Finland, table 135z',
       sourceUrl:
-        'https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__khi/15b5.px/',
-      seriesLabel: {
-        en: 'Annual inflation, %',
-        sl: 'Letna inflacija, %',
-        nb: 'Årlig inflasjon, %'
-      },
+        'https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__tyti/135z.px/',
+      seriesLabel: { en: 'Unemployment rate, trend, %' },
+      decimals: 1,
       series: [
-        { period: '2025M10', value: -0.2 },
-        { period: '2025M11', value: -0.1 },
-        { period: '2025M12', value: 0.2 },
-        { period: '2026M01', value: -0.2 },
-        { period: '2026M02', value: 0.6 },
-        { period: '2026M03', value: 1.3 },
-        { period: '2026M04', value: 1.5 },
-        { period: '2026M05', value: 2.1 },
-        { period: '2026M06', value: 2.1 },
-        { period: '2026M07', value: 2.1 },
-        { period: '2026M08', value: 2.2 },
-        { period: '2026M09', value: 2.5 }
+        { period: '2023M12', value: 7.7 },
+        { period: '2024M03', value: 8.1 },
+        { period: '2024M06', value: 8.4 },
+        { period: '2024M09', value: 8.6 },
+        { period: '2024M12', value: 8.9 },
+        { period: '2025M03', value: 9.2 },
+        { period: '2025M06', value: 9.6 },
+        { period: '2025M09', value: 10 },
+        { period: '2025M12', value: 10.3 },
+        { period: '2026M03', value: 10.5 },
+        { period: '2026M06', value: 10.4 },
+        { period: '2026M09', value: 10.5 }
       ]
     }
   },
@@ -407,39 +385,30 @@ const baseCountries: Country[] = [
     dataLanguages: ['sv', 'en'],
     tables: 4278,
     status: 'live',
+    localPackage: 'scb-mcp',
     example: {
-      question: {
-        en: 'What is the latest inflation rate in Sweden?',
-        sl: 'Kakšna je zadnja stopnja inflacije na Švedskem?',
-        nb: 'Hva er den siste inflasjonen i Sverige?'
-      },
+      question: { en: 'How many people live in Sweden?' },
       answer: {
-        en: 'In September 2026, prices were 1.1% higher than in September 2025. In April 2026, they were 0.1% lower than a year earlier.',
-        sl: 'Septembra 2026 so bile cene za 1,1 % višje kot septembra 2025. Aprila 2026 so bile za 0,1 % nižje kot leto prej.',
-        nb: 'I september 2026 var prisene 1,1 % høyere enn i september 2025. I april 2026 var de 0,1 % lavere enn året før.'
+        en: 'Sweden had 10,621,103 inhabitants in August 2026. In September 2025, it had 10,609,460.'
       },
-      highlight: { en: '1.1%', sl: '1,1 %', nb: '1,1 %' },
-      source: 'Statistics Sweden, table TAB6596',
-      sourceUrl:
-        'https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__PR__PR0101__PR0101A/KPI2020M/',
-      seriesLabel: {
-        en: 'Annual inflation, %',
-        sl: 'Letna inflacija, %',
-        nb: 'Årlig inflasjon, %'
-      },
+      highlight: { en: '10,621,103' },
+      source: 'SCB, table TAB6471',
+      sourceUrl: 'https://www.statistikdatabasen.scb.se/pxweb/en/ssd/',
+      seriesLabel: { en: 'Population, persons' },
+      decimals: 0,
       series: [
-        { period: '2025M10', value: 0.9 },
-        { period: '2025M11', value: 0.3 },
-        { period: '2025M12', value: 0.3 },
-        { period: '2026M01', value: 0.5 },
-        { period: '2026M02', value: 0.5 },
-        { period: '2026M03', value: 0.5 },
-        { period: '2026M04', value: -0.1 },
-        { period: '2026M05', value: 0.8 },
-        { period: '2026M06', value: 0.7 },
-        { period: '2026M07', value: 0.2 },
-        { period: '2026M08', value: 0.3 },
-        { period: '2026M09', value: 1.1 }
+        { period: '2025M09', value: 10609460 },
+        { period: '2025M10', value: 10610485 },
+        { period: '2025M11', value: 10608003 },
+        { period: '2025M12', value: 10605529 },
+        { period: '2026M01', value: 10604464 },
+        { period: '2026M02', value: 10604061 },
+        { period: '2026M03', value: 10604616 },
+        { period: '2026M04', value: 10605725 },
+        { period: '2026M05', value: 10608128 },
+        { period: '2026M06', value: 10610483 },
+        { period: '2026M07', value: 10613531 },
+        { period: '2026M08', value: 10621103 }
       ]
     }
   },
@@ -467,37 +436,28 @@ const baseCountries: Country[] = [
     status: 'live',
     localPackage: 'dst-mcp',
     example: {
-      question: {
-        en: 'What is the latest inflation rate in Denmark?',
-        sl: 'Kakšna je zadnja stopnja inflacije na Danskem?',
-        nb: 'Hva er den siste inflasjonen i Danmark?'
-      },
+      question: { en: 'How many people are unemployed in Denmark?' },
       answer: {
-        en: 'In September 2026, prices were 2.2% higher than in September 2025. Inflation was lowest in February, at 0.7%.',
-        sl: 'Septembra 2026 so bile cene za 2,2 % višje kot septembra 2025. Inflacija je bila najnižja februarja (0,7 %).',
-        nb: 'I september 2026 var prisene 2,2 % høyere enn i september 2025. Inflasjonen var lavest i februar (0,7 %).'
+        en: 'Denmark had 83,055 net unemployed persons in September 2026, seasonally adjusted. In September 2025, the number was 77,523.'
       },
-      highlight: { en: '2.2%', sl: '2,2 %', nb: '2,2 %' },
-      source: 'Statistics Denmark, table PRIS01',
-      sourceUrl: 'https://www.statbank.dk/PRIS01',
-      seriesLabel: {
-        en: 'Annual inflation, %',
-        sl: 'Letna inflacija, %',
-        nb: 'Årlig inflasjon, %'
-      },
+      highlight: { en: '83,055' },
+      source: 'Statistics Denmark, table AUS07',
+      sourceUrl: 'https://www.statbank.dk/AUS07',
+      seriesLabel: { en: 'Net unemployed, seasonally adjusted, persons' },
+      decimals: 0,
       series: [
-        { period: '2025M10', value: 2.1 },
-        { period: '2025M11', value: 2.1 },
-        { period: '2025M12', value: 1.9 },
-        { period: '2026M01', value: 0.8 },
-        { period: '2026M02', value: 0.7 },
-        { period: '2026M03', value: 1.2 },
-        { period: '2026M04', value: 1.4 },
-        { period: '2026M05', value: 1.9 },
-        { period: '2026M06', value: 1.9 },
-        { period: '2026M07', value: 1.7 },
-        { period: '2026M08', value: 2.0 },
-        { period: '2026M09', value: 2.2 }
+        { period: '2023M12', value: 75103 },
+        { period: '2024M03', value: 75574 },
+        { period: '2024M06', value: 76096 },
+        { period: '2024M09', value: 77578 },
+        { period: '2024M12', value: 77341 },
+        { period: '2025M03', value: 76406 },
+        { period: '2025M06', value: 76791 },
+        { period: '2025M09', value: 77523 },
+        { period: '2025M12', value: 78600 },
+        { period: '2026M03', value: 80670 },
+        { period: '2026M06', value: 82035 },
+        { period: '2026M09', value: 83055 }
       ]
     }
   },
@@ -523,39 +483,31 @@ const baseCountries: Country[] = [
     dataLanguages: ['nl', 'en'],
     tables: 4890,
     status: 'live',
+    localPackage: 'cbs-mcp',
     limited: true,
     example: {
-      question: {
-        en: 'What is the latest inflation rate in the Netherlands?',
-        sl: 'Kakšna je zadnja stopnja inflacije na Nizozemskem?',
-        nb: 'Hva er den siste inflasjonen i Nederland?'
-      },
+      question: { en: 'How many people live in the Netherlands?' },
       answer: {
-        en: 'In September 2026, prices were 3.4% higher than in September 2025. Inflation peaked at 3.5% in May.',
-        sl: 'Septembra 2026 so bile cene za 3,4 % višje kot septembra 2025. Inflacija je bila najvišja maja (3,5 %).',
-        nb: 'I september 2026 var prisene 3,4 % høyere enn i september 2025. Inflasjonen var høyest i mai (3,5 %).'
+        en: 'The Netherlands had 18,192,693 inhabitants at the end of September 2026. One year earlier, it had 18,122,384.'
       },
-      highlight: { en: '3.4%', sl: '3,4 %', nb: '3,4 %' },
-      source: 'CBS, table 86141ENG',
-      sourceUrl: 'https://www.cbs.nl/en-gb/figures/detail/86141ENG',
-      seriesLabel: {
-        en: 'Annual inflation, %',
-        sl: 'Letna inflacija, %',
-        nb: 'Årlig inflasjon, %'
-      },
+      highlight: { en: '18,192,693' },
+      source: 'CBS, table 83474NED',
+      sourceUrl: 'https://www.cbs.nl/en-gb/figures/detail/83474NED',
+      seriesLabel: { en: 'Population at end of month, persons' },
+      decimals: 0,
       series: [
-        { period: '2025M10', value: 3.1 },
-        { period: '2025M11', value: 2.8 },
-        { period: '2025M12', value: 2.9 },
-        { period: '2026M01', value: 2.4 },
-        { period: '2026M02', value: 2.4 },
-        { period: '2026M03', value: 2.7 },
-        { period: '2026M04', value: 2.8 },
-        { period: '2026M05', value: 3.5 },
-        { period: '2026M06', value: 2.9 },
-        { period: '2026M07', value: 3.2 },
-        { period: '2026M08', value: 3.3 },
-        { period: '2026M09', value: 3.4 }
+        { period: '2023M12', value: 17942942 },
+        { period: '2024M03', value: 17962646 },
+        { period: '2024M06', value: 17980823 },
+        { period: '2024M09', value: 18027198 },
+        { period: '2024M12', value: 18044027 },
+        { period: '2025M03', value: 18064104 },
+        { period: '2025M06', value: 18080788 },
+        { period: '2025M09', value: 18122384 },
+        { period: '2025M12', value: 18130208 },
+        { period: '2026M03', value: 18139823 },
+        { period: '2026M06', value: 18153386 },
+        { period: '2026M09', value: 18192693 }
       ]
     }
   },
@@ -590,38 +542,29 @@ const baseCountries: Country[] = [
     status: 'live',
     localPackage: 'statsmcp-eurostat',
     example: {
-      question: {
-        en: 'What is the latest inflation rate in the EU?',
-        sl: 'Kakšna je zadnja stopnja inflacije v EU?',
-        nb: 'Hva er den siste inflasjonen i EU?'
-      },
+      question: { en: 'What is the unemployment rate in the EU?' },
       answer: {
-        en: 'In September 2026, prices in the EU were 3.8% higher than a year earlier. In January 2026, the rate was 2.0%.',
-        sl: 'Septembra 2026 so bile cene v EU za 3,8 % višje kot leto prej. Januarja 2026 je bila stopnja 2,0 %.',
-        nb: 'I september 2026 var prisene i EU 3,8 % høyere enn året før. I januar 2026 var raten 2,0 %.'
+        en: 'The EU unemployment rate was 6.2% in September 2026, seasonally adjusted. In September 2025, it was 6.0%.'
       },
-      highlight: { en: '3.8%', sl: '3,8 %', nb: '3,8 %' },
-      source: 'Eurostat, dataset prc_hicp_minr',
+      highlight: { en: '6.2%' },
+      source: 'Eurostat, table une_rt_m',
       sourceUrl:
-        'https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en',
-      seriesLabel: {
-        en: 'Annual inflation (HICP), %',
-        sl: 'Letna inflacija (HICP), %',
-        nb: 'Årlig inflasjon (HICP), %'
-      },
+        'https://ec.europa.eu/eurostat/databrowser/view/une_rt_m/default/table?lang=en',
+      seriesLabel: { en: 'EU27 unemployment rate, seasonally adjusted, %' },
+      decimals: 1,
       series: [
-        { period: '2025M10', value: 2.5 },
-        { period: '2025M11', value: 2.4 },
-        { period: '2025M12', value: 2.3 },
-        { period: '2026M01', value: 2.0 },
-        { period: '2026M02', value: 2.1 },
-        { period: '2026M03', value: 2.8 },
-        { period: '2026M04', value: 3.2 },
-        { period: '2026M05', value: 3.3 },
-        { period: '2026M06', value: 2.9 },
-        { period: '2026M07', value: 3.0 },
-        { period: '2026M08', value: 3.2 },
-        { period: '2026M09', value: 3.8 }
+        { period: '2023M12', value: 6.1 },
+        { period: '2024M03', value: 6 },
+        { period: '2024M06', value: 6 },
+        { period: '2024M09', value: 5.9 },
+        { period: '2024M12', value: 5.9 },
+        { period: '2025M03', value: 6 },
+        { period: '2025M06', value: 6 },
+        { period: '2025M09', value: 6 },
+        { period: '2025M12', value: 6 },
+        { period: '2026M03', value: 6.1 },
+        { period: '2026M06', value: 6.2 },
+        { period: '2026M09', value: 6.2 }
       ]
     }
   },
@@ -650,39 +593,31 @@ const baseCountries: Country[] = [
     dataLanguages: ['en', 'fr'],
     tables: 8280,
     status: 'live',
+    localPackage: 'statsmcp-statcan',
     example: {
-      question: {
-        en: 'How have consumer prices in Canada changed over the last year?',
-        sl: 'Kako so se v zadnjem letu spremenile cene življenjskih potrebščin v Kanadi?',
-        nb: 'Hvordan har konsumprisene i Canada endret seg det siste året?'
-      },
+      question: { en: 'What is the unemployment rate in Canada?' },
       answer: {
-        en: 'In September 2026, the Consumer Price Index was 170.0, up from 164.9 in September 2025 (2002 = 100).',
-        sl: 'Septembra 2026 je bil indeks cen življenjskih potrebščin 170,0, septembra 2025 pa 164,9 (2002 = 100).',
-        nb: 'I september 2026 var konsumprisindeksen 170,0, mot 164,9 i september 2025 (2002 = 100).'
+        en: 'The unemployment rate in Canada was 6.5% in September 2026, seasonally adjusted. In September 2025, it was 7.1%.'
       },
-      highlight: { en: '170.0', sl: '170,0', nb: '170,0' },
-      source: 'Statistics Canada, table 18-10-0004-01',
+      highlight: { en: '6.5%' },
+      source: 'Statistics Canada, table 14-10-0287',
       sourceUrl:
-        'https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401',
-      seriesLabel: {
-        en: 'Consumer Price Index (2002 = 100)',
-        sl: 'Indeks cen življenjskih potrebščin (2002 = 100)',
-        nb: 'Konsumprisindeks (2002 = 100)'
-      },
+        'https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701',
+      seriesLabel: { en: 'Unemployment rate, seasonally adjusted, %' },
+      decimals: 1,
       series: [
-        { period: '2025M10', value: 165.3 },
-        { period: '2025M11', value: 165.4 },
-        { period: '2025M12', value: 165.0 },
-        { period: '2026M01', value: 165.0 },
-        { period: '2026M02', value: 165.9 },
-        { period: '2026M03', value: 167.4 },
-        { period: '2026M04', value: 168.0 },
-        { period: '2026M05', value: 169.6 },
-        { period: '2026M06', value: 169.0 },
-        { period: '2026M07', value: 169.9 },
-        { period: '2026M08', value: 169.8 },
-        { period: '2026M09', value: 170.0 }
+        { period: '2023M12', value: 5.8 },
+        { period: '2024M03', value: 6.1 },
+        { period: '2024M06', value: 6.4 },
+        { period: '2024M09', value: 6.5 },
+        { period: '2024M12', value: 6.7 },
+        { period: '2025M03', value: 6.8 },
+        { period: '2025M06', value: 6.9 },
+        { period: '2025M09', value: 7.1 },
+        { period: '2025M12', value: 6.8 },
+        { period: '2026M03', value: 6.7 },
+        { period: '2026M06', value: 6.5 },
+        { period: '2026M09', value: 6.5 }
       ]
     }
   },
@@ -711,39 +646,31 @@ const baseCountries: Country[] = [
     dataLanguages: ['is', 'en'],
     tables: 1906,
     status: 'live',
+    localPackage: 'statice-mcp',
     example: {
-      question: {
-        en: 'What is the latest inflation rate in Iceland?',
-        sl: 'Kakšna je zadnja stopnja inflacije na Islandiji?',
-        nb: 'Hva er den siste inflasjonen på Island?'
-      },
+      question: { en: 'How fast are wages rising in Iceland?' },
       answer: {
-        en: 'In October 2026, prices were 5.9% higher than in October 2025. In October 2025, the rate was 4.3%.',
-        sl: 'Oktobra 2026 so bile cene za 5,9 % višje kot oktobra 2025. Oktobra 2025 je bila stopnja 4,3 %.',
-        nb: 'I oktober 2026 var prisene 5,9 % høyere enn i oktober 2025. I oktober 2025 var raten 4,3 %.'
+        en: 'Wages in Iceland were 5.6% higher in September 2026 than one year earlier. In September 2025, the annual increase was 7.8%.'
       },
-      highlight: { en: '5.9%', sl: '5,9 %', nb: '5,9 %' },
-      source: 'Statistics Iceland, table VIS01000',
+      highlight: { en: '5.6%' },
+      source: 'Statistics Iceland, table LAU04000',
       sourceUrl:
-        'https://px.hagstofa.is/pxen/pxweb/en/Efnahagur/Efnahagur__visitolur__1_vnv__1_vnv/VIS01000.px/',
-      seriesLabel: {
-        en: 'Annual inflation, %',
-        sl: 'Letna inflacija, %',
-        nb: 'Årlig inflasjon, %'
-      },
+        'https://px.hagstofa.is/pxen/pxweb/en/Samfelag/Samfelag__launogtekjur__2_lvt__1_manadartolur/LAU04000.px/',
+      seriesLabel: { en: 'Wage index, annual change, %' },
+      decimals: 1,
       series: [
-        { period: '2024M01', value: 6.7 },
-        { period: '2024M04', value: 6.0 },
-        { period: '2024M07', value: 6.3 },
-        { period: '2024M10', value: 5.1 },
-        { period: '2025M01', value: 4.6 },
-        { period: '2025M04', value: 4.2 },
-        { period: '2025M07', value: 4.0 },
-        { period: '2025M10', value: 4.3 },
-        { period: '2026M01', value: 5.2 },
-        { period: '2026M04', value: 5.2 },
-        { period: '2026M07', value: 5.3 },
-        { period: '2026M10', value: 5.9 }
+        { period: '2023M12', value: 6.7 },
+        { period: '2024M03', value: 8.3 },
+        { period: '2024M06', value: 6 },
+        { period: '2024M09', value: 6.1 },
+        { period: '2024M12', value: 6.4 },
+        { period: '2025M03', value: 6.9 },
+        { period: '2025M06', value: 8.2 },
+        { period: '2025M09', value: 7.8 },
+        { period: '2025M12', value: 7 },
+        { period: '2026M03', value: 6.8 },
+        { period: '2026M06', value: 5.8 },
+        { period: '2026M09', value: 5.6 }
       ]
     }
   },
@@ -778,39 +705,29 @@ const baseCountries: Country[] = [
     status: 'live',
     localPackage: 'dzs-mcp',
     example: {
-      question: {
-        en: 'What is the latest inflation rate in Croatia?',
-        sl: 'Kakšna je zadnja stopnja inflacije na Hrvaškem?',
-        nb: 'Hva er den siste inflasjonen i Kroatia?'
-      },
+      question: { en: 'How many tourists came to Croatia this summer?' },
       answer: {
-        en: 'In September 2026, prices were 4.7% higher than in September 2025. In September 2024, the rate was 1.6%.',
-        sl: 'Septembra 2026 so bile cene za 4,7 % višje kot septembra 2025. Septembra 2024 je bila stopnja 1,6 %.',
-        nb: 'I september 2026 var prisene 4,7 % høyere enn i september 2025. I september 2024 var raten 1,6 %.'
+        en: 'In August 2026, 4,823,649 tourists arrived at commercial accommodation in Croatia. In August 2025, there were 4,714,658.'
       },
-      highlight: { en: '4.7%', sl: '4,7 %', nb: '4,7 %' },
-      source:
-        'Croatian Bureau of Statistics, table ME_PS09 (updated 2026-10-09)',
+      highlight: { en: '4,823,649' },
+      source: 'DZS, table BS_TU11',
       sourceUrl:
-        'https://web.dzs.hr/PXWeb/pxweb/en/Cijene/Cijene__Indeksi%20potro%C5%A1a%C4%8Dkih%20cijena__Indeksi%20potro%C5%A1a%C4%8Dkih%20cijena%20%E2%80%93%20ECOICOP%2C%20ver.%202/ME_PS09.px/',
-      seriesLabel: {
-        en: 'Annual inflation, %',
-        sl: 'Letna inflacija, %',
-        nb: 'Årlig inflasjon, %'
-      },
+        'https://web.dzs.hr/PXWeb/pxweb/en/Turizam/Turizam__Dolasci%20i%20no%C4%87enja%20turista%20u%20komercijalnim%20smje%C5%A1tajnim%20objektima/BS_TU11.px/',
+      seriesLabel: { en: 'Tourist arrivals, persons' },
+      decimals: 0,
       series: [
-        { period: '2023M12', value: 4.5 },
-        { period: '2024M03', value: 4.1 },
-        { period: '2024M06', value: 2.4 },
-        { period: '2024M09', value: 1.6 },
-        { period: '2024M12', value: 3.4 },
-        { period: '2025M03', value: 3.2 },
-        { period: '2025M06', value: 3.7 },
-        { period: '2025M09', value: 4.2 },
-        { period: '2025M12', value: 3.3 },
-        { period: '2026M03', value: 4.8 },
-        { period: '2026M06', value: 4.5 },
-        { period: '2026M09', value: 4.7 }
+        { period: '2023M11', value: 368797 },
+        { period: '2024M02', value: 312454 },
+        { period: '2024M05', value: 1941800 },
+        { period: '2024M08', value: 4692918 },
+        { period: '2024M11', value: 444234 },
+        { period: '2025M02', value: 313006 },
+        { period: '2025M05', value: 1842725 },
+        { period: '2025M08', value: 4714658 },
+        { period: '2025M11', value: 414355 },
+        { period: '2026M02', value: 328139 },
+        { period: '2026M05', value: 2010430 },
+        { period: '2026M08', value: 4823649 }
       ]
     }
   },
@@ -838,37 +755,28 @@ const baseCountries: Country[] = [
     status: 'live',
     localPackage: 'cso-mcp',
     example: {
-      question: {
-        en: 'What is the latest inflation rate in Ireland?',
-        sl: 'Kakšna je zadnja stopnja inflacije na Irskem?',
-        nb: 'Hva er den siste inflasjonen i Irland?'
-      },
+      question: { en: 'How fast are property prices rising in Ireland?' },
       answer: {
-        en: 'In September 2026, prices were 4.1% higher than in September 2025. In September 2025, the rate was 2.7%.',
-        sl: 'Septembra 2026 so bile cene za 4,1 % višje kot septembra 2025. Septembra 2025 je bila stopnja 2,7 %.',
-        nb: 'I september 2026 var prisene 4,1 % høyere enn i september 2025. I september 2025 var raten 2,7 %.'
+        en: 'Residential property prices in Ireland rose 5.1% in the 12 months to August 2026. In August 2025, the annual rise was 7.5%.'
       },
-      highlight: { en: '4.1%', sl: '4,1 %', nb: '4,1 %' },
-      source: 'Central Statistics Office, table CPM20',
-      sourceUrl: 'https://data.cso.ie/table/CPM20',
-      seriesLabel: {
-        en: 'Annual inflation, %',
-        sl: 'Letna inflacija, %',
-        nb: 'Årlig inflasjon, %'
-      },
+      highlight: { en: '5.1%' },
+      source: 'CSO, table HPM09',
+      sourceUrl: 'https://data.cso.ie/table/HPM09',
+      seriesLabel: { en: 'Property prices, 12-month change, %' },
+      decimals: 1,
       series: [
-        { period: '2023M12', value: 4.6 },
-        { period: '2024M03', value: 2.9 },
-        { period: '2024M06', value: 2.2 },
-        { period: '2024M09', value: 0.7 },
-        { period: '2024M12', value: 1.4 },
-        { period: '2025M03', value: 2.0 },
-        { period: '2025M06', value: 1.8 },
-        { period: '2025M09', value: 2.7 },
-        { period: '2025M12', value: 2.8 },
-        { period: '2026M03', value: 3.6 },
-        { period: '2026M06', value: 3.4 },
-        { period: '2026M09', value: 4.1 }
+        { period: '2023M11', value: 3 },
+        { period: '2024M02', value: 6.2 },
+        { period: '2024M05', value: 8.5 },
+        { period: '2024M08', value: 10.1 },
+        { period: '2024M11', value: 9.6 },
+        { period: '2025M02', value: 8 },
+        { period: '2025M05', value: 7.8 },
+        { period: '2025M08', value: 7.5 },
+        { period: '2025M11', value: 6.8 },
+        { period: '2026M02', value: 6.7 },
+        { period: '2026M05', value: 6.1 },
+        { period: '2026M08', value: 5.1 }
       ]
     }
   }

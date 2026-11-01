@@ -8,6 +8,8 @@ To accept a locale after a native review, add its code to `reviewedLocales`.
 
 Round 1 (all strings): sv 5 · de 4.5 · fr 4.5 · da 4.5 · fi 4.5 · is 4.5 · sl 4 · nb 4 · nl 4 · hr 4 · et 4 · fo 3
 
+Round 3 (audiences, client tabs, new examples): nb 5 · da 5 · fi 5 · sl 4.5 · sv 4.5 · is 4.5 · de 4.5 · fr 4.5 · nl 4.5 · et 4 · hr 4 · fo 3.5
+
 Round 2 (hero, key figures, country pages, FAQ, privacy): da 5 · sv 5 · sl 4.5 · nb 4.5 · fi 4.5 · is 4.5 · de 4.5 · nl 4.5 · fr 4.5 · et 4 · hr 4 · fo 3.5
 
 ## Open questions for native speakers
@@ -27,3 +29,4 @@ Round 2 (hero, key figures, country pages, FAQ, privacy): da 5 · sv 5 · sl 4.5
 - **fo (needs the most work):** "vitlíki" for AI; "Valmynd", "Treytir", "Avmarkarin", "váttan", "Ongin/Eingin"; loanwords "cookies", "loggar", "issue".
 - **Round 2:** is hero title is very long ("gervigreindaraðstoðarmanninum þínum"); fi eyebrow "Maksuton ja avointa lähdekoodia" (not parallel); hr eyebrow "Besplatno i otvorenog koda"; hr "u svojem asistentu" vs "u svom"; fr "Recherche seule" vs "Recherche uniquement"; et "lingib tabeli", "enamiku ameteid", "kaetus"; fo "vitlíkishjálpari", "fanan"; sl "navede"/"navaja", "v npm"/"na npm"; nl "100 %" vs "100%".
 - **Code:** client tab labels such as "Run locally" are not translated yet, so the FAQ quotes them in English.
+- **Round 3:** sl thousands separator (dot vs space); sl "Neto število brezposelnih"; sv "Trenden för arbetslöshetsgraden"; is "Keyra staðbundið" vs "Keyra á eigin tölvu" (tab + FAQ); nb "Lønnene"; de generic masculine (Entwickler…); fr "ont connu la plus forte croissance", "tableurs"; et "kasutavad"/"kasutab"; hr "živorođene"; fo "brúktar íbúðir" vs "bústaðir", "(gongd)", "Eitt ár fyrr", "Komin ferðafólk", "nettoarbeiðsleys".

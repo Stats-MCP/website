@@ -18,11 +18,11 @@ export const da: CountryText = {
     office: 'Statistisk sentralbyrå',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hvad er den seneste inflation i Norge?',
+      question: 'Hvordan har boligpriserne ændret sig i Norge?',
       answer:
-        'I september 2026 var priserne 3,4 % højere end i september 2025. Inflationen var højest i januar og marts (3,6 %).',
-      highlight: '3,4 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Prisindekset for eksisterende boliger i Norge var 158,3 i 3. kvartal 2026 (2015 = 100). I 3. kvartal 2025 var det 153,2.',
+      highlight: '158,3',
+      seriesLabel: 'Prisindeks for eksisterende boliger (2015 = 100)'
     }
   },
   ee: {
@@ -30,11 +30,11 @@ export const da: CountryText = {
     office: 'Estlands statistikkontor',
     licence: 'CC BY-SA 4.0',
     example: {
-      question: 'Hvad er den seneste inflation i Estland?',
+      question: 'Hvad er den gennemsnitlige månedsløn i Estland?',
       answer:
-        'I september 2026 var priserne 3,5 % højere end i september 2025. Inflationen var lavest i august (1,5 %).',
-      highlight: '3,5 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Den gennemsnitlige månedlige bruttoløn i Estland var 2.243 euro i 2. kvartal 2026. I 2. kvartal 2025 var den 2.126 euro.',
+      highlight: '2.243 euro',
+      seriesLabel: 'Gennemsnitlig månedlig bruttoløn, euro'
     }
   },
   fo: {
@@ -54,11 +54,11 @@ export const da: CountryText = {
     office: 'Finlands statistikkontor',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hvad er den seneste inflation i Finland?',
+      question: 'Hvor høj er arbejdsløsheden i Finland?',
       answer:
-        'I september 2026 var priserne 2,5 % højere end i september 2025. For et år siden faldt priserne en smule.',
-      highlight: '2,5 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Den trendkorrigerede ledighedsprocent i Finland var 10,5 % i september 2026. I september 2025 var den 10,0 %.',
+      highlight: '10,5 %',
+      seriesLabel: 'Ledighedsprocent, trend, %'
     }
   },
   se: {
@@ -66,11 +66,11 @@ export const da: CountryText = {
     office: 'Statistiska centralbyrån',
     licence: 'CC0',
     example: {
-      question: 'Hvad er den seneste inflation i Sverige?',
+      question: 'Hvor mange mennesker bor der i Sverige?',
       answer:
-        'I september 2026 var priserne 1,1 % højere end i september 2025. I april 2026 var de 0,1 % lavere end året før.',
-      highlight: '1,1 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Sverige havde 10.621.103 indbyggere i august 2026. I september 2025 havde landet 10.609.460.',
+      highlight: '10.621.103',
+      seriesLabel: 'Befolkning, personer'
     }
   },
   dk: {
@@ -78,11 +78,11 @@ export const da: CountryText = {
     office: 'Danmarks Statistik',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hvad er den seneste inflation i Danmark?',
+      question: 'Hvor mange er ledige i Danmark?',
       answer:
-        'I september 2026 var priserne 2,2 % højere end i september 2025. Inflationen var lavest i februar (0,7 %).',
-      highlight: '2,2 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Danmark havde 83.055 nettoledige i september 2026, sæsonkorrigeret. I september 2025 var tallet 77.523.',
+      highlight: '83.055',
+      seriesLabel: 'Nettoledige, sæsonkorrigeret, personer'
     }
   },
   nl: {
@@ -90,11 +90,11 @@ export const da: CountryText = {
     office: 'Det nederlandske statistikkontor',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hvad er den seneste inflation i Nederlandene?',
+      question: 'Hvor mange mennesker bor der i Nederlandene?',
       answer:
-        'I september 2026 var priserne 3,4 % højere end i september 2025. Inflationen var højest i maj (3,5 %).',
-      highlight: '3,4 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Nederlandene havde 18.192.693 indbyggere ved udgangen af september 2026. Et år tidligere havde landet 18.122.384.',
+      highlight: '18.192.693',
+      seriesLabel: 'Befolkning ved månedens udgang, personer'
     }
   },
   eu: {
@@ -102,11 +102,11 @@ export const da: CountryText = {
     office: 'Eurostat, Den Europæiske Unions statistiske kontor',
     licence: 'Fri genbrug med kildeangivelse',
     example: {
-      question: 'Hvad er den seneste inflation i EU?',
+      question: 'Hvad er arbejdsløsheden i EU?',
       answer:
-        'I september 2026 var priserne i EU 3,8 % højere end året før. I januar 2026 var inflationen 2,0 %.',
-      highlight: '3,8 %',
-      seriesLabel: 'Årlig inflation (HICP), %'
+        'Ledighedsprocenten i EU var 6,2 % i september 2026, sæsonkorrigeret. I september 2025 var den 6,0 %.',
+      highlight: '6,2 %',
+      seriesLabel: 'Ledighedsprocent i EU27, sæsonkorrigeret, %'
     }
   },
   ca: {
@@ -114,12 +114,11 @@ export const da: CountryText = {
     office: 'Canadas statistikkontor',
     licence: 'Åben licens',
     example: {
-      question:
-        'Hvordan har forbrugerpriserne i Canada ændret sig det seneste år?',
+      question: 'Hvad er arbejdsløsheden i Canada?',
       answer:
-        'I september 2026 var forbrugerprisindekset 170,0 mod 164,9 i september 2025 (2002 = 100).',
-      highlight: '170,0',
-      seriesLabel: 'Forbrugerprisindeks (2002 = 100)'
+        'Ledighedsprocenten i Canada var 6,5 % i september 2026, sæsonkorrigeret. I september 2025 var den 7,1 %.',
+      highlight: '6,5 %',
+      seriesLabel: 'Ledighedsprocent, sæsonkorrigeret, %'
     }
   },
   is: {
@@ -127,11 +126,11 @@ export const da: CountryText = {
     office: 'Islands statistikkontor',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hvad er den seneste inflation på Island?',
+      question: 'Hvor hurtigt stiger lønningerne på Island?',
       answer:
-        'I oktober 2026 var priserne 5,9 % højere end i oktober 2025. I oktober 2025 var inflationen 4,3 %.',
-      highlight: '5,9 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Lønningerne på Island var 5,6 % højere i september 2026 end et år tidligere. I september 2025 var den årlige stigning 7,8 %.',
+      highlight: '5,6 %',
+      seriesLabel: 'Lønindeks, årlig ændring, %'
     }
   },
   hr: {
@@ -139,11 +138,11 @@ export const da: CountryText = {
     office: 'Kroatiens statistikkontor',
     licence: 'Åben licens (Kroatien)',
     example: {
-      question: 'Hvad er den seneste inflation i Kroatien?',
+      question: 'Hvor mange turister kom til Kroatien i sommer?',
       answer:
-        'I september 2026 var priserne 4,7 % højere end i september 2025. I september 2024 var inflationen 1,6 %.',
-      highlight: '4,7 %',
-      seriesLabel: 'Årlig inflation, %'
+        'I august 2026 ankom 4.823.649 turister til kommercielle overnatningssteder i Kroatien. I august 2025 var tallet 4.714.658.',
+      highlight: '4.823.649',
+      seriesLabel: 'Turistankomster, personer'
     }
   },
   ie: {
@@ -151,11 +150,11 @@ export const da: CountryText = {
     office: 'Irlands centrale statistikkontor',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hvad er den seneste inflation i Irland?',
+      question: 'Hvor hurtigt stiger boligpriserne i Irland?',
       answer:
-        'I september 2026 var priserne 4,1 % højere end i september 2025. I september 2025 var inflationen 2,7 %.',
-      highlight: '4,1 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Boligpriserne i Irland steg 5,1 % i 12-månedersperioden frem til august 2026. I august 2025 var den årlige stigning 7,5 %.',
+      highlight: '5,1 %',
+      seriesLabel: 'Boligpriser, 12-måneders ændring, %'
     }
   }
 };

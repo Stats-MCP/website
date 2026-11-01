@@ -86,6 +86,31 @@ export const hr: UiStrings = {
     { value: '0', label: 'zapisnika, računa ili API ključeva' },
     { value: '100 %', label: 'rezultata navodi izvor i poveznicu na tablicu' }
   ],
+  audiences: {
+    title: 'Tko koristi StatsMCP',
+    items: [
+      {
+        who: 'Programeri',
+        text: 'Dodajte službene podatke svojem agentu pomoću jednog URL-a.',
+        prompt: 'Koje su danske općine najbrže rasle 2025.?'
+      },
+      {
+        who: 'Novinari',
+        text: 'Provjerite podatak i dobijte poveznicu na tablicu za svoj članak.',
+        prompt: 'Je li nezaposlenost u Finskoj viša nego prije godinu dana?'
+      },
+      {
+        who: 'Analitičari',
+        text: 'Usporedite zemlje bez preuzimanja proračunskih tablica.',
+        prompt: 'Usporedi cijene nekretnina u Norveškoj i Irskoj od 2020.'
+      },
+      {
+        who: 'Istraživači',
+        text: 'Pronađite pravu tablicu, njezine šifre i licenciju.',
+        prompt: 'Koja tablica sadrži rođene prema dobi majke na Islandu?'
+      }
+    ]
+  },
   howItWorks: {
     title: 'Kako radi',
     stepLabel: 'Korak',
@@ -110,7 +135,9 @@ export const hr: UiStrings = {
   connect: {
     title: 'Povežite se za manje od minute',
     meta: 'Streamable HTTP · samo za čitanje · bez prijave · 60 zahtjeva/min',
-    clientTabs: 'Klijent'
+    clientTabs: 'Klijent',
+    otherClients: 'Ostali klijenti',
+    runLocally: 'Lokalno pokretanje'
   },
   countryPage: {
     title: '{country}: službena statistika u vašem AI asistentu.',
@@ -169,7 +196,7 @@ export const hr: UiStrings = {
       {
         question: 'Mogu li ga pokrenuti na svojem računalu?',
         answer:
-          'Da. Poslužitelji su na npm-u. U odjeljku „Povezivanje” otvorite karticu „Run locally”. Tada vaša pitanja idu samo statističkom uredu.'
+          'Da. Poslužitelji su na npm-u. U odjeljku „Povezivanje” otvorite karticu „Lokalno pokretanje”. Tada vaša pitanja idu samo statističkom uredu.'
       },
       {
         question: 'Kako se može dodati moja zemlja?',

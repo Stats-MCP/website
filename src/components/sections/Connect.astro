@@ -44,7 +44,10 @@ const countryTabs = countryTabItems(countries, locale);
                 group="client"
                 idPrefix={`client-${country.id}`}
                 label={t.connect.clientTabs}
-                items={available.map((client) => ({ value: client.id, label: client.label }))}
+                items={available.map((client) => ({
+                  value: client.id,
+                  label: client.labelKey ? t.connect[client.labelKey] : client.label
+                }))}
                 selected={firstClient}
               />
               {available.map((client) => {

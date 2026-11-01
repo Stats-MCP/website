@@ -82,6 +82,32 @@ export const et: UiStrings = {
     { value: '0', label: 'logi, kontot ega API-võtit' },
     { value: '100%', label: 'tulemustest nimetab allika ja lingib tabeli' }
   ],
+  audiences: {
+    title: 'Kes kasutavad StatsMCP-d',
+    items: [
+      {
+        who: 'Arendajad',
+        text: 'Lisa oma agendile ametlikud andmed ühe URL-iga.',
+        prompt:
+          'Millised Taani omavalitsused kasvasid 2025. aastal kõige kiiremini?'
+      },
+      {
+        who: 'Ajakirjanikud',
+        text: 'Kontrolli arvu ja saa oma artikli jaoks tabeli link.',
+        prompt: 'Kas töötus on Soomes kõrgem kui aasta tagasi?'
+      },
+      {
+        who: 'Analüütikud',
+        text: 'Võrdle riike ilma tabelifaile alla laadimata.',
+        prompt: 'Võrdle eluasemehindu Norras ja Iirimaal alates 2020. aastast.'
+      },
+      {
+        who: 'Teadlased',
+        text: 'Leia õige tabel, selle koodid ja litsents.',
+        prompt: 'Millises tabelis on Islandi sünnid ema vanuse järgi?'
+      }
+    ]
+  },
   howItWorks: {
     title: 'Kuidas see töötab',
     stepLabel: 'Samm',
@@ -106,7 +132,9 @@ export const et: UiStrings = {
   connect: {
     title: 'Ühenda vähem kui minutiga',
     meta: 'Streamable HTTP · ainult lugemiseks · sisselogimiseta · 60 päringut minutis',
-    clientTabs: 'Klient'
+    clientTabs: 'Klient',
+    otherClients: 'Muud kliendid',
+    runLocally: 'Käivita kohapeal'
   },
   countryPage: {
     title: '{country}: ametlik statistika sinu tehisintellekti assistendis.',
@@ -165,7 +193,7 @@ export const et: UiStrings = {
       {
         question: 'Kas ma saan seda oma arvutis käitada?',
         answer:
-          'Jah. Serverid on npm-is. Ava jaotises „Ühenda“ vahekaart „Run locally“. Siis lähevad sinu küsimused ainult statistikaametile.'
+          'Jah. Serverid on npm-is. Ava jaotises „Ühenda“ vahekaart „Käivita kohapeal“. Siis lähevad sinu küsimused ainult statistikaametile.'
       },
       {
         question: 'Kuidas saab minu riigi lisada?',

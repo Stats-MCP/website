@@ -20,11 +20,11 @@ export const nl: CountryText = {
     office: 'Statistisch bureau van Noorwegen',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Wat is de meest recente inflatie in Noorwegen?',
+      question: 'Hoe zijn de huizenprijzen in Noorwegen veranderd?',
       answer:
-        'In september 2026 lagen de prijzen 3,4 % hoger dan in september 2025. De inflatie was het hoogst in januari en maart (3,6 %).',
-      highlight: '3,4 %',
-      seriesLabel: inflation
+        'De prijsindex van bestaande woningen in Noorwegen was 158,3 in het derde kwartaal van 2026 (2015 = 100). In het derde kwartaal van 2025 was de index 153,2.',
+      highlight: '158,3',
+      seriesLabel: 'Prijsindex bestaande woningen (2015 = 100)'
     }
   },
   ee: {
@@ -32,11 +32,11 @@ export const nl: CountryText = {
     office: 'Statistisch bureau van Estland',
     licence: 'CC BY-SA 4.0',
     example: {
-      question: 'Wat is de meest recente inflatie in Estland?',
+      question: 'Wat is het gemiddelde maandloon in Estland?',
       answer:
-        'In september 2026 lagen de prijzen 3,5 % hoger dan in september 2025. De inflatie was het laagst in augustus (1,5 %).',
-      highlight: '3,5 %',
-      seriesLabel: inflation
+        'Het gemiddelde bruto maandloon in Estland was € 2.243 in het tweede kwartaal van 2026. In het tweede kwartaal van 2025 was het € 2.126.',
+      highlight: '€ 2.243',
+      seriesLabel: 'Gemiddeld bruto maandloon, €'
     }
   },
   fo: {
@@ -56,11 +56,11 @@ export const nl: CountryText = {
     office: 'Statistisch bureau van Finland',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Wat is de meest recente inflatie in Finland?',
+      question: 'Hoe hoog is de werkloosheid in Finland?',
       answer:
-        'In september 2026 lagen de prijzen 2,5 % hoger dan in september 2025. Een jaar eerder daalden de prijzen licht.',
-      highlight: '2,5 %',
-      seriesLabel: inflation
+        'De werkloosheid in Finland was volgens de trend 10,5 % in september 2026. In september 2025 was die 10,0 %.',
+      highlight: '10,5 %',
+      seriesLabel: 'Werkloosheid, trend, %'
     }
   },
   se: {
@@ -68,11 +68,11 @@ export const nl: CountryText = {
     office: 'Statistisch bureau van Zweden',
     licence: 'CC0',
     example: {
-      question: 'Wat is de meest recente inflatie in Zweden?',
+      question: 'Hoeveel mensen wonen er in Zweden?',
       answer:
-        'In september 2026 lagen de prijzen 1,1 % hoger dan in september 2025. In april 2026 lagen ze 0,1 % lager dan een jaar eerder.',
-      highlight: '1,1 %',
-      seriesLabel: inflation
+        'In augustus 2026 had Zweden 10.621.103 inwoners. In september 2025 waren het er 10.609.460.',
+      highlight: '10.621.103',
+      seriesLabel: 'Bevolking, personen'
     }
   },
   dk: {
@@ -80,11 +80,12 @@ export const nl: CountryText = {
     office: 'Statistisch bureau van Denemarken',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Wat is de meest recente inflatie in Denemarken?',
+      question: 'Hoeveel mensen zijn er werkloos in Denemarken?',
       answer:
-        'In september 2026 lagen de prijzen 2,2 % hoger dan in september 2025. De inflatie was het laagst in februari (0,7 %).',
-      highlight: '2,2 %',
-      seriesLabel: inflation
+        'In september 2026 telde Denemarken 83.055 netto werklozen, voor seizoensinvloeden gecorrigeerd. In september 2025 waren het er 77.523.',
+      highlight: '83.055',
+      seriesLabel:
+        'Netto werklozen, voor seizoensinvloeden gecorrigeerd, personen'
     }
   },
   nl: {
@@ -92,11 +93,11 @@ export const nl: CountryText = {
     office: 'Centraal Bureau voor de Statistiek',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Wat is de meest recente inflatie in Nederland?',
+      question: 'Hoeveel mensen wonen er in Nederland?',
       answer:
-        'In september 2026 lagen de prijzen 3,4 % hoger dan in september 2025. De inflatie was het hoogst in mei (3,5 %).',
-      highlight: '3,4 %',
-      seriesLabel: inflation
+        'Eind september 2026 had Nederland 18.192.693 inwoners. Een jaar eerder waren het er 18.122.384.',
+      highlight: '18.192.693',
+      seriesLabel: 'Bevolking aan het eind van de maand, personen'
     }
   },
   eu: {
@@ -104,11 +105,11 @@ export const nl: CountryText = {
     office: 'Eurostat, het bureau voor de statistiek van de Europese Unie',
     licence: 'Vrij hergebruik met bronvermelding',
     example: {
-      question: 'Wat is de meest recente inflatie in de EU?',
+      question: 'Hoe hoog is de werkloosheid in de EU?',
       answer:
-        'In september 2026 lagen de prijzen in de EU 3,8 % hoger dan een jaar eerder. In januari 2026 was de inflatie 2,0 %.',
-      highlight: '3,8 %',
-      seriesLabel: 'Jaarlijkse inflatie (HICP), %'
+        'De werkloosheid in de EU was 6,2 % in september 2026, voor seizoensinvloeden gecorrigeerd. In september 2025 was die 6,0 %.',
+      highlight: '6,2 %',
+      seriesLabel: 'Werkloosheid EU27, voor seizoensinvloeden gecorrigeerd, %'
     }
   },
   ca: {
@@ -116,12 +117,11 @@ export const nl: CountryText = {
     office: 'Statistisch bureau van Canada',
     licence: 'Open licentie',
     example: {
-      question:
-        'Hoe zijn de consumentenprijzen in Canada het afgelopen jaar veranderd?',
+      question: 'Hoe hoog is de werkloosheid in Canada?',
       answer:
-        'In september 2026 was de consumentenprijsindex 170,0, tegen 164,9 in september 2025 (2002 = 100).',
-      highlight: '170,0',
-      seriesLabel: 'Consumentenprijsindex (2002 = 100)'
+        'De werkloosheid in Canada was 6,5 % in september 2026, voor seizoensinvloeden gecorrigeerd. In september 2025 was die 7,1 %.',
+      highlight: '6,5 %',
+      seriesLabel: 'Werkloosheid, voor seizoensinvloeden gecorrigeerd, %'
     }
   },
   is: {
@@ -129,11 +129,11 @@ export const nl: CountryText = {
     office: 'Statistisch bureau van IJsland',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Wat is de meest recente inflatie in IJsland?',
+      question: 'Hoe snel stijgen de lonen in IJsland?',
       answer:
-        'In oktober 2026 lagen de prijzen 5,9 % hoger dan in oktober 2025. In oktober 2025 was de inflatie 4,3 %.',
-      highlight: '5,9 %',
-      seriesLabel: inflation
+        'De lonen in IJsland lagen in september 2026 5,6 % hoger dan een jaar eerder. In september 2025 was de jaarlijkse stijging 7,8 %.',
+      highlight: '5,6 %',
+      seriesLabel: 'Loonindex, jaarlijkse verandering, %'
     }
   },
   hr: {
@@ -141,11 +141,11 @@ export const nl: CountryText = {
     office: 'Kroatisch Bureau voor de Statistiek',
     licence: 'Open licentie (Kroatië)',
     example: {
-      question: 'Wat is de meest recente inflatie in Kroatië?',
+      question: 'Hoeveel toeristen kwamen er deze zomer naar Kroatië?',
       answer:
-        'In september 2026 lagen de prijzen 4,7 % hoger dan in september 2025. In september 2024 was de inflatie 1,6 %.',
-      highlight: '4,7 %',
-      seriesLabel: inflation
+        'In augustus 2026 kwamen 4.823.649 toeristen aan in commerciële accommodaties in Kroatië. In augustus 2025 waren het er 4.714.658.',
+      highlight: '4.823.649',
+      seriesLabel: 'Aankomsten van toeristen, personen'
     }
   },
   ie: {
@@ -153,11 +153,11 @@ export const nl: CountryText = {
     office: 'Centraal Bureau voor de Statistiek van Ierland',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Wat is de meest recente inflatie in Ierland?',
+      question: 'Hoe snel stijgen de huizenprijzen in Ierland?',
       answer:
-        'In september 2026 lagen de prijzen 4,1 % hoger dan in september 2025. In september 2025 was de inflatie 2,7 %.',
-      highlight: '4,1 %',
-      seriesLabel: inflation
+        'De woningprijzen in Ierland stegen met 5,1 % in de 12 maanden tot augustus 2026. In augustus 2025 was de jaarlijkse stijging 7,5 %.',
+      highlight: '5,1 %',
+      seriesLabel: 'Woningprijzen, verandering over 12 maanden, %'
     }
   }
 };

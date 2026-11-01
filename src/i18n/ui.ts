@@ -73,6 +73,10 @@ export interface UiStrings {
   };
   keyFiguresLabel: string;
   keyFigures: { value: string; label: string }[];
+  audiences: {
+    title: string;
+    items: { who: string; text: string; prompt: string }[];
+  };
   howItWorks: {
     title: string;
     stepLabel: string;
@@ -82,6 +86,8 @@ export interface UiStrings {
     title: string;
     meta: string;
     clientTabs: string;
+    otherClients: string;
+    runLocally: string;
   };
   countryPage: {
     /** `{country}` is the country name. */
@@ -218,6 +224,31 @@ const en: UiStrings = {
     { value: '0', label: 'logs, accounts or API keys' },
     { value: '100%', label: 'of results name the source and link the table' }
   ],
+  audiences: {
+    title: 'Who uses StatsMCP',
+    items: [
+      {
+        who: 'Developers',
+        text: 'Add official data to your agent with one URL.',
+        prompt: 'Which Danish municipalities grew fastest in 2025?'
+      },
+      {
+        who: 'Journalists',
+        text: 'Check a figure and get the table link for your article.',
+        prompt: 'Is unemployment in Finland higher than a year ago?'
+      },
+      {
+        who: 'Analysts',
+        text: 'Compare countries without downloading spreadsheets.',
+        prompt: 'Compare house prices in Norway and Ireland since 2020.'
+      },
+      {
+        who: 'Researchers',
+        text: 'Find the right table, its codes and its licence.',
+        prompt: 'Which table has births by age of mother in Iceland?'
+      }
+    ]
+  },
   howItWorks: {
     title: 'How it works',
     stepLabel: 'Step',
@@ -242,7 +273,9 @@ const en: UiStrings = {
   connect: {
     title: 'Connect in under a minute',
     meta: 'Streamable HTTP · read-only · no sign-in · 60 requests/min',
-    clientTabs: 'Client'
+    clientTabs: 'Client',
+    otherClients: 'Other clients',
+    runLocally: 'Run locally'
   },
   countryPage: {
     title: '{country}: official statistics in your AI assistant.',

@@ -85,6 +85,31 @@ export const nb: UiStrings = {
       label: 'av resultatene oppgir kilden og lenker til tabellen'
     }
   ],
+  audiences: {
+    title: 'Hvem bruker StatsMCP',
+    items: [
+      {
+        who: 'Utviklere',
+        text: 'Legg til offisielle data i agenten din med én URL.',
+        prompt: 'Hvilke danske kommuner vokste raskest i 2025?'
+      },
+      {
+        who: 'Journalister',
+        text: 'Kontroller et tall og få lenken til tabellen for artikkelen din.',
+        prompt: 'Er arbeidsledigheten i Finland høyere enn for et år siden?'
+      },
+      {
+        who: 'Analytikere',
+        text: 'Sammenlign land uten å laste ned regneark.',
+        prompt: 'Sammenlign boligprisene i Norge og Irland siden 2020.'
+      },
+      {
+        who: 'Forskere',
+        text: 'Finn riktig tabell, kodene og lisensen.',
+        prompt: 'Hvilken tabell har fødte etter morens alder på Island?'
+      }
+    ]
+  },
   howItWorks: {
     title: 'Slik fungerer det',
     stepLabel: 'Steg',
@@ -109,7 +134,9 @@ export const nb: UiStrings = {
   connect: {
     title: 'Koble til på under ett minutt',
     meta: 'Streamable HTTP · kun lesetilgang · ingen innlogging · 60 forespørsler/min',
-    clientTabs: 'Klient'
+    clientTabs: 'Klient',
+    otherClients: 'Andre klienter',
+    runLocally: 'Kjør lokalt'
   },
   countryPage: {
     title: '{country}: offisiell statistikk i KI-assistenten din.',
@@ -168,7 +195,7 @@ export const nb: UiStrings = {
       {
         question: 'Kan jeg kjøre det på min egen datamaskin?',
         answer:
-          'Ja. Serverne ligger på npm. Åpne fanen «Run locally» under Koble til. Da går spørsmålene dine bare til statistikkbyrået.'
+          'Ja. Serverne ligger på npm. Åpne fanen «Kjør lokalt» under Koble til. Da går spørsmålene dine bare til statistikkbyrået.'
       },
       {
         question: 'Hvordan kan landet mitt bli lagt til?',

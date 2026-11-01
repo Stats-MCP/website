@@ -20,11 +20,11 @@ export const de: CountryText = {
     office: 'Statistisches Zentralamt Norwegens',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Wie hoch ist die aktuelle Inflationsrate in Norwegen?',
+      question: 'Wie haben sich die Immobilienpreise in Norwegen entwickelt?',
       answer:
-        'Im September 2026 lagen die Preise um 3,4 % höher als im September 2025. Die Inflation war im Januar und März am höchsten (3,6 %).',
-      highlight: '3,4 %',
-      seriesLabel: inflation
+        'Der Preisindex für bestehende Wohnungen in Norwegen lag im 3. Quartal 2026 bei 158,3 (2015 = 100). Im 3. Quartal 2025 lag er bei 153,2.',
+      highlight: '158,3',
+      seriesLabel: 'Preisindex für bestehende Wohnungen (2015 = 100)'
     }
   },
   ee: {
@@ -32,11 +32,11 @@ export const de: CountryText = {
     office: 'Statistisches Amt Estlands',
     licence: 'CC BY-SA 4.0',
     example: {
-      question: 'Wie hoch ist die aktuelle Inflationsrate in Estland?',
+      question: 'Wie hoch ist der durchschnittliche Monatslohn in Estland?',
       answer:
-        'Im September 2026 lagen die Preise um 3,5 % höher als im September 2025. Die Inflation war im August am niedrigsten (1,5 %).',
-      highlight: '3,5 %',
-      seriesLabel: inflation
+        'Im 2. Quartal 2026 betrug der durchschnittliche Bruttomonatslohn in Estland 2.243 €. Im 2. Quartal 2025 waren es 2.126 €.',
+      highlight: '2.243 €',
+      seriesLabel: 'Durchschnittlicher Bruttomonatslohn, €'
     }
   },
   fo: {
@@ -56,11 +56,11 @@ export const de: CountryText = {
     office: 'Statistisches Amt Finnlands',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Wie hoch ist die aktuelle Inflationsrate in Finnland?',
+      question: 'Wie hoch ist die Arbeitslosigkeit in Finnland?',
       answer:
-        'Im September 2026 lagen die Preise um 2,5 % höher als im September 2025. Ein Jahr zuvor sanken die Preise leicht.',
-      highlight: '2,5 %',
-      seriesLabel: inflation
+        'Die Arbeitslosenquote (Trend) in Finnland lag im September 2026 bei 10,5 %. Im September 2025 lag sie bei 10,0 %.',
+      highlight: '10,5 %',
+      seriesLabel: 'Arbeitslosenquote, Trend, %'
     }
   },
   se: {
@@ -68,11 +68,11 @@ export const de: CountryText = {
     office: 'Statistisches Zentralamt Schwedens',
     licence: 'CC0',
     example: {
-      question: 'Wie hoch ist die aktuelle Inflationsrate in Schweden?',
+      question: 'Wie viele Menschen leben in Schweden?',
       answer:
-        'Im September 2026 lagen die Preise um 1,1 % höher als im September 2025. Im April 2026 lagen sie um 0,1 % niedriger als ein Jahr zuvor.',
-      highlight: '1,1 %',
-      seriesLabel: inflation
+        'Im August 2026 hatte Schweden 10.621.103 Einwohner. Im September 2025 waren es 10.609.460.',
+      highlight: '10.621.103',
+      seriesLabel: 'Bevölkerung, Personen'
     }
   },
   dk: {
@@ -80,11 +80,11 @@ export const de: CountryText = {
     office: 'Statistisches Amt Dänemarks',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Wie hoch ist die aktuelle Inflationsrate in Dänemark?',
+      question: 'Wie viele Menschen sind in Dänemark arbeitslos?',
       answer:
-        'Im September 2026 lagen die Preise um 2,2 % höher als im September 2025. Die Inflation war im Februar am niedrigsten (0,7 %).',
-      highlight: '2,2 %',
-      seriesLabel: inflation
+        'Im September 2026 gab es in Dänemark saisonbereinigt 83.055 Nettoarbeitslose. Im September 2025 waren es 77.523.',
+      highlight: '83.055',
+      seriesLabel: 'Nettoarbeitslose, saisonbereinigt, Personen'
     }
   },
   nl: {
@@ -92,11 +92,11 @@ export const de: CountryText = {
     office: 'Statistisches Zentralamt der Niederlande',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Wie hoch ist die aktuelle Inflationsrate in den Niederlanden?',
+      question: 'Wie viele Menschen leben in den Niederlanden?',
       answer:
-        'Im September 2026 lagen die Preise um 3,4 % höher als im September 2025. Die Inflation war im Mai am höchsten (3,5 %).',
-      highlight: '3,4 %',
-      seriesLabel: inflation
+        'Ende September 2026 hatten die Niederlande 18.192.693 Einwohner. Ein Jahr zuvor waren es 18.122.384.',
+      highlight: '18.192.693',
+      seriesLabel: 'Bevölkerung am Monatsende, Personen'
     }
   },
   eu: {
@@ -104,11 +104,11 @@ export const de: CountryText = {
     office: 'Eurostat, das statistische Amt der Europäischen Union',
     licence: 'Freie Weiterverwendung mit Quellenangabe',
     example: {
-      question: 'Wie hoch ist die aktuelle Inflationsrate in der EU?',
+      question: 'Wie hoch ist die Arbeitslosenquote in der EU?',
       answer:
-        'Im September 2026 lagen die Preise in der EU um 3,8 % höher als ein Jahr zuvor. Im Januar 2026 betrug die Rate 2,0 %.',
-      highlight: '3,8 %',
-      seriesLabel: 'Jährliche Inflationsrate (HVPI), %'
+        'Die Arbeitslosenquote in der EU lag im September 2026 saisonbereinigt bei 6,2 %. Im September 2025 lag sie bei 6,0 %.',
+      highlight: '6,2 %',
+      seriesLabel: 'Arbeitslosenquote EU27, saisonbereinigt, %'
     }
   },
   ca: {
@@ -116,12 +116,11 @@ export const de: CountryText = {
     office: 'Statistisches Amt Kanadas',
     licence: 'Offene Lizenz',
     example: {
-      question:
-        'Wie haben sich die Verbraucherpreise in Kanada im letzten Jahr verändert?',
+      question: 'Wie hoch ist die Arbeitslosenquote in Kanada?',
       answer:
-        'Im September 2026 lag der Verbraucherpreisindex bei 170,0, gegenüber 164,9 im September 2025 (2002 = 100).',
-      highlight: '170,0',
-      seriesLabel: 'Verbraucherpreisindex (2002 = 100)'
+        'Die Arbeitslosenquote in Kanada lag im September 2026 saisonbereinigt bei 6,5 %. Im September 2025 lag sie bei 7,1 %.',
+      highlight: '6,5 %',
+      seriesLabel: 'Arbeitslosenquote, saisonbereinigt, %'
     }
   },
   is: {
@@ -129,11 +128,11 @@ export const de: CountryText = {
     office: 'Statistisches Amt Islands',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Wie hoch ist die aktuelle Inflationsrate in Island?',
+      question: 'Wie schnell steigen die Löhne in Island?',
       answer:
-        'Im Oktober 2026 lagen die Preise um 5,9 % höher als im Oktober 2025. Im Oktober 2025 betrug die Rate 4,3 %.',
-      highlight: '5,9 %',
-      seriesLabel: inflation
+        'Die Löhne in Island lagen im September 2026 um 5,6 % höher als ein Jahr zuvor. Im September 2025 betrug der Anstieg zum Vorjahr 7,8 %.',
+      highlight: '5,6 %',
+      seriesLabel: 'Lohnindex, Veränderung zum Vorjahr, %'
     }
   },
   hr: {
@@ -141,11 +140,11 @@ export const de: CountryText = {
     office: 'Kroatisches Statistikamt',
     licence: 'Offene Lizenz (Kroatien)',
     example: {
-      question: 'Wie hoch ist die aktuelle Inflationsrate in Kroatien?',
+      question: 'Wie viele Touristen kamen diesen Sommer nach Kroatien?',
       answer:
-        'Im September 2026 lagen die Preise um 4,7 % höher als im September 2025. Im September 2024 betrug die Rate 1,6 %.',
-      highlight: '4,7 %',
-      seriesLabel: inflation
+        'Im August 2026 kamen 4.823.649 Touristen in gewerblichen Unterkünften in Kroatien an. Im August 2025 waren es 4.714.658.',
+      highlight: '4.823.649',
+      seriesLabel: 'Touristenankünfte, Personen'
     }
   },
   ie: {
@@ -153,11 +152,11 @@ export const de: CountryText = {
     office: 'Zentrales Statistikamt Irlands',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Wie hoch ist die aktuelle Inflationsrate in Irland?',
+      question: 'Wie schnell steigen die Immobilienpreise in Irland?',
       answer:
-        'Im September 2026 lagen die Preise um 4,1 % höher als im September 2025. Im September 2025 betrug die Rate 2,7 %.',
-      highlight: '4,1 %',
-      seriesLabel: inflation
+        'Die Preise für Wohnimmobilien in Irland stiegen in den 12 Monaten bis August 2026 um 5,1 %. Im August 2025 betrug der Anstieg zum Vorjahr 7,5 %.',
+      highlight: '5,1 %',
+      seriesLabel: 'Preise für Wohnimmobilien, Veränderung über 12 Monate, %'
     }
   }
 };

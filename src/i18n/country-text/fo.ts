@@ -18,11 +18,11 @@ export const fo: CountryText = {
     office: 'Hagstovan í Noregi',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hvør er nýggjasti prísvøksturin í Noregi?',
+      question: 'Hvussu hava húsaprísirnir broytt seg í Noregi?',
       answer:
-        'Í september 2026 vóru prísirnir 3,4% hægri enn í september 2025. Prísvøksturin var hægstur í januar og mars (3,6%).',
-      highlight: '3,4%',
-      seriesLabel: 'Árligur prísvøkstur, %'
+        'Prístalið fyri brúktar íbúðir í Noregi var 158,3 í 3. ársfjórðingi 2026 (2015 = 100). Í 3. ársfjórðingi 2025 var tað 153,2.',
+      highlight: '158,3',
+      seriesLabel: 'Prístal fyri brúktar íbúðir (2015 = 100)'
     }
   },
   ee: {
@@ -30,11 +30,11 @@ export const fo: CountryText = {
     office: 'Hagstovan í Estlandi',
     licence: 'CC BY-SA 4.0',
     example: {
-      question: 'Hvør er nýggjasti prísvøksturin í Estlandi?',
+      question: 'Hvussu høg er miðalmánaðarlønin í Estlandi?',
       answer:
-        'Í september 2026 vóru prísirnir 3,5% hægri enn í september 2025. Prísvøksturin var lægstur í august (1,5%).',
-      highlight: '3,5%',
-      seriesLabel: 'Árligur prísvøkstur, %'
+        'Miðal bruttománaðarlønin í Estlandi var 2.243 € í 2. ársfjórðingi 2026. Í 2. ársfjórðingi 2025 var hon 2.126 €.',
+      highlight: '2.243 €',
+      seriesLabel: 'Miðal bruttománaðarløn, €'
     }
   },
   fo: {
@@ -54,11 +54,11 @@ export const fo: CountryText = {
     office: 'Hagstovan í Finnlandi',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hvør er nýggjasti prísvøksturin í Finnlandi?',
+      question: 'Hvussu stórt er arbeiðsloysið í Finnlandi?',
       answer:
-        'Í september 2026 vóru prísirnir 2,5% hægri enn í september 2025. Fyri einum ári síðan lækkaðu prísirnir eitt sindur.',
-      highlight: '2,5%',
-      seriesLabel: 'Árligur prísvøkstur, %'
+        'Arbeiðsloysið í Finnlandi var 10,5% í september 2026 (gongd). Í september 2025 var tað 10,0%.',
+      highlight: '10,5%',
+      seriesLabel: 'Arbeiðsloysi, gongd, %'
     }
   },
   se: {
@@ -66,11 +66,11 @@ export const fo: CountryText = {
     office: 'Hagstovan í Svøríki',
     licence: 'CC0',
     example: {
-      question: 'Hvør er nýggjasti prísvøksturin í Svøríki?',
+      question: 'Hvussu nógv fólk búgva í Svøríki?',
       answer:
-        'Í september 2026 vóru prísirnir 1,1% hægri enn í september 2025. Í apríl 2026 vóru teir 0,1% lægri enn árið fyri.',
-      highlight: '1,1%',
-      seriesLabel: 'Árligur prísvøkstur, %'
+        'Í Svøríki búðu 10.621.103 fólk í august 2026. Í september 2025 búðu 10.609.460 fólk har.',
+      highlight: '10.621.103',
+      seriesLabel: 'Fólkatal, persónar'
     }
   },
   dk: {
@@ -78,11 +78,11 @@ export const fo: CountryText = {
     office: 'Hagstovan í Danmark',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hvør er nýggjasti prísvøksturin í Danmark?',
+      question: 'Hvussu nógv eru arbeiðsleys í Danmark?',
       answer:
-        'Í september 2026 vóru prísirnir 2,2% hægri enn í september 2025. Prísvøksturin var lægstur í februar (0,7%).',
-      highlight: '2,2%',
-      seriesLabel: 'Árligur prísvøkstur, %'
+        'Í Danmark vóru 83.055 nettoarbeiðsleys í september 2026, árstíðarjavnað. Í september 2025 var talið 77.523.',
+      highlight: '83.055',
+      seriesLabel: 'Nettoarbeiðsleys, árstíðarjavnað, persónar'
     }
   },
   nl: {
@@ -90,11 +90,11 @@ export const fo: CountryText = {
     office: 'Hagstovan í Niðurlondum',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hvør er nýggjasti prísvøksturin í Niðurlondum?',
+      question: 'Hvussu nógv fólk búgva í Niðurlondum?',
       answer:
-        'Í september 2026 vóru prísirnir 3,4% hægri enn í september 2025. Prísvøksturin var hægstur í mai (3,5%).',
-      highlight: '3,4%',
-      seriesLabel: 'Árligur prísvøkstur, %'
+        'Í Niðurlondum búðu 18.192.693 fólk við enda september 2026. Eitt ár fyri búðu 18.122.384 fólk har.',
+      highlight: '18.192.693',
+      seriesLabel: 'Fólkatal við mánaðarenda, persónar'
     }
   },
   eu: {
@@ -102,11 +102,11 @@ export const fo: CountryText = {
     office: 'Eurostat, hagstova Evropasamveldisins',
     licence: 'Frí endurnýtsla við keldutilvísing',
     example: {
-      question: 'Hvør er nýggjasti prísvøksturin í ES?',
+      question: 'Hvussu stórt er arbeiðsloysið í ES?',
       answer:
-        'Í september 2026 vóru prísirnir í ES 3,8% hægri enn árið fyri. Í januar 2026 var prísvøksturin 2,0%.',
-      highlight: '3,8%',
-      seriesLabel: 'Árligur prísvøkstur (HICP), %'
+        'Arbeiðsloysið í ES var 6,2% í september 2026, árstíðarjavnað. Í september 2025 var tað 6,0%.',
+      highlight: '6,2%',
+      seriesLabel: 'Arbeiðsloysi í ES27, árstíðarjavnað, %'
     }
   },
   ca: {
@@ -114,12 +114,11 @@ export const fo: CountryText = {
     office: 'Hagstovan í Kanada',
     licence: 'Opið loyvi',
     example: {
-      question:
-        'Hvussu hava brúkaraprísirnir í Kanada broytt seg seinasta árið?',
+      question: 'Hvussu stórt er arbeiðsloysið í Kanada?',
       answer:
-        'Í september 2026 var brúkaraprístalið 170,0, móti 164,9 í september 2025 (2002 = 100).',
-      highlight: '170,0',
-      seriesLabel: 'Brúkaraprístal (2002 = 100)'
+        'Arbeiðsloysið í Kanada var 6,5% í september 2026, árstíðarjavnað. Í september 2025 var tað 7,1%.',
+      highlight: '6,5%',
+      seriesLabel: 'Arbeiðsloysi, árstíðarjavnað, %'
     }
   },
   is: {
@@ -127,11 +126,11 @@ export const fo: CountryText = {
     office: 'Hagstova Íslands',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hvør er nýggjasti prísvøksturin í Íslandi?',
+      question: 'Hvussu skjótt hækka lønirnar í Íslandi?',
       answer:
-        'Í oktober 2026 vóru prísirnir 5,9% hægri enn í oktober 2025. Í oktober 2025 var prísvøksturin 4,3%.',
-      highlight: '5,9%',
-      seriesLabel: 'Árligur prísvøkstur, %'
+        'Lønirnar í Íslandi vóru 5,6% hægri í september 2026 enn eitt ár fyri. Í september 2025 var árliga hækkingin 7,8%.',
+      highlight: '5,6%',
+      seriesLabel: 'Lønartal, árlig broyting, %'
     }
   },
   hr: {
@@ -139,11 +138,11 @@ export const fo: CountryText = {
     office: 'Hagstovan í Kroatia',
     licence: 'Opið loyvi (Kroatia)',
     example: {
-      question: 'Hvør er nýggjasti prísvøksturin í Kroatia?',
+      question: 'Hvussu nógv ferðafólk komu til Kroatia í summar?',
       answer:
-        'Í september 2026 vóru prísirnir 4,7% hægri enn í september 2025. Í september 2024 var prísvøksturin 1,6%.',
-      highlight: '4,7%',
-      seriesLabel: 'Árligur prísvøkstur, %'
+        'Í august 2026 komu 4.823.649 ferðafólk á vinnuligar gistingar í Kroatia. Í august 2025 vóru tey 4.714.658.',
+      highlight: '4.823.649',
+      seriesLabel: 'Ferðafólk komin, persónar'
     }
   },
   ie: {
@@ -151,11 +150,11 @@ export const fo: CountryText = {
     office: 'Høvuðshagstovan í Írlandi',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hvør er nýggjasti prísvøksturin í Írlandi?',
+      question: 'Hvussu skjótt hækka bústaðarprísirnir í Írlandi?',
       answer:
-        'Í september 2026 vóru prísirnir 4,1% hægri enn í september 2025. Í september 2025 var prísvøksturin 2,7%.',
-      highlight: '4,1%',
-      seriesLabel: 'Árligur prísvøkstur, %'
+        'Bústaðarprísirnir í Írlandi hækkaðu 5,1% í 12 mánaðirnar fram til august 2026. Í august 2025 var árliga hækkingin 7,5%.',
+      highlight: '5,1%',
+      seriesLabel: 'Bústaðarprísir, 12 mánaða broyting, %'
     }
   }
 };

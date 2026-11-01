@@ -18,11 +18,11 @@ export const et: CountryText = {
     office: 'Norra statistikaamet',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Milline on viimane inflatsioon Norras?',
+      question: 'Kuidas on eluasemehinnad Norras muutunud?',
       answer:
-        '2026. aasta septembris olid hinnad 3,4% kõrgemad kui 2025. aasta septembris. Inflatsioon oli kõrgeim jaanuaris ja märtsis (3,6%).',
-      highlight: '3,4%',
-      seriesLabel: 'Aastane inflatsioon, %'
+        'Norra olemasolevate eluruumide hinnaindeks oli 2026. aasta III kvartalis 158,3 (2015 = 100). 2025. aasta III kvartalis oli see 153,2.',
+      highlight: '158,3',
+      seriesLabel: 'Olemasolevate eluruumide hinnaindeks (2015 = 100)'
     }
   },
   ee: {
@@ -30,11 +30,11 @@ export const et: CountryText = {
     office: 'Statistikaamet',
     licence: 'CC BY-SA 4.0',
     example: {
-      question: 'Milline on viimane inflatsioon Eestis?',
+      question: 'Kui suur on keskmine kuupalk Eestis?',
       answer:
-        '2026. aasta septembris olid hinnad 3,5% kõrgemad kui 2025. aasta septembris. Inflatsioon oli madalaim augustis (1,5%).',
-      highlight: '3,5%',
-      seriesLabel: 'Aastane inflatsioon, %'
+        'Eesti keskmine brutokuupalk oli 2026. aasta II kvartalis 2243 eurot. 2025. aasta II kvartalis oli see 2126 eurot.',
+      highlight: '2243 eurot',
+      seriesLabel: 'Keskmine brutokuupalk, eurot'
     }
   },
   fo: {
@@ -54,11 +54,11 @@ export const et: CountryText = {
     office: 'Soome statistikaamet',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Milline on viimane inflatsioon Soomes?',
+      question: 'Kui kõrge on töötus Soomes?',
       answer:
-        '2026. aasta septembris olid hinnad 2,5% kõrgemad kui 2025. aasta septembris. Aasta tagasi hinnad veidi langesid.',
-      highlight: '2,5%',
-      seriesLabel: 'Aastane inflatsioon, %'
+        'Soome töötuse määra trend oli 2026. aasta septembris 10,5%. 2025. aasta septembris oli see 10,0%.',
+      highlight: '10,5%',
+      seriesLabel: 'Töötuse määr, trend, %'
     }
   },
   se: {
@@ -66,11 +66,11 @@ export const et: CountryText = {
     office: 'Rootsi statistikaamet',
     licence: 'CC0',
     example: {
-      question: 'Milline on viimane inflatsioon Rootsis?',
+      question: 'Kui palju inimesi elab Rootsis?',
       answer:
-        '2026. aasta septembris olid hinnad 1,1% kõrgemad kui 2025. aasta septembris. 2026. aasta aprillis olid need 0,1% madalamad kui aasta varem.',
-      highlight: '1,1%',
-      seriesLabel: 'Aastane inflatsioon, %'
+        'Rootsis oli 2026. aasta augustis 10 621 103 elanikku. 2025. aasta septembris oli elanikke 10 609 460.',
+      highlight: '10 621 103',
+      seriesLabel: 'Rahvaarv, inimesi'
     }
   },
   dk: {
@@ -78,11 +78,11 @@ export const et: CountryText = {
     office: 'Taani statistikaamet',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Milline on viimane inflatsioon Taanis?',
+      question: 'Kui palju on Taanis töötuid?',
       answer:
-        '2026. aasta septembris olid hinnad 2,2% kõrgemad kui 2025. aasta septembris. Inflatsioon oli madalaim veebruaris (0,7%).',
-      highlight: '2,2%',
-      seriesLabel: 'Aastane inflatsioon, %'
+        'Taanis oli 2026. aasta septembris 83 055 netotöötut, sesoonselt korrigeeritud. 2025. aasta septembris oli neid 77 523.',
+      highlight: '83 055',
+      seriesLabel: 'Netotöötud, sesoonselt korrigeeritud, inimesi'
     }
   },
   nl: {
@@ -90,11 +90,11 @@ export const et: CountryText = {
     office: 'Madalmaade statistikaamet',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Milline on viimane inflatsioon Madalmaades?',
+      question: 'Kui palju inimesi elab Madalmaades?',
       answer:
-        '2026. aasta septembris olid hinnad 3,4% kõrgemad kui 2025. aasta septembris. Inflatsioon oli kõrgeim mais (3,5%).',
-      highlight: '3,4%',
-      seriesLabel: 'Aastane inflatsioon, %'
+        'Madalmaades oli 2026. aasta septembri lõpus 18 192 693 elanikku. Aasta varem oli elanikke 18 122 384.',
+      highlight: '18 192 693',
+      seriesLabel: 'Rahvaarv kuu lõpus, inimesi'
     }
   },
   eu: {
@@ -102,11 +102,11 @@ export const et: CountryText = {
     office: 'Eurostat, Euroopa Liidu statistikaamet',
     licence: 'Vaba taaskasutus viitega allikale',
     example: {
-      question: 'Milline on viimane inflatsioon ELis?',
+      question: 'Kui suur on töötuse määr ELis?',
       answer:
-        '2026. aasta septembris olid hinnad ELis 3,8% kõrgemad kui aasta varem. 2026. aasta jaanuaris oli inflatsioon 2,0%.',
-      highlight: '3,8%',
-      seriesLabel: 'Aastane inflatsioon (HICP), %'
+        'ELi töötuse määr oli 2026. aasta septembris 6,2%, sesoonselt korrigeeritud. 2025. aasta septembris oli see 6,0%.',
+      highlight: '6,2%',
+      seriesLabel: 'EL27 töötuse määr, sesoonselt korrigeeritud, %'
     }
   },
   ca: {
@@ -114,12 +114,11 @@ export const et: CountryText = {
     office: 'Kanada statistikaamet',
     licence: 'Avatud litsents',
     example: {
-      question:
-        'Kuidas on tarbijahinnad Kanadas viimase aasta jooksul muutunud?',
+      question: 'Kui suur on töötuse määr Kanadas?',
       answer:
-        '2026. aasta septembris oli tarbijahinnaindeks 170,0, 2025. aasta septembris aga 164,9 (2002 = 100).',
-      highlight: '170,0',
-      seriesLabel: 'Tarbijahinnaindeks (2002 = 100)'
+        'Kanada töötuse määr oli 2026. aasta septembris 6,5%, sesoonselt korrigeeritud. 2025. aasta septembris oli see 7,1%.',
+      highlight: '6,5%',
+      seriesLabel: 'Töötuse määr, sesoonselt korrigeeritud, %'
     }
   },
   is: {
@@ -127,11 +126,11 @@ export const et: CountryText = {
     office: 'Islandi statistikaamet',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Milline on viimane inflatsioon Islandil?',
+      question: 'Kui kiiresti kasvavad palgad Islandil?',
       answer:
-        '2026. aasta oktoobris olid hinnad 5,9% kõrgemad kui 2025. aasta oktoobris. 2025. aasta oktoobris oli inflatsioon 4,3%.',
-      highlight: '5,9%',
-      seriesLabel: 'Aastane inflatsioon, %'
+        'Islandi palgad olid 2026. aasta septembris 5,6% kõrgemad kui aasta varem. 2025. aasta septembris oli aastane kasv 7,8%.',
+      highlight: '5,6%',
+      seriesLabel: 'Palgaindeks, aastane muutus, %'
     }
   },
   hr: {
@@ -139,11 +138,11 @@ export const et: CountryText = {
     office: 'Horvaatia statistikaamet',
     licence: 'Avatud litsents (Horvaatia)',
     example: {
-      question: 'Milline on viimane inflatsioon Horvaatias?',
+      question: 'Kui palju turiste tuli sel suvel Horvaatiasse?',
       answer:
-        '2026. aasta septembris olid hinnad 4,7% kõrgemad kui 2025. aasta septembris. 2024. aasta septembris oli inflatsioon 1,6%.',
-      highlight: '4,7%',
-      seriesLabel: 'Aastane inflatsioon, %'
+        '2026. aasta augustis saabus Horvaatia majutusettevõtetesse 4 823 649 turisti. 2025. aasta augustis oli neid 4 714 658.',
+      highlight: '4 823 649',
+      seriesLabel: 'Saabunud turistid, inimesi'
     }
   },
   ie: {
@@ -151,11 +150,11 @@ export const et: CountryText = {
     office: 'Iirimaa keskstatistikaamet',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Milline on viimane inflatsioon Iirimaal?',
+      question: 'Kui kiiresti tõusevad kinnisvarahinnad Iirimaal?',
       answer:
-        '2026. aasta septembris olid hinnad 4,1% kõrgemad kui 2025. aasta septembris. 2025. aasta septembris oli inflatsioon 2,7%.',
-      highlight: '4,1%',
-      seriesLabel: 'Aastane inflatsioon, %'
+        'Iirimaa elamukinnisvara hinnad tõusid 2026. aasta augustiga lõppenud 12 kuuga 5,1%. 2025. aasta augustis oli aastane tõus 7,5%.',
+      highlight: '5,1%',
+      seriesLabel: 'Kinnisvarahinnad, 12 kuu muutus, %'
     }
   }
 };

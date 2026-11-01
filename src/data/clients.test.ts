@@ -7,6 +7,7 @@ import {
   cursorInstallLink,
   vscodeInstallLink
 } from '@/data/clients';
+import type { Country } from '@/data/countries';
 import { getCountry } from '@/data/test-helpers';
 
 const slovenia = getCountry('si');
@@ -41,14 +42,15 @@ describe('install links', () => {
   });
 });
 
-describe('clientsFor', () => {
-  it.each([
-    ['si', true],
-    ['no', false]
-  ])('offers the local option for %s: %s', (id, hasLocal) => {
-    const ids = clientsFor(getCountry(id)).map((client) => client.id);
+const clientIds = (country: Country) =>
+  clientsFor(country).map((client) => client.id);
 
-    expect(ids.includes('local')).toBe(hasLocal);
+describe('clientsFor', () => {
+  it('offers the local option only for a country with an npm package', () => {
+    const { localPackage: _localPackage, ...withoutPackage } = getCountry('no');
+
+    expect(clientIds(getCountry('no'))).toContain('local');
+    expect(clientIds(withoutPackage)).not.toContain('local');
   });
 });
 

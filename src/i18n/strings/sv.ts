@@ -89,6 +89,31 @@ export const sv: UiStrings = {
       label: 'av resultaten anger källan och länkar till tabellen'
     }
   ],
+  audiences: {
+    title: 'Vem använder StatsMCP',
+    items: [
+      {
+        who: 'Utvecklare',
+        text: 'Lägg till officiella data i din agent med en enda URL.',
+        prompt: 'Vilka danska kommuner växte snabbast 2025?'
+      },
+      {
+        who: 'Journalister',
+        text: 'Kontrollera en siffra och få länken till tabellen för din artikel.',
+        prompt: 'Är arbetslösheten i Finland högre än för ett år sedan?'
+      },
+      {
+        who: 'Analytiker',
+        text: 'Jämför länder utan att ladda ner kalkylblad.',
+        prompt: 'Jämför bostadspriserna i Norge och Irland sedan 2020.'
+      },
+      {
+        who: 'Forskare',
+        text: 'Hitta rätt tabell, dess koder och dess licens.',
+        prompt: 'Vilken tabell visar födda efter moderns ålder på Island?'
+      }
+    ]
+  },
   howItWorks: {
     title: 'Så fungerar det',
     stepLabel: 'Steg',
@@ -113,7 +138,9 @@ export const sv: UiStrings = {
   connect: {
     title: 'Anslut på under en minut',
     meta: 'Streamable HTTP · endast läsning · ingen inloggning · 60 förfrågningar/min',
-    clientTabs: 'Klient'
+    clientTabs: 'Klient',
+    otherClients: 'Andra klienter',
+    runLocally: 'Kör lokalt'
   },
   countryPage: {
     title: '{country}: officiell statistik i din AI-assistent.',
@@ -172,7 +199,7 @@ export const sv: UiStrings = {
       {
         question: 'Kan jag köra den på min egen dator?',
         answer:
-          'Ja. Servrarna finns på npm. Öppna fliken ”Run locally” under Anslut. Då går dina frågor bara till statistikmyndigheten.'
+          'Ja. Servrarna finns på npm. Öppna fliken ”Kör lokalt” under Anslut. Då går dina frågor bara till statistikmyndigheten.'
       },
       {
         question: 'Hur kan mitt land läggas till?',

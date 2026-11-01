@@ -18,11 +18,11 @@ export const fi: CountryText = {
     office: 'Norjan tilastokeskus',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Mikä on Norjan viimeisin inflaatio?',
+      question: 'Miten asuntojen hinnat ovat muuttuneet Norjassa?',
       answer:
-        'Syyskuussa 2026 hinnat olivat 3,4 % korkeammat kuin syyskuussa 2025. Inflaatio oli korkeimmillaan tammi- ja maaliskuussa (3,6 %).',
-      highlight: '3,4 %',
-      seriesLabel: 'Inflaatio, vuosimuutos, %'
+        'Vanhojen asuntojen hintaindeksi oli Norjassa 158,3 vuoden 2026 kolmannella neljänneksellä (2015 = 100). Vuoden 2025 kolmannella neljänneksellä se oli 153,2.',
+      highlight: '158,3',
+      seriesLabel: 'Vanhojen asuntojen hintaindeksi (2015 = 100)'
     }
   },
   ee: {
@@ -30,11 +30,11 @@ export const fi: CountryText = {
     office: 'Viron tilastovirasto',
     licence: 'CC BY-SA 4.0',
     example: {
-      question: 'Mikä on Viron viimeisin inflaatio?',
+      question: 'Mikä on keskimääräinen kuukausipalkka Virossa?',
       answer:
-        'Syyskuussa 2026 hinnat olivat 3,5 % korkeammat kuin syyskuussa 2025. Inflaatio oli matalimmillaan elokuussa (1,5 %).',
-      highlight: '3,5 %',
-      seriesLabel: 'Inflaatio, vuosimuutos, %'
+        'Keskimääräinen bruttokuukausipalkka oli Virossa 2 243 euroa vuoden 2026 toisella neljänneksellä. Vuoden 2025 toisella neljänneksellä se oli 2 126 euroa.',
+      highlight: '2 243 euroa',
+      seriesLabel: 'Keskimääräinen bruttokuukausipalkka, euroa'
     }
   },
   fo: {
@@ -54,11 +54,11 @@ export const fi: CountryText = {
     office: 'Tilastokeskus',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Mikä on Suomen viimeisin inflaatio?',
+      question: 'Kuinka korkea työttömyys Suomessa on?',
       answer:
-        'Syyskuussa 2026 hinnat olivat 2,5 % korkeammat kuin syyskuussa 2025. Vuosi sitten hinnat laskivat hieman.',
-      highlight: '2,5 %',
-      seriesLabel: 'Inflaatio, vuosimuutos, %'
+        'Työttömyysasteen trendi oli Suomessa 10,5 % syyskuussa 2026. Syyskuussa 2025 se oli 10,0 %.',
+      highlight: '10,5 %',
+      seriesLabel: 'Työttömyysaste, trendi, %'
     }
   },
   se: {
@@ -66,11 +66,11 @@ export const fi: CountryText = {
     office: 'Ruotsin tilastokeskus',
     licence: 'CC0',
     example: {
-      question: 'Mikä on Ruotsin viimeisin inflaatio?',
+      question: 'Montako ihmistä Ruotsissa asuu?',
       answer:
-        'Syyskuussa 2026 hinnat olivat 1,1 % korkeammat kuin syyskuussa 2025. Huhtikuussa 2026 ne olivat 0,1 % alemmat kuin vuotta aiemmin.',
-      highlight: '1,1 %',
-      seriesLabel: 'Inflaatio, vuosimuutos, %'
+        'Ruotsissa oli 10 621 103 asukasta elokuussa 2026. Syyskuussa 2025 asukkaita oli 10 609 460.',
+      highlight: '10 621 103',
+      seriesLabel: 'Väkiluku, henkilöä'
     }
   },
   dk: {
@@ -78,11 +78,11 @@ export const fi: CountryText = {
     office: 'Tanskan tilastokeskus',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Mikä on Tanskan viimeisin inflaatio?',
+      question: 'Montako työtöntä Tanskassa on?',
       answer:
-        'Syyskuussa 2026 hinnat olivat 2,2 % korkeammat kuin syyskuussa 2025. Inflaatio oli matalimmillaan helmikuussa (0,7 %).',
-      highlight: '2,2 %',
-      seriesLabel: 'Inflaatio, vuosimuutos, %'
+        'Tanskassa oli kausitasoitettuna 83 055 nettotyötöntä syyskuussa 2026. Syyskuussa 2025 heitä oli 77 523.',
+      highlight: '83 055',
+      seriesLabel: 'Nettotyöttömät, kausitasoitettu, henkilöä'
     }
   },
   nl: {
@@ -90,11 +90,11 @@ export const fi: CountryText = {
     office: 'Alankomaiden tilastovirasto',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Mikä on Alankomaiden viimeisin inflaatio?',
+      question: 'Montako ihmistä Alankomaissa asuu?',
       answer:
-        'Syyskuussa 2026 hinnat olivat 3,4 % korkeammat kuin syyskuussa 2025. Inflaatio oli korkeimmillaan toukokuussa (3,5 %).',
-      highlight: '3,4 %',
-      seriesLabel: 'Inflaatio, vuosimuutos, %'
+        'Alankomaissa oli 18 192 693 asukasta syyskuun 2026 lopussa. Vuotta aiemmin asukkaita oli 18 122 384.',
+      highlight: '18 192 693',
+      seriesLabel: 'Väkiluku kuukauden lopussa, henkilöä'
     }
   },
   eu: {
@@ -102,11 +102,11 @@ export const fi: CountryText = {
     office: 'Eurostat, Euroopan unionin tilastovirasto',
     licence: 'Vapaa uudelleenkäyttö lähde mainiten',
     example: {
-      question: 'Mikä on EU:n viimeisin inflaatio?',
+      question: 'Mikä on EU:n työttömyysaste?',
       answer:
-        'Syyskuussa 2026 hinnat olivat EU:ssa 3,8 % korkeammat kuin vuotta aiemmin. Tammikuussa 2026 inflaatio oli 2,0 %.',
-      highlight: '3,8 %',
-      seriesLabel: 'Inflaatio (YKHI), vuosimuutos, %'
+        'EU:n kausitasoitettu työttömyysaste oli 6,2 % syyskuussa 2026. Syyskuussa 2025 se oli 6,0 %.',
+      highlight: '6,2 %',
+      seriesLabel: 'EU27:n työttömyysaste, kausitasoitettu, %'
     }
   },
   ca: {
@@ -114,12 +114,11 @@ export const fi: CountryText = {
     office: 'Kanadan tilastovirasto',
     licence: 'Avoin lisenssi',
     example: {
-      question:
-        'Miten kuluttajahinnat ovat muuttuneet Kanadassa viimeisen vuoden aikana?',
+      question: 'Mikä on Kanadan työttömyysaste?',
       answer:
-        'Syyskuussa 2026 kuluttajahintaindeksi oli 170,0, kun se syyskuussa 2025 oli 164,9 (2002 = 100).',
-      highlight: '170,0',
-      seriesLabel: 'Kuluttajahintaindeksi (2002 = 100)'
+        'Kanadan kausitasoitettu työttömyysaste oli 6,5 % syyskuussa 2026. Syyskuussa 2025 se oli 7,1 %.',
+      highlight: '6,5 %',
+      seriesLabel: 'Työttömyysaste, kausitasoitettu, %'
     }
   },
   is: {
@@ -127,11 +126,11 @@ export const fi: CountryText = {
     office: 'Islannin tilastokeskus',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Mikä on Islannin viimeisin inflaatio?',
+      question: 'Kuinka nopeasti palkat nousevat Islannissa?',
       answer:
-        'Lokakuussa 2026 hinnat olivat 5,9 % korkeammat kuin lokakuussa 2025. Lokakuussa 2025 inflaatio oli 4,3 %.',
-      highlight: '5,9 %',
-      seriesLabel: 'Inflaatio, vuosimuutos, %'
+        'Islannissa palkat olivat 5,6 % korkeammat syyskuussa 2026 kuin vuotta aiemmin. Syyskuussa 2025 vuosinousu oli 7,8 %.',
+      highlight: '5,6 %',
+      seriesLabel: 'Palkkaindeksi, vuosimuutos, %'
     }
   },
   hr: {
@@ -139,11 +138,11 @@ export const fi: CountryText = {
     office: 'Kroatian tilastovirasto',
     licence: 'Avoin lisenssi (Kroatia)',
     example: {
-      question: 'Mikä on Kroatian viimeisin inflaatio?',
+      question: 'Montako matkailijaa Kroatiaan tuli tänä kesänä?',
       answer:
-        'Syyskuussa 2026 hinnat olivat 4,7 % korkeammat kuin syyskuussa 2025. Syyskuussa 2024 inflaatio oli 1,6 %.',
-      highlight: '4,7 %',
-      seriesLabel: 'Inflaatio, vuosimuutos, %'
+        'Elokuussa 2026 Kroatian kaupallisiin majoitusliikkeisiin saapui 4 823 649 matkailijaa. Elokuussa 2025 heitä oli 4 714 658.',
+      highlight: '4 823 649',
+      seriesLabel: 'Saapuneet matkailijat, henkilöä'
     }
   },
   ie: {
@@ -151,11 +150,11 @@ export const fi: CountryText = {
     office: 'Irlannin keskustilastovirasto',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Mikä on Irlannin viimeisin inflaatio?',
+      question: 'Kuinka nopeasti asuntojen hinnat nousevat Irlannissa?',
       answer:
-        'Syyskuussa 2026 hinnat olivat 4,1 % korkeammat kuin syyskuussa 2025. Syyskuussa 2025 inflaatio oli 2,7 %.',
-      highlight: '4,1 %',
-      seriesLabel: 'Inflaatio, vuosimuutos, %'
+        'Asuntojen hinnat nousivat Irlannissa 5,1 % elokuuhun 2026 päättyneiden 12 kuukauden aikana. Elokuussa 2025 vuosinousu oli 7,5 %.',
+      highlight: '5,1 %',
+      seriesLabel: 'Asuntojen hinnat, 12 kuukauden muutos, %'
     }
   }
 };

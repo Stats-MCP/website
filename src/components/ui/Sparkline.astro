@@ -19,6 +19,8 @@ const {
 const box = { width: 480, height: 130, padding: 14 };
 const points = sparklinePoints(values, box);
 const last = points.at(-1);
+/** Below the last point when it is high in the chart, so the label stays inside the drawing. */
+const labelY = last && last.y < box.height / 2 ? last.y + 20 : (last?.y ?? 0) - 10;
 const lastValue = values.at(-1);
 const max = Math.max(...values);
 const min = Math.min(...values);
@@ -48,7 +50,7 @@ const peaks = points.filter(
       last && lastValue !== undefined && (
         <>
           <circle cx={last.x} cy={last.y} r="4.5" class="last" />
-          <text x={last.x - 8} y={last.y - 10} text-anchor="end">
+          <text x={last.x - 8} y={labelY} text-anchor="end">
             {formatValue(lastValue)}
           </text>
         </>

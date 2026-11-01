@@ -10,6 +10,8 @@ export interface ClientInstall {
 export interface Client {
   id: string;
   label: string;
+  /** Translated tab label for a client that is not a product name. */
+  labelKey?: 'otherClients' | 'runLocally';
   /** English step texts; `{code}` and `{country}` are replaced per country. */
   steps: string[];
   code: (country: Country) => string;
@@ -110,6 +112,7 @@ export const clients: Client[] = [
   {
     id: 'other',
     label: 'Other clients',
+    labelKey: 'otherClients',
     steps: [
       'Add a remote server of type http or streamable-http.',
       'Use the endpoint. No authentication.'
@@ -119,6 +122,7 @@ export const clients: Client[] = [
   {
     id: 'local',
     label: 'Run locally',
+    labelKey: 'runLocally',
     steps: [
       'You need Node.js 20 or later.',
       'Add this command as a stdio server.'

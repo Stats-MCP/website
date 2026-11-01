@@ -18,11 +18,11 @@ export const sv: CountryText = {
     office: 'Statistisk sentralbyrå',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Vilken är den senaste inflationstakten i Norge?',
+      question: 'Hur har bostadspriserna utvecklats i Norge?',
       answer:
-        'I september 2026 var priserna 3,4 % högre än i september 2025. Inflationen var som högst i januari och mars (3,6 %).',
-      highlight: '3,4 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Prisindex för begagnade bostäder i Norge var 158,3 tredje kvartalet 2026 (2015 = 100). Tredje kvartalet 2025 var det 153,2.',
+      highlight: '158,3',
+      seriesLabel: 'Prisindex för begagnade bostäder (2015 = 100)'
     }
   },
   ee: {
@@ -30,11 +30,11 @@ export const sv: CountryText = {
     office: 'Estlands statistikmyndighet',
     licence: 'CC BY-SA 4.0',
     example: {
-      question: 'Vilken är den senaste inflationstakten i Estland?',
+      question: 'Vad är den genomsnittliga månadslönen i Estland?',
       answer:
-        'I september 2026 var priserna 3,5 % högre än i september 2025. Inflationen var som lägst i augusti (1,5 %).',
-      highlight: '3,5 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Den genomsnittliga månadslönen före skatt i Estland var 2 243 euro andra kvartalet 2026. Andra kvartalet 2025 var den 2 126 euro.',
+      highlight: '2 243 euro',
+      seriesLabel: 'Genomsnittlig månadslön före skatt, euro'
     }
   },
   fo: {
@@ -54,11 +54,11 @@ export const sv: CountryText = {
     office: 'Statistikcentralen',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Vilken är den senaste inflationstakten i Finland?',
+      question: 'Hur hög är arbetslösheten i Finland?',
       answer:
-        'I september 2026 var priserna 2,5 % högre än i september 2025. För ett år sedan sjönk priserna något.',
-      highlight: '2,5 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Trenden för arbetslöshetsgraden i Finland var 10,5 % i september 2026. I september 2025 var den 10,0 %.',
+      highlight: '10,5 %',
+      seriesLabel: 'Arbetslöshetsgrad, trend, %'
     }
   },
   se: {
@@ -66,11 +66,11 @@ export const sv: CountryText = {
     office: 'Statistiska centralbyrån',
     licence: 'CC0',
     example: {
-      question: 'Vilken är den senaste inflationstakten i Sverige?',
+      question: 'Hur många bor i Sverige?',
       answer:
-        'I september 2026 var priserna 1,1 % högre än i september 2025. I april 2026 var de 0,1 % lägre än ett år tidigare.',
-      highlight: '1,1 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Sverige hade 10 621 103 invånare i augusti 2026. I september 2025 hade landet 10 609 460 invånare.',
+      highlight: '10 621 103',
+      seriesLabel: 'Folkmängd, antal personer'
     }
   },
   dk: {
@@ -78,11 +78,11 @@ export const sv: CountryText = {
     office: 'Danmarks Statistik',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Vilken är den senaste inflationstakten i Danmark?',
+      question: 'Hur många är arbetslösa i Danmark?',
       answer:
-        'I september 2026 var priserna 2,2 % högre än i september 2025. Inflationen var som lägst i februari (0,7 %).',
-      highlight: '2,2 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Danmark hade 83 055 nettoarbetslösa i september 2026, säsongsjusterat. I september 2025 var antalet 77 523.',
+      highlight: '83 055',
+      seriesLabel: 'Nettoarbetslösa, säsongsjusterat, antal personer'
     }
   },
   nl: {
@@ -90,11 +90,11 @@ export const sv: CountryText = {
     office: 'Nederländernas statistikmyndighet',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Vilken är den senaste inflationstakten i Nederländerna?',
+      question: 'Hur många bor i Nederländerna?',
       answer:
-        'I september 2026 var priserna 3,4 % högre än i september 2025. Inflationen var som högst i maj (3,5 %).',
-      highlight: '3,4 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Nederländerna hade 18 192 693 invånare i slutet av september 2026. Ett år tidigare hade landet 18 122 384 invånare.',
+      highlight: '18 192 693',
+      seriesLabel: 'Folkmängd vid månadens slut, antal personer'
     }
   },
   eu: {
@@ -102,11 +102,11 @@ export const sv: CountryText = {
     office: 'Eurostat, Europeiska unionens statistikkontor',
     licence: 'Fri vidareanvändning med källhänvisning',
     example: {
-      question: 'Vilken är den senaste inflationstakten i EU?',
+      question: 'Hur hög är arbetslösheten i EU?',
       answer:
-        'I september 2026 var priserna i EU 3,8 % högre än ett år tidigare. I januari 2026 var takten 2,0 %.',
-      highlight: '3,8 %',
-      seriesLabel: 'Årlig inflation (HIKP), %'
+        'Arbetslösheten i EU var 6,2 % i september 2026, säsongsjusterat. I september 2025 var den 6,0 %.',
+      highlight: '6,2 %',
+      seriesLabel: 'Arbetslöshet i EU27, säsongsjusterad, %'
     }
   },
   ca: {
@@ -114,12 +114,11 @@ export const sv: CountryText = {
     office: 'Kanadas statistikmyndighet',
     licence: 'Öppen licens',
     example: {
-      question:
-        'Hur har konsumentpriserna i Kanada förändrats det senaste året?',
+      question: 'Hur hög är arbetslösheten i Kanada?',
       answer:
-        'I september 2026 var konsumentprisindex 170,0, jämfört med 164,9 i september 2025 (2002 = 100).',
-      highlight: '170,0',
-      seriesLabel: 'Konsumentprisindex (2002 = 100)'
+        'Arbetslösheten i Kanada var 6,5 % i september 2026, säsongsjusterat. I september 2025 var den 7,1 %.',
+      highlight: '6,5 %',
+      seriesLabel: 'Arbetslöshet, säsongsjusterad, %'
     }
   },
   is: {
@@ -127,11 +126,11 @@ export const sv: CountryText = {
     office: 'Islands statistikmyndighet',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Vilken är den senaste inflationstakten på Island?',
+      question: 'Hur snabbt stiger lönerna på Island?',
       answer:
-        'I oktober 2026 var priserna 5,9 % högre än i oktober 2025. I oktober 2025 var takten 4,3 %.',
-      highlight: '5,9 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Lönerna på Island var 5,6 % högre i september 2026 än ett år tidigare. I september 2025 var den årliga ökningen 7,8 %.',
+      highlight: '5,6 %',
+      seriesLabel: 'Löneindex, årlig förändring, %'
     }
   },
   hr: {
@@ -139,11 +138,11 @@ export const sv: CountryText = {
     office: 'Kroatiens statistikmyndighet',
     licence: 'Öppen licens (Kroatien)',
     example: {
-      question: 'Vilken är den senaste inflationstakten i Kroatien?',
+      question: 'Hur många turister kom till Kroatien i somras?',
       answer:
-        'I september 2026 var priserna 4,7 % högre än i september 2025. I september 2024 var takten 1,6 %.',
-      highlight: '4,7 %',
-      seriesLabel: 'Årlig inflation, %'
+        'I augusti 2026 kom 4 823 649 turister till kommersiella logianläggningar i Kroatien. I augusti 2025 var de 4 714 658.',
+      highlight: '4 823 649',
+      seriesLabel: 'Ankomna turister, antal personer'
     }
   },
   ie: {
@@ -151,11 +150,11 @@ export const sv: CountryText = {
     office: 'Irlands centrala statistikmyndighet',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Vilken är den senaste inflationstakten i Irland?',
+      question: 'Hur snabbt stiger bostadspriserna i Irland?',
       answer:
-        'I september 2026 var priserna 4,1 % högre än i september 2025. I september 2025 var takten 2,7 %.',
-      highlight: '4,1 %',
-      seriesLabel: 'Årlig inflation, %'
+        'Bostadspriserna i Irland steg med 5,1 % under de tolv månaderna fram till augusti 2026. I augusti 2025 var den årliga ökningen 7,5 %.',
+      highlight: '5,1 %',
+      seriesLabel: 'Bostadspriser, förändring på tolv månader, %'
     }
   }
 };

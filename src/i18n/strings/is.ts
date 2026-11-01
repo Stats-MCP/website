@@ -89,6 +89,31 @@ export const isl: UiStrings = {
       label: 'niðurstaðna tilgreina heimild og tengja á töfluna'
     }
   ],
+  audiences: {
+    title: 'Hverjir nota StatsMCP',
+    items: [
+      {
+        who: 'Forritarar',
+        text: 'Bættu opinberum gögnum við gervigreindarforritið þitt með einni vefslóð.',
+        prompt: 'Hvaða sveitarfélög í Danmörku uxu hraðast árið 2025?'
+      },
+      {
+        who: 'Blaðamenn',
+        text: 'Staðfestu tölu og fáðu tengil á töfluna fyrir greinina þína.',
+        prompt: 'Er atvinnuleysi í Finnlandi meira en fyrir ári?'
+      },
+      {
+        who: 'Greinendur',
+        text: 'Berðu saman lönd án þess að sækja töflureikna.',
+        prompt: 'Berðu saman íbúðaverð í Noregi og á Írlandi frá 2020.'
+      },
+      {
+        who: 'Rannsakendur',
+        text: 'Finndu réttu töfluna, kóða hennar og leyfi.',
+        prompt: 'Hvaða tafla sýnir fædda eftir aldri móður á Íslandi?'
+      }
+    ]
+  },
   howItWorks: {
     title: 'Svona virkar það',
     stepLabel: 'Skref',
@@ -113,7 +138,9 @@ export const isl: UiStrings = {
   connect: {
     title: 'Tengstu á innan við mínútu',
     meta: 'Streamable HTTP · aðeins lestur · engin innskráning · 60 beiðnir/mín',
-    clientTabs: 'Forrit'
+    clientTabs: 'Forrit',
+    otherClients: 'Önnur forrit',
+    runLocally: 'Keyra staðbundið'
   },
   countryPage: {
     title: '{country}: opinberar hagtölur í aðstoðarmanninum þínum.',
@@ -172,7 +199,7 @@ export const isl: UiStrings = {
       {
         question: 'Get ég keyrt þetta á eigin tölvu?',
         answer:
-          'Já. Netþjónarnir eru á npm. Opnaðu flipann „Run locally“ undir Tengjast. Þá fara spurningarnar þínar aðeins til hagstofunnar.'
+          'Já. Netþjónarnir eru á npm. Opnaðu flipann „Keyra staðbundið“ undir Tengjast. Þá fara spurningarnar þínar aðeins til hagstofunnar.'
       },
       {
         question: 'Hvernig er hægt að bæta landinu mínu við?',

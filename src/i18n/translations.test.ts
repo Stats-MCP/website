@@ -3,7 +3,6 @@ import { describe, expect, it } from 'vitest';
 import { clients } from '@/data/clients';
 import { countries } from '@/data/countries';
 import { translatedSteps } from '@/i18n/client-steps';
-import { countryTexts } from '@/i18n/country-text';
 import { locales } from '@/i18n/locales';
 import { ui } from '@/i18n/ui';
 
@@ -59,12 +58,17 @@ describe('translations', () => {
     }
   });
 
-  it.each(Object.entries(countryTexts))(
-    '%s has text for every country',
-    (_locale, texts) => {
-      expect(Object.keys(texts ?? {}).toSorted()).toEqual(
-        countries.map((country) => country.id).toSorted()
-      );
+  it.each(others)(
+    '%s has its own name and example for every country',
+    (locale) => {
+      const missing = countries.flatMap((country) => [
+        ...(country.name[locale] === undefined ? [`${country.id} name`] : []),
+        ...(country.example && country.example.answer[locale] === undefined
+          ? [`${country.id} example`]
+          : [])
+      ]);
+
+      expect(missing).toEqual([]);
     }
   );
 });

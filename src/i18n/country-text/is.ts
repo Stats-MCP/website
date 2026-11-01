@@ -18,11 +18,11 @@ export const isl: CountryText = {
     office: 'Hagstofa Noregs',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hver er nýjasta verðbólgutalan í Noregi?',
+      question: 'Hvernig hefur íbúðaverð þróast í Noregi?',
       answer:
-        'Í september 2026 var verðlag 3,4% hærra en í september 2025. Verðbólgan var mest í janúar og mars (3,6%).',
-      highlight: '3,4%',
-      seriesLabel: 'Ársverðbólga, %'
+        'Vísitala verðs á eldra íbúðarhúsnæði í Noregi var 158,3 á 3. ársfjórðungi 2026 (2015 = 100). Á 3. ársfjórðungi 2025 var hún 153,2.',
+      highlight: '158,3',
+      seriesLabel: 'Vísitala verðs á eldra íbúðarhúsnæði (2015 = 100)'
     }
   },
   ee: {
@@ -30,11 +30,11 @@ export const isl: CountryText = {
     office: 'Hagstofa Eistlands',
     licence: 'CC BY-SA 4.0',
     example: {
-      question: 'Hver er nýjasta verðbólgutalan í Eistlandi?',
+      question: 'Hver eru meðalmánaðarlaun í Eistlandi?',
       answer:
-        'Í september 2026 var verðlag 3,5% hærra en í september 2025. Verðbólgan var minnst í ágúst (1,5%).',
-      highlight: '3,5%',
-      seriesLabel: 'Ársverðbólga, %'
+        'Meðalheildarlaun á mánuði í Eistlandi voru 2.243 evrur á 2. ársfjórðungi 2026. Á 2. ársfjórðungi 2025 voru þau 2.126 evrur.',
+      highlight: '2.243 evrur',
+      seriesLabel: 'Meðalheildarlaun á mánuði, evrur'
     }
   },
   fo: {
@@ -54,11 +54,11 @@ export const isl: CountryText = {
     office: 'Hagstofa Finnlands',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hver er nýjasta verðbólgutalan í Finnlandi?',
+      question: 'Hversu mikið er atvinnuleysi í Finnlandi?',
       answer:
-        'Í september 2026 var verðlag 2,5% hærra en í september 2025. Fyrir ári lækkaði verðlag lítillega.',
-      highlight: '2,5%',
-      seriesLabel: 'Ársverðbólga, %'
+        'Leitni atvinnuleysis í Finnlandi var 10,5% í september 2026. Í september 2025 var hún 10,0%.',
+      highlight: '10,5%',
+      seriesLabel: 'Atvinnuleysi, leitni, %'
     }
   },
   se: {
@@ -66,11 +66,11 @@ export const isl: CountryText = {
     office: 'Hagstofa Svíþjóðar',
     licence: 'CC0',
     example: {
-      question: 'Hver er nýjasta verðbólgutalan í Svíþjóð?',
+      question: 'Hversu margir búa í Svíþjóð?',
       answer:
-        'Í september 2026 var verðlag 1,1% hærra en í september 2025. Í apríl 2026 var það 0,1% lægra en ári áður.',
-      highlight: '1,1%',
-      seriesLabel: 'Ársverðbólga, %'
+        'Íbúar Svíþjóðar voru 10.621.103 í ágúst 2026. Í september 2025 voru þeir 10.609.460.',
+      highlight: '10.621.103',
+      seriesLabel: 'Mannfjöldi, fjöldi einstaklinga'
     }
   },
   dk: {
@@ -78,11 +78,11 @@ export const isl: CountryText = {
     office: 'Hagstofa Danmerkur',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hver er nýjasta verðbólgutalan í Danmörku?',
+      question: 'Hversu margir eru atvinnulausir í Danmörku?',
       answer:
-        'Í september 2026 var verðlag 2,2% hærra en í september 2025. Verðbólgan var minnst í febrúar (0,7%).',
-      highlight: '2,2%',
-      seriesLabel: 'Ársverðbólga, %'
+        'Í Danmörku voru 83.055 nettóatvinnulausir í september 2026, árstíðaleiðrétt. Í september 2025 voru þeir 77.523.',
+      highlight: '83.055',
+      seriesLabel: 'Nettóatvinnulausir, árstíðaleiðrétt, fjöldi'
     }
   },
   nl: {
@@ -90,11 +90,11 @@ export const isl: CountryText = {
     office: 'Hagstofa Hollands',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hver er nýjasta verðbólgutalan í Hollandi?',
+      question: 'Hversu margir búa í Hollandi?',
       answer:
-        'Í september 2026 var verðlag 3,4% hærra en í september 2025. Verðbólgan var mest í maí (3,5%).',
-      highlight: '3,4%',
-      seriesLabel: 'Ársverðbólga, %'
+        'Íbúar Hollands voru 18.192.693 í lok september 2026. Ári áður voru þeir 18.122.384.',
+      highlight: '18.192.693',
+      seriesLabel: 'Mannfjöldi í lok mánaðar, fjöldi einstaklinga'
     }
   },
   eu: {
@@ -102,11 +102,11 @@ export const isl: CountryText = {
     office: 'Eurostat, hagstofa Evrópusambandsins',
     licence: 'Frjáls endurnot með tilvísun í heimild',
     example: {
-      question: 'Hver er nýjasta verðbólgutalan í ESB?',
+      question: 'Hvert er atvinnuleysið í ESB?',
       answer:
-        'Í september 2026 var verðlag í ESB 3,8% hærra en ári áður. Í janúar 2026 var verðbólgan 2,0%.',
-      highlight: '3,8%',
-      seriesLabel: 'Ársverðbólga (SVN), %'
+        'Atvinnuleysi í ESB var 6,2% í september 2026, árstíðaleiðrétt. Í september 2025 var það 6,0%.',
+      highlight: '6,2%',
+      seriesLabel: 'Atvinnuleysi í ESB27, árstíðaleiðrétt, %'
     }
   },
   ca: {
@@ -114,11 +114,11 @@ export const isl: CountryText = {
     office: 'Hagstofa Kanada',
     licence: 'Opið leyfi',
     example: {
-      question: 'Hvernig hefur neysluverð í Kanada breyst síðastliðið ár?',
+      question: 'Hvert er atvinnuleysið í Kanada?',
       answer:
-        'Í september 2026 var vísitala neysluverðs 170,0, en 164,9 í september 2025 (2002 = 100).',
-      highlight: '170,0',
-      seriesLabel: 'Vísitala neysluverðs (2002 = 100)'
+        'Atvinnuleysi í Kanada var 6,5% í september 2026, árstíðaleiðrétt. Í september 2025 var það 7,1%.',
+      highlight: '6,5%',
+      seriesLabel: 'Atvinnuleysi, árstíðaleiðrétt, %'
     }
   },
   is: {
@@ -126,11 +126,11 @@ export const isl: CountryText = {
     office: 'Hagstofa Íslands',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hver er nýjasta verðbólgutalan á Íslandi?',
+      question: 'Hversu hratt hækka laun á Íslandi?',
       answer:
-        'Í október 2026 var verðlag 5,9% hærra en í október 2025. Í október 2025 var verðbólgan 4,3%.',
-      highlight: '5,9%',
-      seriesLabel: 'Ársverðbólga, %'
+        'Laun á Íslandi voru 5,6% hærri í september 2026 en ári áður. Í september 2025 var árshækkunin 7,8%.',
+      highlight: '5,6%',
+      seriesLabel: 'Launavísitala, breyting á ári, %'
     }
   },
   hr: {
@@ -138,11 +138,11 @@ export const isl: CountryText = {
     office: 'Hagstofa Króatíu',
     licence: 'Opið leyfi (Króatía)',
     example: {
-      question: 'Hver er nýjasta verðbólgutalan í Króatíu?',
+      question: 'Hversu margir ferðamenn komu til Króatíu í sumar?',
       answer:
-        'Í september 2026 var verðlag 4,7% hærra en í september 2025. Í september 2024 var verðbólgan 1,6%.',
-      highlight: '4,7%',
-      seriesLabel: 'Ársverðbólga, %'
+        'Í ágúst 2026 komu 4.823.649 ferðamenn á skráða gististaði í Króatíu. Í ágúst 2025 voru þeir 4.714.658.',
+      highlight: '4.823.649',
+      seriesLabel: 'Komur ferðamanna, fjöldi'
     }
   },
   ie: {
@@ -150,11 +150,11 @@ export const isl: CountryText = {
     office: 'Hagstofa Írlands',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Hver er nýjasta verðbólgutalan á Írlandi?',
+      question: 'Hversu hratt hækkar íbúðaverð á Írlandi?',
       answer:
-        'Í september 2026 var verðlag 4,1% hærra en í september 2025. Í september 2025 var verðbólgan 2,7%.',
-      highlight: '4,1%',
-      seriesLabel: 'Ársverðbólga, %'
+        'Íbúðaverð á Írlandi hækkaði um 5,1% á 12 mánuðum fram að ágúst 2026. Í ágúst 2025 var árshækkunin 7,5%.',
+      highlight: '5,1%',
+      seriesLabel: 'Íbúðaverð, 12 mánaða breyting, %'
     }
   }
 };

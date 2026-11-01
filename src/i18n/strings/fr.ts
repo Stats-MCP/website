@@ -92,6 +92,33 @@ export const fr: UiStrings = {
       label: 'des résultats citent la source et renvoient au tableau'
     }
   ],
+  audiences: {
+    title: 'Qui utilise StatsMCP',
+    items: [
+      {
+        who: 'Développeurs',
+        text: 'Ajoutez des données officielles à votre agent avec une seule URL.',
+        prompt: 'Quelles communes danoises ont le plus grandi en 2025 ?'
+      },
+      {
+        who: 'Journalistes',
+        text: 'Vérifiez un chiffre et obtenez le lien vers le tableau pour votre article.',
+        prompt: 'Le chômage en Finlande est-il plus élevé qu’il y a un an ?'
+      },
+      {
+        who: 'Analystes',
+        text: 'Comparez des pays sans télécharger de tableurs.',
+        prompt:
+          'Compare les prix des logements en Norvège et en Irlande depuis 2020.'
+      },
+      {
+        who: 'Chercheurs',
+        text: 'Trouvez le bon tableau, ses codes et sa licence.',
+        prompt:
+          'Quel tableau donne les naissances selon l’âge de la mère en Islande ?'
+      }
+    ]
+  },
   howItWorks: {
     title: 'Fonctionnement',
     stepLabel: 'Étape',
@@ -116,7 +143,9 @@ export const fr: UiStrings = {
   connect: {
     title: 'Connexion en moins d’une minute',
     meta: 'Streamable HTTP · lecture seule · sans inscription · 60 requêtes/min',
-    clientTabs: 'Client'
+    clientTabs: 'Client',
+    otherClients: 'Autres clients',
+    runLocally: 'Exécution locale'
   },
   countryPage: {
     title: '{country} : les statistiques officielles dans votre assistant IA.',
@@ -175,7 +204,7 @@ export const fr: UiStrings = {
       {
         question: 'Puis-je l’exécuter sur mon propre ordinateur ?',
         answer:
-          'Oui. Les serveurs sont sur npm. Dans la section Connexion, ouvrez l’onglet « Run locally ». Vos questions vont alors uniquement à l’office statistique.'
+          'Oui. Les serveurs sont sur npm. Dans la section Connexion, ouvrez l’onglet « Exécution locale ». Vos questions vont alors uniquement à l’office statistique.'
       },
       {
         question: 'Comment ajouter mon pays ?',

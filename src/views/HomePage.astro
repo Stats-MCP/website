@@ -1,5 +1,6 @@
 ---
 import Base from '@/layouts/Base.astro';
+import Audiences from '@/components/sections/Audiences.astro';
 import Connect from '@/components/sections/Connect.astro';
 import CountriesGrid from '@/components/sections/CountriesGrid.astro';
 import Faq from '@/components/sections/Faq.astro';
@@ -33,6 +34,7 @@ const selected = defaultCountry(countries, locale);
   ]}>
   <Hero locale={locale} countries={countries} selected={selected} />
   <KeyFigures locale={locale} />
+  <Audiences locale={locale} />
   <HowItWorks locale={locale} />
   <Connect locale={locale} countries={countries} selected={selected} />
   <CountriesGrid locale={locale} countries={countries} />

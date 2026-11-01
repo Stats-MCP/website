@@ -20,11 +20,11 @@ export const fr: CountryText = {
     office: 'Office statistique de la Norvège',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Quel est le dernier taux d’inflation en Norvège ?',
+      question: 'Comment les prix des logements ont-ils évolué en Norvège ?',
       answer:
-        'En septembre 2026, les prix étaient supérieurs de 3,4 % à ceux de septembre 2025. L’inflation a atteint son maximum en janvier et en mars (3,6 %).',
-      highlight: '3,4 %',
-      seriesLabel: inflation
+        'L’indice des prix des logements anciens en Norvège était de 158,3 au 3e trimestre 2026 (2015 = 100). Au 3e trimestre 2025, il était de 153,2.',
+      highlight: '158,3',
+      seriesLabel: 'Indice des prix des logements anciens (2015 = 100)'
     }
   },
   ee: {
@@ -32,11 +32,11 @@ export const fr: CountryText = {
     office: 'Office statistique de l’Estonie',
     licence: 'CC BY-SA 4.0',
     example: {
-      question: 'Quel est le dernier taux d’inflation en Estonie ?',
+      question: 'Quel est le salaire mensuel moyen en Estonie ?',
       answer:
-        'En septembre 2026, les prix étaient supérieurs de 3,5 % à ceux de septembre 2025. L’inflation a atteint son minimum en août (1,5 %).',
-      highlight: '3,5 %',
-      seriesLabel: inflation
+        'Le salaire mensuel brut moyen en Estonie était de 2 243 € au 2e trimestre 2026. Au 2e trimestre 2025, il était de 2 126 €.',
+      highlight: '2 243 €',
+      seriesLabel: 'Salaire mensuel brut moyen, €'
     }
   },
   fo: {
@@ -56,11 +56,11 @@ export const fr: CountryText = {
     office: 'Office statistique de la Finlande',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Quel est le dernier taux d’inflation en Finlande ?',
+      question: 'Quel est le niveau du chômage en Finlande ?',
       answer:
-        'En septembre 2026, les prix étaient supérieurs de 2,5 % à ceux de septembre 2025. Un an plus tôt, les prix baissaient légèrement.',
-      highlight: '2,5 %',
-      seriesLabel: inflation
+        'Le taux de chômage tendanciel en Finlande était de 10,5 % en septembre 2026. En septembre 2025, il était de 10,0 %.',
+      highlight: '10,5 %',
+      seriesLabel: 'Taux de chômage, tendance, %'
     }
   },
   se: {
@@ -68,11 +68,11 @@ export const fr: CountryText = {
     office: 'Office statistique de la Suède',
     licence: 'CC0',
     example: {
-      question: 'Quel est le dernier taux d’inflation en Suède ?',
+      question: 'Combien de personnes vivent en Suède ?',
       answer:
-        'En septembre 2026, les prix étaient supérieurs de 1,1 % à ceux de septembre 2025. En avril 2026, ils étaient inférieurs de 0,1 % à ceux de l’année précédente.',
-      highlight: '1,1 %',
-      seriesLabel: inflation
+        'La Suède comptait 10 621 103 habitants en août 2026. En septembre 2025, elle en comptait 10 609 460.',
+      highlight: '10 621 103',
+      seriesLabel: 'Population, personnes'
     }
   },
   dk: {
@@ -80,11 +80,11 @@ export const fr: CountryText = {
     office: 'Office statistique du Danemark',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Quel est le dernier taux d’inflation au Danemark ?',
+      question: 'Combien de personnes sont au chômage au Danemark ?',
       answer:
-        'En septembre 2026, les prix étaient supérieurs de 2,2 % à ceux de septembre 2025. L’inflation a atteint son minimum en février (0,7 %).',
-      highlight: '2,2 %',
-      seriesLabel: inflation
+        'En septembre 2026, le Danemark comptait 83 055 chômeurs nets, en données corrigées des variations saisonnières. En septembre 2025, ils étaient 77 523.',
+      highlight: '83 055',
+      seriesLabel: 'Chômeurs nets, CVS, personnes'
     }
   },
   nl: {
@@ -92,11 +92,11 @@ export const fr: CountryText = {
     office: 'Bureau central de la statistique des Pays-Bas',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Quel est le dernier taux d’inflation aux Pays-Bas ?',
+      question: 'Combien de personnes vivent aux Pays-Bas ?',
       answer:
-        'En septembre 2026, les prix étaient supérieurs de 3,4 % à ceux de septembre 2025. L’inflation a atteint son maximum en mai (3,5 %).',
-      highlight: '3,4 %',
-      seriesLabel: inflation
+        'Fin septembre 2026, les Pays-Bas comptaient 18 192 693 habitants. Un an plus tôt, ils en comptaient 18 122 384.',
+      highlight: '18 192 693',
+      seriesLabel: 'Population en fin de mois, personnes'
     }
   },
   eu: {
@@ -104,11 +104,11 @@ export const fr: CountryText = {
     office: 'Eurostat, l’office statistique de l’Union européenne',
     licence: 'Réutilisation libre avec mention de la source',
     example: {
-      question: 'Quel est le dernier taux d’inflation dans l’UE ?',
+      question: 'Quel est le taux de chômage dans l’UE ?',
       answer:
-        'En septembre 2026, les prix dans l’UE étaient supérieurs de 3,8 % à ceux de l’année précédente. En janvier 2026, le taux était de 2,0 %.',
-      highlight: '3,8 %',
-      seriesLabel: 'Inflation annuelle (IPCH), %'
+        'Le taux de chômage de l’UE était de 6,2 % en septembre 2026, en données corrigées des variations saisonnières. En septembre 2025, il était de 6,0 %.',
+      highlight: '6,2 %',
+      seriesLabel: 'Taux de chômage UE27, CVS, %'
     }
   },
   ca: {
@@ -116,12 +116,11 @@ export const fr: CountryText = {
     office: 'Statistique Canada',
     licence: 'Licence ouverte de Statistique Canada',
     example: {
-      question:
-        'Comment les prix à la consommation ont-ils évolué au Canada au cours de la dernière année ?',
+      question: 'Quel est le taux de chômage au Canada ?',
       answer:
-        'En septembre 2026, l’indice des prix à la consommation était de 170,0, contre 164,9 en septembre 2025 (2002 = 100).',
-      highlight: '170,0',
-      seriesLabel: 'Indice des prix à la consommation (2002 = 100)'
+        'Le taux de chômage au Canada était de 6,5 % en septembre 2026, en données désaisonnalisées. En septembre 2025, il était de 7,1 %.',
+      highlight: '6,5 %',
+      seriesLabel: 'Taux de chômage, désaisonnalisé, %'
     }
   },
   is: {
@@ -129,11 +128,11 @@ export const fr: CountryText = {
     office: 'Office statistique de l’Islande',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Quel est le dernier taux d’inflation en Islande ?',
+      question: 'À quel rythme les salaires augmentent-ils en Islande ?',
       answer:
-        'En octobre 2026, les prix étaient supérieurs de 5,9 % à ceux d’octobre 2025. En octobre 2025, le taux était de 4,3 %.',
-      highlight: '5,9 %',
-      seriesLabel: inflation
+        'En septembre 2026, les salaires en Islande étaient supérieurs de 5,6 % à ceux de l’année précédente. En septembre 2025, la hausse annuelle était de 7,8 %.',
+      highlight: '5,6 %',
+      seriesLabel: 'Indice des salaires, variation annuelle, %'
     }
   },
   hr: {
@@ -141,11 +140,11 @@ export const fr: CountryText = {
     office: 'Bureau croate de statistique',
     licence: 'Licence ouverte (Croatie)',
     example: {
-      question: 'Quel est le dernier taux d’inflation en Croatie ?',
+      question: 'Combien de touristes sont venus en Croatie cet été ?',
       answer:
-        'En septembre 2026, les prix étaient supérieurs de 4,7 % à ceux de septembre 2025. En septembre 2024, le taux était de 1,6 %.',
-      highlight: '4,7 %',
-      seriesLabel: inflation
+        'En août 2026, 4 823 649 touristes sont arrivés dans des hébergements marchands en Croatie. En août 2025, ils étaient 4 714 658.',
+      highlight: '4 823 649',
+      seriesLabel: 'Arrivées de touristes, personnes'
     }
   },
   ie: {
@@ -153,11 +152,12 @@ export const fr: CountryText = {
     office: 'Office central de la statistique d’Irlande',
     licence: 'CC BY 4.0',
     example: {
-      question: 'Quel est le dernier taux d’inflation en Irlande ?',
+      question:
+        'À quel rythme les prix de l’immobilier augmentent-ils en Irlande ?',
       answer:
-        'En septembre 2026, les prix étaient supérieurs de 4,1 % à ceux de septembre 2025. En septembre 2025, le taux était de 2,7 %.',
-      highlight: '4,1 %',
-      seriesLabel: inflation
+        'Les prix des logements en Irlande ont augmenté de 5,1 % sur les 12 mois jusqu’en août 2026. En août 2025, la hausse annuelle était de 7,5 %.',
+      highlight: '5,1 %',
+      seriesLabel: 'Prix des logements, variation sur 12 mois, %'
     }
   }
 };

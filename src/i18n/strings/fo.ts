@@ -85,6 +85,31 @@ export const fo: UiStrings = {
       label: 'av úrslitunum nevna kelduna og hava leinkju til talvuna'
     }
   ],
+  audiences: {
+    title: 'Hvør brúkar StatsMCP',
+    items: [
+      {
+        who: 'Forritarar',
+        text: 'Legg almennar dátur afturat agenti tínum við einum URL.',
+        prompt: 'Hvørjar danskar kommunur vuksu mest í 2025?'
+      },
+      {
+        who: 'Tíðindafólk',
+        text: 'Kanna eitt tal og fá leinkjuna til talvuna til greinina.',
+        prompt: 'Er arbeiðsloysið í Finnlandi hægri enn fyri einum ári síðan?'
+      },
+      {
+        who: 'Greinarar',
+        text: 'Samanber lond uttan at taka rokniark niður.',
+        prompt: 'Samanber húsaprísir í Noregi og Írlandi síðan 2020.'
+      },
+      {
+        who: 'Granskarar',
+        text: 'Finn røttu talvuna, koturnar og loyvið.',
+        prompt: 'Hvør talva hevur føðingar eftir aldri móðurinnar í Íslandi?'
+      }
+    ]
+  },
   howItWorks: {
     title: 'Soleiðis virkar tað',
     stepLabel: 'Stig',
@@ -109,7 +134,9 @@ export const fo: UiStrings = {
   connect: {
     title: 'Knýt saman á minni enn einum minutti',
     meta: 'Streamable HTTP · bert til lesingar · eingin innritan · 60 fyrispurningar/min',
-    clientTabs: 'Forrit'
+    clientTabs: 'Forrit',
+    otherClients: 'Onnur forrit',
+    runLocally: 'Koyr á egnu teldu'
   },
   countryPage: {
     title: '{country}: almenn hagtøl í vitlíkishjálpara tínum.',
@@ -168,7 +195,7 @@ export const fo: UiStrings = {
       {
         question: 'Kann eg koyra tað á míni egnu teldu?',
         answer:
-          'Ja. Ambætararnir eru á npm. Lat fanan „Run locally“ upp undir „Knýt saman“. Tá fara spurningar tínir bert til hagstovuna.'
+          'Ja. Ambætararnir eru á npm. Lat fanan „Koyr á egnu teldu“ upp undir „Knýt saman“. Tá fara spurningar tínir bert til hagstovuna.'
       },
       {
         question: 'Hvussu kann mítt land verða lagt afturat?',

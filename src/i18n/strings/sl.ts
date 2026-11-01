@@ -81,6 +81,32 @@ export const sl: UiStrings = {
     { value: '0', label: 'dnevnikov, računov ali ključev API' },
     { value: '100 %', label: 'rezultatov navede vir in povezavo na tabelo' }
   ],
+  audiences: {
+    title: 'Kdo uporablja StatsMCP',
+    items: [
+      {
+        who: 'Razvijalci',
+        text: 'Z enim URL-jem dodajte uradne podatke svojemu agentu.',
+        prompt: 'Katere danske občine so leta 2025 najhitreje rasle?'
+      },
+      {
+        who: 'Novinarji',
+        text: 'Preverite podatek in pridobite povezavo na tabelo za svoj članek.',
+        prompt: 'Ali je brezposelnost na Finskem višja kot pred enim letom?'
+      },
+      {
+        who: 'Analitiki',
+        text: 'Primerjajte države brez prenašanja preglednic.',
+        prompt: 'Primerjaj cene stanovanj na Norveškem in Irskem od leta 2020.'
+      },
+      {
+        who: 'Raziskovalci',
+        text: 'Poiščite pravo tabelo, njene šifre in licenco.',
+        prompt:
+          'Katera tabela vsebuje živorojene po starosti matere na Islandiji?'
+      }
+    ]
+  },
   howItWorks: {
     title: 'Kako deluje',
     stepLabel: 'Korak',
@@ -105,7 +131,9 @@ export const sl: UiStrings = {
   connect: {
     title: 'Povezava v manj kot minuti',
     meta: 'Streamable HTTP · samo za branje · brez prijave · 60 zahtev/min',
-    clientTabs: 'Odjemalec'
+    clientTabs: 'Odjemalec',
+    otherClients: 'Drugi odjemalci',
+    runLocally: 'Lokalni zagon'
   },
   countryPage: {
     title: '{country}: uradna statistika v vašem pomočniku UI.',
@@ -164,7 +192,7 @@ export const sl: UiStrings = {
       {
         question: 'Ali ga lahko zaženem na svojem računalniku?',
         answer:
-          'Da. Strežniki so na voljo v npm. V razdelku Povezava odprite zavihek „Run locally“. Tako gredo vaša vprašanja samo do statističnega urada.'
+          'Da. Strežniki so na voljo v npm. V razdelku Povezava odprite zavihek „Lokalni zagon“. Tako gredo vaša vprašanja samo do statističnega urada.'
       },
       {
         question: 'Kako lahko dodate mojo državo?',

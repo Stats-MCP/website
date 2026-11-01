@@ -85,6 +85,33 @@ export const de: UiStrings = {
       label: 'der Ergebnisse nennen die Quelle und verlinken die Tabelle'
     }
   ],
+  audiences: {
+    title: 'Wer StatsMCP nutzt',
+    items: [
+      {
+        who: 'Entwickler',
+        text: 'Fügen Sie Ihrem Agenten mit einer URL amtliche Daten hinzu.',
+        prompt: 'Welche dänischen Gemeinden sind 2025 am schnellsten gewachsen?'
+      },
+      {
+        who: 'Journalisten',
+        text: 'Prüfen Sie eine Zahl und erhalten Sie den Link zur Tabelle für Ihren Artikel.',
+        prompt: 'Ist die Arbeitslosigkeit in Finnland höher als vor einem Jahr?'
+      },
+      {
+        who: 'Analysten',
+        text: 'Vergleichen Sie Länder, ohne Excel-Dateien herunterzuladen.',
+        prompt:
+          'Vergleiche die Immobilienpreise in Norwegen und Irland seit 2020.'
+      },
+      {
+        who: 'Forscher',
+        text: 'Finden Sie die passende Tabelle, ihre Codes und ihre Lizenz.',
+        prompt:
+          'Welche Tabelle enthält die Geburten nach Alter der Mutter in Island?'
+      }
+    ]
+  },
   howItWorks: {
     title: 'So funktioniert es',
     stepLabel: 'Schritt',
@@ -109,7 +136,9 @@ export const de: UiStrings = {
   connect: {
     title: 'In weniger als einer Minute verbinden',
     meta: 'Streamable HTTP · nur Lesezugriff · ohne Anmeldung · 60 Anfragen/min',
-    clientTabs: 'Client'
+    clientTabs: 'Client',
+    otherClients: 'Andere Clients',
+    runLocally: 'Lokal ausführen'
   },
   countryPage: {
     title: '{country}: amtliche Statistik in Ihrem KI-Assistenten.',
@@ -168,7 +197,7 @@ export const de: UiStrings = {
       {
         question: 'Kann ich es auf meinem eigenen Computer ausführen?',
         answer:
-          'Ja. Die Server sind auf npm. Öffnen Sie unter „Verbinden“ den Tab „Run locally“. Dann gehen Ihre Fragen nur an das Statistikamt.'
+          'Ja. Die Server sind auf npm. Öffnen Sie unter „Verbinden“ den Tab „Lokal ausführen“. Dann gehen Ihre Fragen nur an das Statistikamt.'
       },
       {
         question: 'Wie kann mein Land hinzugefügt werden?',

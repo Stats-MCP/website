@@ -84,6 +84,31 @@ export const da: UiStrings = {
       label: 'af resultaterne angiver kilden og linker til tabellen'
     }
   ],
+  audiences: {
+    title: 'Hvem bruger StatsMCP',
+    items: [
+      {
+        who: 'Udviklere',
+        text: 'Tilføj officielle data til din agent med én URL.',
+        prompt: 'Hvilke danske kommuner voksede hurtigst i 2025?'
+      },
+      {
+        who: 'Journalister',
+        text: 'Tjek et tal, og få linket til tabellen til din artikel.',
+        prompt: 'Er arbejdsløsheden i Finland højere end for et år siden?'
+      },
+      {
+        who: 'Analytikere',
+        text: 'Sammenlign lande uden at downloade regneark.',
+        prompt: 'Sammenlign boligpriserne i Norge og Irland siden 2020.'
+      },
+      {
+        who: 'Forskere',
+        text: 'Find den rigtige tabel, dens koder og dens licens.',
+        prompt: 'Hvilken tabel har fødte efter moderens alder på Island?'
+      }
+    ]
+  },
   howItWorks: {
     title: 'Sådan virker det',
     stepLabel: 'Trin',
@@ -108,7 +133,9 @@ export const da: UiStrings = {
   connect: {
     title: 'Forbind på under et minut',
     meta: 'Streamable HTTP · kun læseadgang · intet login · 60 forespørgsler/min',
-    clientTabs: 'Klient'
+    clientTabs: 'Klient',
+    otherClients: 'Andre klienter',
+    runLocally: 'Kør lokalt'
   },
   countryPage: {
     title: '{country}: officiel statistik i din AI-assistent.',
@@ -167,7 +194,7 @@ export const da: UiStrings = {
       {
         question: 'Kan jeg køre det på min egen computer?',
         answer:
-          'Ja. Serverne ligger på npm. Åbn fanen »Run locally« under Forbind. Så går dine spørgsmål kun til statistikkontoret.'
+          'Ja. Serverne ligger på npm. Åbn fanen »Kør lokalt« under Forbind. Så går dine spørgsmål kun til statistikkontoret.'
       },
       {
         question: 'Hvordan kan mit land blive tilføjet?',

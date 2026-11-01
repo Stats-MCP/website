@@ -85,6 +85,32 @@ export const nl: UiStrings = {
       label: 'van de resultaten noemt de bron en linkt naar de tabel'
     }
   ],
+  audiences: {
+    title: 'Wie gebruikt StatsMCP',
+    items: [
+      {
+        who: 'Ontwikkelaars',
+        text: 'Voeg met één URL officiële data toe aan uw agent.',
+        prompt: 'Welke Deense gemeenten groeiden het snelst in 2025?'
+      },
+      {
+        who: 'Journalisten',
+        text: 'Controleer een cijfer en krijg de link naar de tabel voor uw artikel.',
+        prompt: 'Is de werkloosheid in Finland hoger dan een jaar geleden?'
+      },
+      {
+        who: 'Analisten',
+        text: 'Vergelijk landen zonder spreadsheets te downloaden.',
+        prompt: 'Vergelijk de huizenprijzen in Noorwegen en Ierland sinds 2020.'
+      },
+      {
+        who: 'Onderzoekers',
+        text: 'Vind de juiste tabel, de codes en de licentie.',
+        prompt:
+          'Welke tabel bevat geboorten naar leeftijd van de moeder in IJsland?'
+      }
+    ]
+  },
   howItWorks: {
     title: 'Hoe het werkt',
     stepLabel: 'Stap',
@@ -109,7 +135,9 @@ export const nl: UiStrings = {
   connect: {
     title: 'Verbinden in minder dan een minuut',
     meta: 'Streamable HTTP · alleen-lezen · zonder aanmelding · 60 verzoeken/min',
-    clientTabs: 'Client'
+    clientTabs: 'Client',
+    otherClients: 'Andere clients',
+    runLocally: 'Lokaal draaien'
   },
   countryPage: {
     title: '{country}: officiële statistiek in uw AI-assistent.',
@@ -168,7 +196,7 @@ export const nl: UiStrings = {
       {
         question: 'Kan ik het op mijn eigen computer draaien?',
         answer:
-          'Ja. De servers staan op npm. Open bij ‘Verbinden’ het tabblad ‘Run locally’. Dan gaan uw vragen alleen naar het statistisch bureau.'
+          'Ja. De servers staan op npm. Open bij ‘Verbinden’ het tabblad ‘Lokaal draaien’. Dan gaan uw vragen alleen naar het statistisch bureau.'
       },
       {
         question: 'Hoe kan mijn land worden toegevoegd?',
