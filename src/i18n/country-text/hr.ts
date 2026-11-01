@@ -156,5 +156,17 @@ export const hr: CountryText = {
       highlight: '5,1 %',
       seriesLabel: 'Cijene stambenih nekretnina, promjena u 12 mjeseci, %'
     }
+  },
+  au: {
+    name: 'Australija',
+    office: 'Australski zavod za statistiku',
+    licence: 'CC BY 4.0',
+    example: {
+      question: 'Koliko brzo rastu cijene u Australiji?',
+      answer:
+        'Potrošačke cijene u Australiji porasle su 4,3 % u 12 mjeseci do rujna 2026. U rujnu 2025. godišnji je rast iznosio 3,6 %.',
+      highlight: '4,3 %',
+      seriesLabel: 'Potrošačke cijene, promjena u 12 mjeseci, %'
+    }
   }
 };

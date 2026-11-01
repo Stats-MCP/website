@@ -132,5 +132,17 @@ export const nb: CountryText = {
       highlight: '5,1 %',
       seriesLabel: 'Boligpriser, endring siste 12 måneder, %'
     }
+  },
+  au: {
+    name: 'Australia',
+    office: 'Australias statistikkbyrå',
+    licence: 'CC BY 4.0',
+    example: {
+      question: 'Hvor raskt stiger prisene i Australia?',
+      answer:
+        'Konsumprisene i Australia steg med 4,3 % i 12-månedersperioden fram til september 2026. I september 2025 var den årlige økningen 3,6 %.',
+      highlight: '4,3 %',
+      seriesLabel: 'Konsumpriser, endring siste 12 måneder, %'
+    }
   }
 };

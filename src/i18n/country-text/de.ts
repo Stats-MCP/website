@@ -158,5 +158,17 @@ export const de: CountryText = {
       highlight: '5,1 %',
       seriesLabel: 'Preise für Wohnimmobilien, Veränderung über 12 Monate, %'
     }
+  },
+  au: {
+    name: 'Australien',
+    office: 'Australisches Statistikamt',
+    licence: 'CC BY 4.0',
+    example: {
+      question: 'Wie schnell steigen die Preise in Australien?',
+      answer:
+        'Die Verbraucherpreise in Australien stiegen in den 12 Monaten bis September 2026 um 4,3 %. Im September 2025 betrug der Anstieg zum Vorjahr 3,6 %.',
+      highlight: '4,3 %',
+      seriesLabel: 'Verbraucherpreise, Veränderung über 12 Monate, %'
+    }
   }
 };

@@ -160,5 +160,17 @@ export const fr: CountryText = {
       highlight: '5,1 %',
       seriesLabel: 'Prix des logements, variation sur 12 mois, %'
     }
+  },
+  au: {
+    name: 'Australie',
+    office: 'Bureau australien de statistique',
+    licence: 'CC BY 4.0',
+    example: {
+      question: 'À quel rythme les prix augmentent-ils en Australie ?',
+      answer:
+        'Les prix à la consommation en Australie ont augmenté de 4,3 % sur les 12 mois jusqu’en septembre 2026. En septembre 2025, la hausse annuelle était de 3,6 %.',
+      highlight: '4,3 %',
+      seriesLabel: 'Prix à la consommation, variation sur 12 mois, %'
+    }
   }
 };

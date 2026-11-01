@@ -132,5 +132,17 @@ export const sl: CountryText = {
       highlight: '5,1 %',
       seriesLabel: 'Cene stanovanjskih nepremičnin, 12-mesečna sprememba, %'
     }
+  },
+  au: {
+    name: 'Avstralija',
+    office: 'Avstralski statistični urad',
+    licence: 'CC BY 4.0',
+    example: {
+      question: 'Kako hitro rastejo cene v Avstraliji?',
+      answer:
+        'Cene življenjskih potrebščin v Avstraliji so se v 12 mesecih do septembra 2026 zvišale za 4,3 %. Septembra 2025 je bila letna rast 3,6 %.',
+      highlight: '4,3 %',
+      seriesLabel: 'Cene življenjskih potrebščin, 12-mesečna sprememba, %'
+    }
   }
 };

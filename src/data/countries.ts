@@ -779,6 +779,55 @@ const baseCountries: Country[] = [
         { period: '2026M08', value: 5.1 }
       ]
     }
+  },
+  {
+    id: 'au',
+    slug: 'australia',
+    code: 'AU',
+    name: { en: 'Australia' },
+    database: {
+      name: 'ABS Data API',
+      url: 'https://www.abs.gov.au/about/data-services/application-programming-interfaces-apis/data-api-user-guide'
+    },
+    office: {
+      name: 'ABS',
+      fullName: { en: 'Australian Bureau of Statistics' },
+      url: 'https://www.abs.gov.au/'
+    },
+    licence: {
+      label: { en: 'CC BY 4.0' },
+      url: 'https://www.abs.gov.au/website-privacy-copyright-and-disclaimer#copyright-and-creative-commons'
+    },
+    dataLanguages: ['en'],
+    tables: 1228,
+    status: 'live',
+    localPackage: 'abs-mcp',
+    example: {
+      question: { en: 'How fast are prices rising in Australia?' },
+      answer: {
+        en: 'Consumer prices in Australia rose 4.3% in the 12 months to September 2026. In September 2025, the annual rise was 3.6%.'
+      },
+      highlight: { en: '4.3%' },
+      source: 'ABS, table CPI',
+      sourceUrl:
+        'https://dataexplorer.abs.gov.au/vis?df[ds]=ABS_ABS_TOPICS&df[id]=CPI&df[ag]=ABS',
+      seriesLabel: { en: 'Consumer prices, 12-month change, %' },
+      decimals: 1,
+      series: [
+        { period: '2025M10', value: 3.8 },
+        { period: '2025M11', value: 3.4 },
+        { period: '2025M12', value: 3.8 },
+        { period: '2026M01', value: 3.8 },
+        { period: '2026M02', value: 3.7 },
+        { period: '2026M03', value: 4.6 },
+        { period: '2026M04', value: 4.2 },
+        { period: '2026M05', value: 4 },
+        { period: '2026M06', value: 3.8 },
+        { period: '2026M07', value: 3.5 },
+        { period: '2026M08', value: 4 },
+        { period: '2026M09', value: 4.3 }
+      ]
+    }
   }
 ];
 

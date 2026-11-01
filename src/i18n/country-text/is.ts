@@ -156,5 +156,17 @@ export const isl: CountryText = {
       highlight: '5,1%',
       seriesLabel: 'Íbúðaverð, 12 mánaða breyting, %'
     }
+  },
+  au: {
+    name: 'Ástralía',
+    office: 'Hagstofa Ástralíu',
+    licence: 'CC BY 4.0',
+    example: {
+      question: 'Hversu hratt hækkar verðlag í Ástralíu?',
+      answer:
+        'Neysluverð í Ástralíu hækkaði um 4,3% á 12 mánuðum fram að september 2026. Í september 2025 var árshækkunin 3,6%.',
+      highlight: '4,3%',
+      seriesLabel: 'Neysluverð, 12 mánaða breyting, %'
+    }
   }
 };

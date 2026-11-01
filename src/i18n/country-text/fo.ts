@@ -156,5 +156,17 @@ export const fo: CountryText = {
       highlight: '5,1%',
       seriesLabel: 'Bústaðarprísir, 12 mánaða broyting, %'
     }
+  },
+  au: {
+    name: 'Avstralia',
+    office: 'Hagstova Avstralia',
+    licence: 'CC BY 4.0',
+    example: {
+      question: 'Hvussu skjótt hækka prísirnir í Avstralia?',
+      answer:
+        'Brúkaraprísirnir í Avstralia hækkaðu 4,3% í 12 mánaðirnar fram til september 2026. Í september 2025 var árliga hækkingin 3,6%.',
+      highlight: '4,3%',
+      seriesLabel: 'Brúkaraprísir, 12 mánaða broyting, %'
+    }
   }
 };

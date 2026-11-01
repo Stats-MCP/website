@@ -156,5 +156,17 @@ export const fi: CountryText = {
       highlight: '5,1 %',
       seriesLabel: 'Asuntojen hinnat, 12 kuukauden muutos, %'
     }
+  },
+  au: {
+    name: 'Australia',
+    office: 'Australian tilastokeskus',
+    licence: 'CC BY 4.0',
+    example: {
+      question: 'Kuinka nopeasti hinnat nousevat Australiassa?',
+      answer:
+        'Kuluttajahinnat nousivat Australiassa 4,3 % syyskuuhun 2026 päättyneiden 12 kuukauden aikana. Syyskuussa 2025 vuosinousu oli 3,6 %.',
+      highlight: '4,3 %',
+      seriesLabel: 'Kuluttajahinnat, 12 kuukauden muutos, %'
+    }
   }
 };

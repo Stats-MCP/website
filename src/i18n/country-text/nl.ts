@@ -159,5 +159,17 @@ export const nl: CountryText = {
       highlight: '5,1 %',
       seriesLabel: 'Woningprijzen, verandering over 12 maanden, %'
     }
+  },
+  au: {
+    name: 'Australië',
+    office: 'Australisch Bureau voor de Statistiek',
+    licence: 'CC BY 4.0',
+    example: {
+      question: 'Hoe snel stijgen de prijzen in Australië?',
+      answer:
+        'De consumentenprijzen in Australië stegen met 4,3 % in de 12 maanden tot september 2026. In september 2025 was de jaarlijkse stijging 3,6 %.',
+      highlight: '4,3 %',
+      seriesLabel: 'Consumentenprijzen, verandering over 12 maanden, %'
+    }
   }
 };

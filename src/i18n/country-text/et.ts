@@ -156,5 +156,17 @@ export const et: CountryText = {
       highlight: '5,1%',
       seriesLabel: 'Kinnisvarahinnad, 12 kuu muutus, %'
     }
+  },
+  au: {
+    name: 'Austraalia',
+    office: 'Austraalia statistikaamet',
+    licence: 'CC BY 4.0',
+    example: {
+      question: 'Kui kiiresti tõusevad hinnad Austraalias?',
+      answer:
+        'Austraalia tarbijahinnad tõusid 2026. aasta septembriga lõppenud 12 kuuga 4,3%. 2025. aasta septembris oli aastane tõus 3,6%.',
+      highlight: '4,3%',
+      seriesLabel: 'Tarbijahinnad, 12 kuu muutus, %'
+    }
   }
 };
