@@ -537,6 +537,70 @@ export const countries: Country[] = [
     }
   },
   {
+    id: 'eu',
+    slug: 'eurostat',
+    code: 'EU',
+    name: { en: 'EU and EFTA', sl: 'EU in EFTA', nb: 'EU og EFTA' },
+    database: {
+      name: 'Eurostat',
+      url: 'https://ec.europa.eu/eurostat/data/database'
+    },
+    office: {
+      name: 'European Commission',
+      fullName: {
+        en: 'Eurostat, the statistical office of the European Union',
+        sl: 'Eurostat, statistični urad Evropske unije',
+        nb: 'Eurostat, EUs statistikkontor'
+      },
+      url: 'https://ec.europa.eu/eurostat'
+    },
+    licence: {
+      label: {
+        en: 'Free reuse with attribution',
+        sl: 'Prosta uporaba z navedbo vira',
+        nb: 'Fri gjenbruk med kildehenvisning'
+      },
+      url: 'https://ec.europa.eu/eurostat/help/copyright-notice'
+    },
+    dataLanguages: ['en', 'de', 'fr'],
+    status: 'live',
+    example: {
+      question: {
+        en: 'What is the latest inflation rate in the EU?',
+        sl: 'Kakšna je zadnja stopnja inflacije v EU?',
+        nb: 'Hva er den siste inflasjonen i EU?'
+      },
+      answer: {
+        en: 'In September 2026, prices in the EU were 3.8% higher than a year earlier. In January 2026, the rate was 2.0%.',
+        sl: 'Septembra 2026 so bile cene v EU za 3,8 % višje kot leto prej. Januarja 2026 je bila stopnja 2,0 %.',
+        nb: 'I september 2026 var prisene i EU 3,8 % høyere enn året før. I januar 2026 var raten 2,0 %.'
+      },
+      highlight: { en: '3.8%', sl: '3,8 %', nb: '3,8 %' },
+      source: 'Eurostat, dataset prc_hicp_minr',
+      sourceUrl:
+        'https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en',
+      seriesLabel: {
+        en: 'Annual inflation (HICP), %',
+        sl: 'Letna inflacija (HICP), %',
+        nb: 'Årlig inflasjon (HICP), %'
+      },
+      series: [
+        { period: '2025M10', value: 2.5 },
+        { period: '2025M11', value: 2.4 },
+        { period: '2025M12', value: 2.3 },
+        { period: '2026M01', value: 2.0 },
+        { period: '2026M02', value: 2.1 },
+        { period: '2026M03', value: 2.8 },
+        { period: '2026M04', value: 3.2 },
+        { period: '2026M05', value: 3.3 },
+        { period: '2026M06', value: 2.9 },
+        { period: '2026M07', value: 3.0 },
+        { period: '2026M08', value: 3.2 },
+        { period: '2026M09', value: 3.8 }
+      ]
+    }
+  },
+  {
     id: 'is',
     slug: 'iceland',
     code: 'IS',
