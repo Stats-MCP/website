@@ -481,6 +481,62 @@ export const countries: Country[] = [
     }
   },
   {
+    id: 'nl',
+    slug: 'netherlands',
+    code: 'NL',
+    name: { en: 'Netherlands', sl: 'Nizozemska', nb: 'Nederland' },
+    database: { name: 'StatLine', url: 'https://opendata.cbs.nl/' },
+    office: {
+      name: 'CBS',
+      fullName: {
+        en: 'Statistics Netherlands',
+        sl: 'Statistični urad Nizozemske',
+        nb: 'Nederlands statistikkbyrå'
+      },
+      url: 'https://www.cbs.nl/en-gb'
+    },
+    licence: {
+      label: { en: 'CC BY 4.0', sl: 'CC BY 4.0', nb: 'CC BY 4.0' },
+      url: 'https://www.cbs.nl/en-gb/about-us/website/copyright'
+    },
+    dataLanguages: ['nl', 'en'],
+    status: 'live',
+    example: {
+      question: {
+        en: 'What is the latest inflation rate in the Netherlands?',
+        sl: 'Kakšna je zadnja stopnja inflacije na Nizozemskem?',
+        nb: 'Hva er den siste inflasjonen i Nederland?'
+      },
+      answer: {
+        en: 'In September 2026, prices were 3.4% higher than in September 2025. Inflation peaked at 3.5% in May.',
+        sl: 'Septembra 2026 so bile cene za 3,4 % višje kot septembra 2025. Inflacija je bila najvišja maja (3,5 %).',
+        nb: 'I september 2026 var prisene 3,4 % høyere enn i september 2025. Inflasjonen var høyest i mai (3,5 %).'
+      },
+      highlight: { en: '3.4%', sl: '3,4 %', nb: '3,4 %' },
+      source: 'CBS, table 86141ENG',
+      sourceUrl: 'https://www.cbs.nl/en-gb/figures/detail/86141ENG',
+      seriesLabel: {
+        en: 'Annual inflation, %',
+        sl: 'Letna inflacija, %',
+        nb: 'Årlig inflasjon, %'
+      },
+      series: [
+        { period: '2025M10', value: 3.1 },
+        { period: '2025M11', value: 2.8 },
+        { period: '2025M12', value: 2.9 },
+        { period: '2026M01', value: 2.4 },
+        { period: '2026M02', value: 2.4 },
+        { period: '2026M03', value: 2.7 },
+        { period: '2026M04', value: 2.8 },
+        { period: '2026M05', value: 3.5 },
+        { period: '2026M06', value: 2.9 },
+        { period: '2026M07', value: 3.2 },
+        { period: '2026M08', value: 3.3 },
+        { period: '2026M09', value: 3.4 }
+      ]
+    }
+  },
+  {
     id: 'is',
     slug: 'iceland',
     code: 'IS',
