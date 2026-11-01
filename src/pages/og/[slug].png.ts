@@ -9,20 +9,21 @@ interface Props {
   card: OgCard;
 }
 
+const offices = String(liveCountries.length);
+const exampleCountry = countries.find((country) => country.example);
+
 export const getStaticPaths = (() =>
   locales.flatMap((locale) => {
     const t = ui[locale];
-    const offices = String(liveCountries.length);
-    const slovenia = countries.find((country) => country.example);
     const pages: { slug: string; card: OgCard }[] = [
       {
         slug: 'home',
         card: {
           title: fill(t.home.title, { offices }),
           footer: t.hero.eyebrow,
-          chart: slovenia?.example && {
-            values: slovenia.example.series.map((point) => point.value),
-            caption: `${t.seo.figureNumber} · ${localized(slovenia.name, locale)} · ${localized(slovenia.example.seriesLabel, locale)}`
+          chart: exampleCountry?.example && {
+            values: exampleCountry.example.series.map((point) => point.value),
+            caption: `${t.seo.figureNumber} · ${localized(exampleCountry.name, locale)} · ${localized(exampleCountry.example.seriesLabel, locale)}`
           }
         }
       },
@@ -33,9 +34,7 @@ export const getStaticPaths = (() =>
       {
         slug: 'countries',
         card: {
-          title: fill(t.countries.pageTitle, {
-            offices
-          }),
+          title: fill(t.countries.pageTitle, { offices }),
           footer: t.countries.pageIntro
         }
       },

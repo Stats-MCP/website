@@ -51,9 +51,6 @@ export const hr: UiStrings = {
   },
   hero: {
     eyebrow: 'Besplatno i otvorenog koda',
-    title:
-      'Službena statistika iz {countries} zemalja i EU-a u vašem AI asistentu.',
-    lead: 'StatsMCP povezuje Claude, ChatGPT, Cursor i VS Code s {offices} statističkih ureda. Svaki odgovor navodi izvor i poveznicu na tablicu.',
     addToClaude: 'Dodaj u Claude',
     addToChatgpt: 'Dodaj u ChatGPT',
     allEndpointLabel: 'Jedna krajnja točka za sve zemlje',

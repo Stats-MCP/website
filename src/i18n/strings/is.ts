@@ -51,9 +51,6 @@ export const isl: UiStrings = {
   },
   hero: {
     eyebrow: 'Ókeypis og opinn hugbúnaður',
-    title:
-      'Opinberar hagtölur frá {countries} löndum og ESB, í gervigreindaraðstoðarmanninum þínum.',
-    lead: 'StatsMCP tengir Claude, ChatGPT, Cursor og VS Code við {offices} hagstofur. Hvert svar tilgreinir heimild og tengir á töfluna.',
     addToClaude: 'Bæta við Claude',
     addToChatgpt: 'Bæta við ChatGPT',
     allEndpointLabel: 'Einn endapunktur fyrir öll lönd',

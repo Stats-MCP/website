@@ -26,12 +26,10 @@ function firstThen(
   );
 }
 
-/** For the code chips: EU, then by country code. */
 export function byCode(countries: readonly Country[]): Country[] {
   return firstThen(countries, (a, b) => a.code.localeCompare(b.code));
 }
 
-/** For lists that show names: EU, then by name in the page's language. */
 export function byName(
   countries: readonly Country[],
   locale: Locale

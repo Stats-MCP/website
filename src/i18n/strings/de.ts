@@ -51,9 +51,6 @@ export const de: UiStrings = {
   },
   hero: {
     eyebrow: 'Kostenlos und Open Source',
-    title:
-      'Amtliche Statistik aus {countries} Ländern und der EU in Ihrem KI-Assistenten.',
-    lead: 'StatsMCP verbindet Claude, ChatGPT, Cursor und VS Code mit {offices} Statistikämtern. Jede Antwort nennt die Quelle und verlinkt die Tabelle.',
     addToClaude: 'Zu Claude hinzufügen',
     addToChatgpt: 'Zu ChatGPT hinzufügen',
     allEndpointLabel: 'Ein Endpunkt für alle Länder',

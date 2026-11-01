@@ -24,7 +24,7 @@ function el(
   return { type, props: { style, children } };
 }
 
-async function font(file: string): Promise<Buffer> {
+function font(file: string): Promise<Buffer> {
   return readFile(require.resolve(`@fontsource/${file}`));
 }
 

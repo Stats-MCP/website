@@ -12,9 +12,8 @@ interface Props {
   oneOffice?: boolean;
 }
 
-const { locale, oneOffice = true } = Astro.props;
+const { locale, connectHref = `${localePath(locale)}#connect`, oneOffice = true } = Astro.props;
 const t = ui[locale];
-const connectHref = Astro.props.connectHref ?? `${localePath(locale)}#connect`;
 ---
 
 <div class="box">

@@ -51,9 +51,6 @@ export const sv: UiStrings = {
   },
   hero: {
     eyebrow: 'Gratis och öppen källkod',
-    title:
-      'Officiell statistik från {countries} länder och EU, i din AI-assistent.',
-    lead: 'StatsMCP kopplar Claude, ChatGPT, Cursor och VS Code till {offices} statistikmyndigheter. Varje svar anger källan och länkar till tabellen.',
     addToClaude: 'Lägg till i Claude',
     addToChatgpt: 'Lägg till i ChatGPT',
     allEndpointLabel: 'En slutpunkt för alla länder',

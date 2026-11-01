@@ -50,9 +50,6 @@ export interface UiStrings {
   };
   hero: {
     eyebrow: string;
-    /** `{countries}` and `{offices}` are numbers. */
-    title: string;
-    lead: string;
     addToClaude: string;
     addToChatgpt: string;
     allEndpointLabel: string;
@@ -213,9 +210,6 @@ const en: UiStrings = {
   },
   hero: {
     eyebrow: 'Free and open source',
-    title:
-      'Official statistics from {countries} countries and the EU, in your AI assistant.',
-    lead: 'StatsMCP connects Claude, ChatGPT, Cursor and VS Code to {offices} statistics offices. Every answer names its source and links the table.',
     addToClaude: 'Add to Claude',
     addToChatgpt: 'Add to ChatGPT',
     allEndpointLabel: 'One endpoint for every country',
@@ -418,18 +412,18 @@ const en: UiStrings = {
 
 export const ui: Record<Locale, UiStrings> = {
   en,
-  sl: sl,
-  nb: nb,
-  da: da,
-  sv: sv,
-  fi: fi,
+  sl,
+  nb,
+  da,
+  sv,
+  fi,
   is: isl,
-  fo: fo,
-  et: et,
-  hr: hr,
-  nl: nl,
-  de: de,
-  fr: fr
+  fo,
+  et,
+  hr,
+  nl,
+  de,
+  fr
 };
 
 export function fill(template: string, values: Record<string, string>): string {

@@ -7,7 +7,7 @@ import TabPanel from '@/components/ui/TabPanel.astro';
 import Tabs from '@/components/ui/Tabs.astro';
 import { endpoint, statusKey, type Country } from '@/data/countries';
 import { repoUrl } from '@/data/site';
-import { type Locale , localized } from '@/i18n/locales';
+import { type Locale, localized } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
 import { byName } from '@/lib/country-order';
 import { countryTabItems } from '@/lib/country-tabs';
@@ -21,25 +21,19 @@ interface Props {
   selected: Country;
   /** False on a country page, where the page's country must win over a stored choice. */
   restore?: boolean;
-  /** Heading and lead of a country page; the home page computes its own. */
-  title?: string;
-  lead?: string;
+  title: string;
+  lead: string;
 }
 
-const { locale, countries, selected, restore = true } = Astro.props;
+const { locale, countries, selected, restore = true, title, lead } = Astro.props;
 const t = ui[locale];
 const live = countries.filter((country) => country.status === 'live');
-const counts = {
-  countries: String(live.filter((country) => country.id !== 'eu').length),
-  offices: String(live.length)
-};
-const title = Astro.props.title ?? fill(t.hero.title, counts);
-const lead = Astro.props.lead ?? fill(t.hero.lead, counts);
 const coverage = byName(live, locale)
   .map((country) => localized(country.name, locale))
   .join(' · ');
 const tabs = countryTabItems(countries, locale, { compact: true });
 const toolNames = t.howItWorks.steps.map((step) => step.tool);
+const toolCalls = fill(t.figure.toolCalls, { count: String(toolNames.length) });
 const formatValue = (decimals = 1) => {
   const format = new Intl.NumberFormat(locale, {
     minimumFractionDigits: decimals,
@@ -121,10 +115,8 @@ const formatValue = (decimals = 1) => {
               <div class="turn">
                 <p class="speaker">{t.figure.assistant}</p>
                 <div class="tools">
-                  <span class="mono-label">
-                    {fill(t.figure.toolCalls, { count: String(toolNames.length) })}
-                  </span>
-                  <ol aria-label={fill(t.figure.toolCalls, { count: String(toolNames.length) })}>
+                  <span class="mono-label">{toolCalls}</span>
+                  <ol aria-label={toolCalls}>
                     {toolNames.map((tool) => (
                       <li>
                         <code>{tool}</code>
@@ -260,7 +252,6 @@ const formatValue = (decimals = 1) => {
   }
   .status.limited {
     color: var(--warn);
-    border-color: currentColor;
   }
   .status.live {
     color: var(--live);

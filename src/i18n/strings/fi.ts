@@ -51,9 +51,6 @@ export const fi: UiStrings = {
   },
   hero: {
     eyebrow: 'Maksuton ja avointa lähdekoodia',
-    title:
-      'Viralliset tilastot {countries} maasta ja EU:sta tekoälyavustajassasi.',
-    lead: 'StatsMCP yhdistää Clauden, ChatGPT:n, Cursorin ja VS Coden {offices} tilastovirastoon. Jokainen vastaus kertoo lähteen ja linkittää taulukkoon.',
     addToClaude: 'Lisää Claudeen',
     addToChatgpt: 'Lisää ChatGPT:hen',
     allEndpointLabel: 'Yksi päätepiste kaikille maille',

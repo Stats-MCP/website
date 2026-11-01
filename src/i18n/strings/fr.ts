@@ -51,9 +51,6 @@ export const fr: UiStrings = {
   },
   hero: {
     eyebrow: 'Gratuit et open source',
-    title:
-      'Les statistiques officielles de {countries} pays et de l’UE, dans votre assistant IA.',
-    lead: 'StatsMCP connecte Claude, ChatGPT, Cursor et VS Code à {offices} offices statistiques. Chaque réponse cite sa source et renvoie au tableau.',
     addToClaude: 'Ajouter à Claude',
     addToChatgpt: 'Ajouter à ChatGPT',
     allEndpointLabel: 'Un seul point d’accès pour tous les pays',

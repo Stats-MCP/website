@@ -1,16 +1,9 @@
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
-import { countries } from './src/data/countries';
 import { isIndexableUrl } from './src/i18n/indexing';
-import {
-  defaultLocale,
-  localeTags,
-  locales,
-  reviewedLocales
-} from './src/i18n/locales';
-
-const indexingRules = { locales, defaultLocale, reviewedLocales, countries };
+import { defaultLocale, localeTags, locales } from './src/i18n/locales';
+import { indexingRules } from './src/i18n/site-indexing';
 
 export const config = defineConfig({
   site: 'https://statsmcp.dev',
@@ -18,13 +11,13 @@ export const config = defineConfig({
   build: { format: 'directory' },
   vite: { build: { assetsInlineLimit: 0 } },
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale,
     locales: [...locales],
     routing: { prefixDefaultLocale: false }
   },
   integrations: [
     sitemap({
-      i18n: { defaultLocale: 'en', locales: localeTags },
+      i18n: { defaultLocale, locales: localeTags },
       filter: (page) => isIndexableUrl(indexingRules, page),
       changefreq: 'weekly',
       lastmod: new Date()

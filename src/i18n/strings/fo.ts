@@ -51,9 +51,6 @@ export const fo: UiStrings = {
   },
   hero: {
     eyebrow: 'Ókeypis og opin keldukota',
-    title:
-      'Almenn hagtøl úr {countries} londum og ES, í vitlíkishjálpara tínum.',
-    lead: 'StatsMCP knýtir Claude, ChatGPT, Cursor og VS Code at {offices} hagstovum. Hvørt svar nevnir kelduna og hevur leinkju til talvuna.',
     addToClaude: 'Legg afturat Claude',
     addToChatgpt: 'Legg afturat ChatGPT',
     allEndpointLabel: 'Eitt endapunkt fyri øll lond',

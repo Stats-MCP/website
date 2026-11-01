@@ -8,14 +8,13 @@ export function countryTabItems(
   locale: Locale,
   options: { compact?: boolean } = {}
 ): { value: string; label: string; icon?: string; title?: string }[] {
-  return byCode(countries).map((country) => ({
-    value: country.id,
-    label: options.compact
-      ? country.code
-      : `${country.code} · ${localized(country.name, locale)}`,
-    icon: flagUrl(country.code),
-    ...(options.compact
-      ? { title: `${country.code} · ${localized(country.name, locale)}` }
-      : {})
-  }));
+  return byCode(countries).map((country) => {
+    const fullLabel = `${country.code} · ${localized(country.name, locale)}`;
+    return {
+      value: country.id,
+      label: options.compact ? country.code : fullLabel,
+      icon: flagUrl(country.code),
+      ...(options.compact ? { title: fullLabel } : {})
+    };
+  });
 }

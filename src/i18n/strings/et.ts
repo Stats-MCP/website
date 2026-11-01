@@ -51,9 +51,6 @@ export const et: UiStrings = {
   },
   hero: {
     eyebrow: 'Tasuta ja avatud lähtekoodiga',
-    title:
-      'Ametlik statistika {countries} riigist ja EList sinu tehisintellekti assistendis.',
-    lead: "StatsMCP ühendab Claude'i, ChatGPT, Cursori ja VS Code'i {offices} statistikaametiga. Iga vastus nimetab allika ja lingib tabeli.",
     addToClaude: "Lisa Claude'ile",
     addToChatgpt: 'Lisa ChatGPT-le',
     allEndpointLabel: 'Üks lõpp-punkt kõigile riikidele',

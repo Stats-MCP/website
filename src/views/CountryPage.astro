@@ -5,7 +5,7 @@ import Faq from '@/components/sections/Faq.astro';
 import HowItWorks from '@/components/sections/HowItWorks.astro';
 import Hero from '@/components/sections/Hero.astro';
 import { countries, liveCountries, type Country } from '@/data/countries';
-import { type Locale , localized } from '@/i18n/locales';
+import { type Locale, localized } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
 import { localePath } from '@/i18n/urls';
 import { breadcrumbData } from '@/lib/structured-data';
@@ -16,16 +16,17 @@ interface Props {
 }
 
 const { locale, country } = Astro.props;
+const countryName = localized(country.name, locale);
 const seo = country.status === 'live' ? ui[locale].seo.countryLive : ui[locale].seo.countryPlanned;
 const values = {
-  country: localized(country.name, locale),
+  country: countryName,
   database: country.database.name,
   office: country.office.name
 };
 const absolute = (path: string) => new URL(path, Astro.site).href;
 const page = ui[locale].countryPage;
 const pageValues = {
-  country: localized(country.name, locale),
+  country: countryName,
   office: localized(country.office.fullName, locale),
   licence: localized(country.licence.label, locale),
   tables: country.tables === undefined ? '' : new Intl.NumberFormat(locale).format(country.tables)
@@ -45,7 +46,7 @@ const sources = String(liveCountries.length);
   jsonLd={[
     breadcrumbData([
       { name: 'StatsMCP', url: absolute(localePath(locale)) },
-      { name: localized(country.name, locale), url: absolute(localePath(locale, `${country.slug}/`)) }
+      { name: countryName, url: absolute(localePath(locale, `${country.slug}/`)) }
     ])
   ]}>
   <Hero
