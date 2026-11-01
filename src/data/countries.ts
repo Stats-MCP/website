@@ -665,7 +665,10 @@ export const countries: Country[] = [
     slug: 'iceland',
     code: 'IS',
     name: { en: 'Iceland', sl: 'Islandija', nb: 'Island' },
-    database: { name: 'Statistics Iceland', url: 'https://www.statice.is/' },
+    database: {
+      name: 'PX-Web',
+      url: 'https://px.hagstofa.is/pxen/pxweb/en/'
+    },
     office: {
       name: 'Statistics Iceland',
       fullName: {
@@ -675,9 +678,112 @@ export const countries: Country[] = [
       },
       url: 'https://www.statice.is/'
     },
-    licence: { label: { en: 'CC BY 4.0', sl: 'CC BY 4.0', nb: 'CC BY 4.0' } },
+    licence: {
+      label: { en: 'CC BY 4.0', sl: 'CC BY 4.0', nb: 'CC BY 4.0' },
+      url: 'https://statice.is/publications/open-data-access'
+    },
     dataLanguages: ['is', 'en'],
-    status: 'planned'
+    status: 'live',
+    example: {
+      question: {
+        en: 'What is the latest inflation rate in Iceland?',
+        sl: 'Kakšna je zadnja stopnja inflacije na Islandiji?',
+        nb: 'Hva er den siste inflasjonen på Island?'
+      },
+      answer: {
+        en: 'In October 2026, prices were 5.9% higher than in October 2025. In October 2025, the rate was 4.3%.',
+        sl: 'Oktobra 2026 so bile cene za 5,9 % višje kot oktobra 2025. Oktobra 2025 je bila stopnja 4,3 %.',
+        nb: 'I oktober 2026 var prisene 5,9 % høyere enn i oktober 2025. I oktober 2025 var raten 4,3 %.'
+      },
+      highlight: { en: '5.9%', sl: '5,9 %', nb: '5,9 %' },
+      source: 'Statistics Iceland, table VIS01000',
+      sourceUrl:
+        'https://px.hagstofa.is/pxen/pxweb/en/Efnahagur/Efnahagur__visitolur__1_vnv__1_vnv/VIS01000.px/',
+      seriesLabel: {
+        en: 'Annual inflation, %',
+        sl: 'Letna inflacija, %',
+        nb: 'Årlig inflasjon, %'
+      },
+      series: [
+        { period: '2024M01', value: 6.7 },
+        { period: '2024M04', value: 6.0 },
+        { period: '2024M07', value: 6.3 },
+        { period: '2024M10', value: 5.1 },
+        { period: '2025M01', value: 4.6 },
+        { period: '2025M04', value: 4.2 },
+        { period: '2025M07', value: 4.0 },
+        { period: '2025M10', value: 4.3 },
+        { period: '2026M01', value: 5.2 },
+        { period: '2026M04', value: 5.2 },
+        { period: '2026M07', value: 5.3 },
+        { period: '2026M10', value: 5.9 }
+      ]
+    }
+  },
+  {
+    id: 'hr',
+    slug: 'croatia',
+    code: 'HR',
+    name: { en: 'Croatia', sl: 'Hrvaška', nb: 'Kroatia' },
+    database: {
+      name: 'PX-Web',
+      url: 'https://web.dzs.hr/PXWeb/pxweb/en/'
+    },
+    office: {
+      name: 'DZS',
+      fullName: {
+        en: 'Croatian Bureau of Statistics',
+        sl: 'Hrvaški statistični urad',
+        nb: 'Kroatias statistikkbyrå'
+      },
+      url: 'https://dzs.gov.hr/'
+    },
+    licence: {
+      label: {
+        en: 'Open Licence (Croatia)',
+        sl: 'Odprta licenca (Hrvaška)',
+        nb: 'Åpen lisens (Kroatia)'
+      },
+      url: 'https://web.dzs.hr/Hrv/about_us/Legals/Open%20Licence.pdf'
+    },
+    dataLanguages: ['hr', 'en'],
+    status: 'live',
+    example: {
+      question: {
+        en: 'What is the latest inflation rate in Croatia?',
+        sl: 'Kakšna je zadnja stopnja inflacije na Hrvaškem?',
+        nb: 'Hva er den siste inflasjonen i Kroatia?'
+      },
+      answer: {
+        en: 'In September 2026, prices were 4.7% higher than in September 2025. In September 2024, the rate was 1.6%.',
+        sl: 'Septembra 2026 so bile cene za 4,7 % višje kot septembra 2025. Septembra 2024 je bila stopnja 1,6 %.',
+        nb: 'I september 2026 var prisene 4,7 % høyere enn i september 2025. I september 2024 var raten 1,6 %.'
+      },
+      highlight: { en: '4.7%', sl: '4,7 %', nb: '4,7 %' },
+      source:
+        'Croatian Bureau of Statistics, table ME_PS09 (updated 2026-10-09)',
+      sourceUrl:
+        'https://web.dzs.hr/PXWeb/pxweb/en/Cijene/Cijene__Indeksi%20potro%C5%A1a%C4%8Dkih%20cijena__Indeksi%20potro%C5%A1a%C4%8Dkih%20cijena%20%E2%80%93%20ECOICOP%2C%20ver.%202/ME_PS09.px/',
+      seriesLabel: {
+        en: 'Annual inflation, %',
+        sl: 'Letna inflacija, %',
+        nb: 'Årlig inflasjon, %'
+      },
+      series: [
+        { period: '2023M12', value: 4.5 },
+        { period: '2024M03', value: 4.1 },
+        { period: '2024M06', value: 2.4 },
+        { period: '2024M09', value: 1.6 },
+        { period: '2024M12', value: 3.4 },
+        { period: '2025M03', value: 3.2 },
+        { period: '2025M06', value: 3.7 },
+        { period: '2025M09', value: 4.2 },
+        { period: '2025M12', value: 3.3 },
+        { period: '2026M03', value: 4.8 },
+        { period: '2026M06', value: 4.5 },
+        { period: '2026M09', value: 4.7 }
+      ]
+    }
   }
 ];
 
