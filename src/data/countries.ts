@@ -601,6 +601,66 @@ export const countries: Country[] = [
     }
   },
   {
+    id: 'ca',
+    slug: 'canada',
+    code: 'CA',
+    name: { en: 'Canada', sl: 'Kanada', nb: 'Canada' },
+    database: {
+      name: 'Statistics Canada data tables',
+      url: 'https://www150.statcan.gc.ca/n1/en/type/data'
+    },
+    office: {
+      name: 'Statistics Canada',
+      fullName: {
+        en: 'Statistics Canada',
+        sl: 'Statistični urad Kanade',
+        nb: 'Canadas statistikkbyrå'
+      },
+      url: 'https://www.statcan.gc.ca/en/start'
+    },
+    licence: {
+      label: { en: 'Open Licence', sl: 'Odprta licenca', nb: 'Åpen lisens' },
+      url: 'https://www.statcan.gc.ca/en/reference/licence'
+    },
+    dataLanguages: ['en', 'fr'],
+    status: 'live',
+    example: {
+      question: {
+        en: 'How have consumer prices in Canada changed over the last year?',
+        sl: 'Kako so se v zadnjem letu spremenile cene življenjskih potrebščin v Kanadi?',
+        nb: 'Hvordan har konsumprisene i Canada endret seg det siste året?'
+      },
+      answer: {
+        en: 'In September 2026, the Consumer Price Index was 170.0, up from 164.9 in September 2025 (2002 = 100).',
+        sl: 'Septembra 2026 je bil indeks cen življenjskih potrebščin 170,0, septembra 2025 pa 164,9 (2002 = 100).',
+        nb: 'I september 2026 var konsumprisindeksen 170,0, mot 164,9 i september 2025 (2002 = 100).'
+      },
+      highlight: { en: '170.0', sl: '170,0', nb: '170,0' },
+      source: 'Statistics Canada, table 18-10-0004-01',
+      sourceUrl:
+        'https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401',
+      seriesLabel: {
+        en: 'Consumer Price Index (2002 = 100)',
+        sl: 'Indeks cen življenjskih potrebščin (2002 = 100)',
+        nb: 'Konsumprisindeks (2002 = 100)'
+      },
+      series: [
+        { period: '2025M10', value: 165.3 },
+        { period: '2025M11', value: 165.4 },
+        { period: '2025M12', value: 165.0 },
+        { period: '2026M01', value: 165.0 },
+        { period: '2026M02', value: 165.9 },
+        { period: '2026M03', value: 167.4 },
+        { period: '2026M04', value: 168.0 },
+        { period: '2026M05', value: 169.6 },
+        { period: '2026M06', value: 169.0 },
+        { period: '2026M07', value: 169.9 },
+        { period: '2026M08', value: 169.8 },
+        { period: '2026M09', value: 170.0 }
+      ]
+    }
+  },
+  {
     id: 'is',
     slug: 'iceland',
     code: 'IS',
