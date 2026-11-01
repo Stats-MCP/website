@@ -210,7 +210,8 @@ export const fi: UiStrings = {
       {
         question: 'Voinko yhdistää useita maita?',
         answer:
-          'Kyllä. Yhdistä https://statsmcp.dev/mcp kerran ja kysy mistä tahansa maasta. Jos haluat käyttää vain yhtä virastoa, yhdistä sen oma päätepiste Maat-sivulta.'
+          'Kyllä. Yhdistä https://statsmcp.dev/mcp kerran ja kysy mistä tahansa maasta. Jos haluat käyttää vain yhtä virastoa, yhdistä sen oma päätepiste Maat-sivulta.',
+        link: 'countries/'
       },
       {
         question: 'Voinko ajaa sitä omalla tietokoneellani?',

@@ -11,8 +11,8 @@ import { countryTarget } from '@/data/connect-target';
 import type { Country } from '@/data/countries';
 import { getCountry } from '@/data/test-helpers';
 
-const slovenia = countryTarget(getCountry('si'));
-const norway = countryTarget(getCountry('no'));
+const slovenia = countryTarget(getCountry('si'), 'en');
+const norway = countryTarget(getCountry('no'), 'en');
 
 describe('install links', () => {
   it('encodes the endpoint as base64 JSON in the Cursor link', () => {
@@ -44,7 +44,7 @@ describe('install links', () => {
 });
 
 const clientIds = (country: Country) =>
-  clientsFor(countryTarget(country)).map((client) => client.id);
+  clientsFor(countryTarget(country, 'en')).map((client) => client.id);
 
 describe('clientsFor', () => {
   it('offers the local option only for a country with an npm package', () => {
@@ -60,7 +60,9 @@ describe('clientSteps', () => {
     const claude = clients.find((client) => client.id === 'claude');
     if (!claude) throw new Error('claude client missing');
 
-    expect(clientSteps(claude, slovenia, 'sl')).toEqual(
+    expect(
+      clientSteps(claude, countryTarget(getCountry('si'), 'sl'), 'sl')
+    ).toEqual(
       expect.arrayContaining([
         'Poimenujte ga StatsMCP SI in prilepite končno točko.',
         'Postavite vprašanje o statistiki (Slovenija).'

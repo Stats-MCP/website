@@ -15,6 +15,8 @@ import { sv } from '@/i18n/strings/sv';
 export interface FaqItem {
   question: string;
   answer: string;
+  /** Page path under the locale, linked after the answer. */
+  link?: string;
 }
 
 export interface PageSeo {
@@ -362,7 +364,8 @@ const en: UiStrings = {
       {
         question: 'Can I connect several countries?',
         answer:
-          'Yes. Connect https://statsmcp.dev/mcp once and ask about any country. To use only one office, connect its own endpoint from the Countries page.'
+          'Yes. Connect https://statsmcp.dev/mcp once and ask about any country. To use only one office, connect its own endpoint from the Countries page.',
+        link: 'countries/'
       },
       {
         question: 'Can I run it on my own computer?',

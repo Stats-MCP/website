@@ -27,7 +27,7 @@ const connectHref = Astro.props.connectHref ?? `${localePath(locale)}#connect`;
     <LinkButton href={connectHref} variant="primary" activate="client:claude">
       {t.hero.addToClaude}
     </LinkButton>
-    <LinkButton href={connectHref} activate="client:chatgpt">{t.hero.otherAssistants}</LinkButton>
+    <LinkButton href={connectHref}>{t.hero.otherAssistants}</LinkButton>
   </div>
   {
     oneOffice && (

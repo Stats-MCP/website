@@ -210,7 +210,8 @@ export const isl: UiStrings = {
       {
         question: 'Get ég tengt mörg lönd?',
         answer:
-          'Já. Tengdu https://statsmcp.dev/mcp einu sinni og spurðu um hvaða land sem er. Ef þú vilt aðeins nota eina hagstofu skaltu tengja endapunkt hennar af síðunni Lönd.'
+          'Já. Tengdu https://statsmcp.dev/mcp einu sinni og spurðu um hvaða land sem er. Ef þú vilt aðeins nota eina hagstofu skaltu tengja endapunkt hennar af síðunni Lönd.',
+        link: 'countries/'
       },
       {
         question: 'Get ég keyrt þetta á eigin tölvu?',

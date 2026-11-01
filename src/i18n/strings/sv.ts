@@ -210,7 +210,8 @@ export const sv: UiStrings = {
       {
         question: 'Kan jag ansluta flera länder?',
         answer:
-          'Ja. Anslut https://statsmcp.dev/mcp en gång och fråga om vilket land som helst. Vill du bara använda en myndighet ansluter du dess egen slutpunkt från sidan Länder.'
+          'Ja. Anslut https://statsmcp.dev/mcp en gång och fråga om vilket land som helst. Vill du bara använda en myndighet ansluter du dess egen slutpunkt från sidan Länder.',
+        link: 'countries/'
       },
       {
         question: 'Kan jag köra den på min egen dator?',

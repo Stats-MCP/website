@@ -16,7 +16,7 @@ import { getCountry } from '@/data/test-helpers';
 import { locales } from '@/i18n/locales';
 
 const all = allCountriesTarget('any country');
-const slovenia = countryTarget(getCountry('si'));
+const slovenia = countryTarget(getCountry('si'), 'en');
 
 function code(clientId: string, target: ConnectTarget): string {
   const client = clients.find((item) => item.id === clientId);
@@ -83,7 +83,7 @@ describe('connect targets', () => {
 
   it.each([
     [
-      countryTarget(getCountry('si')),
+      countryTarget(getCountry('si'), 'en'),
       'si',
       'statsmcp-si',
       'https://statsmcp.dev/si/mcp'
@@ -96,6 +96,8 @@ describe('connect targets', () => {
   it('keeps no package key for a country without one', () => {
     const { localPackage: _localPackage, ...withoutPackage } = getCountry('no');
 
-    expect(countryTarget(withoutPackage)).not.toHaveProperty('localPackage');
+    expect(countryTarget(withoutPackage, 'en')).not.toHaveProperty(
+      'localPackage'
+    );
   });
 });

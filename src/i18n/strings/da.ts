@@ -205,7 +205,8 @@ export const da: UiStrings = {
       {
         question: 'Kan jeg forbinde flere lande?',
         answer:
-          'Ja. Forbind https://statsmcp.dev/mcp én gang, og spørg om et hvilket som helst land. Vil du kun bruge ét kontor, forbinder du dets eget endpoint fra siden Lande.'
+          'Ja. Forbind https://statsmcp.dev/mcp én gang, og spørg om et hvilket som helst land. Vil du kun bruge ét kontor, forbinder du dets eget endpoint fra siden Lande.',
+        link: 'countries/'
       },
       {
         question: 'Kan jeg køre det på min egen computer?',

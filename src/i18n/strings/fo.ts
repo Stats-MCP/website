@@ -206,7 +206,8 @@ export const fo: UiStrings = {
       {
         question: 'Kann eg knýta fleiri lond at?',
         answer:
-          'Ja. Knýt https://statsmcp.dev/mcp at eina ferð, og spyr um hvørt land sum helst. Vilt tú bert brúka eina hagstovu, knýtir tú hennara egna endapunkt at frá síðuni Lond.'
+          'Ja. Knýt https://statsmcp.dev/mcp at eina ferð, og spyr um hvørt land sum helst. Vilt tú bert brúka eina hagstovu, knýtir tú hennara egna endapunkt at frá síðuni Lond.',
+        link: 'countries/'
       },
       {
         question: 'Kann eg koyra tað á míni egnu teldu?',

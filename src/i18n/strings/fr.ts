@@ -215,7 +215,8 @@ export const fr: UiStrings = {
       {
         question: 'Puis-je connecter plusieurs pays ?',
         answer:
-          'Oui. Connectez https://statsmcp.dev/mcp une seule fois et posez des questions sur n’importe quel pays. Pour n’utiliser qu’un seul office, connectez son propre point d’accès depuis la page Pays.'
+          'Oui. Connectez https://statsmcp.dev/mcp une seule fois et posez des questions sur n’importe quel pays. Pour n’utiliser qu’un seul office, connectez son propre point d’accès depuis la page Pays.',
+        link: 'countries/'
       },
       {
         question: 'Puis-je l’exécuter sur mon propre ordinateur ?',

@@ -207,7 +207,8 @@ export const hr: UiStrings = {
       {
         question: 'Mogu li povezati više zemalja?',
         answer:
-          'Da. Jednom povežite https://statsmcp.dev/mcp i pitajte o bilo kojoj zemlji. Ako želite koristiti samo jedan ured, na stranici Zemlje povežite njegovu krajnju točku.'
+          'Da. Jednom povežite https://statsmcp.dev/mcp i pitajte o bilo kojoj zemlji. Ako želite koristiti samo jedan ured, na stranici Zemlje povežite njegovu krajnju točku.',
+        link: 'countries/'
       },
       {
         question: 'Mogu li ga pokrenuti na svojem računalu?',

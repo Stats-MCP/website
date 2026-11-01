@@ -206,7 +206,8 @@ export const nb: UiStrings = {
       {
         question: 'Kan jeg koble til flere land?',
         answer:
-          'Ja. Koble til https://statsmcp.dev/mcp én gang, og spør om hvilket som helst land. Vil du bare bruke ett byrå, kobler du til endepunktet for det byrået fra siden Land.'
+          'Ja. Koble til https://statsmcp.dev/mcp én gang, og spør om hvilket som helst land. Vil du bare bruke ett byrå, kobler du til endepunktet for det byrået fra siden Land.',
+        link: 'countries/'
       },
       {
         question: 'Kan jeg kjøre det på min egen datamaskin?',

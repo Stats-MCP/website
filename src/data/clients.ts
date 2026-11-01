@@ -1,6 +1,6 @@
 import type { ConnectTarget } from '@/data/connect-target';
 import { translatedSteps } from '@/i18n/client-steps';
-import { type Locale, type Localized, localized } from '@/i18n/locales';
+import type { Locale, Localized } from '@/i18n/locales';
 
 export interface ClientInstall {
   label: Localized;
@@ -141,9 +141,7 @@ export function clientSteps(
   const steps = translatedSteps[locale]?.[client.id] ?? client.steps;
   return steps.map((step) =>
     step
-      .replaceAll('{code}', target.code)
-      .replaceAll('{country}', localized(target.name, locale))
-      .replaceAll(/ {2,}/g, ' ')
-      .replaceAll(' ,', ',')
+      .replaceAll(' {code}', target.code ? ` ${target.code}` : '')
+      .replaceAll('{country}', target.name)
   );
 }

@@ -207,7 +207,8 @@ export const nl: UiStrings = {
       {
         question: 'Kan ik meerdere landen verbinden?',
         answer:
-          'Ja. Verbind https://statsmcp.dev/mcp één keer en stel vragen over elk land. Wilt u maar één bureau gebruiken, verbind dan het eigen endpoint van dat bureau via de pagina Landen.'
+          'Ja. Verbind https://statsmcp.dev/mcp één keer en stel vragen over elk land. Wilt u maar één bureau gebruiken, verbind dan het eigen endpoint van dat bureau via de pagina Landen.',
+        link: 'countries/'
       },
       {
         question: 'Kan ik het op mijn eigen computer draaien?',

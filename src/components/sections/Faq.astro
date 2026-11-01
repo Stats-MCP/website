@@ -1,6 +1,7 @@
 ---
 import type { Locale } from '@/i18n/locales';
 import { ui } from '@/i18n/ui';
+import { localePath } from '@/i18n/urls';
 
 interface Props {
   locale: Locale;
@@ -8,6 +9,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = ui[locale].faq;
+const linkLabel = ui[locale].connect.oneOfficeLink;
 ---
 
 <section id="faq" class="faq">
@@ -17,7 +19,17 @@ const t = ui[locale].faq;
       t.items.map((item, index) => (
         <details open={index === 0}>
           <summary>{item.question}</summary>
-          <p>{item.answer}</p>
+          <p>
+            {item.answer}
+            {item.link && (
+              <>
+                {' '}
+                <a href={localePath(locale, item.link)}>
+                  {linkLabel} <span aria-hidden="true">→</span>
+                </a>
+              </>
+            )}
+          </p>
         </details>
       ))
     }

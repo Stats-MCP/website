@@ -203,7 +203,8 @@ export const sl: UiStrings = {
       {
         question: 'Ali lahko povežem več držav?',
         answer:
-          'Da. Enkrat povežite https://statsmcp.dev/mcp in sprašujte o kateri koli državi. Če želite uporabljati samo en urad, na strani Države povežite njegovo končno točko.'
+          'Da. Enkrat povežite https://statsmcp.dev/mcp in sprašujte o kateri koli državi. Če želite uporabljati samo en urad, na strani Države povežite njegovo končno točko.',
+        link: 'countries/'
       },
       {
         question: 'Ali ga lahko zaženem na svojem računalniku?',

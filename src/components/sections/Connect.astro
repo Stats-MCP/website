@@ -34,7 +34,7 @@ const t = ui[locale];
     countries.map((country) => (
       <TabPanel group="country" idPrefix="connect" value={country.id} selected={selected.id}>
         {country.status === 'live' ? (
-          <ClientTabs locale={locale} target={countryTarget(country)} />
+          <ClientTabs locale={locale} target={countryTarget(country, locale)} />
         ) : (
           <p class="planned">
             {fill(t.figure.plannedTitle, { country: localized(country.name, locale) })}{' '}

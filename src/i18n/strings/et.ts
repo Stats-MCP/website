@@ -203,7 +203,8 @@ export const et: UiStrings = {
       {
         question: 'Kas ma saan ühendada mitu riiki?',
         answer:
-          'Jah. Ühenda https://statsmcp.dev/mcp üks kord ja küsi ükskõik millise riigi kohta. Kui soovid kasutada ainult üht ametit, ühenda lehelt Riigid selle enda lõpp-punkt.'
+          'Jah. Ühenda https://statsmcp.dev/mcp üks kord ja küsi ükskõik millise riigi kohta. Kui soovid kasutada ainult üht ametit, ühenda lehelt Riigid selle enda lõpp-punkt.',
+        link: 'countries/'
       },
       {
         question: 'Kas ma saan seda oma arvutis käitada?',

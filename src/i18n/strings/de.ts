@@ -208,7 +208,8 @@ export const de: UiStrings = {
       {
         question: 'Kann ich mehrere Länder verbinden?',
         answer:
-          'Ja. Verbinden Sie https://statsmcp.dev/mcp einmal und stellen Sie Fragen zu jedem Land. Wenn Sie nur ein Amt nutzen möchten, verbinden Sie dessen eigenen Endpunkt über die Seite Länder.'
+          'Ja. Verbinden Sie https://statsmcp.dev/mcp einmal und stellen Sie Fragen zu jedem Land. Wenn Sie nur ein Amt nutzen möchten, verbinden Sie dessen eigenen Endpunkt über die Seite Länder.',
+        link: 'countries/'
       },
       {
         question: 'Kann ich es auf meinem eigenen Computer ausführen?',
