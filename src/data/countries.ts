@@ -485,7 +485,6 @@ const baseCountries: Country[] = [
     tables: 4890,
     status: 'live',
     localPackage: 'cbs-mcp',
-    limited: true,
     example: {
       question: { en: 'How many people live in the Netherlands?' },
       answer: {
