@@ -1,5 +1,6 @@
 import type { Country } from '@/data/countries';
-import type { Locale } from '@/i18n/locales';
+import { type Locale, localized } from '@/i18n/locales';
+import { byCode } from '@/lib/country-order';
 import { flagUrl } from '@/lib/flags';
 
 export function countryTabItems(
@@ -7,14 +8,14 @@ export function countryTabItems(
   locale: Locale,
   options: { compact?: boolean } = {}
 ): { value: string; label: string; icon?: string; title?: string }[] {
-  return countries.map((country) => ({
+  return byCode(countries).map((country) => ({
     value: country.id,
     label: options.compact
       ? country.code
-      : `${country.code} · ${country.name[locale]}`,
+      : `${country.code} · ${localized(country.name, locale)}`,
     icon: flagUrl(country.code),
     ...(options.compact
-      ? { title: `${country.code} · ${country.name[locale]}` }
+      ? { title: `${country.code} · ${localized(country.name, locale)}` }
       : {})
   }));
 }

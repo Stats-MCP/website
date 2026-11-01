@@ -57,8 +57,11 @@ describe('clientSteps', () => {
     const claude = clients.find((client) => client.id === 'claude');
     if (!claude) throw new Error('claude client missing');
 
-    expect(clientSteps(claude, slovenia, 'sl')).toContain(
-      'Ask a question about Slovenija.'
+    expect(clientSteps(claude, slovenia, 'sl')).toEqual(
+      expect.arrayContaining([
+        'Poimenujte ga StatsMCP SI in prilepite končno točko.',
+        'Postavite vprašanje o statistiki (Slovenija).'
+      ])
     );
     expect(clientSteps(claude, slovenia, 'en')).toContain(
       'Name it StatsMCP SI and paste the endpoint.'

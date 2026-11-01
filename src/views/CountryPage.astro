@@ -4,7 +4,7 @@ import Connect from '@/components/sections/Connect.astro';
 import CountriesTable from '@/components/sections/CountriesTable.astro';
 import Hero from '@/components/sections/Hero.astro';
 import { countries, type Country } from '@/data/countries';
-import type { Locale } from '@/i18n/locales';
+import { type Locale , localized } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
 import { localePath } from '@/i18n/urls';
 import { breadcrumbData } from '@/lib/structured-data';
@@ -17,7 +17,7 @@ interface Props {
 const { locale, country } = Astro.props;
 const seo = country.status === 'live' ? ui[locale].seo.countryLive : ui[locale].seo.countryPlanned;
 const values = {
-  country: country.name[locale],
+  country: localized(country.name, locale),
   database: country.database.name,
   office: country.office.name
 };
@@ -34,7 +34,7 @@ const absolute = (path: string) => new URL(path, Astro.site).href;
   jsonLd={[
     breadcrumbData([
       { name: 'StatsMCP', url: absolute(localePath(locale)) },
-      { name: country.name[locale], url: absolute(localePath(locale, `${country.slug}/`)) }
+      { name: localized(country.name, locale), url: absolute(localePath(locale, `${country.slug}/`)) }
     ])
   ]}>
   <Hero locale={locale} countries={countries} selected={country} restore={false} />

@@ -1,0 +1,16 @@
+---
+import { countries } from '@/data/countries';
+import CountryPage from '@/views/CountryPage.astro';
+
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (() =>
+  countries.map((country) => ({
+    params: { slug: country.slug },
+    props: { country }
+  }))) satisfies GetStaticPaths;
+
+const { country } = Astro.props;
+---
+
+<CountryPage locale="fr" country={country} />

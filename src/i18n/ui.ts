@@ -1,4 +1,16 @@
 import type { Locale } from '@/i18n/locales';
+import { da } from '@/i18n/strings/da';
+import { de } from '@/i18n/strings/de';
+import { et } from '@/i18n/strings/et';
+import { fi } from '@/i18n/strings/fi';
+import { fo } from '@/i18n/strings/fo';
+import { fr } from '@/i18n/strings/fr';
+import { hr } from '@/i18n/strings/hr';
+import { isl } from '@/i18n/strings/is';
+import { nb } from '@/i18n/strings/nb';
+import { nl } from '@/i18n/strings/nl';
+import { sl } from '@/i18n/strings/sl';
+import { sv } from '@/i18n/strings/sv';
 
 export interface FaqItem {
   question: string;
@@ -306,7 +318,21 @@ const en: UiStrings = {
 };
 
 /** Slovenian and Norwegian copy is English until a native speaker reviews it (see reviewedLocales). */
-export const ui: Record<Locale, UiStrings> = { en, sl: en, nb: en };
+export const ui: Record<Locale, UiStrings> = {
+  en,
+  sl: sl,
+  nb: nb,
+  da: da,
+  sv: sv,
+  fi: fi,
+  is: isl,
+  fo: fo,
+  et: et,
+  hr: hr,
+  nl: nl,
+  de: de,
+  fr: fr
+};
 
 export function fill(template: string, values: Record<string, string>): string {
   return Object.entries(values).reduce(

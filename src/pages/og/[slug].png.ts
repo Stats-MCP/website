@@ -1,5 +1,5 @@
 import { countries, endpoint } from '@/data/countries';
-import { locales } from '@/i18n/locales';
+import { locales, localized } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
 import { renderOgImage, type OgCard } from '@/og/render';
 
@@ -21,7 +21,7 @@ export const getStaticPaths = (() =>
           footer: t.hero.eyebrow,
           chart: slovenia?.example && {
             values: slovenia.example.series.map((point) => point.value),
-            caption: `${t.seo.figureNumber} · ${slovenia.name[locale]} · ${slovenia.example.seriesLabel[locale]}`
+            caption: `${t.seo.figureNumber} · ${localized(slovenia.name, locale)} · ${localized(slovenia.example.seriesLabel, locale)}`
           }
         }
       },
@@ -40,8 +40,10 @@ export const getStaticPaths = (() =>
       ...countries.map((country) => ({
         slug: country.slug,
         card: {
-          title: fill(t.seo.countryCard, { country: country.name[locale] }),
-          footer: `${country.code} · ${country.name[locale]} · ${endpoint(country).replace('https://', '')}`
+          title: fill(t.seo.countryCard, {
+            country: localized(country.name, locale)
+          }),
+          footer: `${country.code} · ${localized(country.name, locale)} · ${endpoint(country).replace('https://', '')}`
         }
       }))
     ];

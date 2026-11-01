@@ -7,6 +7,7 @@ import Hero from '@/components/sections/Hero.astro';
 import HowItWorks from '@/components/sections/HowItWorks.astro';
 import KeyFigures from '@/components/sections/KeyFigures.astro';
 import { countries } from '@/data/countries';
+import { defaultCountry } from '@/lib/country-order';
 import { localeTags, locales, type Locale } from '@/i18n/locales';
 import { ui } from '@/i18n/ui';
 import { faqData, softwareData, websiteData } from '@/lib/structured-data';
@@ -16,8 +17,7 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const selected = countries.find((country) => country.status === 'live') ?? countries[0];
-if (!selected) throw new Error('No countries are configured.');
+const selected = defaultCountry(countries, locale);
 ---
 
 <Base

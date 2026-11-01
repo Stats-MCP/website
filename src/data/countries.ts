@@ -1,3 +1,5 @@
+import type { CountryText } from '@/data/country-text';
+import { countryTexts } from '@/i18n/country-text';
 import type { Localized } from '@/i18n/locales';
 
 export type CountryStatus = 'live' | 'planned';
@@ -69,7 +71,7 @@ export function endpoint(country: Country): string {
   return `https://statsmcp.dev/${country.id}/mcp`;
 }
 
-export const countries: Country[] = [
+const baseCountries: Country[] = [
   {
     id: 'si',
     slug: 'slovenia',
@@ -852,5 +854,66 @@ export const countries: Country[] = [
     }
   }
 ];
+
+function withText(
+  value: Localized,
+  pick: (text: CountryText[string]) => string | undefined,
+  id: string
+): Localized {
+  const added = Object.fromEntries(
+    Object.entries(countryTexts).flatMap(([locale, texts]) => {
+      const text = texts?.[id];
+      const translated = text ? pick(text) : undefined;
+      return translated === undefined ? [] : [[locale, translated]];
+    })
+  );
+  return { ...added, ...value };
+}
+
+function translate(country: Country): Country {
+  const id = country.id;
+  const example = country.example;
+  return {
+    ...country,
+    name: withText(country.name, (text) => text.name, id),
+    office: {
+      ...country.office,
+      fullName: withText(country.office.fullName, (text) => text.office, id)
+    },
+    licence: {
+      ...country.licence,
+      label: withText(country.licence.label, (text) => text.licence, id)
+    },
+    ...(example
+      ? {
+          example: {
+            ...example,
+            question: withText(
+              example.question,
+              (text) => text.example?.question,
+              id
+            ),
+            answer: withText(
+              example.answer,
+              (text) => text.example?.answer,
+              id
+            ),
+            highlight: withText(
+              example.highlight,
+              (text) => text.example?.highlight,
+              id
+            ),
+            seriesLabel: withText(
+              example.seriesLabel,
+              (text) => text.example?.seriesLabel,
+              id
+            )
+          }
+        }
+      : {})
+  };
+}
+
+export const countries: Country[] = baseCountries.map(translate);
 
 validateCountries(countries);

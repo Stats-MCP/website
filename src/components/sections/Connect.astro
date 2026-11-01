@@ -6,7 +6,7 @@ import TabPanel from '@/components/ui/TabPanel.astro';
 import Tabs from '@/components/ui/Tabs.astro';
 import { clientSteps, clientsFor } from '@/data/clients';
 import type { Country } from '@/data/countries';
-import type { Locale } from '@/i18n/locales';
+import { type Locale , localized } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
 import { countryTabItems } from '@/lib/country-tabs';
 
@@ -69,7 +69,7 @@ const countryTabs = countryTabItems(countries, locale);
                         />
                         {install && (
                           <LinkButton href={install.href} variant="primary">
-                            {install.label[locale]}
+                            {localized(install.label, locale)}
                           </LinkButton>
                         )}
                       </div>
@@ -80,7 +80,7 @@ const countryTabs = countryTabItems(countries, locale);
             </div>
           ) : (
             <p class="planned">
-              {fill(t.figure.plannedTitle, { country: country.name[locale] })}{' '}
+              {fill(t.figure.plannedTitle, { country: localized(country.name, locale) })}{' '}
               {fill(t.figure.plannedText, { database: country.database.name })}
             </p>
           )}

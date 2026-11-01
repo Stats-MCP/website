@@ -1,5 +1,5 @@
 ---
-import { localeTags, locales, type Locale } from '@/i18n/locales';
+import { localeNames, localeTags, locales, type Locale } from '@/i18n/locales';
 import { ui } from '@/i18n/ui';
 import { localePath } from '@/i18n/urls';
 import LogoMark from '@/components/ui/LogoMark.astro';
@@ -34,22 +34,44 @@ const links = [
       ))
     }
   </ul>
-  <ul class="languages" aria-label={t.language}>
-    {
-      locales.map((code) => (
-        <li>
-          <a
-            href={localePath(code, path)}
-            hreflang={localeTags[code]}
-            aria-current={code === locale ? 'page' : undefined}>
-            {code.toUpperCase()}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+  <details class="languages" data-language-menu>
+    <summary aria-label={`${t.language}: ${localeNames[locale]}`}>
+      <span class="code">{locale.toUpperCase()}</span>
+      <span class="name">{localeNames[locale]}</span>
+      <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+    </summary>
+    <ul aria-label={t.language}>
+      {
+        locales.map((code) => (
+          <li>
+            <a
+              href={localePath(code, path)}
+              hreflang={localeTags[code]}
+              lang={localeTags[code]}
+              aria-current={code === locale ? 'page' : undefined}>
+              <span class="code">{code.toUpperCase()}</span>
+              {localeNames[code]}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </details>
   <a class="github pressable" href={repoUrl}>{t.github}</a>
 </nav>
+
+<script>
+  for (const menu of document.querySelectorAll<HTMLDetailsElement>('[data-language-menu]')) {
+    document.addEventListener('click', (event) => {
+      if (menu.open && event.target instanceof Node && !menu.contains(event.target)) menu.open = false;
+    });
+    menu.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || !menu.open) return;
+      menu.open = false;
+      menu.querySelector('summary')?.focus();
+    });
+  }
+</script>
 
 <style>
   .nav {
@@ -85,19 +107,69 @@ const links = [
     text-decoration: none;
   }
   .languages {
-    gap: 0;
+    position: relative;
+  }
+  .languages summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 12px;
     border: 1px solid var(--ink);
+    font-size: 14px;
+    cursor: pointer;
+    list-style: none;
   }
-  .languages a {
-    display: inline-block;
-    padding: 6px 10px;
-    font-family: var(--font-mono);
-    font-size: 13px;
-    text-decoration: none;
+  .languages summary::-webkit-details-marker {
+    display: none;
   }
-  .languages a[aria-current='page'] {
+  .languages[open] summary {
     background: var(--ink);
     color: var(--paper);
+  }
+  .languages ul {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 6px);
+    right: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    width: max-content;
+    max-width: min(420px, calc(100vw - 32px));
+    border: 1px solid var(--ink);
+    background: var(--paper);
+  }
+  .languages li {
+    display: flex;
+  }
+  .languages ul a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 0 14px;
+    font-size: 15px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .languages ul a:hover,
+  .languages ul a:focus-visible {
+    background: var(--surface);
+  }
+  .languages ul a[aria-current='page'] {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .code {
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+  .languages ul .code {
+    min-width: 22px;
+    color: inherit;
+    opacity: 0.7;
   }
   .github {
     background: var(--ink);
@@ -113,7 +185,8 @@ const links = [
   }
   @media (max-width: 760px) {
     .tagline,
-    .links {
+    .links,
+    .languages summary .name {
       display: none;
     }
   }

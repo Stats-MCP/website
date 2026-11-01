@@ -7,7 +7,7 @@ import TabPanel from '@/components/ui/TabPanel.astro';
 import Tabs from '@/components/ui/Tabs.astro';
 import { endpoint, type Country } from '@/data/countries';
 import { repoUrl } from '@/data/site';
-import type { Locale } from '@/i18n/locales';
+import { type Locale , localized } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
 import { countryTabItems } from '@/lib/country-tabs';
 import { splitHighlight } from '@/lib/highlight';
@@ -51,7 +51,7 @@ const formatPercent = (value: number) =>
             <p class="picked">
               <Flag code={country.code} />
               <span>
-                <strong>{country.name[locale]}</strong> · {country.office.fullName[locale]}
+                <strong>{localized(country.name, locale)}</strong> · {localized(country.office.fullName, locale)}
               </span>
             </p>
             <div class="endpoint">
@@ -94,7 +94,7 @@ const formatPercent = (value: number) =>
             <div class="body">
               <div class="turn">
                 <p class="speaker">{t.figure.you}</p>
-                <p class="question">{country.example.question[locale]}</p>
+                <p class="question">{localized(country.example.question, locale)}</p>
               </div>
               <div class="turn">
                 <p class="speaker">{t.figure.assistant}</p>
@@ -112,19 +112,19 @@ const formatPercent = (value: number) =>
                   </ol>
                 </div>
                 <div class="chart">
-                  <p class="mono-label">{country.example.seriesLabel[locale]}</p>
+                  <p class="mono-label">{localized(country.example.seriesLabel, locale)}</p>
                   <Sparkline
                     values={country.example.series.map((point) => point.value)}
                     formatValue={formatPercent}
                     startLabel={formatPeriod(country.example.series[0]?.period ?? '', locale)}
                     endLabel={formatPeriod(country.example.series.at(-1)?.period ?? '', locale)}
-                    label={`${country.example.seriesLabel[locale]}: ${country.example.series
+                    label={`${localized(country.example.seriesLabel, locale)}: ${country.example.series
                       .map((point) => `${formatPeriod(point.period, locale)} ${formatPercent(point.value)}`)
                       .join(', ')}`}
                   />
                 </div>
                 <p class="answer">
-                  {splitHighlight(country.example.answer[locale], country.example.highlight[locale]).map(
+                  {splitHighlight(localized(country.example.answer, locale), localized(country.example.highlight, locale)).map(
                     (part) => (part.highlight ? <strong>{part.text}</strong> : part.text)
                   )}
                 </p>
@@ -140,7 +140,7 @@ const formatPercent = (value: number) =>
           ) : (
             <div class="body">
               <p class="answer">
-                {fill(t.figure.plannedTitle, { country: country.name[locale] })}
+                {fill(t.figure.plannedTitle, { country: localized(country.name, locale) })}
               </p>
               <p>{fill(t.figure.plannedText, { database: country.database.name })}</p>
               <a href={repoUrl}>{t.figure.plannedLink}</a>

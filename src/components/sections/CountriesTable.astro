@@ -1,8 +1,9 @@
 ---
 import Flag from '@/components/ui/Flag.astro';
+import { byName } from '@/lib/country-order';
 import Section from '@/components/ui/Section.astro';
 import type { Country } from '@/data/countries';
-import type { Locale } from '@/i18n/locales';
+import { type Locale , localized } from '@/i18n/locales';
 import { ui } from '@/i18n/ui';
 import { localePath } from '@/i18n/urls';
 import { issuesUrl } from '@/data/site';
@@ -36,13 +37,13 @@ const number = new Intl.NumberFormat(locale);
       </thead>
       <tbody>
         {
-          countries.map((country) => (
+          byName(countries, locale).map((country) => (
             <tr>
               <td class="mono">{country.code}</td>
               <td>
                 <span class="country">
                   <Flag code={country.code} />
-                  {country.name[locale]}
+                  {localized(country.name, locale)}
                 </span>
               </td>
               <td>
@@ -64,9 +65,9 @@ const number = new Intl.NumberFormat(locale);
               </td>
               <td>
                 {country.licence.url ? (
-                  <a href={country.licence.url}>{country.licence.label[locale]}</a>
+                  <a href={country.licence.url}>{localized(country.licence.label, locale)}</a>
                 ) : (
-                  country.licence.label[locale]
+                  localized(country.licence.label, locale)
                 )}
               </td>
               <td class:list={['mono', { muted: country.status !== 'live' }]}>

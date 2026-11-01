@@ -1,7 +1,6 @@
 import { endpoint, type Country } from '@/data/countries';
-import type { Locale, Localized } from '@/i18n/locales';
-
-type StepTemplates = Record<Locale, string[]>;
+import { translatedSteps } from '@/i18n/client-steps';
+import { type Locale, type Localized, localized } from '@/i18n/locales';
 
 export interface ClientInstall {
   label: Localized;
@@ -11,8 +10,8 @@ export interface ClientInstall {
 export interface Client {
   id: string;
   label: string;
-  /** Step texts; `{code}` and `{country}` are replaced per country. */
-  steps: StepTemplates;
+  /** English step texts; `{code}` and `{country}` are replaced per country. */
+  steps: string[];
   code: (country: Country) => string;
   install?: (country: Country) => ClientInstall;
   /** Shown only for countries with a local npm package. */
@@ -49,48 +48,42 @@ export function vscodeInstallLink(country: Country): string {
   return `https://insiders.vscode.dev/redirect/mcp/install?${params.toString()}`;
 }
 
-function sameInAllLocales(steps: string[]): StepTemplates {
-  return { en: steps, sl: steps, nb: steps };
-}
-
 export const clients: Client[] = [
   {
     id: 'claude',
     label: 'Claude',
-    steps: sameInAllLocales([
+    steps: [
       'Open Settings, then Connectors.',
       'Select Add custom connector.',
       'Name it StatsMCP {code} and paste the endpoint.',
       'Ask a question about {country}.'
-    ]),
+    ],
     code: endpoint
   },
   {
     id: 'chatgpt',
     label: 'ChatGPT',
-    steps: sameInAllLocales([
+    steps: [
       'Turn on developer mode in Settings.',
       'Open Connectors, then Create.',
       'Paste the endpoint. Choose no authentication.'
-    ]),
+    ],
     code: endpoint
   },
   {
     id: 'claude-code',
     label: 'Claude Code',
-    steps: sameInAllLocales([
+    steps: [
       'Run the command in your terminal.',
       'Run /mcp to check the connection.'
-    ]),
+    ],
     code: (country) =>
       `claude mcp add --transport http ${serverName(country)} ${endpoint(country)}`
   },
   {
     id: 'cursor',
     label: 'Cursor',
-    steps: sameInAllLocales([
-      'Select Add to Cursor, or add the block to .cursor/mcp.json.'
-    ]),
+    steps: ['Select Add to Cursor, or add the block to .cursor/mcp.json.'],
     code: mcpServersJson,
     install: (country) => ({
       label: { en: 'Add to Cursor', sl: 'Add to Cursor', nb: 'Add to Cursor' },
@@ -100,10 +93,10 @@ export const clients: Client[] = [
   {
     id: 'vscode',
     label: 'VS Code',
-    steps: sameInAllLocales([
+    steps: [
       'Select Install in VS Code, or add the block to .vscode/mcp.json.',
       'Start the server from the MCP panel.'
-    ]),
+    ],
     code: vscodeJson,
     install: (country) => ({
       label: {
@@ -117,19 +110,19 @@ export const clients: Client[] = [
   {
     id: 'other',
     label: 'Other clients',
-    steps: sameInAllLocales([
+    steps: [
       'Add a remote server of type http or streamable-http.',
       'Use the endpoint. No authentication.'
-    ]),
+    ],
     code: mcpServersJson
   },
   {
     id: 'local',
     label: 'Run locally',
-    steps: sameInAllLocales([
+    steps: [
       'You need Node.js 20 or later.',
       'Add this command as a stdio server.'
-    ]),
+    ],
     code: (country) => `npx -y ${country.localPackage ?? ''}`,
     needsLocalPackage: true
   }
@@ -146,9 +139,10 @@ export function clientSteps(
   country: Country,
   locale: Locale
 ): string[] {
-  return client.steps[locale].map((step) =>
+  const steps = translatedSteps[locale]?.[client.id] ?? client.steps;
+  return steps.map((step) =>
     step
       .replaceAll('{code}', country.code)
-      .replaceAll('{country}', country.name[locale])
+      .replaceAll('{country}', localized(country.name, locale))
   );
 }

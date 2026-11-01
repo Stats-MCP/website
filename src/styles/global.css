@@ -72,6 +72,8 @@ h3 {
   font-family: var(--font-display);
   font-weight: 400;
   margin: 0;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 code,
