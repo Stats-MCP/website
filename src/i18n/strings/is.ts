@@ -70,6 +70,15 @@ export const isl: UiStrings = {
     privacy: 'Engar atvikaskrár · Engin skráning · Engar vafrakökur'
   },
   copy: { copy: 'Afrita', copied: 'Afritað' },
+  home: {
+    title: 'Allar hagstofur ríkja, ein tenging.',
+    lead: 'Bættu einum MCP-þjóni við gervigreindaraðstoðarmanninn þinn. Spurðu um hvaða af {offices} hagstofum sem er, frá Slóveníu til Ástralíu. Aðstoðarmaðurinn leitar í {tables} opinberum töflum og vísar í heimildina.',
+    compareQuestion: 'Berðu saman atvinnuleysi í Kanada og ESB.',
+    compareAnswer:
+      'Á tímabilinu {period} var atvinnuleysi {canada} í Kanada og {eu} í ESB. Báðar tölurnar eru árstíðaleiðréttar.',
+    euShort: 'ESB',
+    tryTitle: 'Prófaðu að spyrja'
+  },
   figure: {
     caption: 'Mynd 1 · Dæmi um samtal',
     you: 'Þú',

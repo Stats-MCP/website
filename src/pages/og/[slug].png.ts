@@ -17,7 +17,7 @@ export const getStaticPaths = (() =>
       {
         slug: 'home',
         card: {
-          title: t.hero.title,
+          title: t.home.title,
           footer: t.hero.eyebrow,
           chart: slovenia?.example && {
             values: slovenia.example.series.map((point) => point.value),

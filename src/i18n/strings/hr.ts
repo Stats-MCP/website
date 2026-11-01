@@ -70,6 +70,15 @@ export const hr: UiStrings = {
     privacy: 'Bez zapisnika · Bez registracije · Bez kolačića'
   },
   copy: { copy: 'Kopiraj', copied: 'Kopirano' },
+  home: {
+    title: 'Svi nacionalni statistički uredi, jedna veza.',
+    lead: 'Dodajte jedan MCP poslužitelj svom AI asistentu. Pitajte o bilo kojem od {offices} ureda, od Slovenije do Australije. Asistent pretražuje {tables} službenih tablica i navodi izvor.',
+    compareQuestion: 'Usporedi nezaposlenost u Kanadi i EU-u.',
+    compareAnswer:
+      'U razdoblju {period} nezaposlenost je iznosila {canada} u Kanadi i {eu} u EU-u. Obje stope su desezonirane.',
+    euShort: 'EU',
+    tryTitle: 'Pokušajte pitati'
+  },
   figure: {
     caption: 'Slika 1 · Primjer razgovora',
     you: 'Vi',

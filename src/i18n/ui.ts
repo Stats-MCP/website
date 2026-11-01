@@ -63,6 +63,16 @@ export interface UiStrings {
     privacy: string;
   };
   copy: { copy: string; copied: string };
+  home: {
+    title: string;
+    /** `{offices}` and `{tables}` are filled from the country data. */
+    lead: string;
+    compareQuestion: string;
+    /** `{period}`, `{canada}` and `{eu}` come from the Canada and EU examples. */
+    compareAnswer: string;
+    euShort: string;
+    tryTitle: string;
+  };
   figure: {
     caption: string;
     you: string;
@@ -214,6 +224,15 @@ const en: UiStrings = {
     privacy: 'No logs · No sign-up · No cookies'
   },
   copy: { copy: 'Copy', copied: 'Copied' },
+  home: {
+    title: 'Every national statistics office, one connection.',
+    lead: 'Add one MCP server to your AI assistant. Ask about any of {offices} offices, from Slovenia to Australia. Your assistant searches {tables} official tables and cites the source.',
+    compareQuestion: 'Compare unemployment in Canada and the EU.',
+    compareAnswer:
+      'In {period}, unemployment was {canada} in Canada and {eu} in the EU. Both rates are seasonally adjusted.',
+    euShort: 'EU',
+    tryTitle: 'Try asking'
+  },
   figure: {
     caption: 'Figure 1 · Example conversation',
     you: 'You',

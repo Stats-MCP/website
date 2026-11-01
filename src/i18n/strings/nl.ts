@@ -66,6 +66,15 @@ export const nl: UiStrings = {
     privacy: 'Geen logs · Geen aanmelding · Geen cookies'
   },
   copy: { copy: 'Kopiëren', copied: 'Gekopieerd' },
+  home: {
+    title: 'Alle nationale statistiekbureaus, één verbinding.',
+    lead: 'Voeg één MCP-server toe aan uw AI-assistent. Vraag naar elk van de {offices} bureaus, van Slovenië tot Australië. Uw assistent doorzoekt {tables} officiële tabellen en noemt de bron.',
+    compareQuestion: 'Vergelijk de werkloosheid in Canada en de EU.',
+    compareAnswer:
+      'In {period} was de werkloosheid {canada} in Canada en {eu} in de EU. Beide cijfers zijn voor seizoensinvloeden gecorrigeerd.',
+    euShort: 'EU',
+    tryTitle: 'Probeer te vragen'
+  },
   figure: {
     caption: 'Figuur 1 · Voorbeeldgesprek',
     you: 'U',

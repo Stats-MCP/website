@@ -65,6 +65,15 @@ export const da: UiStrings = {
     privacy: 'Ingen logge · Ingen tilmelding · Ingen cookies'
   },
   copy: { copy: 'Kopiér', copied: 'Kopieret' },
+  home: {
+    title: 'Alle nationale statistikkontorer, én forbindelse.',
+    lead: 'Tilføj én MCP-server til din AI-assistent. Spørg om et hvilket som helst af {offices} kontorer, fra Slovenien til Australien. Assistenten søger i {tables} officielle tabeller og angiver kilden.',
+    compareQuestion: 'Sammenlign ledigheden i Canada og EU.',
+    compareAnswer:
+      'I {period} var ledigheden {canada} i Canada og {eu} i EU. Begge tal er sæsonkorrigerede.',
+    euShort: 'EU',
+    tryTitle: 'Prøv at spørge'
+  },
   figure: {
     caption: 'Figur 1 · Eksempel på en samtale',
     you: 'Du',

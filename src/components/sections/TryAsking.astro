@@ -1,0 +1,71 @@
+---
+import Section from '@/components/ui/Section.astro';
+import { countries, type Country } from '@/data/countries';
+import { type Locale, localized } from '@/i18n/locales';
+import { ui } from '@/i18n/ui';
+import { keepNumbersTogether } from '@/lib/highlight';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = ui[locale];
+const examples = ['au', 'ie', 'nl'].flatMap((id) => {
+  const country = countries.find((item: Country) => item.id === id);
+  return country?.example ? [country.example] : [];
+});
+if (examples.length !== 3) {
+  throw new Error('Try asking needs the au, ie and nl examples.');
+}
+---
+
+<Section title={t.home.tryTitle}>
+  <div class="grid">
+    {
+      examples.map((example) => (
+        <div class="card">
+          <p class="ask">“{localized(example.question, locale)}”</p>
+          <p class="answer">{keepNumbersTogether(localized(example.answer, locale))}</p>
+          <p class="source">
+            {t.figure.sourceLabel}{' '}
+            <a href={example.sourceUrl}>
+              {example.source}
+              <span aria-hidden="true"> ↗</span>
+            </a>
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</Section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 16px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+  }
+  .card p {
+    margin: 0;
+  }
+  .ask {
+    font-weight: 600;
+  }
+  .answer {
+    color: var(--muted);
+  }
+  .source {
+    margin-top: auto;
+    font-size: 13px;
+    color: var(--subtle);
+  }
+</style>

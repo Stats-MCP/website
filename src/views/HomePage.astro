@@ -4,9 +4,10 @@ import Audiences from '@/components/sections/Audiences.astro';
 import Connect from '@/components/sections/Connect.astro';
 import CountriesGrid from '@/components/sections/CountriesGrid.astro';
 import Faq from '@/components/sections/Faq.astro';
-import Hero from '@/components/sections/Hero.astro';
+import HomeHero from '@/components/sections/HomeHero.astro';
 import HowItWorks from '@/components/sections/HowItWorks.astro';
 import KeyFigures from '@/components/sections/KeyFigures.astro';
+import TryAsking from '@/components/sections/TryAsking.astro';
 import { countries } from '@/data/countries';
 import { defaultCountry } from '@/lib/country-order';
 import { localeTags, locales, type Locale } from '@/i18n/locales';
@@ -32,8 +33,9 @@ const selected = defaultCountry(countries, locale);
     softwareData(),
     faqData(ui[locale].faq.items)
   ]}>
-  <Hero locale={locale} countries={countries} selected={selected} />
+  <HomeHero locale={locale} />
   <KeyFigures locale={locale} />
+  <TryAsking locale={locale} />
   <Audiences locale={locale} />
   <HowItWorks locale={locale} />
   <Connect locale={locale} countries={countries} selected={selected} all />

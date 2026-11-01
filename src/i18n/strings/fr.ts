@@ -70,6 +70,15 @@ export const fr: UiStrings = {
     privacy: 'Aucun journal · Aucune inscription · Aucun cookie'
   },
   copy: { copy: 'Copier', copied: 'Copié' },
+  home: {
+    title: 'Tous les offices statistiques nationaux, une seule connexion.',
+    lead: 'Ajoutez un serveur MCP à votre assistant IA. Interrogez n’importe lequel des {offices} offices, de la Slovénie à l’Australie. Votre assistant consulte {tables} tableaux officiels et cite la source.',
+    compareQuestion: 'Compare le chômage au Canada et dans l’UE.',
+    compareAnswer:
+      'En {period}, le taux de chômage était de {canada} au Canada et de {eu} dans l’UE. Les deux taux sont corrigés des variations saisonnières.',
+    euShort: 'UE',
+    tryTitle: 'Essayez de demander'
+  },
   figure: {
     caption: 'Figure 1 · Exemple de conversation',
     you: 'Vous',

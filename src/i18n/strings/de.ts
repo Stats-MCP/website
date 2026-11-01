@@ -66,6 +66,15 @@ export const de: UiStrings = {
     privacy: 'Keine Protokolle · Keine Anmeldung · Keine Cookies'
   },
   copy: { copy: 'Kopieren', copied: 'Kopiert' },
+  home: {
+    title: 'Alle nationalen Statistikämter, eine Verbindung.',
+    lead: 'Fügen Sie Ihrem KI-Assistenten einen MCP-Server hinzu. Fragen Sie zu jedem der {offices} Ämter, von Slowenien bis Australien. Ihr Assistent durchsucht {tables} amtliche Tabellen und nennt die Quelle.',
+    compareQuestion: 'Vergleiche die Arbeitslosigkeit in Kanada und der EU.',
+    compareAnswer:
+      'Im Zeitraum {period} lag die Arbeitslosenquote in Kanada bei {canada} und in der EU bei {eu}. Beide Werte sind saisonbereinigt.',
+    euShort: 'EU',
+    tryTitle: 'Fragen Sie zum Beispiel'
+  },
   figure: {
     caption: 'Abbildung 1 · Beispielgespräch',
     you: 'Sie',

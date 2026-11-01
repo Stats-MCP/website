@@ -66,6 +66,15 @@ export const et: UiStrings = {
     privacy: 'Logideta · Registreerumiseta · Küpsisteta'
   },
   copy: { copy: 'Kopeeri', copied: 'Kopeeritud' },
+  home: {
+    title: 'Kõik riiklikud statistikaametid, üks ühendus.',
+    lead: 'Lisa oma tehisintellekti assistendile üks MCP-server. Küsi ükskõik millise {offices} ameti kohta, Sloveeniast Austraaliani. Assistent otsib {tables} ametlikust tabelist ja viitab allikale.',
+    compareQuestion: 'Võrdle töötust Kanadas ja ELis.',
+    compareAnswer:
+      'Perioodil {period} oli töötuse määr Kanadas {canada} ja ELis {eu}. Mõlemad määrad on sesoonselt kohandatud.',
+    euShort: 'EL',
+    tryTitle: 'Proovi küsida'
+  },
   figure: {
     caption: 'Joonis 1 · Näidisvestlus',
     you: 'Sina',

@@ -70,6 +70,15 @@ export const sv: UiStrings = {
     privacy: 'Inga loggar · Ingen registrering · Inga kakor'
   },
   copy: { copy: 'Kopiera', copied: 'Kopierat' },
+  home: {
+    title: 'Alla nationella statistikmyndigheter, en anslutning.',
+    lead: 'Lägg till en MCP-server i din AI-assistent. Fråga om vilken som helst av {offices} myndigheter, från Slovenien till Australien. Assistenten söker i {tables} officiella tabeller och anger källan.',
+    compareQuestion: 'Jämför arbetslösheten i Kanada och EU.',
+    compareAnswer:
+      'I {period} var arbetslösheten {canada} i Kanada och {eu} i EU. Båda talen är säsongsjusterade.',
+    euShort: 'EU',
+    tryTitle: 'Prova att fråga'
+  },
   figure: {
     caption: 'Figur 1 · Exempelsamtal',
     you: 'Du',

@@ -70,6 +70,15 @@ export const fi: UiStrings = {
     privacy: 'Ei lokeja · Ei rekisteröitymistä · Ei evästeitä'
   },
   copy: { copy: 'Kopioi', copied: 'Kopioitu' },
+  home: {
+    title: 'Kaikki kansalliset tilastovirastot, yksi yhteys.',
+    lead: 'Lisää yksi MCP-palvelin tekoälyavustajaasi. Kysy mistä tahansa {offices} virastosta Sloveniasta Australiaan. Avustaja hakee {tables} virallisesta taulukosta ja kertoo lähteen.',
+    compareQuestion: 'Vertaa työttömyyttä Kanadassa ja EU:ssa.',
+    compareAnswer:
+      'Ajanjaksolla {period} työttömyysaste oli Kanadassa {canada} ja EU:ssa {eu}. Molemmat luvut ovat kausitasoitettuja.',
+    euShort: 'EU',
+    tryTitle: 'Kokeile kysyä'
+  },
   figure: {
     caption: 'Kuva 1 · Esimerkkikeskustelu',
     you: 'Sinä',

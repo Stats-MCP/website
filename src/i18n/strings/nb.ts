@@ -66,6 +66,15 @@ export const nb: UiStrings = {
     privacy: 'Ingen logger · Ingen registrering · Ingen informasjonskapsler'
   },
   copy: { copy: 'Kopier', copied: 'Kopiert' },
+  home: {
+    title: 'Alle nasjonale statistikkbyråer, én tilkobling.',
+    lead: 'Legg til én MCP-server i KI-assistenten din. Spør om hvilket som helst av {offices} byråer, fra Slovenia til Australia. Assistenten søker i {tables} offisielle tabeller og oppgir kilden.',
+    compareQuestion: 'Sammenlign arbeidsledigheten i Canada og EU.',
+    compareAnswer:
+      'I {period} var arbeidsledigheten {canada} i Canada og {eu} i EU. Begge tallene er sesongjusterte.',
+    euShort: 'EU',
+    tryTitle: 'Prøv å spørre'
+  },
   figure: {
     caption: 'Figur 1 · Eksempel på samtale',
     you: 'Du',

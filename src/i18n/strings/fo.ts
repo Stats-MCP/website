@@ -66,6 +66,15 @@ export const fo: UiStrings = {
     privacy: 'Ongar loggar · Eingin innritan · Ongar cookies'
   },
   copy: { copy: 'Avrita', copied: 'Avritað' },
+  home: {
+    title: 'Allar hagstovur landanna, eitt samband.',
+    lead: 'Legg ein MCP-ambætara afturat KT-hjálparanum hjá tær. Spyr um hvørja sum helst av {offices} hagstovum, frá Slovenia til Avstralia. Hjálparin leitar í {tables} almennum talvum og greiðir frá keldu.',
+    compareQuestion: 'Samanber arbeiðsloysið í Kanada og ES.',
+    compareAnswer:
+      'Í tíðarskeiðnum {period} var arbeiðsloysið {canada} í Kanada og {eu} í ES. Bæði tølini eru árstíðarjavnað.',
+    euShort: 'ES',
+    tryTitle: 'Royn at spyrja'
+  },
   figure: {
     caption: 'Mynd 1 · Dømi um samrøðu',
     you: 'Tú',
