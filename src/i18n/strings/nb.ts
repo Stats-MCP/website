@@ -136,7 +136,9 @@ export const nb: UiStrings = {
     meta: 'Streamable HTTP · kun lesetilgang · ingen innlogging · 60 forespørsler/min',
     clientTabs: 'Klient',
     otherClients: 'Andre klienter',
-    runLocally: 'Kjør lokalt'
+    runLocally: 'Kjør lokalt',
+    allCountries: 'et hvilket som helst land',
+    oneOfficeLink: 'Koble til bare ett byrå'
   },
   countryPage: {
     title: '{country}: offisiell statistikk i KI-assistenten din.',

@@ -137,7 +137,9 @@ export const hr: UiStrings = {
     meta: 'Streamable HTTP · samo za čitanje · bez prijave · 60 zahtjeva/min',
     clientTabs: 'Klijent',
     otherClients: 'Ostali klijenti',
-    runLocally: 'Lokalno pokretanje'
+    runLocally: 'Lokalno pokretanje',
+    allCountries: 'bilo koja zemlja',
+    oneOfficeLink: 'Povežite se samo s jednim uredom'
   },
   countryPage: {
     title: '{country}: službena statistika u vašem AI asistentu.',

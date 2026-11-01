@@ -140,7 +140,9 @@ export const isl: UiStrings = {
     meta: 'Streamable HTTP · aðeins lestur · engin innskráning · 60 beiðnir/mín',
     clientTabs: 'Forrit',
     otherClients: 'Önnur forrit',
-    runLocally: 'Keyra staðbundið'
+    runLocally: 'Keyra staðbundið',
+    allCountries: 'hvaða land sem er',
+    oneOfficeLink: 'Tengjast aðeins einni hagstofu'
   },
   countryPage: {
     title: '{country}: opinberar hagtölur í aðstoðarmanninum þínum.',

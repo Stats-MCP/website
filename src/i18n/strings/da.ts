@@ -135,7 +135,9 @@ export const da: UiStrings = {
     meta: 'Streamable HTTP · kun læseadgang · intet login · 60 forespørgsler/min',
     clientTabs: 'Klient',
     otherClients: 'Andre klienter',
-    runLocally: 'Kør lokalt'
+    runLocally: 'Kør lokalt',
+    allCountries: 'et hvilket som helst land',
+    oneOfficeLink: 'Forbind kun til ét kontor'
   },
   countryPage: {
     title: '{country}: officiel statistik i din AI-assistent.',

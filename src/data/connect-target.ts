@@ -13,11 +13,11 @@ export interface ConnectTarget {
   localPackage?: string;
 }
 
-export function allCountriesTarget(name: Localized): ConnectTarget {
+export function allCountriesTarget(name: string): ConnectTarget {
   return {
     id: 'all',
     code: '',
-    name,
+    name: { en: name },
     url: ALL_COUNTRIES_URL,
     serverName: 'statsmcp'
   };

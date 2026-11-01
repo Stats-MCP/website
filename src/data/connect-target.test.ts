@@ -15,7 +15,7 @@ import {
 import { getCountry } from '@/data/test-helpers';
 import { locales } from '@/i18n/locales';
 
-const all = allCountriesTarget({ en: 'any country' });
+const all = allCountriesTarget('any country');
 const slovenia = countryTarget(getCountry('si'));
 
 function code(clientId: string, target: ConnectTarget): string {

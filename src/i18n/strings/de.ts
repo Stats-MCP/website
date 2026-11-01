@@ -138,7 +138,9 @@ export const de: UiStrings = {
     meta: 'Streamable HTTP · nur Lesezugriff · ohne Anmeldung · 60 Anfragen/min',
     clientTabs: 'Client',
     otherClients: 'Andere Clients',
-    runLocally: 'Lokal ausführen'
+    runLocally: 'Lokal ausführen',
+    allCountries: 'jedes Land',
+    oneOfficeLink: 'Nur mit einem Amt verbinden'
   },
   countryPage: {
     title: '{country}: amtliche Statistik in Ihrem KI-Assistenten.',

@@ -140,7 +140,9 @@ export const fi: UiStrings = {
     meta: 'Streamable HTTP · vain luku · ei kirjautumista · 60 pyyntöä/min',
     clientTabs: 'Asiakasohjelma',
     otherClients: 'Muut asiakasohjelmat',
-    runLocally: 'Aja paikallisesti'
+    runLocally: 'Aja paikallisesti',
+    allCountries: 'mikä tahansa maa',
+    oneOfficeLink: 'Yhdistä vain yhteen virastoon'
   },
   countryPage: {
     title: '{country}: viralliset tilastot tekoälyavustajassasi.',

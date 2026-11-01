@@ -1,0 +1,85 @@
+---
+import CodeBlock from '@/components/ui/CodeBlock.astro';
+import LinkButton from '@/components/ui/LinkButton.astro';
+import TabPanel from '@/components/ui/TabPanel.astro';
+import Tabs from '@/components/ui/Tabs.astro';
+import { clientSteps, clientsFor } from '@/data/clients';
+import type { ConnectTarget } from '@/data/connect-target';
+import { type Locale, localized } from '@/i18n/locales';
+import { ui } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  target: ConnectTarget;
+}
+
+const { locale, target } = Astro.props;
+const t = ui[locale];
+const available = clientsFor(target);
+const firstClient = available[0]?.id ?? '';
+const idPrefix = `client-${target.id}`;
+---
+
+<div class="clients" data-tab-scope>
+  <Tabs
+    group="client"
+    idPrefix={idPrefix}
+    label={t.connect.clientTabs}
+    items={available.map((client) => ({
+      value: client.id,
+      label: client.labelKey ? t.connect[client.labelKey] : client.label
+    }))}
+    selected={firstClient}
+  />
+  {
+    available.map((client) => {
+      const install = client.install?.(target);
+      return (
+        <TabPanel group="client" idPrefix={idPrefix} value={client.id} selected={firstClient}>
+          <div class="panel">
+            <ol>
+              {clientSteps(client, target, locale).map((step) => (
+                <li>{step}</li>
+              ))}
+            </ol>
+            <div class="code">
+              <CodeBlock code={client.code(target)} copyLabel={t.copy.copy} copiedLabel={t.copy.copied} />
+              {install && (
+                <LinkButton href={install.href} variant="primary">
+                  {localized(install.label, locale)}
+                </LinkButton>
+              )}
+            </div>
+          </div>
+        </TabPanel>
+      );
+    })
+  }
+</div>
+
+<style>
+  .clients {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+    gap: 32px;
+  }
+  ol {
+    margin: 0;
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 17px;
+  }
+  .code {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+</style>

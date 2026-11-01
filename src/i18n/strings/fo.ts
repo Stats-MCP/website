@@ -136,7 +136,9 @@ export const fo: UiStrings = {
     meta: 'Streamable HTTP · bert til lesingar · eingin innritan · 60 fyrispurningar/min',
     clientTabs: 'Forrit',
     otherClients: 'Onnur forrit',
-    runLocally: 'Koyr á egnu teldu'
+    runLocally: 'Koyr á egnu teldu',
+    allCountries: 'hvørt land sum helst',
+    oneOfficeLink: 'Bind bert at einari hagstovu'
   },
   countryPage: {
     title: '{country}: almenn hagtøl í vitlíkishjálpara tínum.',

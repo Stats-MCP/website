@@ -145,7 +145,9 @@ export const fr: UiStrings = {
     meta: 'Streamable HTTP · lecture seule · sans inscription · 60 requêtes/min',
     clientTabs: 'Client',
     otherClients: 'Autres clients',
-    runLocally: 'Exécution locale'
+    runLocally: 'Exécution locale',
+    allCountries: 'n’importe quel pays',
+    oneOfficeLink: 'Se connecter à un seul office'
   },
   countryPage: {
     title: '{country} : les statistiques officielles dans votre assistant IA.',

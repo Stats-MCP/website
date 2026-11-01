@@ -1,14 +1,13 @@
 ---
-import CodeBlock from '@/components/ui/CodeBlock.astro';
-import LinkButton from '@/components/ui/LinkButton.astro';
+import ClientTabs from '@/components/sections/ClientTabs.astro';
 import Section from '@/components/ui/Section.astro';
 import TabPanel from '@/components/ui/TabPanel.astro';
 import Tabs from '@/components/ui/Tabs.astro';
-import { clientSteps, clientsFor } from '@/data/clients';
-import { countryTarget } from '@/data/connect-target';
+import { allCountriesTarget, countryTarget } from '@/data/connect-target';
 import type { Country } from '@/data/countries';
-import { type Locale , localized } from '@/i18n/locales';
+import { type Locale, localized } from '@/i18n/locales';
 import { fill, ui } from '@/i18n/ui';
+import { localePath } from '@/i18n/urls';
 import { countryTabItems } from '@/lib/country-tabs';
 
 interface Props {
@@ -16,112 +15,60 @@ interface Props {
   countries: Country[];
   selected: Country;
   restore?: boolean;
+  /** Connect to the all-countries endpoint instead of one country. */
+  all?: boolean;
 }
 
-const { locale, countries, selected, restore = true } = Astro.props;
+const { locale, countries, selected, restore = true, all = false } = Astro.props;
 const t = ui[locale];
-const countryTabs = countryTabItems(countries, locale);
 ---
 
 <Section id="connect" title={t.connect.title} meta={t.connect.meta}>
-  <Tabs
-    group="country"
-    idPrefix="connect"
-    label={t.hero.countryTabs}
-    items={countryTabs}
-    selected={selected.id}
-    restore={restore}
-    layout="wrap"
-  />
   {
-    countries.map((country) => {
-      const target = countryTarget(country);
-      const available = clientsFor(target);
-      const firstClient = available[0]?.id ?? '';
-      return (
-        <TabPanel group="country" idPrefix="connect" value={country.id} selected={selected.id}>
-          {country.status === 'live' ? (
-            <div class="clients" data-tab-scope>
-              <Tabs
-                group="client"
-                idPrefix={`client-${country.id}`}
-                label={t.connect.clientTabs}
-                items={available.map((client) => ({
-                  value: client.id,
-                  label: client.labelKey ? t.connect[client.labelKey] : client.label
-                }))}
-                selected={firstClient}
-              />
-              {available.map((client) => {
-                const install = client.install?.(target);
-                return (
-                  <TabPanel
-                    group="client"
-                    idPrefix={`client-${country.id}`}
-                    value={client.id}
-                    selected={firstClient}>
-                    <div class="panel">
-                      <ol>
-                        {clientSteps(client, target, locale).map((step) => (
-                          <li>{step}</li>
-                        ))}
-                      </ol>
-                      <div class="code">
-                        <CodeBlock
-                          code={client.code(target)}
-                          copyLabel={t.copy.copy}
-                          copiedLabel={t.copy.copied}
-                        />
-                        {install && (
-                          <LinkButton href={install.href} variant="primary">
-                            {localized(install.label, locale)}
-                          </LinkButton>
-                        )}
-                      </div>
-                    </div>
-                  </TabPanel>
-                );
-              })}
-            </div>
-          ) : (
-            <p class="planned">
-              {fill(t.figure.plannedTitle, { country: localized(country.name, locale) })}{' '}
-              {fill(t.figure.plannedText, { database: country.database.name })}
-            </p>
-          )}
-        </TabPanel>
-      );
-    })
+    all ? (
+      <>
+        <ClientTabs locale={locale} target={allCountriesTarget(t.connect.allCountries)} />
+        <p class="one-office">
+          <a href={localePath(locale, 'countries/')}>
+            {t.connect.oneOfficeLink} <span aria-hidden="true">→</span>
+          </a>
+        </p>
+      </>
+    ) : (
+      <>
+        <Tabs
+          group="country"
+          idPrefix="connect"
+          label={t.hero.countryTabs}
+          items={countryTabItems(countries, locale)}
+          selected={selected.id}
+          restore={restore}
+          layout="wrap"
+        />
+        {countries.map((country) => (
+          <TabPanel group="country" idPrefix="connect" value={country.id} selected={selected.id}>
+            {country.status === 'live' ? (
+              <ClientTabs locale={locale} target={countryTarget(country)} />
+            ) : (
+              <p class="planned">
+                {fill(t.figure.plannedTitle, { country: localized(country.name, locale) })}{' '}
+                {fill(t.figure.plannedText, { database: country.database.name })}
+              </p>
+            )}
+          </TabPanel>
+        ))}
+      </>
+    )
   }
 </Section>
 
 <style>
-  .clients {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-  .panel {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
-    gap: 32px;
-  }
-  ol {
-    margin: 0;
-    padding-left: 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-size: 17px;
-  }
-  .code {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
   .planned {
     margin: 0;
     color: var(--muted);
+  }
+  .one-office {
+    margin: 24px 0 0;
+    font-size: 17px;
   }
 </style>

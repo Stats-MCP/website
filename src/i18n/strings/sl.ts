@@ -133,7 +133,9 @@ export const sl: UiStrings = {
     meta: 'Streamable HTTP · samo za branje · brez prijave · 60 zahtev/min',
     clientTabs: 'Odjemalec',
     otherClients: 'Drugi odjemalci',
-    runLocally: 'Lokalni zagon'
+    runLocally: 'Lokalni zagon',
+    allCountries: 'katera koli država',
+    oneOfficeLink: 'Povežite se samo z enim uradom'
   },
   countryPage: {
     title: '{country}: uradna statistika v vašem pomočniku UI.',

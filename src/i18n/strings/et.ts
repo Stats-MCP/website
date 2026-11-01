@@ -134,7 +134,9 @@ export const et: UiStrings = {
     meta: 'Streamable HTTP · ainult lugemiseks · sisselogimiseta · 60 päringut minutis',
     clientTabs: 'Klient',
     otherClients: 'Muud kliendid',
-    runLocally: 'Käivita kohapeal'
+    runLocally: 'Käivita kohapeal',
+    allCountries: 'mis tahes riik',
+    oneOfficeLink: 'Ühenda ainult ühe ametiga'
   },
   countryPage: {
     title: '{country}: ametlik statistika sinu tehisintellekti assistendis.',

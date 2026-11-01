@@ -88,6 +88,9 @@ export interface UiStrings {
     clientTabs: string;
     otherClients: string;
     runLocally: string;
+    /** Fills `{country}` in client steps for the all-countries endpoint. */
+    allCountries: string;
+    oneOfficeLink: string;
   };
   countryPage: {
     /** `{country}` is the country name. */
@@ -275,7 +278,9 @@ const en: UiStrings = {
     meta: 'Streamable HTTP · read-only · no sign-in · 60 requests/min',
     clientTabs: 'Client',
     otherClients: 'Other clients',
-    runLocally: 'Run locally'
+    runLocally: 'Run locally',
+    allCountries: 'any country',
+    oneOfficeLink: 'Connect to only one office'
   },
   countryPage: {
     title: '{country}: official statistics in your AI assistant.',

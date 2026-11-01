@@ -137,7 +137,9 @@ export const nl: UiStrings = {
     meta: 'Streamable HTTP · alleen-lezen · zonder aanmelding · 60 verzoeken/min',
     clientTabs: 'Client',
     otherClients: 'Andere clients',
-    runLocally: 'Lokaal draaien'
+    runLocally: 'Lokaal draaien',
+    allCountries: 'elk land',
+    oneOfficeLink: 'Maak verbinding met één bureau'
   },
   countryPage: {
     title: '{country}: officiële statistiek in uw AI-assistent.',

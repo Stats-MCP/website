@@ -140,7 +140,9 @@ export const sv: UiStrings = {
     meta: 'Streamable HTTP · endast läsning · ingen inloggning · 60 förfrågningar/min',
     clientTabs: 'Klient',
     otherClients: 'Andra klienter',
-    runLocally: 'Kör lokalt'
+    runLocally: 'Kör lokalt',
+    allCountries: 'vilket land som helst',
+    oneOfficeLink: 'Anslut till bara en myndighet'
   },
   countryPage: {
     title: '{country}: officiell statistik i din AI-assistent.',
