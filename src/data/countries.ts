@@ -425,6 +425,62 @@ export const countries: Country[] = [
     }
   },
   {
+    id: 'dk',
+    slug: 'denmark',
+    code: 'DK',
+    name: { en: 'Denmark', sl: 'Danska', nb: 'Danmark' },
+    database: { name: 'StatBank Denmark', url: 'https://www.statbank.dk/' },
+    office: {
+      name: 'Statistics Denmark',
+      fullName: {
+        en: 'Statistics Denmark',
+        sl: 'Statistični urad Danske',
+        nb: 'Danmarks Statistik'
+      },
+      url: 'https://www.dst.dk/en'
+    },
+    licence: {
+      label: { en: 'CC BY 4.0', sl: 'CC BY 4.0', nb: 'CC BY 4.0' },
+      url: 'https://www.dst.dk/en/Statistik/brug-statistikken/kildeangivelse'
+    },
+    dataLanguages: ['da', 'en'],
+    status: 'live',
+    example: {
+      question: {
+        en: 'What is the latest inflation rate in Denmark?',
+        sl: 'Kakšna je zadnja stopnja inflacije na Danskem?',
+        nb: 'Hva er den siste inflasjonen i Danmark?'
+      },
+      answer: {
+        en: 'In September 2026, prices were 2.2% higher than in September 2025. Inflation was lowest in February, at 0.7%.',
+        sl: 'Septembra 2026 so bile cene za 2,2 % višje kot septembra 2025. Inflacija je bila najnižja februarja (0,7 %).',
+        nb: 'I september 2026 var prisene 2,2 % høyere enn i september 2025. Inflasjonen var lavest i februar (0,7 %).'
+      },
+      highlight: { en: '2.2%', sl: '2,2 %', nb: '2,2 %' },
+      source: 'Statistics Denmark, table PRIS01',
+      sourceUrl: 'https://www.statbank.dk/PRIS01',
+      seriesLabel: {
+        en: 'Annual inflation, %',
+        sl: 'Letna inflacija, %',
+        nb: 'Årlig inflasjon, %'
+      },
+      series: [
+        { period: '2025M10', value: 2.1 },
+        { period: '2025M11', value: 2.1 },
+        { period: '2025M12', value: 1.9 },
+        { period: '2026M01', value: 0.8 },
+        { period: '2026M02', value: 0.7 },
+        { period: '2026M03', value: 1.2 },
+        { period: '2026M04', value: 1.4 },
+        { period: '2026M05', value: 1.9 },
+        { period: '2026M06', value: 1.9 },
+        { period: '2026M07', value: 1.7 },
+        { period: '2026M08', value: 2.0 },
+        { period: '2026M09', value: 2.2 }
+      ]
+    }
+  },
+  {
     id: 'is',
     slug: 'iceland',
     code: 'IS',
