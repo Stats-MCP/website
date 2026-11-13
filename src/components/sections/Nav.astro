@@ -1,5 +1,5 @@
 ---
-import { localeNames, localeTags, locales, type Locale } from '@/i18n/locales';
+import { localeNames, localeTags, type Locale } from '@/i18n/locales';
 import { ui } from '@/i18n/ui';
 import { localePath } from '@/i18n/urls';
 import LogoMark from '@/components/ui/LogoMark.astro';
@@ -8,9 +8,10 @@ import { repoUrl } from '@/data/site';
 interface Props {
   locale: Locale;
   path: string;
+  languages: readonly Locale[];
 }
 
-const { locale, path } = Astro.props;
+const { locale, path, languages } = Astro.props;
 const t = ui[locale].nav;
 const home = localePath(locale);
 const links = [
@@ -42,7 +43,7 @@ const links = [
     </summary>
     <ul aria-label={t.language}>
       {
-        locales.map((code) => (
+        languages.map((code) => (
           <li>
             <a
               href={localePath(code, path)}

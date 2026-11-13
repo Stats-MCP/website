@@ -11,7 +11,7 @@ import '@/styles/global.css';
 import Footer from '@/components/sections/Footer.astro';
 import Nav from '@/components/sections/Nav.astro';
 import Seo from '@/components/seo/Seo.astro';
-import { localeTags, type Locale } from '@/i18n/locales';
+import { localeTags, locales, type Locale } from '@/i18n/locales';
 
 interface Props {
   locale: Locale;
@@ -23,9 +23,11 @@ interface Props {
   ogSlug: string;
   countrySlug?: string;
   jsonLd?: object[];
+  /** Locales this page exists in. */
+  languages?: readonly Locale[];
 }
 
-const { locale, title, description, path, ogSlug, countrySlug, jsonLd } = Astro.props;
+const { locale, title, description, path, ogSlug, countrySlug, jsonLd, languages = locales } = Astro.props;
 ---
 
 <!doctype html>
@@ -41,11 +43,12 @@ const { locale, title, description, path, ogSlug, countrySlug, jsonLd } = Astro.
       ogImage={`/og/${ogSlug}-${locale}.png`}
       countrySlug={countrySlug}
       jsonLd={jsonLd}
+      languages={languages}
     />
   </head>
   <body>
     <div class="container">
-      <Nav locale={locale} path={path} />
+      <Nav locale={locale} path={path} languages={languages} />
       <main>
         <slot />
       </main>

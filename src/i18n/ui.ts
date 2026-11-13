@@ -149,6 +149,8 @@ export interface UiStrings {
     privacy: string;
     security: string;
     builtBy: string;
+    about: string;
+    contact: string;
   };
   privacy: {
     title: string;
@@ -383,7 +385,9 @@ const en: UiStrings = {
     licences: 'Data licences by country',
     privacy: 'Privacy',
     security: 'Security',
-    builtBy: 'Built by'
+    builtBy: 'Built by',
+    about: 'About',
+    contact: 'Contact'
   },
   privacy: {
     title: 'Privacy',

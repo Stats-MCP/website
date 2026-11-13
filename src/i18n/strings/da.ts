@@ -227,7 +227,9 @@ export const da: UiStrings = {
     licences: 'Datalicenser pr. land',
     privacy: 'Privatliv',
     security: 'Sikkerhed',
-    builtBy: 'Bygget af'
+    builtBy: 'Bygget af',
+    about: 'Om',
+    contact: 'Kontakt'
   },
   privacy: {
     title: 'Privatliv',

@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import {
   breadcrumbData,
   faqData,
+  organizationData,
   softwareData,
   websiteData
 } from '@/lib/structured-data';
@@ -12,6 +13,7 @@ describe('structured data', () => {
     ['WebSite', websiteData(['en', 'sl-SI'])],
     ['SoftwareApplication', softwareData('One MCP endpoint.')],
     ['FAQPage', faqData([])],
+    ['Organization', organizationData()],
     ['BreadcrumbList', breadcrumbData([])]
   ])('builds a schema.org %s', (type, data) => {
     expect(data).toMatchObject({
@@ -27,6 +29,16 @@ describe('structured data', () => {
     expect(softwareData('One MCP endpoint.')).toMatchObject({
       description: 'One MCP endpoint.',
       offers: { price: '0' }
+    });
+  });
+
+  it('gives the organization a contact point and the GitHub org', () => {
+    expect(organizationData()).toMatchObject({
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'technical support'
+      },
+      sameAs: expect.arrayContaining(['https://github.com/Stats-MCP'])
     });
   });
 

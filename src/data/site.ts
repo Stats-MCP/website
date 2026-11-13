@@ -1,4 +1,5 @@
-export const repoUrl = 'https://github.com/Stats-MCP/statsmcp';
+export const githubOrgUrl = 'https://github.com/Stats-MCP';
+export const repoUrl = `${githubOrgUrl}/statsmcp`;
 export const issuesUrl = `${repoUrl}/issues`;
 export const docsUrl = `${repoUrl}/tree/main/docs`;
 export const securityUrl = `${repoUrl}/security/policy`;

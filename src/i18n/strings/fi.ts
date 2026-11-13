@@ -231,7 +231,9 @@ export const fi: UiStrings = {
     licences: 'Datan lisenssit maittain',
     privacy: 'Tietosuoja',
     security: 'Tietoturva',
-    builtBy: 'Tekijä:'
+    builtBy: 'Tekijä:',
+    about: 'Tietoa',
+    contact: 'Yhteystiedot'
   },
   privacy: {
     title: 'Tietosuoja',

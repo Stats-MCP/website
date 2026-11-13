@@ -1,6 +1,6 @@
 ---
 import { isIndexable } from '@/i18n/indexing';
-import { localeTags, locales, type Locale } from '@/i18n/locales';
+import { localeTags, type Locale } from '@/i18n/locales';
 import { indexingRules } from '@/i18n/site-indexing';
 import { localePath } from '@/i18n/urls';
 
@@ -13,9 +13,10 @@ interface Props {
   ogImage: string;
   countrySlug?: string;
   jsonLd?: object[];
+  languages: readonly Locale[];
 }
 
-const { title, description, path, locale, ogImage, countrySlug, jsonLd = [] } = Astro.props;
+const { title, description, path, locale, ogImage, countrySlug, jsonLd = [], languages } = Astro.props;
 const absolute = (value: string) => new URL(value, Astro.site).href;
 const canonical = absolute(localePath(locale, path));
 const indexable = isIndexable(indexingRules, locale, countrySlug);
@@ -27,7 +28,7 @@ const jsonLdText = (item: object) => JSON.stringify(item).replaceAll('<', '\\u00
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
 {
-  locales.map((code) => (
+  languages.map((code) => (
     <link rel="alternate" hreflang={localeTags[code]} href={absolute(localePath(code, path))} />
   ))
 }
@@ -44,7 +45,7 @@ const jsonLdText = (item: object) => JSON.stringify(item).replaceAll('<', '\\u00
 <meta property="og:image:alt" content={title} />
 <meta property="og:locale" content={ogLocale(localeTags[locale])} />
 {
-  locales
+  languages
     .filter((code) => code !== locale)
     .map((code) => <meta property="og:locale:alternate" content={ogLocale(localeTags[code])} />)
 }

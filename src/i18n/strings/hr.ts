@@ -229,7 +229,9 @@ export const hr: UiStrings = {
     licences: 'Licencije za podatke po zemljama',
     privacy: 'Privatnost',
     security: 'Sigurnost',
-    builtBy: 'Izradio'
+    builtBy: 'Izradio',
+    about: 'O projektu',
+    contact: 'Kontakt'
   },
   privacy: {
     title: 'Privatnost',

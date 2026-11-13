@@ -1,7 +1,31 @@
-import { repoUrl } from '@/data/site';
+import { githubOrgUrl, issuesUrl, repoUrl } from '@/data/site';
 import type { FaqItem } from '@/i18n/ui';
 
 const siteUrl = 'https://statsmcp.dev/';
+
+export const productKeywords = [
+  'MCP server',
+  'official statistics',
+  'statistics offices',
+  'Eurostat'
+];
+
+export function organizationData(): object {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'StatsMCP',
+    url: siteUrl,
+    logo: `${siteUrl}favicon.svg`,
+    sameAs: [githubOrgUrl, repoUrl],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'technical support',
+      url: issuesUrl,
+      availableLanguage: ['English']
+    }
+  };
+}
 
 export function websiteData(languages: readonly string[]): object {
   return {
@@ -19,6 +43,7 @@ export function softwareData(description: string): object {
     '@type': 'SoftwareApplication',
     name: 'StatsMCP',
     description,
+    keywords: productKeywords.join(', '),
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'Any',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },

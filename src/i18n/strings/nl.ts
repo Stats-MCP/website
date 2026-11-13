@@ -229,7 +229,9 @@ export const nl: UiStrings = {
     licences: 'Datalicenties per land',
     privacy: 'Privacy',
     security: 'Beveiliging',
-    builtBy: 'Gemaakt door'
+    builtBy: 'Gemaakt door',
+    about: 'Over',
+    contact: 'Contact'
   },
   privacy: {
     title: 'Privacy',

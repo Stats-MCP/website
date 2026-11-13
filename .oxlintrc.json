@@ -42,7 +42,12 @@
   },
   "overrides": [
     {
-      "files": ["astro.config.ts", "vitest.config.ts", "src/pages/**"],
+      "files": [
+        "astro.config.ts",
+        "vitest.config.ts",
+        "src/pages/**",
+        "src/worker/index.ts"
+      ],
       "rules": {
         "import/no-default-export": "off"
       }

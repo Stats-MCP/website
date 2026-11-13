@@ -225,7 +225,9 @@ export const et: UiStrings = {
     licences: 'Andmelitsentsid riigiti',
     privacy: 'Privaatsus',
     security: 'Turvalisus',
-    builtBy: 'Loonud'
+    builtBy: 'Loonud',
+    about: 'Teave',
+    contact: 'Kontakt'
   },
   privacy: {
     title: 'Privaatsus',

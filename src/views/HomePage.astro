@@ -11,7 +11,7 @@ import TryAsking from '@/components/sections/TryAsking.astro';
 import { countries } from '@/data/countries';
 import { localeTags, locales, type Locale } from '@/i18n/locales';
 import { ui } from '@/i18n/ui';
-import { faqData, softwareData, websiteData } from '@/lib/structured-data';
+import { faqData, organizationData, softwareData, websiteData } from '@/lib/structured-data';
 
 interface Props {
   locale: Locale;
@@ -29,6 +29,7 @@ const { locale } = Astro.props;
   jsonLd={[
     websiteData(locales.map((code) => localeTags[code])),
     softwareData(ui[locale].seo.home.description),
+    organizationData(),
     faqData(ui[locale].faq.items)
   ]}>
   <HomeHero locale={locale} />

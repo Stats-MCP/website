@@ -1,0 +1,68 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/ui/Section.astro';
+import type { InfoPage } from '@/data/info-pages';
+import { organizationData } from '@/lib/structured-data';
+
+interface Props {
+  page: InfoPage;
+}
+
+const { page } = Astro.props;
+---
+
+<Base
+  locale="en"
+  languages={['en']}
+  title={`${page.title} — StatsMCP`}
+  description={page.description}
+  path={page.path}
+  ogSlug="home"
+  jsonLd={[organizationData()]}>
+  <Section title={page.title}>
+    <p class="intro">{page.description}</p>
+    {
+      page.sections.map((section) => (
+        <article>
+          <h3>{section.heading}</h3>
+          {section.paragraphs.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+          {section.links && (
+            <ul>
+              {section.links.map((link) => (
+                <li>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </article>
+      ))
+    }
+  </Section>
+</Base>
+
+<style>
+  .intro {
+    font-family: var(--font-display);
+    font-size: 24px;
+    margin: 0;
+    max-width: 760px;
+  }
+  article {
+    border-top: 1px solid var(--rule);
+    padding-top: 16px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  p,
+  ul {
+    margin: 8px 0 0;
+    max-width: 760px;
+  }
+  ul {
+    padding-left: 22px;
+  }
+</style>
