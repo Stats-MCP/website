@@ -226,7 +226,8 @@ export const fo: UiStrings = {
     documentation: 'Skjalfesting',
     licences: 'Dátuloyvi eftir landi',
     privacy: 'Privatlív',
-    security: 'Trygd'
+    security: 'Trygd',
+    builtBy: 'Gjørt av'
   },
   privacy: {
     title: 'Privatlív',

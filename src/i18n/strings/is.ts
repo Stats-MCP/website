@@ -230,7 +230,8 @@ export const isl: UiStrings = {
     documentation: 'Skjölun',
     licences: 'Gagnaleyfi eftir löndum',
     privacy: 'Persónuvernd',
-    security: 'Öryggi'
+    security: 'Öryggi',
+    builtBy: 'Smíðað af'
   },
   privacy: {
     title: 'Persónuvernd',

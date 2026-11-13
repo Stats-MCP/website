@@ -228,7 +228,8 @@ export const nl: UiStrings = {
     documentation: 'Documentatie',
     licences: 'Datalicenties per land',
     privacy: 'Privacy',
-    security: 'Beveiliging'
+    security: 'Beveiliging',
+    builtBy: 'Gemaakt door'
   },
   privacy: {
     title: 'Privacy',

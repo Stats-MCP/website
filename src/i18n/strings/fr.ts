@@ -236,7 +236,8 @@ export const fr: UiStrings = {
     documentation: 'Documentation',
     licences: 'Licences des données par pays',
     privacy: 'Confidentialité',
-    security: 'Sécurité'
+    security: 'Sécurité',
+    builtBy: 'Conçu par'
   },
   privacy: {
     title: 'Confidentialité',

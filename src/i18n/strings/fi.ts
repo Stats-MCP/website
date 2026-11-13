@@ -230,7 +230,8 @@ export const fi: UiStrings = {
     documentation: 'Dokumentaatio',
     licences: 'Datan lisenssit maittain',
     privacy: 'Tietosuoja',
-    security: 'Tietoturva'
+    security: 'Tietoturva',
+    builtBy: 'Tekijä:'
   },
   privacy: {
     title: 'Tietosuoja',

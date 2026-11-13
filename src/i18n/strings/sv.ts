@@ -230,7 +230,8 @@ export const sv: UiStrings = {
     documentation: 'Dokumentation',
     licences: 'Datalicenser per land',
     privacy: 'Integritet',
-    security: 'Säkerhet'
+    security: 'Säkerhet',
+    builtBy: 'Byggd av'
   },
   privacy: {
     title: 'Integritet',

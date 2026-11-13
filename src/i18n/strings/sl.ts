@@ -225,7 +225,8 @@ export const sl: UiStrings = {
     documentation: 'Dokumentacija',
     licences: 'Licence za podatke po državah',
     privacy: 'Zasebnost',
-    security: 'Varnost'
+    security: 'Varnost',
+    builtBy: 'Izdelal'
   },
   privacy: {
     title: 'Zasebnost',

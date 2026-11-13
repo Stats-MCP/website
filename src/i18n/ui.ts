@@ -148,6 +148,7 @@ export interface UiStrings {
     licences: string;
     privacy: string;
     security: string;
+    builtBy: string;
   };
   privacy: {
     title: string;
@@ -381,7 +382,8 @@ const en: UiStrings = {
     documentation: 'Documentation',
     licences: 'Data licences by country',
     privacy: 'Privacy',
-    security: 'Security'
+    security: 'Security',
+    builtBy: 'Built by'
   },
   privacy: {
     title: 'Privacy',

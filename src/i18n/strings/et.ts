@@ -224,7 +224,8 @@ export const et: UiStrings = {
     documentation: 'Dokumentatsioon',
     licences: 'Andmelitsentsid riigiti',
     privacy: 'Privaatsus',
-    security: 'Turvalisus'
+    security: 'Turvalisus',
+    builtBy: 'Loonud'
   },
   privacy: {
     title: 'Privaatsus',

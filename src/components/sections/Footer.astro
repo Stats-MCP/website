@@ -3,7 +3,7 @@ import type { Locale } from '@/i18n/locales';
 import { ui } from '@/i18n/ui';
 import { localePath } from '@/i18n/urls';
 import { countries } from '@/data/countries';
-import { docsUrl, npmUrl, repoUrl, securityUrl } from '@/data/site';
+import { docsUrl, npmUrl, repoUrl, securityUrl, tiansphereUrl } from '@/data/site';
 
 interface Props {
   locale: Locale;
@@ -46,6 +46,7 @@ const columns = [
   <div class="about">
     <p class="brand">StatsMCP</p>
     <p>{t.footer.disclaimer}</p>
+    <p class="credit">{t.footer.builtBy} <a href={tiansphereUrl}>TianSphere</a></p>
   </div>
   {
     columns.map((column) => (
@@ -80,6 +81,9 @@ const columns = [
     font-size: 22px;
     color: var(--ink);
     margin-bottom: 8px;
+  }
+  .credit {
+    margin-top: 8px;
   }
   .title {
     font-weight: 600;

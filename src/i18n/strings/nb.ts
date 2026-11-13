@@ -226,7 +226,8 @@ export const nb: UiStrings = {
     documentation: 'Dokumentasjon',
     licences: 'Datalisenser per land',
     privacy: 'Personvern',
-    security: 'Sikkerhet'
+    security: 'Sikkerhet',
+    builtBy: 'Laget av'
   },
   privacy: {
     title: 'Personvern',
