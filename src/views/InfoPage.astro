@@ -14,17 +14,17 @@ const { page } = Astro.props;
 <Base
   locale="en"
   languages={['en']}
-  title={`${page.title} — StatsMCP`}
+  title={page.seoTitle}
   description={page.description}
   path={page.path}
   ogSlug="home"
   jsonLd={[organizationData()]}>
-  <Section title={page.title}>
+  <Section level="h1" title={page.title}>
     <p class="intro">{page.description}</p>
     {
       page.sections.map((section) => (
         <article>
-          <h3>{section.heading}</h3>
+          <h2>{section.heading}</h2>
           {section.paragraphs.map((paragraph) => (
             <p>{paragraph}</p>
           ))}
@@ -54,7 +54,7 @@ const { page } = Astro.props;
     border-top: 1px solid var(--rule);
     padding-top: 16px;
   }
-  h3 {
+  h2 {
     font-size: 24px;
   }
   p,

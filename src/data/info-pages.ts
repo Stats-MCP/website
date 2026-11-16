@@ -14,6 +14,7 @@ export interface InfoSection {
 export interface InfoPage {
   path: string;
   title: string;
+  seoTitle: string;
   description: string;
   sections: InfoSection[];
 }
@@ -21,8 +22,9 @@ export interface InfoPage {
 export const aboutPage: InfoPage = {
   path: 'about/',
   title: 'About StatsMCP',
+  seoTitle: 'About StatsMCP, the open source statistics MCP server',
   description:
-    'StatsMCP is a free, open source MCP server that gives AI assistants official statistics from national statistics offices and Eurostat, with the source in every answer.',
+    'StatsMCP is a free, open source MCP server that gives AI assistants official figures from national statistics offices and Eurostat, with the source.',
   sections: [
     {
       heading: 'What StatsMCP is',
@@ -62,6 +64,7 @@ export const aboutPage: InfoPage = {
 export const contactPage: InfoPage = {
   path: 'contact/',
   title: 'Contact StatsMCP',
+  seoTitle: 'Contact the StatsMCP project',
   description:
     'How to contact the StatsMCP project: GitHub issues for questions, bugs and new countries, and private reports for security problems.',
   sections: [

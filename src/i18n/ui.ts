@@ -165,9 +165,9 @@ export interface UiStrings {
 const en: UiStrings = {
   seo: {
     home: {
-      title: 'StatsMCP — Official statistics for AI assistants',
+      title: 'Official statistics MCP server for AI assistants — StatsMCP',
       description:
-        'Connect Claude, ChatGPT, Cursor and other AI assistants to national statistics offices and Eurostat with one MCP endpoint. Free, read-only and open source. Every answer cites the source.'
+        'Connect Claude, ChatGPT and Cursor to national statistics offices and Eurostat with one free, read-only MCP server. Every answer cites the source.'
     },
     privacy: {
       title: 'Privacy — StatsMCP',
@@ -175,7 +175,7 @@ const en: UiStrings = {
         'StatsMCP logs nothing: no request logs, no cookies, no analytics. Read what the endpoint and this website do with your data.'
     },
     countries: {
-      title: 'Connect to one statistics office — StatsMCP',
+      title: 'MCP endpoints for each statistics office — StatsMCP',
       description:
         'The MCP endpoint, data languages, number of tables and licence of each statistics office in StatsMCP. Copy one endpoint, or connect every office at once.'
     },
@@ -189,12 +189,12 @@ const en: UiStrings = {
       description: 'This page does not exist on StatsMCP.'
     },
     countryLive: {
-      title: '{country} statistics for AI assistants — StatsMCP',
+      title: '{country} official statistics MCP server — StatsMCP',
       description:
-        "Ask Claude, ChatGPT or Cursor about {country}'s official statistics from {database} ({office}). Free MCP endpoint, sources in every answer."
+        "Ask Claude, ChatGPT or Cursor about {country}'s official statistics from {database} ({office}). Free MCP endpoint with sources."
     },
     countryPlanned: {
-      title: '{country} statistics for AI assistants — StatsMCP',
+      title: '{country} official statistics MCP server — StatsMCP',
       description:
         "{country}'s official statistics for Claude, ChatGPT and other AI assistants are coming to StatsMCP. Follow the roadmap on GitHub."
     },
