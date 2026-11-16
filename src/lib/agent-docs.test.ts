@@ -1,7 +1,13 @@
 import { describe, expect, it } from 'vitest';
 
+import { endpoint, liveCountries } from '@/data/countries';
 import { aboutPage, contactPage } from '@/data/info-pages';
-import { infoPageMarkdown, llmsText, notFoundMarkdown } from '@/lib/agent-docs';
+import {
+  infoPageMarkdown,
+  llmsFullText,
+  llmsText,
+  notFoundMarkdown
+} from '@/lib/agent-docs';
 
 describe('agent docs', () => {
   it('tells agents when to use StatsMCP and how to call it', () => {
@@ -10,6 +16,13 @@ describe('agent docs', () => {
     expect(text).toMatch(/^# StatsMCP\n\n> /);
     expect(text).toContain('## When to use StatsMCP');
     expect(text).toContain('## How to call it');
+  });
+
+  it('lists the endpoint of every live country in llms-full.txt', () => {
+    const text = llmsFullText();
+
+    for (const country of liveCountries)
+      expect(text).toContain(`MCP endpoint: ${endpoint(country)}`);
   });
 
   it('explains a missing page and links to llms.txt and the sitemap', () => {

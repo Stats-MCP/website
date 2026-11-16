@@ -24,6 +24,8 @@ const ogLocale = (tag: string) => tag.replace('-', '_');
 const jsonLdText = (item: object) => JSON.stringify(item).replaceAll('<', '\\u003c');
 const imageUrl = absolute(ogImage);
 const indexedLanguages = languages.filter((code) => isIndexable(indexingRules, code, countrySlug));
+const markdownPaths = ['', 'about/', 'contact/'];
+const markdownUrl = locale === 'en' && markdownPaths.includes(path) ? `/${path}index.md` : undefined;
 ---
 
 <title>{title}</title>
@@ -62,4 +64,7 @@ const indexedLanguages = languages.filter((code) => isIndexable(indexingRules, c
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
 <link rel="sitemap" href="/sitemap-index.xml" />
+{markdownUrl && <link rel="alternate" type="text/markdown" href={markdownUrl} />}
+<link rel="ard" href="/.well-known/ard.json" />
+<link rel="ai-catalog" href="/.well-known/ai-catalog.json" />
 {jsonLd.map((item) => <script type="application/ld+json" set:html={jsonLdText(item)} />)}

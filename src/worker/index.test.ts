@@ -12,7 +12,11 @@ const files: Record<string, { body: string; type: string }> = {
     type: 'text/html; charset=utf-8'
   },
   '/llms.txt': { body: '# StatsMCP', type: 'text/plain' },
-  '/404.md': { body: '# Page not found', type: 'text/markdown' }
+  '/404.md': { body: '# Page not found', type: 'text/markdown' },
+  '/.well-known/mcp/server-card.json': {
+    body: '{}',
+    type: 'application/json'
+  }
 };
 
 const env = {
@@ -99,6 +103,30 @@ describe('worker', () => {
 
     expect(response.status).toBe(404);
     expect(await response.text()).toBe('<h1>Not found</h1>');
+  });
+
+  it.each([
+    ['/index.md', 'text/markdown'],
+    ['/index.md', 'text/html']
+  ])('marks %s as noindex for Accept %s', async (path, accept) => {
+    const response = await get(path, accept);
+
+    expect(response.headers.get('X-Robots-Tag')).toBe('noindex');
+  });
+
+  it('keeps pages indexable', async () => {
+    const response = await get('/', 'text/html');
+
+    expect(response.headers.get('X-Robots-Tag')).toBeNull();
+  });
+
+  it('serves the MCP server card with its type and CORS', async () => {
+    const response = await get('/.well-known/mcp/server-card.json', '*/*');
+
+    expect(response.headers.get('Content-Type')).toBe(
+      'application/mcp-server-card+json'
+    );
+    expect(response.headers.get('Access-Control-Allow-Origin')).toBe('*');
   });
 
   it('adds the security headers to every response', async () => {

@@ -3,10 +3,12 @@ import {
   countries,
   liveCountries,
   endpoint,
-  indexedTables
+  indexedTables,
+  statusKey,
+  type Country
 } from '@/data/countries';
 import { aboutPage, contactPage, type InfoPage } from '@/data/info-pages';
-import { docsUrl, repoUrl } from '@/data/site';
+import { docsUrl, repoUrl, serverCardPath } from '@/data/site';
 import { fill, ui } from '@/i18n/ui';
 
 const siteUrl = 'https://statsmcp.dev';
@@ -74,7 +76,10 @@ export function llmsText(): string {
     '',
     '## Links',
     '',
+    `- Full text for agents (every country, FAQ and policies): ${siteUrl}/llms-full.txt`,
     `- Countries and endpoints: ${siteUrl}/countries/`,
+    `- Countries as JSON: ${siteUrl}/countries.json`,
+    `- MCP server card: ${siteUrl}${serverCardPath}`,
     `- About: ${siteUrl}/${aboutPage.path}`,
     `- Contact: ${siteUrl}/${contactPage.path}`,
     `- Source code: ${repoUrl}`,
@@ -82,6 +87,69 @@ export function llmsText(): string {
     ''
   ];
   return lines.join('\n');
+}
+
+function countryMarkdown(country: Country): string[] {
+  const t = ui.en;
+  const example = country.example;
+  return [
+    `### ${country.name.en}`,
+    '',
+    `- Page: ${siteUrl}/${country.slug}/`,
+    `- Office: ${country.office.fullName.en} (${country.office.name}), ${country.office.url}`,
+    `- Database: ${country.database.name}, ${country.database.url}`,
+    `- Status: ${t.hero.status[statusKey(country)]}`,
+    ...(country.status === 'live'
+      ? [`- MCP endpoint: ${endpoint(country)}`, `- Country id: ${country.id}`]
+      : []),
+    `- Data languages: ${country.dataLanguages.join(', ')}`,
+    ...(country.tables === undefined
+      ? []
+      : [`- Tables in the search index: ${country.tables}`]),
+    `- Licence: ${country.licence.label.en}${country.licence.url ? `, ${country.licence.url}` : ''}`,
+    ...(country.localPackage
+      ? [`- Run locally: npx -y ${country.localPackage}`]
+      : []),
+    ...(example
+      ? [
+          `- Example question: ${example.question.en}`,
+          `- Example answer: ${example.answer.en} Source: ${example.source}, ${example.sourceUrl}`
+        ]
+      : []),
+    ''
+  ];
+}
+
+function nestedInfoPage(page: InfoPage): string {
+  return infoPageMarkdown(page)
+    .replaceAll('\n## ', '\n### ')
+    .replace(/^# /, '## ');
+}
+
+export function llmsFullText(): string {
+  const t = ui.en;
+  return [
+    llmsText(),
+    '## Countries in detail',
+    '',
+    ...countries.flatMap(countryMarkdown),
+    '## Frequently asked questions',
+    '',
+    ...t.faq.items.flatMap((item) => [
+      `### ${item.question}`,
+      '',
+      item.answer,
+      ''
+    ]),
+    nestedInfoPage(aboutPage),
+    nestedInfoPage(contactPage),
+    `## ${t.privacy.title}`,
+    '',
+    t.privacy.intro,
+    '',
+    ...t.privacy.points.map((point) => `- ${point}`),
+    ''
+  ].join('\n');
 }
 
 export function infoPageMarkdown(page: InfoPage): string {
