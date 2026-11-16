@@ -55,5 +55,10 @@ const { locale, title, description, path, ogSlug, countrySlug, jsonLd, languages
       <Footer locale={locale} />
     </div>
     <p id="copy-status" class="visually-hidden" aria-live="polite"></p>
+    <script>
+      import { registerWebMcpTools } from '@/scripts/webmcp';
+
+      registerWebMcpTools();
+    </script>
   </body>
 </html>
