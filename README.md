@@ -20,3 +20,7 @@ pnpm format       # oxfmt check (pnpm format:fix to correct)
 
 - Country facts (endpoints, databases, licences) must match the MCP repository.
 - Code rules are the same as in the MCP repository: no `any`, named exports, `@/` imports, no nested ternaries, comments only when the reason is not clear.
+
+## Renewals
+
+- The WebMCP origin trial token (`webMcpOriginTrialToken` in `src/data/site.ts`) expires on 30 March 2027. Renew it at https://developer.chrome.com/origintrials/#/trials/my and replace the value.
