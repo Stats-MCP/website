@@ -3,16 +3,19 @@ interface Props {
   id?: string;
   title?: string;
   meta?: string;
+  /** Use `h1` when the section title is the page title. */
+  level?: 'h1' | 'h2';
 }
 
-const { id, title, meta } = Astro.props;
+const { id, title, meta, level = 'h2' } = Astro.props;
+const Heading = level;
 ---
 
 <section id={id} class="section">
   {
     title && (
       <div class="head">
-        <h2>{title}</h2>
+        <Heading class="title">{title}</Heading>
         {meta && <p class="mono-label">{meta}</p>}
       </div>
     )
@@ -35,14 +38,14 @@ const { id, title, meta } = Astro.props;
     justify-content: space-between;
     gap: 16px;
   }
-  h2 {
+  .title {
     font-size: 44px;
   }
   .head p {
     margin: 0;
   }
   @media (max-width: 640px) {
-    h2 {
+    .title {
       font-size: 34px;
     }
   }

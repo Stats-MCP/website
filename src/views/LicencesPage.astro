@@ -19,14 +19,14 @@ const t = ui[locale].licences;
   description={ui[locale].seo.licences.description}
   path="licences/"
   ogSlug="licences">
-  <Section title={t.title}>
+  <Section level="h1" title={t.title}>
     <p>{t.intro}</p>
     {
       countries.map((country) => (
         <article>
-          <h3>
+          <h2>
             {localized(country.name, locale)} · {localized(country.office.fullName, locale)}
-          </h3>
+          </h2>
           <p>
             {country.licence.url ? (
               <a href={country.licence.url}>{localized(country.licence.label, locale)}</a>
@@ -46,7 +46,7 @@ const t = ui[locale].licences;
     border-top: 1px solid var(--rule);
     padding-top: 16px;
   }
-  h3 {
+  h2 {
     font-size: 24px;
   }
   p {
