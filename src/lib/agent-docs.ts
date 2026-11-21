@@ -7,7 +7,12 @@ import {
   statusKey,
   type Country
 } from '@/data/countries';
-import { aboutPage, contactPage, type InfoPage } from '@/data/info-pages';
+import {
+  aboutPage,
+  contactPage,
+  termsPage,
+  type InfoPage
+} from '@/data/info-pages';
 import { docsUrl, repoUrl, serverCardPath } from '@/data/site';
 import { fill, ui } from '@/i18n/ui';
 
@@ -82,6 +87,7 @@ export function llmsText(): string {
     `- MCP server card: ${siteUrl}${serverCardPath}`,
     `- About: ${siteUrl}/${aboutPage.path}`,
     `- Contact: ${siteUrl}/${contactPage.path}`,
+    `- Terms of service: ${siteUrl}/${termsPage.path}`,
     `- Source code: ${repoUrl}`,
     `- Documentation: ${docsUrl}`,
     ''
@@ -143,6 +149,7 @@ export function llmsFullText(): string {
     ]),
     nestedInfoPage(aboutPage),
     nestedInfoPage(contactPage),
+    nestedInfoPage(termsPage),
     `## ${t.privacy.title}`,
     '',
     t.privacy.intro,

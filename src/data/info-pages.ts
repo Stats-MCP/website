@@ -96,3 +96,50 @@ export const contactPage: InfoPage = {
     }
   ]
 };
+
+export const termsPage: InfoPage = {
+  path: 'terms/',
+  title: 'Terms of service',
+  seoTitle: 'Terms of service — StatsMCP',
+  description:
+    'The terms of use for the StatsMCP website and the hosted MCP endpoints: a free, read-only service with no warranty and no account.',
+  sections: [
+    {
+      heading: 'The service',
+      paragraphs: [
+        'StatsMCP gives AI assistants read-only access to the public APIs of national statistics offices and Eurostat. By using the website or the hosted endpoints you accept these terms.',
+        'The service is free. You need no account and no API key.'
+      ]
+    },
+    {
+      heading: 'Acceptable use',
+      paragraphs: [
+        'Use the service for lawful purposes only. Do not try to break the service, bypass the rate limits or use it to attack other systems.',
+        'We can limit or block access that hurts the service or other users.'
+      ]
+    },
+    {
+      heading: 'The data',
+      paragraphs: [
+        'The figures come from the statistics offices, unchanged. The data belongs to each office and its own licence and attribution rules apply. The Data licences page links to them.',
+        'StatsMCP does not guarantee that the data is complete, current or correct. Check the source table before you rely on a figure.'
+      ],
+      links: [{ label: 'Data licences by country', href: '/licences/' }]
+    },
+    {
+      heading: 'No warranty',
+      paragraphs: [
+        'The service is provided "as is" with no warranty. We do not promise availability, and we can change or stop the service at any time.',
+        'To the extent the law permits, we are not liable for decisions or damages that result from use of the service or the data.'
+      ]
+    },
+    {
+      heading: 'Changes and contact',
+      paragraphs: [
+        'We can update these terms. The current version stays on this page.',
+        'The source code is under the MIT licence. Questions about these terms: open an issue on GitHub.'
+      ],
+      links: [{ label: 'Open an issue on GitHub', href: issuesUrl }]
+    }
+  ]
+};

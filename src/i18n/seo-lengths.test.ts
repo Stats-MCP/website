@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { liveCountries } from '@/data/countries';
-import { aboutPage, contactPage } from '@/data/info-pages';
+import { aboutPage, contactPage, termsPage } from '@/data/info-pages';
 import { fill, ui } from '@/i18n/ui';
 
 const seo = ui.en.seo;
@@ -12,6 +12,7 @@ const pages = [
   ['privacy', seo.privacy.title, seo.privacy.description],
   ['about', aboutPage.seoTitle, aboutPage.description],
   ['contact', contactPage.seoTitle, contactPage.description],
+  ['terms', termsPage.seoTitle, termsPage.description],
   ...liveCountries.map((country) => {
     const values = {
       country: country.name.en,

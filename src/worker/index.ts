@@ -19,6 +19,12 @@ const serverCardType = 'application/mcp-server-card+json';
 function pathHeaders(pathname: string): Record<string, string> {
   if (pathname.endsWith('.md')) return { 'X-Robots-Tag': 'noindex' };
   if (!pathname.startsWith('/.well-known/')) return {};
+  if (pathname === '/.well-known/openai-apps-challenge')
+    return {
+      'Access-Control-Allow-Origin': '*',
+      'Cache-Control': 'no-store',
+      'Content-Type': 'text/plain; charset=utf-8'
+    };
   const discovery = {
     'Access-Control-Allow-Origin': '*',
     'Cache-Control': 'public, max-age=3600'
